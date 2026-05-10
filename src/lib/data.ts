@@ -15,7 +15,7 @@ export const seo: SeoMeta = {
   description:
     'Jatinder Sandhu is a Full Stack Developer with 5+ years of experience in PHP, React.js, Next.js, Node.js, Laravel, and WordPress. Based in Bathinda, Punjab, India.',
   keywords:
-    'Jatinder Sandhu, Full Stack Developer, PHP Developer, React Developer, Next.js, Node.js, Laravel, WordPress, Freelance Developer India, Bathinda developer',
+    'Jatinder Sandhu, Full Stack Developer, PHP Developer, React Developer, Next.js, Node.js, Laravel, WordPress, Freelance Developer India, Bathinda developer, Hire Full Stack Developer, Full Stack Developer Bathinda, PHP Laravel Developer, React Next.js Developer, WordPress Developer, Freelance Web Developer Punjab, Web Development Services India, Custom Web Application Developer, API Developer, Database Developer, E-commerce Solutions, Shopify Developer',
   ogImage: 'https://jatinder.malwaland.in/jatindersandhu.png',
   twitterHandle: '@jatindersandhuinfo',
   siteUrl: 'https://jatinder.malwaland.in',
@@ -148,7 +148,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Luna By Navneet',
-    tech: 'Next.js · Tailwindcss',
+    tech: 'Next.js · Tailwind CSS',
     url: 'https://lunanav.malwaland.in/',
   },
   {

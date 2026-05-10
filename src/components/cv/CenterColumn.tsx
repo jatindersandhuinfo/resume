@@ -11,7 +11,7 @@ export function CenterColumn() {
       {/* Hero Image */}
       <div className="relative flex-1 min-h-[320px] overflow-hidden">
         <Image
-          src="https://jatinder.malwaland.in/jatindersandhu.png"
+          src="/jatindersandhu.png"
           alt={`${personal.firstName} ${personal.lastName} — ${personal.role}`}
           fill
           className="object-cover object-top"
