@@ -15,7 +15,7 @@
 
   body {
     @apply bg-[#c8c8c8] min-h-screen flex justify-center items-start;
-    padding: 0px 16px;
+    padding: 0px;
   }
 
   @media print {
