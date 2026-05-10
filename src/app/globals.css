@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sidebar-bg: #1e1e1e;
+    --center-bg: #111111;
+    --accent: #ff990a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#c8c8c8] min-h-screen flex justify-center items-start;
+    padding: 0px 16px;
+  }
+
+  @media print {
+    body {
+      padding: 0;
+      background: white;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+}
+
+/* ── Bebas Neue via @font-face fallback (Google Fonts loaded in layout) ── */
+.font-bebas {
+  font-family: var(--font-bebas), 'Impact', sans-serif;
+}
