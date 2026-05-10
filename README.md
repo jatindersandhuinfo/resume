@@ -89,7 +89,7 @@ npx vercel
 
 ## Tech Stack
 
-- **Next.js 14** (App Router)
+- **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS**
 - **next/font** — Bebas Neue, DM Sans, DM Mono
