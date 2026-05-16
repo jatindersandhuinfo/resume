@@ -11,13 +11,12 @@ export function CenterColumn() {
       {/* Hero Image */}
       <div className="relative flex-1 min-h-[320px] overflow-hidden">
         <Image
-          src="/jatindersandhu.png"
+          src="/jatindersandhu-1.webp"
           alt={`${personal.firstName} ${personal.lastName} — ${personal.role}`}
           fill
           className="object-cover object-top"
           style={{ filter: 'grayscale(30%) brightness(0.75)' }}
           priority
-          sizes="(max-width: 768px) 100vw, 380px"
         />
       </div>
 
