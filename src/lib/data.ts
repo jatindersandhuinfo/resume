@@ -9,6 +9,13 @@ import type {
   Service,
   SeoMeta,
 } from '@/types/cv';
+import type {
+  AboutSectionData,
+  ServicesSectionData,
+  WorksSectionData,
+  ExperienceSectionData,
+  SkillsSectionData,
+} from '@/types/sections';
 
 export const seo: SeoMeta = {
   title: 'Jatinder Sandhu — Full Stack Developer in Punjab, India',
@@ -198,5 +205,114 @@ export const projects: Project[] = [
   {
     name: 'True Holiday Admin',
     tech: 'PHP · MySQL · Bootstrap',
+  },
+];
+
+// Section-specific data
+
+const serviceCopy: Record<string, string> = {
+  'Backend Dev': 'APIs, auth, database design, and server-side logic that can grow with the product.',
+  'Frontend Dev': 'Responsive interfaces built with React, Next.js, Tailwind CSS, and clean component systems.',
+  'API Integration': 'Payments, booking tools, CRMs, third-party data, and custom service integrations.',
+  WordPress: 'Custom WordPress builds, theme work, Elementor pages, WooCommerce, and CMS maintenance.',
+  Shopify: 'Storefront improvements, product flows, theme edits, and conversion-focused ecommerce UI.',
+  'REST API': 'Structured endpoints, validation, JWT authentication, and practical API documentation.',
+  Database: 'MySQL, MongoDB, PostgreSQL, schema planning, optimization, and data workflows.',
+};
+
+const serviceTags: Record<string, string> = {
+  'Backend Dev': 'Architecture',
+  'Frontend Dev': 'Interface',
+  'API Integration': 'Automation',
+  WordPress: 'CMS',
+  Shopify: 'Commerce',
+  'REST API': 'Backend',
+  Database: 'Data',
+};
+
+const serviceStacks: Record<string, string[]> = {
+  'Backend Dev': ['Node.js', 'PHP', 'Laravel'],
+  'Frontend Dev': ['React', 'Next.js', 'Tailwind'],
+  'API Integration': ['REST', 'Webhooks', 'CRM'],
+  WordPress: ['CMS', 'Elementor', 'WooCommerce'],
+  Shopify: ['Storefront', 'Theme', 'Checkout'],
+  'REST API': ['JWT', 'Validation', 'Docs'],
+  Database: ['MySQL', 'MongoDB', 'Postgres'],
+};
+
+const experienceFocus: Record<string, string[]> = {
+  'SuperVisionIT Solutions': ['React + Redux', 'Node APIs', 'JWT Auth', 'MongoDB'],
+  'Envy Us Media Pvt Ltd': ['PHP CMS', 'MySQL', 'Integrations', 'Testing'],
+};
+
+// Section exports
+
+export const aboutSection: AboutSectionData = {
+  id: 'about',
+  kicker: 'About Me',
+  title: 'Transforming your vision into a dynamic web experience through clean UI and robust functionality.',
+  description:
+    "I'm Jatinder Sandhu, a full stack developer focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
+};
+
+export const servicesSection: ServicesSectionData = {
+  id: 'services',
+  kicker: 'What I Do',
+  title: 'Full-stack services for websites, apps, and business systems.',
+  description:
+    'From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure. The focus is clean UI, dependable backend logic, and maintainable code.',
+  services,
+  serviceCopy,
+  serviceTags,
+  serviceStacks,
+};
+
+export const worksSection: WorksSectionData = {
+  id: 'works',
+  kicker: 'Works',
+  title: 'Selected builds and production projects.',
+  description: 'A focused sample of business websites, ecommerce work, and web applications built with practical stacks.',
+  works: projects,
+};
+
+export const experienceSection: ExperienceSectionData = {
+  id: 'experience',
+  kicker: 'Experience',
+  title: 'Production work across frontend, backend, and CMS.',
+  description:
+    'A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.',
+  experience,
+  experienceFocus,
+};
+
+export const skillsSection: SkillsSectionData = {
+  id: 'skills',
+  kicker: 'Skills',
+  title: 'Stack I use to build complete web products.',
+  description:
+    'Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.',
+  skillBars,
+  techGroups: techGroups.map(group => ({
+    category: group.category,
+    items: group.items,
+  })),
+};
+
+export const stats = [
+  {
+    value: '6+',
+    label: 'Years Experience',
+  },
+  {
+    value: '10+',
+    label: 'Projects Delivered',
+  },
+  {
+    value: '10+',
+    label: 'Happy Clients',
+  },
+  {
+    value: '100%',
+    label: 'Clean & Scalable Code',
   },
 ];
