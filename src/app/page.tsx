@@ -1,13 +1,13 @@
-"use client";
-
 import Image from 'next/image';
-import { useState } from 'react';
+import HeaderNav from '@/components/HeaderNav';
 import {
   contact,
   education,
   experience,
   personal,
   projects,
+  sections,
+  SectionData,
   services,
   skillBars,
   techGroups,
@@ -57,85 +57,303 @@ const experienceFocus: Record<string, string[]> = {
 
 const uniqueTechItems = Array.from(new Set(techGroups.flatMap((group) => group.items)));
 
-const navItems = [
-  { label: 'About Me', href: '#about' },
-  { label: 'What I Do', href: '#services' },
-  { label: 'Works', href: '#works' },
-  { label: 'Hire Me', href: '#contact' },
-];
+const renderSection = (section: SectionData) => {
+  switch (section.id) {
+    case 'about':
+      return (
+        <section id="about" className="content-section mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-28" aria-labelledby="about-title">
+          <div>
+            <p className="section-kicker">{section.kicker}</p>
+            <h2 id="about-title" className="mt-5 section-title text-white">
+              {section.title}
+            </h2>
+          </div>
+          <div className="space-y-6 body-copy text-white/66">
+            <p>{section.description}</p>
+            <p>
+              My work spans PHP, Laravel, WordPress, React, Next.js, Node.js, MySQL, MongoDB, and API integrations. I like projects where design, performance, and business flow all matter.
+            </p>
+            <div className="grid gap-3 pt-3 sm:grid-cols-2">
+              {techGroups.map((group) => (
+                <div key={group.category} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
+                  <h3 className="text-base font-black text-white">{group.category}</h3>
+                  <p className="mt-3 small-copy text-[#d7d7d7]">{group.items.join(' / ')}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case 'services':
+      return (
+        <section id="services" className="content-section border-y border-white/10 bg-[#111416]" aria-labelledby="services-title">
+          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+            <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.7fr_1fr]">
+              <div>
+                <p className="section-kicker">{section.kicker}</p>
+                <h2 id="services-title" className="mt-5 section-title text-white">
+                  {section.title}
+                </h2>
+              </div>
+              <p className="max-w-2xl body-copy text-white/62 lg:pt-10">
+                {section.description}
+              </p>
+            </div>
+
+            <div className="mb-5 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+              <article className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-7">
+                <p className="section-kicker">Core Offer</p>
+                <h3 className="mt-5 subsection-title text-white">
+                  Complete product delivery from idea to launch.
+                </h3>
+                <p className="mt-5 max-w-2xl body-copy text-[#e6e6e6]">
+                  I can design the flow, build the responsive frontend, connect APIs, prepare the CMS or database, and keep the implementation practical for future changes.
+                </p>
+              </article>
+              <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3 lg:grid-cols-1">
+                {['React / Next.js', 'PHP / Laravel', 'WordPress / Shopify'].map((item) => (
+                  <div key={item} className="bg-[#15191b] p-5">
+                    <p className="meta-label text-white/32">Specialist Stack</p>
+                    <p className="mt-2 text-base font-black text-white">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service, index) => (
+                <article
+                  key={service.label}
+                  className="interactive-card group relative min-h-[280px] overflow-hidden rounded-lg border border-white/10 bg-[#0f1214] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad63]/55 hover:bg-[#15191b]"
+                >
+                  <p className="absolute -right-2 -top-3 text-[5.75rem] font-black leading-none text-white/[0.035] transition group-hover:text-[#d6ad63]/10">
+                    0{index + 1}
+                  </p>
+
+                  <div className="relative flex items-start justify-between gap-5">
+                    <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-sm font-black text-[#d6ad63]">
+                      0{index + 1}
+                    </span>
+                    <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 meta-label text-[#d7d7d7] transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
+                      {serviceTags[service.label] ?? 'Web'}
+                    </span>
+                  </div>
+
+                  <h3 className="relative mt-9 card-title text-white transition group-hover:text-[#d6ad63]">
+                    {service.label}
+                  </h3>
+                  <p className="relative mt-4 small-copy text-[#d7d7d7]">
+                    {serviceCopy[service.label] ?? 'Clean, dependable web development support for your product.'}
+                  </p>
+
+                  <div className="relative mt-6 flex flex-wrap gap-2">
+                    {(serviceStacks[service.label] ?? ['Web', 'Build', 'Support']).map((item) => (
+                      <span key={item} className="rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-[#c7c7c7]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="absolute inset-x-6 bottom-0 h-px bg-white/10 transition group-hover:bg-[#d6ad63]" />
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case 'works':
+      return (
+        <section id="works" className="content-section mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28" aria-labelledby="works-title">
+          <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1fr]">
+            <div>
+              <p className="section-kicker">{section.kicker}</p>
+              <h2 id="works-title" className="mt-5 section-title text-white">
+                {section.title}
+              </h2>
+            </div>
+            <p className="max-w-2xl body-copy text-white/62 lg:pt-10">{section.description}</p>
+          </div>
+
+          <div className="border-t border-white/10">
+            {projects.map((project, index) => {
+              const Wrapper = project.url ? 'a' : 'article';
+              const props = project.url
+                ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' }
+                : {};
+
+              return (
+                <Wrapper
+                  key={project.name}
+                  className="interactive-card group grid gap-5 border-b border-white/10 py-7 transition hover:bg-white/[0.03] md:grid-cols-[90px_1fr_0.8fr_120px]"
+                  {...props}
+                >
+                  <p className="text-sm font-black text-white/32">0{index + 1}</p>
+                  <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
+                    {project.name}
+                  </h3>
+                  <p className="meta-label text-[#c7c7c7]">{project.tech}</p>
+                  <p className="button-label text-[#d6ad63]">
+                    {project.url ? 'Open' : 'Private'}
+                  </p>
+                </Wrapper>
+              );
+            })}
+          </div>
+        </section>
+      );
+
+    case 'experience':
+      return (
+        <section className="content-section border-y border-white/10 bg-[#111416]" aria-labelledby="experience-title">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:px-10 lg:py-28">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <p className="section-kicker">{section.kicker}</p>
+              <h2 id="experience-title" className="mt-5 section-title text-white">
+                {section.title}
+              </h2>
+              <p className="mt-5 body-copy text-[#e6e6e6]">{section.description}</p>
+              <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10">
+                <div className="bg-[#0b0d0e] p-5">
+                  <p className="card-title text-[#d6ad63]">{personal.experience}</p>
+                  <p className="mt-2 meta-label text-white/38">Experience</p>
+                </div>
+                <div className="bg-[#0b0d0e] p-5">
+                  <p className="card-title text-[#d6ad63]">{experience.length}</p>
+                  <p className="mt-2 meta-label text-white/38">Companies</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative space-y-6 before:absolute before:left-[21px] before:top-5 before:h-[calc(100%-40px)] before:w-px before:bg-white/10">
+              {experience.map((item, index) => (
+                <article key={item.company} className="group relative grid gap-5 pl-14 md:grid-cols-[150px_1fr]">
+                  <div className="absolute left-0 top-1 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-[#111416] text-sm font-black text-[#d6ad63] transition group-hover:border-[#d6ad63]">
+                    0{index + 1}
+                  </div>
+                  <div>
+                    <p className="rounded-full border border-white/10 px-4 py-2 text-center meta-label text-[#c7c7c7]">
+                      {item.period}
+                    </p>
+                  </div>
+                  <div className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-6 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#d6ad63]/55">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <h3 className="card-title text-white transition group-hover:text-[#d6ad63]">
+                          {item.company}
+                        </h3>
+                        <p className="mt-2 meta-label text-[#bfc4c9]">{item.role}</p>
+                      </div>
+                      <span className="w-fit rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-[#d7d7d7]">
+                        Production
+                      </span>
+                    </div>
+                    <p className="mt-5 small-copy text-white/60">{item.description}</p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {(experienceFocus[item.company] ?? ['Development', 'Delivery']).map((focus) => (
+                        <span key={focus} className="rounded-full border border-white/10 px-3 py-1 text-xs font-bold text-[#d7d7d7]">
+                          {focus}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case 'skills':
+      return (
+        <section className="content-section border-y border-white/10 bg-[#0f1214]" aria-labelledby="skills-title">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-px px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-28">
+            <div className="rounded-lg border border-white/10 bg-[#15191b] p-6 sm:p-8 lg:rounded-r-none">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                <div className="flex-col gap-4">
+                  <p className="section-kicker">{section.kicker}</p>
+                  <h2 id="skills-title" className="my-4 max-w-2xl section-title text-white">
+                    {section.title}
+                  </h2>
+                  <p className="max-w-sm small-copy text-[#d0d4d9]">{section.description}</p>
+                </div>
+              </div>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                {skillBars.map((skill) => (
+                  <article key={skill.name} className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-5 transition hover:-translate-y-1 hover:border-[#d6ad63]/60">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="card-title text-white">{skill.name}</h3>
+                        <p className="mt-2 text-sm text-[#c2c7cc]">Production experience</p>
+                      </div>
+                      <p className="card-title text-[#d6ad63]">{skill.level}</p>
+                    </div>
+                    <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10">
+                      <div className="h-full rounded-full bg-[#d6ad63]" style={{ width: `${skill.level}%` }} />
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                {uniqueTechItems.map((item) => (
+                  <span key={item} className="rounded-full border border-white/10 px-4 py-2 meta-label text-[#d7d7d7]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div id="contact" className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0d0e] p-6 sm:p-8 lg:rounded-l-none">
+              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#d6ad63]/14 blur-3xl" />
+              <div className="relative">
+                <p className="section-kicker">Hire Me</p>
+                <h2 className="mt-4 section-title text-white">
+                  Have a project that needs a reliable developer?
+                </h2>
+                <p className="mt-5 body-copy text-white/58">
+                  Send the scope, reference, or rough idea. I can help shape the flow, build the interface, connect the backend, and ship it cleanly.
+                </p>
+
+                <div className="mt-8 grid gap-3">
+                  <a
+                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 button-label text-[#0b0d0e] transition hover:bg-white"
+                    href={`mailto:${contact.email}`}
+                  >
+                    Let&apos;s Talk
+                  </a>
+                  <a
+                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 px-6 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+                    href={contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+
+                <div className="mt-8 border-t border-white/10 pt-6">
+                  <p className="meta-label text-white/34">Direct Email</p>
+                  <a className="mt-2 block break-words text-base font-black text-white transition hover:text-[#d6ad63]" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+
+    default:
+      return null;
+  }
+};
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <main className="min-h-screen bg-[#0b0d0e] text-white">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b0d0e]/92 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-10">
-          <a href="#" className="text-lg font-black uppercase tracking-[0.06em]">
-            {personal.firstName}
-          </a>
-          <nav className="hidden items-center gap-7 text-sm uppercase tracking-[0.18em] md:flex" aria-label="Primary navigation">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="transition-colors duration-200 hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center gap-3">
-            <a
-              className="hidden rounded-full border border-white/18 bg-[#d6ad63] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] md:inline-flex"
-              href={`mailto:${contact.email}`}
-            >
-              Hire Me
-            </a>
-            <button
-              type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/18 text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63] md:hidden"
-              aria-expanded={menuOpen}
-              aria-controls="mobile-navigation"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              onClick={() => setMenuOpen((current) => !current)}
-            >
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
-                <path
-                  d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 7h16M4 12h16M4 17h16'}
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        {menuOpen ? (
-          <div id="mobile-navigation" className="md:hidden border-t border-white/10 bg-[#0b0d0e] px-5 py-5">
-            <nav className="flex flex-col gap-3" aria-label="Mobile navigation">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-2xl px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <a
-                href={`mailto:${contact.email}`}
-                className="rounded-2xl bg-[#d6ad63] px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                Hire Me
-              </a>
-            </nav>
-          </div>
-        ) : null}
-      </header>
+      <HeaderNav />
 
       <section className="relative overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
         <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl grid-cols-1 gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:py-12">
@@ -209,286 +427,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section id="about" className="content-section mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-28" aria-labelledby="about-title">
-        <div>
-          <p className="section-kicker">About Me</p>
-          <h2 id="about-title" className="mt-5 section-title text-white">
-            Transforming your vision into a dynamic web experience through clean UI and robust functionality.
-          </h2>
-        </div>
-        <div className="space-y-6 body-copy text-white/66">
-          <p>
-            I&apos;m {personal.firstName} {personal.lastName}, a full stack developer focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.
-          </p>
-          <p>
-            My work spans PHP, Laravel, WordPress, React, Next.js, Node.js, MySQL, MongoDB, and API integrations. I like projects where design, performance, and business flow all matter.
-          </p>
-          <div className="grid gap-3 pt-3 sm:grid-cols-2">
-            {techGroups.map((group) => (
-              <div key={group.category} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
-                <h3 className="text-base font-black text-white">{group.category}</h3>
-                <p className="mt-3 small-copy text-[#d7d7d7]">{group.items.join(' / ')}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="content-section border-y border-white/10 bg-[#111416]" aria-labelledby="services-title">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-          <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.7fr_1fr]">
-            <div>
-              <p className="section-kicker">What I Do</p>
-              <h2 id="services-title" className="mt-5 section-title text-white">
-                Full-stack services for websites, apps, and business systems.
-              </h2>
-            </div>
-            <p className="max-w-2xl body-copy text-white/62 lg:pt-10">
-              From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure. The focus is clean UI, dependable backend logic, and maintainable code.
-            </p>
-          </div>
-
-          <div className="mb-5 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-            <article className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-7">
-              <p className="section-kicker">Core Offer</p>
-              <h3 className="mt-5 subsection-title text-white">
-                Complete product delivery from idea to launch.
-              </h3>
-              <p className="mt-5 max-w-2xl body-copy text-[#e6e6e6]">
-                I can design the flow, build the responsive frontend, connect APIs, prepare the CMS or database, and keep the implementation practical for future changes.
-              </p>
-            </article>
-            <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3 lg:grid-cols-1">
-              {['React / Next.js', 'PHP / Laravel', 'WordPress / Shopify'].map((item) => (
-                <div key={item} className="bg-[#15191b] p-5">
-                  <p className="meta-label text-white/32">Specialist Stack</p>
-                  <p className="mt-2 text-base font-black text-white">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <article
-                key={service.label}
-                className="interactive-card group relative min-h-[280px] overflow-hidden rounded-lg border border-white/10 bg-[#0f1214] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad63]/55 hover:bg-[#15191b]"
-              >
-                <p className="absolute -right-2 -top-3 text-[5.75rem] font-black leading-none text-white/[0.035] transition group-hover:text-[#d6ad63]/10">
-                  0{index + 1}
-                </p>
-
-                <div className="relative flex items-start justify-between gap-5">
-                  <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-sm font-black text-[#d6ad63]">
-                    0{index + 1}
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 meta-label text-[#d7d7d7] transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
-                    {serviceTags[service.label] ?? 'Web'}
-                  </span>
-                </div>
-
-                <h3 className="relative mt-9 card-title text-white transition group-hover:text-[#d6ad63]">
-                  {service.label}
-                </h3>
-                <p className="relative mt-4 small-copy text-[#d7d7d7]">
-                  {serviceCopy[service.label] ?? 'Clean, dependable web development support for your product.'}
-                </p>
-
-                <div className="relative mt-6 flex flex-wrap gap-2">
-                  {(serviceStacks[service.label] ?? ['Web', 'Build', 'Support']).map((item) => (
-                    <span key={item} className="rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-[#c7c7c7]">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="absolute inset-x-6 bottom-0 h-px bg-white/10 transition group-hover:bg-[#d6ad63]" />
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="works" className="content-section mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28" aria-labelledby="works-title">
-        <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1fr]">
-          <div>
-            <p className="section-kicker">Works</p>
-            <h2 id="works-title" className="mt-5 section-title text-white">
-              Selected builds and production projects.
-            </h2>
-          </div>
-          <p className="max-w-2xl body-copy text-white/62 lg:pt-10">
-            A focused sample of business websites, ecommerce work, and web applications built with practical stacks.
-          </p>
-        </div>
-
-        <div className="border-t border-white/10">
-          {projects.map((project, index) => {
-            const Wrapper = project.url ? 'a' : 'article';
-            const props = project.url
-              ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' }
-              : {};
-
-            return (
-              <Wrapper
-                key={project.name}
-                className="interactive-card group grid gap-5 border-b border-white/10 py-7 transition hover:bg-white/[0.03] md:grid-cols-[90px_1fr_0.8fr_120px]"
-                {...props}
-              >
-                <p className="text-sm font-black text-white/32">0{index + 1}</p>
-                <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
-                  {project.name}
-                </h3>
-                <p className="meta-label text-[#c7c7c7]">{project.tech}</p>
-                <p className="button-label text-[#d6ad63]">
-                  {project.url ? 'Open' : 'Private'}
-                </p>
-              </Wrapper>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="content-section border-y border-white/10 bg-[#111416]" aria-labelledby="experience-title">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:px-10 lg:py-28">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="section-kicker">Experience</p>
-            <h2 id="experience-title" className="mt-5 section-title text-white">
-              Production work across frontend, backend, and CMS.
-            </h2>
-            <p className="mt-5 body-copy text-[#e6e6e6]">
-              A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10">
-              <div className="bg-[#0b0d0e] p-5">
-                <p className="card-title text-[#d6ad63]">{personal.experience}</p>
-                <p className="mt-2 meta-label text-white/38">Experience</p>
-              </div>
-              <div className="bg-[#0b0d0e] p-5">
-                <p className="card-title text-[#d6ad63]">{experience.length}</p>
-                <p className="mt-2 meta-label text-white/38">Companies</p>
-              </div>
-            </div>
-          </div>
-          <div className="relative space-y-6 before:absolute before:left-[21px] before:top-5 before:h-[calc(100%-40px)] before:w-px before:bg-white/10">
-            {experience.map((item, index) => (
-              <article key={item.company} className="group relative grid gap-5 pl-14 md:grid-cols-[150px_1fr]">
-                <div className="absolute left-0 top-1 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-[#111416] text-sm font-black text-[#d6ad63] transition group-hover:border-[#d6ad63]">
-                  0{index + 1}
-                </div>
-                <div>
-                  <p className="rounded-full border border-white/10 px-4 py-2 text-center meta-label text-[#c7c7c7]">
-                    {item.period}
-                  </p>
-                </div>
-                <div className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-6 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#d6ad63]/55">
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="card-title text-white transition group-hover:text-[#d6ad63]">
-                        {item.company}
-                      </h3>
-                      <p className="mt-2 meta-label text-[#bfc4c9]">{item.role}</p>
-                    </div>
-                    <span className="w-fit rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-[#d7d7d7]">
-                      Production
-                    </span>
-                  </div>
-                  <p className="mt-5 small-copy text-white/60">{item.description}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {(experienceFocus[item.company] ?? ['Development', 'Delivery']).map((focus) => (
-                      <span key={focus} className="rounded-full border border-white/10 px-3 py-1 text-xs font-bold text-[#d7d7d7]">
-                        {focus}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="content-section border-y border-white/10 bg-[#0f1214]" aria-labelledby="skills-title">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-px px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-28">
-          <div className="rounded-lg border border-white/10 bg-[#15191b] p-6 sm:p-8 lg:rounded-r-none">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-              <div className="flex-col gap-4">
-                <p className="section-kicker">Skills</p>
-                <h2 id="skills-title" className="my-4 max-w-2xl section-title text-white">
-                  Stack I use to build complete web products.
-                </h2>
-             
-              <p className="max-w-sm small-copy text-[#d0d4d9]">
-                Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.
-              </p>
-               </div>
-            </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {skillBars.map((skill) => (
-                <article key={skill.name} className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-5 transition hover:-translate-y-1 hover:border-[#d6ad63]/60">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="card-title text-white">{skill.name}</h3>
-                      <p className="mt-2 text-sm text-[#c2c7cc]">Production experience</p>
-                    </div>
-                    <p className="card-title text-[#d6ad63]">{skill.level}</p>
-                  </div>
-                  <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10">
-                    <div className="h-full rounded-full bg-[#d6ad63]" style={{ width: `${skill.level}%` }} />
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-2">
-              {uniqueTechItems.map((item) => (
-                <span key={item} className="rounded-full border border-white/10 px-4 py-2 meta-label text-[#d7d7d7]">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div id="contact" className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0d0e] p-6 sm:p-8 lg:rounded-l-none">
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#d6ad63]/14 blur-3xl" />
-            <div className="relative">
-              <p className="section-kicker">Hire Me</p>
-              <h2 className="mt-4 section-title text-white">
-                Have a project that needs a reliable developer?
-              </h2>
-              <p className="mt-5 body-copy text-white/58">
-                Send the scope, reference, or rough idea. I can help shape the flow, build the interface, connect the backend, and ship it cleanly.
-              </p>
-
-              <div className="mt-8 grid gap-3">
-                <a
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 button-label text-[#0b0d0e] transition hover:bg-white"
-                  href={`mailto:${contact.email}`}
-                >
-                  Let&apos;s Talk
-                </a>
-                <a
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 px-6 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                  href={contact.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </div>
-
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <p className="meta-label text-white/34">Direct Email</p>
-                <a className="mt-2 block break-words text-base font-black text-white transition hover:text-[#d6ad63]" href={`mailto:${contact.email}`}>
-                  {contact.email}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {sections.map(renderSection)}
 
       <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-[#bdbdbd]">
         <p>{personal.firstName} {personal.lastName} / {personal.role} / {education[0].degree}</p>

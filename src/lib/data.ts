@@ -104,6 +104,50 @@ export const services: Service[] = [
   { label: 'Database' },
 ];
 
+export type SectionData = {
+  id: 'about' | 'services' | 'works' | 'experience' | 'skills';
+  kicker: string;
+  title: string;
+  description: string;
+};
+
+export const sections: SectionData[] = [
+  {
+    id: 'about',
+    kicker: 'About Me',
+    title: 'Transforming your vision into a dynamic web experience through clean UI and robust functionality.',
+    description:
+      "I’m Jatinder Sandhu, a full stack developer focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
+  },
+  {
+    id: 'services',
+    kicker: 'What I Do',
+    title: 'Full-stack services for websites, apps, and business systems.',
+    description:
+      'From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure. The focus is clean UI, dependable backend logic, and maintainable code.',
+  },
+  {
+    id: 'works',
+    kicker: 'Works',
+    title: 'Selected builds and production projects.',
+    description: 'A focused sample of business websites, ecommerce work, and web applications built with practical stacks.',
+  },
+  {
+    id: 'experience',
+    kicker: 'Experience',
+    title: 'Production work across frontend, backend, and CMS.',
+    description:
+      'A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.',
+  },
+  {
+    id: 'skills',
+    kicker: 'Skills',
+    title: 'Stack I use to build complete web products.',
+    description:
+      'Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.',
+  },
+];
+
 export const experience: WorkExperience[] = [
   {
     company: 'SuperVisionIT Solutions',
