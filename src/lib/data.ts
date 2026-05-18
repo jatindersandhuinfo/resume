@@ -11,11 +11,11 @@ import type {
 } from '@/types/cv';
 
 export const seo: SeoMeta = {
-  title: 'Jatinder Sandhu — Full Stack Developer',
+  title: 'Jatinder Sandhu — Full Stack Developer in Punjab, India',
   description:
-    'Jatinder Sandhu is a Full Stack Developer with 5+ years of experience in PHP, React.js, Next.js, Node.js, Laravel, and WordPress. Based in Bathinda, Punjab, India.',
+    'Hire Jatinder Sandhu, a full stack developer in Bathinda, Punjab, building responsive websites, web apps, APIs, WordPress, Shopify, React, Next.js, Node.js, PHP, and Laravel solutions.',
   keywords:
-    'Jatinder Sandhu, Full Stack Developer, PHP Developer, React Developer, Next.js, Node.js, Laravel, WordPress, Freelance Developer India, Bathinda developer, Hire Full Stack Developer, Full Stack Developer Bathinda, PHP Laravel Developer, React Next.js Developer, WordPress Developer, Freelance Web Developer Punjab, Web Development Services India, Custom Web Application Developer, API Developer, Database Developer, E-commerce Solutions, Shopify Developer',
+    'Jatinder Sandhu, Full Stack Developer Punjab, Full Stack Developer Bathinda, Freelance Web Developer India, Hire Full Stack Developer, React Developer India, Next.js Developer India, Node.js Developer India, PHP Laravel Developer, WordPress Developer Punjab, Shopify Developer India, API Integration Developer, Custom Web Application Developer, Website Developer Bathinda, Web Development Services Punjab, Responsive Website Developer, Ecommerce Website Developer India, CMS Developer, MySQL Developer, MongoDB Developer',
   ogImage: 'https://jatinder.malwaland.in/jatindersandhu.png',
   twitterHandle: '@jatindersandhuinfo',
   siteUrl: 'https://jatinder.malwaland.in',

@@ -1,27 +1,6 @@
 import type { Metadata } from 'next';
-import { Bebas_Neue, DM_Sans, DM_Mono } from 'next/font/google';
 import './globals.css';
-import { seo, personal, contact } from '@/lib/data';
-
-const bebasNeue = Bebas_Neue({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-bebas',
-  display: 'swap',
-});
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dm-sans',
-  display: 'swap',
-});
-
-const dmMono = DM_Mono({
-  weight: ['400', '500'],
-  subsets: ['latin'],
-  variable: '--font-dm-mono',
-  display: 'swap',
-});
+import { seo, personal, contact, services, techGroups } from '@/lib/data';
 
 export const metadata: Metadata = {
   metadataBase: new URL(seo.siteUrl),
@@ -33,6 +12,7 @@ export const metadata: Metadata = {
   keywords: seo.keywords,
   authors: [{ name: `${personal.firstName} ${personal.lastName}`, url: seo.siteUrl }],
   creator: `${personal.firstName} ${personal.lastName}`,
+  category: 'technology',
   openGraph: {
     type: 'profile',
     locale: 'en_IN',
@@ -82,6 +62,19 @@ const jsonLd = {
   description: seo.description,
   email: contact.email,
   telephone: contact.phone,
+  knowsAbout: techGroups.flatMap((group) => group.items),
+  makesOffer: services.map((service) => ({
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: service.label,
+      areaServed: ['India', 'Punjab', 'Bathinda'],
+      provider: {
+        '@type': 'Person',
+        name: `${personal.firstName} ${personal.lastName}`,
+      },
+    },
+  })),
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Bathinda',
@@ -93,10 +86,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${bebasNeue.variable} ${dmSans.variable} ${dmMono.variable}`}
-    >
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"

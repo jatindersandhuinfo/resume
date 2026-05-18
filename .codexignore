@@ -1,0 +1,311 @@
+# ==================================================
+# .codexignore — Universal (works for any project)
+# Add this to every project root. No exceptions.
+# ==================================================
+
+
+# ==========================================
+# 1. SECRETS & ENVIRONMENT
+# ==========================================
+.env
+.env.*
+.env.local
+.env.*.local
+.env.development
+.env.staging
+.env.production
+.env.test
+*.env
+.envrc
+
+secrets.json
+secrets.yaml
+secrets.yml
+secret.json
+secret.yaml
+secret.yml
+
+api_keys.*
+api_key.*
+tokens.*
+token.*
+credentials.*
+service_account.*
+service-account.*
+
+
+# ==========================================
+# 2. PRIVATE KEYS & CERTIFICATES
+# ==========================================
+*.pem
+*.key
+*.crt
+*.cert
+*.pfx
+*.p12
+*.cer
+*.ca-bundle
+*.keystore
+*.jks
+*.ppk
+*.asc
+*.priv
+id_rsa
+id_rsa.pub
+id_dsa
+id_dsa.pub
+id_ecdsa
+id_ecdsa.pub
+id_ed25519
+id_ed25519.pub
+private_key*
+private-key*
+
+
+# ==========================================
+# 3. CLOUD PROVIDER CONFIGS
+# ==========================================
+.aws/
+.gcp/
+.azure/
+.oci/
+gcp-credentials.json
+firebase-adminsdk*.json
+google-services.json
+GoogleService-Info.plist
+.boto
+.s3cfg
+
+
+# ==========================================
+# 4. DATABASE
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.sql
+*.sql.gz
+*.dump
+dump.rdb
+database.yml
+database.yaml
+db_config.*
+db_backup/
+data/
+
+
+# ==========================================
+# 5. SSH
+# ==========================================
+.ssh/
+known_hosts
+authorized_keys
+
+
+# ==========================================
+# 6. DEPENDENCIES (never needs review)
+# ==========================================
+node_modules/
+vendor/
+.venv/
+venv/
+env/
+.env/
+__pypackages__/
+bower_components/
+jspm_packages/
+.pnp/
+.pnp.js
+Pods/
+.gradle/
+.m2/
+
+
+# ==========================================
+# 7. BUILD & GENERATED OUTPUT
+# ==========================================
+dist/
+build/
+out/
+output/
+.next/
+.nuxt/
+.svelte-kit/
+.remix/
+.output/
+.vercel/
+.netlify/
+.serverless/
+.parcel-cache/
+.turbo/
+.cache/
+cache/
+tmp/
+temp/
+*.min.js
+*.min.css
+*.bundle.js
+*.chunk.js
+*.generated.*
+coverage/
+.nyc_output/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.class
+*.jar
+*.war
+*.ear
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+target/
+bin/
+obj/
+
+
+# ==========================================
+# 8. LOGS
+# ==========================================
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# ==========================================
+# 9. OS & EDITOR JUNK
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*.bak
+*.orig
+*~
+
+
+# ==========================================
+# 10. BINARY & MEDIA (no value for Codex)
+# ==========================================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.webp
+*.avif
+*.mp4
+*.mp3
+*.mov
+*.avi
+*.mkv
+*.wav
+*.ogg
+*.flac
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.tgz
+*.bz2
+*.xz
+*.iso
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.ttf
+*.woff
+*.woff2
+*.eot
+*.otf
+*.pdf
+
+
+# ==========================================
+# 11. TEST SNAPSHOTS & FIXTURES
+# ==========================================
+__snapshots__/
+*.snap
+fixtures/
+test-results/
+playwright-report/
+cypress/screenshots/
+cypress/videos/
+
+
+# ==========================================
+# 12. LOCK FILES (optional but recommended)
+# ==========================================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+composer.lock
+Gemfile.lock
+poetry.lock
+Pipfile.lock
+cargo.lock
+
+
+# ==========================================
+# 13. CI/CD & DEPLOYMENT SECRETS
+# ==========================================
+.github/workflows/secrets*
+.circleci/secrets*
+.gitlab-ci-secrets*
+kubeconfig
+*.kubeconfig
+helmfile.yaml
+helm/secrets*
+terraform.tfvars
+*.tfstate
+*.tfstate.*
+.terraform/
+
+
+# ==========================================
+# 14. PERSONAL / BUSINESS DATA
+# ==========================================
+personal/
+private/
+confidential/
+internal/
+invoices/
+contracts/
+*.csv
+*.xls
+*.xlsx
+*.doc
+*.docx
+backup/
+backups/
