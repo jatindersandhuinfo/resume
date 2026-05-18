@@ -14,11 +14,13 @@
 
   html {
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     @apply min-h-screen bg-[#f5f7f6] font-dm antialiased;
     padding: 0;
+    font-synthesis: none;
   }
 
   @media print {
@@ -37,11 +39,140 @@
   font-family: var(--font-bebas), 'Impact', sans-serif;
 }
 
+.hero-title {
+  font-size: clamp(3.25rem, 8vw, 6.35rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.section-title {
+  font-size: clamp(2.35rem, 4.5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.04;
+}
+
+.subsection-title {
+  font-size: clamp(1.75rem, 2.7vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.card-title {
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.body-copy {
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.78;
+}
+
+.small-copy {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
 .section-kicker {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
   line-height: 1;
   text-transform: uppercase;
   color: #d6ad63;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.button-label {
+  font-size: 0.8125rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+.animate-fade-up {
+  animation: fade-up 720ms ease both;
+}
+
+.animate-soft-in {
+  animation: soft-in 900ms ease both;
+}
+
+.animate-delay-1 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-2 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-3 {
+  animation-delay: 300ms;
+}
+
+.interactive-card {
+  transform: translateZ(0);
+  will-change: transform, border-color, background-color;
+}
+
+@supports (animation-timeline: view()) {
+  .content-section {
+    animation: fade-up both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 18%;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
