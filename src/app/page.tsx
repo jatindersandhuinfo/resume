@@ -1,4 +1,7 @@
+"use client";
+
 import Image from 'next/image';
+import { useState } from 'react';
 import {
   contact,
   education,
@@ -62,27 +65,76 @@ const navItems = [
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#0b0d0e] text-white">
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0b0d0e]/88 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-5 sm:px-8 lg:px-10">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b0d0e]/92 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-10">
           <a href="#" className="text-lg font-black uppercase tracking-[0.06em]">
             {personal.firstName}
           </a>
-          <nav className="hidden items-center gap-7 meta-label text-white/62 md:flex" aria-label="Primary navigation">
+          <nav className="hidden items-center gap-7 text-sm uppercase tracking-[0.18em] md:flex" aria-label="Primary navigation">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="transition hover:text-[#d6ad63]">
+              <a
+                key={item.href}
+                href={item.href}
+                className="transition-colors duration-200 hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
+              >
                 {item.label}
               </a>
             ))}
           </nav>
-          <a
-            className="rounded-full border border-white/18 px-4 py-2 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            href={`mailto:${contact.email}`}
-          >
-            Hire Me
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              className="hidden rounded-full border border-white/18 bg-[#d6ad63] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] md:inline-flex"
+              href={`mailto:${contact.email}`}
+            >
+              Hire Me
+            </a>
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/18 text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63] md:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              onClick={() => setMenuOpen((current) => !current)}
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5">
+                <path
+                  d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 7h16M4 12h16M4 17h16'}
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
+        {menuOpen ? (
+          <div id="mobile-navigation" className="md:hidden border-t border-white/10 bg-[#0b0d0e] px-5 py-5">
+            <nav className="flex flex-col gap-3" aria-label="Mobile navigation">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a
+                href={`mailto:${contact.email}`}
+                className="rounded-2xl bg-[#d6ad63] px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white"
+                onClick={() => setMenuOpen(false)}
+              >
+                Hire Me
+              </a>
+            </nav>
+          </div>
+        ) : null}
       </header>
 
       <section className="relative overflow-hidden border-b border-white/10" aria-labelledby="hero-title">
@@ -94,21 +146,27 @@ export default function Home() {
             </div>
 
             <p className="animate-fade-up animate-delay-1 mb-5 section-kicker text-[#d6ad63]">
-              {personal.role} / {personal.location}
+              {personal.role} · {personal.location}
             </p>
             <h1 id="hero-title" className="animate-fade-up animate-delay-2 hero-title max-w-4xl text-white">
-              A Full Stack Developer from Punjab.
+              Building scalable web products that help growing businesses launch faster.
             </h1>
-            <p className="animate-fade-up animate-delay-3 mt-7 max-w-2xl body-copy text-white/66 sm:text-xl">
-              I create clean, responsive, and scalable web experiences for businesses that need more than a basic website.
+            <p className="animate-fade-up animate-delay-3 mt-7 max-w-2xl body-copy text-[#e6e6e6] sm:text-xl">
+              {personal.summary} Clean interfaces, flexible APIs, and practical deployments for websites, apps, and business tools.
             </p>
 
             <div className="animate-fade-up animate-delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/18 px-7 button-label text-white transition hover:border-white hover:bg-white hover:text-[#0b0d0e]"
-                href="#about"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#d6ad63] px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
+                href={`mailto:${contact.email}`}
               >
-                About Me
+                Hire Me
+              </a>
+              <a
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/12 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
+                href="#works"
+              >
+                View Work
               </a>
             </div>
           </div>
@@ -143,7 +201,7 @@ export default function Home() {
             {stats.map((stat) => (
               <div key={stat.label} className="border-r border-white/10 py-6 pr-4 last:border-r-0 sm:px-5 sm:first:pl-0">
                 <p className="subsection-title text-white">{stat.value}</p>
-                <p className="mt-2 meta-label text-white/48">
+                <p className="mt-2 meta-label text-[#d7d7d7]">
                   {stat.label}
                 </p>
               </div>
@@ -170,7 +228,7 @@ export default function Home() {
             {techGroups.map((group) => (
               <div key={group.category} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
                 <h3 className="text-base font-black text-white">{group.category}</h3>
-                <p className="mt-3 small-copy text-white/55">{group.items.join(' / ')}</p>
+                <p className="mt-3 small-copy text-[#d7d7d7]">{group.items.join(' / ')}</p>
               </div>
             ))}
           </div>
@@ -197,7 +255,7 @@ export default function Home() {
               <h3 className="mt-5 subsection-title text-white">
                 Complete product delivery from idea to launch.
               </h3>
-              <p className="mt-5 max-w-2xl body-copy text-white/58">
+              <p className="mt-5 max-w-2xl body-copy text-[#e6e6e6]">
                 I can design the flow, build the responsive frontend, connect APIs, prepare the CMS or database, and keep the implementation practical for future changes.
               </p>
             </article>
@@ -225,7 +283,7 @@ export default function Home() {
                   <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-sm font-black text-[#d6ad63]">
                     0{index + 1}
                   </span>
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 meta-label text-white/48 transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
+                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 meta-label text-[#d7d7d7] transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
                     {serviceTags[service.label] ?? 'Web'}
                   </span>
                 </div>
@@ -233,13 +291,13 @@ export default function Home() {
                 <h3 className="relative mt-9 card-title text-white transition group-hover:text-[#d6ad63]">
                   {service.label}
                 </h3>
-                <p className="relative mt-4 small-copy text-white/58">
+                <p className="relative mt-4 small-copy text-[#d7d7d7]">
                   {serviceCopy[service.label] ?? 'Clean, dependable web development support for your product.'}
                 </p>
 
                 <div className="relative mt-6 flex flex-wrap gap-2">
                   {(serviceStacks[service.label] ?? ['Web', 'Build', 'Support']).map((item) => (
-                    <span key={item} className="rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-white/52">
+                    <span key={item} className="rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-[#c7c7c7]">
                       {item}
                     </span>
                   ))}
@@ -282,7 +340,7 @@ export default function Home() {
                 <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
                   {project.name}
                 </h3>
-                <p className="meta-label text-white/46">{project.tech}</p>
+                <p className="meta-label text-[#c7c7c7]">{project.tech}</p>
                 <p className="button-label text-[#d6ad63]">
                   {project.url ? 'Open' : 'Private'}
                 </p>
@@ -299,7 +357,7 @@ export default function Home() {
             <h2 id="experience-title" className="mt-5 section-title text-white">
               Production work across frontend, backend, and CMS.
             </h2>
-            <p className="mt-5 body-copy text-white/56">
+            <p className="mt-5 body-copy text-[#e6e6e6]">
               A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10">
@@ -320,7 +378,7 @@ export default function Home() {
                   0{index + 1}
                 </div>
                 <div>
-                  <p className="rounded-full border border-white/10 px-4 py-2 text-center meta-label text-white/46">
+                  <p className="rounded-full border border-white/10 px-4 py-2 text-center meta-label text-[#c7c7c7]">
                     {item.period}
                   </p>
                 </div>
@@ -330,16 +388,16 @@ export default function Home() {
                       <h3 className="card-title text-white transition group-hover:text-[#d6ad63]">
                         {item.company}
                       </h3>
-                      <p className="mt-2 meta-label text-white/42">{item.role}</p>
+                      <p className="mt-2 meta-label text-[#bfc4c9]">{item.role}</p>
                     </div>
-                    <span className="w-fit rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-white/48">
+                    <span className="w-fit rounded-full bg-white/[0.05] px-3 py-1 text-xs font-bold text-[#d7d7d7]">
                       Production
                     </span>
                   </div>
                   <p className="mt-5 small-copy text-white/60">{item.description}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {(experienceFocus[item.company] ?? ['Development', 'Delivery']).map((focus) => (
-                      <span key={focus} className="rounded-full border border-white/10 px-3 py-1 text-xs font-bold text-white/48">
+                      <span key={focus} className="rounded-full border border-white/10 px-3 py-1 text-xs font-bold text-[#d7d7d7]">
                         {focus}
                       </span>
                     ))}
@@ -355,15 +413,16 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-px px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-28">
           <div className="rounded-lg border border-white/10 bg-[#15191b] p-6 sm:p-8 lg:rounded-r-none">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-              <div>
+              <div className="flex-col gap-4">
                 <p className="section-kicker">Skills</p>
-                <h2 id="skills-title" className="mt-4 max-w-2xl section-title text-white">
+                <h2 id="skills-title" className="my-4 max-w-2xl section-title text-white">
                   Stack I use to build complete web products.
                 </h2>
-              </div>
-              <p className="max-w-sm small-copy text-white/54">
+             
+              <p className="max-w-sm small-copy text-[#d0d4d9]">
                 Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.
               </p>
+               </div>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -372,7 +431,7 @@ export default function Home() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="card-title text-white">{skill.name}</h3>
-                      <p className="mt-2 text-sm text-white/44">Production experience</p>
+                      <p className="mt-2 text-sm text-[#c2c7cc]">Production experience</p>
                     </div>
                     <p className="card-title text-[#d6ad63]">{skill.level}</p>
                   </div>
@@ -385,7 +444,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap gap-2">
               {uniqueTechItems.map((item) => (
-                <span key={item} className="rounded-full border border-white/10 px-4 py-2 meta-label text-white/58">
+                <span key={item} className="rounded-full border border-white/10 px-4 py-2 meta-label text-[#d7d7d7]">
                   {item}
                 </span>
               ))}
@@ -431,7 +490,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-white/42">
+      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-[#bdbdbd]">
         <p>{personal.firstName} {personal.lastName} / {personal.role} / {education[0].degree}</p>
       </footer>
     </main>
