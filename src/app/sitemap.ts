@@ -21,14 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }));
 
-  // Dynamic portfolio projects
-  const projectRoutes =
-    projects?.map((project: any) => ({
-      url: project.url,
-      lastModified: new Date(project.updatedAt || Date.now()),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    })) || [];
 
-  return [...staticRoutes, ...projectRoutes];
+
+  return [...staticRoutes];
 }
