@@ -1,16 +1,165 @@
-import { Sidebar } from '@/components/cv/Sidebar';
-import { CenterColumn } from '@/components/cv/CenterColumn';
-import { RightColumn } from '@/components/cv/RightColumn';
+import Image from 'next/image';
+
+import HeaderNav from '@/components/HeaderNav';
+
+import { AboutSection } from '@/components/sections/AboutSection';
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { WorksSection } from '@/components/sections/WorksSection';
+import { ExperienceSection } from '@/components/sections/ExperienceSection';
+import { SkillsSection } from '@/components/sections/SkillsSection';
+
+import {
+  contact,
+  personal,
+  stats,
+  aboutSection,
+  servicesSection,
+  worksSection,
+  experienceSection,
+  skillsSection,
+} from '@/lib/data';
+
+const buttonBaseClass =
+  'inline-flex min-h-[52px] items-center justify-center rounded-full px-7 text-sm font-semibold uppercase tracking-[0.14em] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]';
+
+const primaryButtonClass = `${buttonBaseClass} bg-[#d6ad63] text-[#0b0d0e] hover:bg-white hover:text-[#0b0d0e]`;
+
+const secondaryButtonClass = `${buttonBaseClass} border border-white/12 text-white hover:border-[#d6ad63] hover:text-[#d6ad63]`;
 
 export default function Home() {
+  const fullName = `${personal.firstName} ${personal.lastName}`;
+
   return (
-    <main
-      className="w-full max-w-[1440px] bg-white shadow-2xl flex flex-col md:flex-row min-h-screen overflow-hidden"
-      style={{ boxShadow: '0 30px 80px rgba(0,0,0,0.35)' }}
-    >
-      <Sidebar />
-      <CenterColumn />
-      <RightColumn />
+    <main className="min-h-screen bg-[#0b0d0e] text-white">
+      <HeaderNav />
+
+      <section
+        className="relative overflow-hidden border-b border-white/10"
+        aria-labelledby="hero-title"
+      >
+        <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl grid-cols-1 gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:py-12">
+          {/* Left Content */}
+          <div className="flex flex-col justify-center">
+            <div className="animate-fade-up mb-8 flex w-fit items-center gap-3 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-sm font-bold text-white/80">
+              <span
+                aria-hidden="true"
+                className="h-2.5 w-2.5 rounded-full bg-[#d6ad63]"
+              />
+
+              <span>{personal.freelanceStatus}</span>
+            </div>
+
+            <p className="animate-fade-up animate-delay-1 mb-5 section-kicker text-[#d6ad63]">
+              {personal.role} · {personal.location}
+            </p>
+
+            <h1
+              id="hero-title"
+              className="animate-fade-up animate-delay-2 hero-title max-w-4xl text-white"
+            >
+              Building scalable web products that help growing businesses
+              launch faster.
+            </h1>
+
+            <p className="animate-fade-up animate-delay-3 mt-7 max-w-2xl body-copy text-[#e6e6e6] sm:text-xl">
+              {personal.summary} Clean interfaces, flexible APIs, and practical
+              deployments for websites, apps, and business tools.
+            </p>
+
+            <div className="animate-fade-up animate-delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={`mailto:${contact.email}`}
+                aria-label={`Hire ${fullName}`}
+                className={primaryButtonClass}
+              >
+                Hire Me
+              </a>
+
+              <a
+                href="#works"
+                aria-label="View portfolio projects"
+                className={secondaryButtonClass}
+              >
+                View Work
+              </a>
+            </div>
+          </div>
+
+          {/* Right Image Card */}
+          <div className="animate-soft-in animate-delay-2 relative isolate aspect-[4/5] overflow-hidden rounded-lg border border-white/10 bg-[#141719] lg:h-full">
+            <Image
+              src="/jatindersandhu-1.webp"
+              alt={`${fullName}, ${personal.role}`}
+              fill
+              priority
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="z-0 object-cover object-top grayscale-[12%]"
+            />
+
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0b0d0e]/26 via-transparent to-[#0b0d0e]/86" />
+
+            {/* Floating Badge */}
+            <div className="absolute left-5 bottom-28 z-30 flex max-w-[calc(100%-40px)] items-center rounded-full border border-[#d6ad63]/55 bg-[#0b0d0e] px-4 py-2.5 text-xs font-black text-white shadow-2xl shadow-black/50 sm:left-6 sm:bottom-32 sm:px-5 sm:py-3 sm:text-sm">
+              <span
+                aria-hidden="true"
+                className="mr-2 h-2 w-2 shrink-0 rounded-full bg-[#d6ad63]"
+              />
+
+              <span>Clean code / Scalable APIs</span>
+            </div>
+
+            {/* Experience Badge */}
+            <div className="absolute right-6 top-6 z-30 hidden rounded-full bg-white px-5 py-3 text-sm font-black text-[#0b0d0e] shadow-2xl shadow-black/30 lg:block">
+              {personal.experience}
+            </div>
+
+            {/* Bottom Info */}
+            <div className="absolute inset-x-0 bottom-0 z-30 p-6 pt-32">
+              <p className="subsection-title text-white">{fullName}</p>
+
+              <p className="mt-2 meta-label text-[#d6ad63]">
+                {personal.role}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="border-t border-white/10">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 px-5 sm:grid-cols-4 sm:px-8 lg:px-10">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="border-r border-white/10 py-6 pr-4 last:border-r-0 sm:px-5 sm:first:pl-0"
+              >
+                <p className="subsection-title text-white">
+                  {stat.value}
+                </p>
+
+                <p className="mt-2 meta-label text-[#d7d7d7]">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <AboutSection section={aboutSection} />
+
+      <ServicesSection section={servicesSection} />
+
+      <WorksSection section={worksSection} />
+
+      <ExperienceSection section={experienceSection} />
+
+      <SkillsSection section={skillsSection} />
+
+      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-[#bdbdbd]">
+        <address className="not-italic">
+          {fullName} / {personal.role}
+        </address>
+      </footer>
     </main>
   );
 }
