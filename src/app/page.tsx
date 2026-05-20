@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import HeaderNav from '@/components/HeaderNav';
@@ -11,6 +12,7 @@ import { SkillsSection } from '@/components/sections/SkillsSection';
 import {
   contact,
   personal,
+  seo,
   stats,
   aboutSection,
   servicesSection,
@@ -18,6 +20,19 @@ import {
   experienceSection,
   skillsSection,
 } from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: seo.title,
+  description: seo.description,
+  alternates: {
+    canonical: seo.siteUrl,
+  },
+  openGraph: {
+    url: seo.siteUrl,
+    title: seo.title,
+    description: seo.description,
+  },
+};
 
 const buttonBaseClass =
   'inline-flex min-h-[52px] items-center justify-center rounded-full px-7 text-sm font-semibold uppercase tracking-[0.14em] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]';
@@ -52,14 +67,15 @@ export default function Home() {
             <p className="animate-fade-up animate-delay-1 mb-7 max-w-3xl hero-role">
               <span className="hero-role-line">{personal.role}</span>
               <span className="hero-role-line mt-1 text-white/55">{personal.location}</span>
+              <span className="hero-role-line mt-1 text-emerald-400/90">{personal.serviceArea}</span>
             </p>
 
             <h1
               id="hero-title"
               className="animate-fade-up animate-delay-2 hero-title max-w-4xl text-white"
             >
-              Building scalable web products that help growing businesses
-              launch faster.
+              Hire a remote full stack developer — building scalable web products
+              for growing businesses worldwide.
             </h1>
 
             <p className="animate-fade-up animate-delay-3 mt-8 max-w-2xl body-copy-lg text-[#e6e6e6]">
@@ -156,10 +172,37 @@ export default function Home() {
 
       <SkillsSection section={skillsSection} />
 
-      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-[#bdbdbd]">
-        <address className="not-italic">
-          {fullName} / {personal.role}
-        </address>
+      <footer className="border-t border-white/10 px-5 py-10 sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 text-center">
+          <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#bdbdbd]">
+            <a href="#about" className="transition hover:text-[#d6ad63]">About</a>
+            <a href="#services" className="transition hover:text-[#d6ad63]">Services</a>
+            <a href="#works" className="transition hover:text-[#d6ad63]">Works</a>
+            <a href="#experience" className="transition hover:text-[#d6ad63]">Experience</a>
+            <a href="#contact" className="transition hover:text-[#d6ad63]">Contact</a>
+          </nav>
+          <p className="max-w-3xl text-sm leading-relaxed text-[#9ca3af]">
+            {fullName} is a remote freelance full stack developer based in India and working with
+            clients worldwide, specializing in React, Next.js, Node.js, PHP, Laravel, WordPress,
+            Shopify, and AI-powered web development.
+          </p>
+          <address className="not-italic text-sm text-[#bdbdbd]">
+            <a href={`mailto:${contact.email}`} className="transition hover:text-[#d6ad63]">
+              {contact.email}
+            </a>
+            {' · '}
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#d6ad63]">
+              LinkedIn
+            </a>
+            {' · '}
+            <a href={contact.upwork} target="_blank" rel="noopener noreferrer" className="transition hover:text-[#d6ad63]">
+              Upwork
+            </a>
+          </address>
+          <p className="text-xs text-white/35">
+            © {new Date().getFullYear()} {fullName}. {personal.role}.
+          </p>
+        </div>
       </footer>
     </main>
   );

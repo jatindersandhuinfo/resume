@@ -4,6 +4,7 @@ export interface PersonalInfo {
   role: string;
   age: number;
   location: string;
+  serviceArea: string;
   freelanceStatus: string;
   experience: string;
   summary: string;

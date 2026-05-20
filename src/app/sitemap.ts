@@ -2,27 +2,12 @@ import { MetadataRoute } from 'next';
 import { seo } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = seo.siteUrl;
-
-  // Main pages & sections
-  const routes = [
-    '',
-    '/#about',
-    '/#services',
-    '/#works',
-    '/#experience',
-    '/#skills',
-    '/#contact',
+  return [
+    {
+      url: seo.siteUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
   ];
-
-  const staticRoutes = routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }));
-
-
-
-  return staticRoutes;
 }

@@ -1,39 +1,30 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-import {
-  seo,
-  personal,
-  contact,
-  services,
-  techGroups,
-  projects,
-} from '@/lib/data';
+import { seo, personal, contact } from '@/lib/data';
+import { getStructuredData, seoKeywords } from '@/lib/structured-data';
+
+const fullName = `${personal.firstName} ${personal.lastName}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(seo.siteUrl),
 
   title: {
     default: seo.title,
-    template: `%s | ${personal.firstName} ${personal.lastName}`,
+    template: `%s | ${fullName}`,
   },
 
   description: seo.description,
 
-  keywords: seo.keywords,
+  keywords: seoKeywords,
 
-  authors: [
-    {
-      name: `${personal.firstName} ${personal.lastName}`,
-      url: seo.siteUrl,
-    },
-  ],
+  authors: [{ name: fullName, url: seo.siteUrl }],
 
-  creator: `${personal.firstName} ${personal.lastName}`,
+  creator: fullName,
 
-  publisher: `${personal.firstName} ${personal.lastName}`,
+  publisher: fullName,
 
-  applicationName: `${personal.firstName} ${personal.lastName} Portfolio`,
+  applicationName: `${fullName} Portfolio`,
 
   category: 'technology',
 
@@ -47,13 +38,14 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: seo.siteUrl,
+    languages: {
+      'en-IN': seo.siteUrl,
+    },
   },
 
   robots: {
     index: true,
     follow: true,
-    nocache: false,
-
     googleBot: {
       index: true,
       follow: true,
@@ -64,197 +56,72 @@ export const metadata: Metadata = {
     },
   },
 
+  icons: {
+    icon: [{ url: '/favicon.ico', sizes: 'any' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+
   openGraph: {
     type: 'profile',
     locale: 'en_IN',
-
     url: seo.siteUrl,
-
-    siteName: `${personal.firstName} ${personal.lastName} — Portfolio`,
-
+    siteName: `${fullName} — Portfolio`,
     title: seo.title,
-
     description: seo.description,
-
+    firstName: personal.firstName,
+    lastName: personal.lastName,
+    username: seo.twitterHandle.replace('@', ''),
+    countryName: 'India',
     images: [
       {
         url: seo.ogImage,
         width: 1200,
         height: 630,
-        alt: `${personal.firstName} ${personal.lastName} — ${personal.role}`,
+        alt: `${fullName} — ${personal.role}`,
+        type: 'image/png',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-
     title: seo.title,
-
     description: seo.description,
-
     site: seo.twitterHandle,
-
     creator: seo.twitterHandle,
-
-    images: [seo.ogImage],
+    images: {
+      url: seo.ogImage,
+      alt: `${fullName} — Full Stack Developer Portfolio`,
+    },
   },
 
   other: {
     'theme-color': '#0b0d0e',
     'color-scheme': 'dark',
+    'geo.region': 'IN-PB',
+    'geo.placename': 'Bathinda, Punjab, India',
+    'content-language': 'en-IN',
   },
 };
-
-// Advanced JSON-LD structured data
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-
-    name: `${personal.firstName} ${personal.lastName}`,
-
-    url: seo.siteUrl,
-
-    image: seo.ogImage,
-
-    jobTitle: personal.role,
-
-    description: seo.description,
-
-    email: contact.email,
-
-    telephone: contact.phone,
-
-    knowsAbout: techGroups.flatMap((group) => group.items),
-
-    sameAs: [
-      contact.linkedin,
-      contact.github,
-      contact.upwork,
-      `https://twitter.com/${seo.twitterHandle.replace('@', '')}`,
-    ],
-
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Bathinda',
-      addressRegion: 'Punjab',
-      addressCountry: 'IN',
-    },
-
-    makesOffer: services.map((service) => ({
-      '@type': 'Offer',
-
-      itemOffered: {
-        '@type': 'Service',
-
-        name: service.label,
-
-        areaServed: ['India', 'Punjab', 'Bathinda'],
-
-        provider: {
-          '@type': 'Person',
-          name: `${personal.firstName} ${personal.lastName}`,
-        },
-      },
-    })),
-  },
-
-  {
-    '@context': 'https://schema.org',
-
-    '@type': 'WebSite',
-
-    name: `${personal.firstName} ${personal.lastName}`,
-
-    url: seo.siteUrl,
-
-    description: seo.description,
-
-    publisher: {
-      '@type': 'Person',
-      name: `${personal.firstName} ${personal.lastName}`,
-    },
-  },
-
-  {
-    '@context': 'https://schema.org',
-
-    '@type': 'ProfessionalService',
-
-    name: `${personal.firstName} ${personal.lastName}`,
-
-    url: seo.siteUrl,
-
-    image: seo.ogImage,
-
-    description: seo.description,
-
-    areaServed: 'Worldwide',
-
-    priceRange: '$$',
-
-    serviceType: services.map((service) => service.label),
-  },
-
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Portfolio Projects',
-    itemListElement: projects.map((project, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': 'CreativeWork',
-        name: project.name,
-        description: project.result,
-        ...(project.url ? { url: project.url } : {}),
-        keywords: project.tech,
-      },
-    })),
-  },
-
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
-    mainEntity: {
-      '@type': 'Person',
-      name: `${personal.firstName} ${personal.lastName}`,
-      url: seo.siteUrl,
-    },
-    description: seo.description,
-  },
-];
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const structuredData = getStructuredData();
+
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
-        {/* Preload Hero Image */}
-        <link
-          rel="preload"
-          as="image"
-          href="/jatindersandhu-1.webp"
-        />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-
-        {/* Apple Touch Icon */}
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
-        />
-
-        {/* Structured Data */}
+        <link rel="preload" as="image" href="/jatindersandhu-1.webp" />
+        <link rel="me" href={contact.linkedin} />
+        <link rel="me" href={contact.github} />
+        <link rel="me" href={contact.upwork} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>

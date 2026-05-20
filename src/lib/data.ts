@@ -20,9 +20,9 @@ import type {
 export const seo: SeoMeta = {
   title: 'Jatinder Sandhu — Full Stack Developer | React, Next.js, Node.js, PHP | AI-Powered Development',
   description:
-    'Hire Jatinder Sandhu — full stack developer in Bathinda, Punjab. 6+ years, 25+ projects, AI-assisted delivery with Cursor AI & Claude. React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, and API integrations.',
+    'Hire Jatinder Sandhu — remote full stack developer for clients worldwide. Based in India, 6+ years, 25+ projects, AI-assisted delivery with Cursor AI & Claude. React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, and API integrations.',
   keywords:
-    'Jatinder Sandhu, Full Stack Developer Punjab, Full Stack Developer Bathinda, Freelance Web Developer India, Hire Full Stack Developer, React Developer India, Next.js Developer India, Node.js Developer India, PHP Laravel Developer, WordPress Developer Punjab, Shopify Developer India, API Integration Developer, AI Integration Developer, Cursor AI Developer, Claude AI Developer, ChatGPT API Developer, OpenAI API Integration, Prompt Engineering, Custom Web Application Developer, Website Developer Bathinda, Web Development Services Punjab, Responsive Website Developer, Ecommerce Website Developer India, CMS Developer, MySQL Developer, MongoDB Developer, Upwork Full Stack Developer',
+    'Jatinder Sandhu, Remote Full Stack Developer, Global Freelance Web Developer, Hire Full Stack Developer Worldwide, International Web Developer, React Developer Remote, Next.js Developer Remote, Node.js Developer Remote, PHP Laravel Developer, WordPress Developer, Shopify Developer, API Integration Developer, AI Integration Developer, Cursor AI Developer, Claude AI Developer, ChatGPT API Developer, OpenAI API Integration, Prompt Engineering, Custom Web Application Developer, Responsive Website Developer, Ecommerce Website Developer, CMS Developer, MySQL Developer, MongoDB Developer, Upwork Full Stack Developer, Full Stack Developer India, Full Stack Developer Punjab',
   ogImage: 'https://jatinder.malwaland.in/jatindersandhu.png',
   twitterHandle: '@jatindersandhuinfo',
   siteUrl: 'https://jatinder.malwaland.in',
@@ -33,8 +33,9 @@ export const personal: PersonalInfo = {
   lastName: 'Sandhu',
   role: 'Full Stack Developer | React, Next.js, Node.js, PHP | AI-Powered Development',
   age: 31,
-  location: 'Bathinda, Punjab, India',
-  freelanceStatus: 'Available for Freelance',
+  location: 'Based in Bathinda, Punjab, India',
+  serviceArea: 'Serving clients worldwide · Remote',
+  freelanceStatus: 'Available for Freelance · Worldwide',
   experience: '6+ Years',
   summary:
     '6+ years building scalable web apps · PHP · React · Node.js · AI-assisted workflows',
@@ -140,14 +141,14 @@ export const sections: SectionData[] = [
     kicker: 'About Me',
     title: 'Transforming your vision into a dynamic web experience through clean UI and robust functionality.',
     description:
-      "I’m Jatinder Sandhu, a full stack developer focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
+      "I'm Jatinder Sandhu, a remote full stack developer working with clients globally — focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
   },
   {
     id: 'services',
     kicker: 'What I Do',
     title: 'Full-stack services for websites, apps, and business systems.',
     description:
-      'From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure. The focus is clean UI, dependable backend logic, and maintainable code.',
+      'From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure — for startups and businesses worldwide. The focus is clean UI, dependable backend logic, and maintainable code.',
   },
   {
     id: 'works',
@@ -304,7 +305,7 @@ export const aboutSection: AboutSectionData = {
   kicker: 'About Me',
   title: 'Transforming your vision into a dynamic web experience through clean UI and robust functionality.',
   description:
-    "I'm Jatinder Sandhu, a full stack developer focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
+    "I'm Jatinder Sandhu, a remote full stack developer for clients worldwide — focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
 };
 
 export const servicesSection: ServicesSectionData = {

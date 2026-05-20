@@ -51,7 +51,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
               Have a project that needs a reliable developer?
             </h2>
             <p className="mt-5 body-copy text-white/58">
-              Send the scope, reference, or rough idea. I can help shape the flow, build the interface, connect the backend, and ship it cleanly.
+              Send the scope, reference, or rough idea — wherever you are. I work remotely with clients worldwide and can help shape the flow, build the interface, connect the backend, and ship it cleanly.
             </p>
 
             <div className="mt-8 grid gap-3">
