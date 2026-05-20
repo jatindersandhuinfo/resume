@@ -23,18 +23,13 @@ export function SkillsSection({ section }: SkillsSectionProps) {
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {section.skillBars.map((skill) => (
-              <article key={skill.name} className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-5 transition hover:-translate-y-1 hover:border-[#d6ad63]/60">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="card-title text-white">{skill.name}</h3>
-                    <p className="mt-2 text-sm text-[#c2c7cc]">Production experience</p>
-                  </div>
-                  <p className="card-title text-[#d6ad63]">{skill.level}</p>
-                </div>
-                <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10">
-                  <div className="h-full rounded-full bg-[#d6ad63]" style={{ width: `${skill.level}%` }} />
-                </div>
+            {section.coreStrengths.map((strength) => (
+              <article
+                key={strength.name}
+                className="interactive-card rounded-lg border border-white/10 bg-[#0b0d0e] p-5 transition hover:-translate-y-1 hover:border-[#d6ad63]/60"
+              >
+                <h3 className="card-title text-white">{strength.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#c2c7cc]">{strength.detail}</p>
               </article>
             ))}
           </div>
@@ -73,6 +68,14 @@ export function SkillsSection({ section }: SkillsSectionProps) {
                 rel="noopener noreferrer"
               >
                 LinkedIn
+              </a>
+              <a
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 px-6 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+                href={contact.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Upwork Profile
               </a>
             </div>
 

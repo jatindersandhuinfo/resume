@@ -7,6 +7,7 @@ import {
   contact,
   services,
   techGroups,
+  projects,
 } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -92,7 +93,9 @@ export const metadata: Metadata = {
 
     description: seo.description,
 
-    creator: '@yourusername',
+    site: seo.twitterHandle,
+
+    creator: seo.twitterHandle,
 
     images: [seo.ogImage],
   },
@@ -125,7 +128,12 @@ const jsonLd = [
 
     knowsAbout: techGroups.flatMap((group) => group.items),
 
-    sameAs: [contact.linkedin, contact.github],
+    sameAs: [
+      contact.linkedin,
+      contact.github,
+      contact.upwork,
+      `https://twitter.com/${seo.twitterHandle.replace('@', '')}`,
+    ],
 
     address: {
       '@type': 'PostalAddress',
@@ -187,6 +195,34 @@ const jsonLd = [
     priceRange: '$$',
 
     serviceType: services.map((service) => service.label),
+  },
+
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Portfolio Projects',
+    itemListElement: projects.map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: project.name,
+        description: project.result,
+        ...(project.url ? { url: project.url } : {}),
+        keywords: project.tech,
+      },
+    })),
+  },
+
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      name: `${personal.firstName} ${personal.lastName}`,
+      url: seo.siteUrl,
+    },
+    description: seo.description,
   },
 ];
 

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { seo, projects } from '@/lib/data';
+import { seo } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = seo.siteUrl;
@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/#works',
     '/#experience',
     '/#skills',
+    '/#contact',
   ];
 
   const staticRoutes = routes.map((route) => ({
@@ -23,5 +24,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
 
-  return [...staticRoutes];
+  return staticRoutes;
 }

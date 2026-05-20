@@ -27,16 +27,19 @@ export function WorksSection({ section }: WorksSectionProps) {
           return (
             <Wrapper
               key={project.name}
-              className="interactive-card group grid gap-5 border-b border-white/10 py-7 transition hover:bg-white/[0.03] md:grid-cols-[90px_1fr_0.8fr_120px]"
+              className="interactive-card group grid gap-4 border-b border-white/10 py-7 transition hover:bg-white/[0.03] md:grid-cols-[72px_1fr_1.1fr_auto] md:gap-5"
               {...props}
             >
               <p className="text-sm font-black text-white/32">0{index + 1}</p>
-              <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
-                {project.name}
-              </h3>
-              <p className="meta-label text-[#c7c7c7]">{project.tech}</p>
-              <p className="button-label text-[#d6ad63]">
-                {project.url ? 'Open' : 'Private'}
+              <div>
+                <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
+                  {project.name}
+                </h3>
+                <p className="mt-2 meta-label text-[#c7c7c7]">{project.tech}</p>
+              </div>
+              <p className="small-copy text-white/58">{project.result}</p>
+              <p className="button-label shrink-0 text-[#d6ad63]">
+                {project.url ? 'Live' : 'Private'}
               </p>
             </Wrapper>
           );

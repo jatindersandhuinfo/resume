@@ -40,17 +40,18 @@ export default function Home() {
         <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl grid-cols-1 gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:py-12">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
-            <div className="animate-fade-up mb-8 flex w-fit items-center gap-3 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-sm font-bold text-white/80">
+            <div className="animate-fade-up mb-8 flex w-fit items-center gap-3 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold leading-snug text-white/85">
               <span
                 aria-hidden="true"
-                className="h-2.5 w-2.5 rounded-full bg-[#d6ad63]"
+                className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.65)]"
               />
 
               <span>{personal.freelanceStatus}</span>
             </div>
 
-            <p className="animate-fade-up animate-delay-1 mb-5 section-kicker text-[#d6ad63]">
-              {personal.role} · {personal.location}
+            <p className="animate-fade-up animate-delay-1 mb-7 max-w-3xl hero-role">
+              <span className="hero-role-line">{personal.role}</span>
+              <span className="hero-role-line mt-1 text-white/55">{personal.location}</span>
             </p>
 
             <h1
@@ -61,7 +62,7 @@ export default function Home() {
               launch faster.
             </h1>
 
-            <p className="animate-fade-up animate-delay-3 mt-7 max-w-2xl body-copy text-[#e6e6e6] sm:text-xl">
+            <p className="animate-fade-up animate-delay-3 mt-8 max-w-2xl body-copy-lg text-[#e6e6e6]">
               {personal.summary} Clean interfaces, flexible APIs, and practical
               deployments for websites, apps, and business tools.
             </p>
@@ -92,17 +93,17 @@ export default function Home() {
               alt={`${fullName}, ${personal.role}`}
               fill
               priority
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              className="z-0 object-cover object-top grayscale-[12%]"
+              quality={95}
+              className="z-0 object-cover object-top"
             />
 
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0b0d0e]/26 via-transparent to-[#0b0d0e]/86" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[42%] bg-gradient-to-t from-[#0b0d0e] via-[#0b0d0e]/55 to-transparent" />
 
             {/* Floating Badge */}
             <div className="absolute left-5 bottom-28 z-30 flex max-w-[calc(100%-40px)] items-center rounded-full border border-[#d6ad63]/55 bg-[#0b0d0e] px-4 py-2.5 text-xs font-black text-white shadow-2xl shadow-black/50 sm:left-6 sm:bottom-32 sm:px-5 sm:py-3 sm:text-sm">
               <span
                 aria-hidden="true"
-                className="mr-2 h-2 w-2 shrink-0 rounded-full bg-[#d6ad63]"
+                className="mr-2 h-2 w-2 shrink-0 rounded-full bg-emerald-400"
               />
 
               <span>Clean code / Scalable APIs</span>
@@ -117,7 +118,7 @@ export default function Home() {
             <div className="absolute inset-x-0 bottom-0 z-30 p-6 pt-32">
               <p className="subsection-title text-white">{fullName}</p>
 
-              <p className="mt-2 meta-label text-[#d6ad63]">
+              <p className="mt-2.5 meta-label-relaxed leading-snug text-[#d6ad63]">
                 {personal.role}
               </p>
             </div>
@@ -136,7 +137,7 @@ export default function Home() {
                   {stat.value}
                 </p>
 
-                <p className="mt-2 meta-label text-[#d7d7d7]">
+                <p className="mt-2.5 meta-label leading-snug text-[#d7d7d7]">
                   {stat.label}
                 </p>
               </div>

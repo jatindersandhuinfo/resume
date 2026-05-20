@@ -1,7 +1,7 @@
 import type {
   PersonalInfo,
   ContactInfo,
-  Skill,
+  CoreStrength,
   TechGroup,
   WorkExperience,
   Education,
@@ -18,11 +18,11 @@ import type {
 } from '@/types/sections';
 
 export const seo: SeoMeta = {
-  title: 'Jatinder Sandhu — Full Stack Developer in Punjab, India',
+  title: 'Jatinder Sandhu — Full Stack Developer | React, Next.js, Node.js, PHP | AI-Powered Development',
   description:
-    'Hire Jatinder Sandhu, a full stack developer in Bathinda, Punjab, building responsive websites, web apps, APIs, WordPress, Shopify, React, Next.js, Node.js, PHP, and Laravel solutions.',
+    'Hire Jatinder Sandhu — full stack developer in Bathinda, Punjab. 6+ years, 25+ projects, AI-assisted delivery with Cursor AI & Claude. React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, and API integrations.',
   keywords:
-    'Jatinder Sandhu, Full Stack Developer Punjab, Full Stack Developer Bathinda, Freelance Web Developer India, Hire Full Stack Developer, React Developer India, Next.js Developer India, Node.js Developer India, PHP Laravel Developer, WordPress Developer Punjab, Shopify Developer India, API Integration Developer, Custom Web Application Developer, Website Developer Bathinda, Web Development Services Punjab, Responsive Website Developer, Ecommerce Website Developer India, CMS Developer, MySQL Developer, MongoDB Developer',
+    'Jatinder Sandhu, Full Stack Developer Punjab, Full Stack Developer Bathinda, Freelance Web Developer India, Hire Full Stack Developer, React Developer India, Next.js Developer India, Node.js Developer India, PHP Laravel Developer, WordPress Developer Punjab, Shopify Developer India, API Integration Developer, AI Integration Developer, Cursor AI Developer, Claude AI Developer, ChatGPT API Developer, OpenAI API Integration, Prompt Engineering, Custom Web Application Developer, Website Developer Bathinda, Web Development Services Punjab, Responsive Website Developer, Ecommerce Website Developer India, CMS Developer, MySQL Developer, MongoDB Developer, Upwork Full Stack Developer',
   ogImage: 'https://jatinder.malwaland.in/jatindersandhu.png',
   twitterHandle: '@jatindersandhuinfo',
   siteUrl: 'https://jatinder.malwaland.in',
@@ -31,15 +31,15 @@ export const seo: SeoMeta = {
 export const personal: PersonalInfo = {
   firstName: 'Jatinder',
   lastName: 'Sandhu',
-  role: 'Full Stack Developer',
+  role: 'Full Stack Developer | React, Next.js, Node.js, PHP | AI-Powered Development',
   age: 31,
   location: 'Bathinda, Punjab, India',
   freelanceStatus: 'Available for Freelance',
-  experience: '5+ Years',
+  experience: '6+ Years',
   summary:
-    "5+ years building scalable web apps · PHP · React · Node.js",
+    '6+ years building scalable web apps · PHP · React · Node.js · AI-assisted workflows',
   sideNote:
-    'Passionate about clean architecture, scalable APIs, and high-performance web applications. Always learning, always shipping.',
+    'I work with Cursor AI and Claude AI daily for faster, cleaner delivery — fewer bugs and quicker turnaround on your project.',
 };
 
 export const contact: ContactInfo = {
@@ -49,16 +49,17 @@ export const contact: ContactInfo = {
   whatsapp: 'https://wa.me/9888360667',
   linkedin: 'https://www.linkedin.com/in/jatindersandhuinfo/',
   github: 'https://github.com/jatindersandhuinfo',
+  upwork: 'https://www.upwork.com/freelancers/jatindersandhuinfo',
   telegram: 'https://t.me/jatindersandhuinfo',
   discord: 'https://discord.gg/w7VjgHAA',
 };
 
-export const skillBars: Skill[] = [
-  { name: 'PHP', level: 90 },
-  { name: 'React.js', level: 75 },
-  { name: 'Next.js', level: 70 },
-  { name: 'Node.js', level: 70 },
-  { name: 'Laravel', level: 65 },
+export const coreStrengths: CoreStrength[] = [
+  { name: 'PHP / Laravel', detail: '12+ production backends & CMS builds' },
+  { name: 'React / Next.js', detail: '10+ fast, SEO-friendly frontends' },
+  { name: 'WordPress / WooCommerce', detail: '8+ business & booking sites' },
+  { name: 'Node.js / APIs', detail: 'REST, JWT auth & third-party integrations' },
+  { name: 'AI-Assisted Delivery', detail: 'Cursor AI · Claude · ChatGPT API daily' },
 ];
 
 export const techGroups: TechGroup[] = [
@@ -100,6 +101,19 @@ export const techGroups: TechGroup[] = [
     items: ['MySQL', 'MongoDB', 'PostgreSQL', 'Firebase', 'AWS', 'DigitalOcean'],
     badges: [],
   },
+  {
+    category: 'AI & Automation',
+    icon: 'AI',
+    iconBg: '#d6ad6322',
+    iconColor: '#d6ad63',
+    borderColor: '#d6ad6333',
+    items: ['Cursor AI', 'Claude AI', 'ChatGPT API', 'OpenAI API', 'Prompt Engineering'],
+    badges: [
+      { label: 'Cu', bg: '#d6ad6322', color: '#d6ad63', border: '#d6ad6333' },
+      { label: 'Cl', bg: '#cc785c22', color: '#e8a88a', border: '#cc785c33' },
+      { label: 'GP', bg: '#10a37f22', color: '#10a37f', border: '#10a37f33' },
+    ],
+  },
 ];
 
 export const services: Service[] = [
@@ -110,6 +124,7 @@ export const services: Service[] = [
   { label: 'Shopify' },
   { label: 'REST API' },
   { label: 'Database' },
+  { label: 'AI Integration' },
 ];
 
 export type SectionData = {
@@ -162,7 +177,7 @@ export const experience: WorkExperience[] = [
     role: 'Full Stack Developer',
     period: 'Aug 2020 — Present',
     description:
-      'Built dynamic UIs with React.js + Redux. Developed scalable backend APIs with Node.js and Express.js. Implemented JWT auth and optimized MongoDB schemas for performance.',
+      'Built dynamic UIs with React.js + Redux. Developed scalable Node.js APIs with JWT auth. Optimized MongoDB schemas — 40% faster query response on high-traffic modules.',
   },
   {
     company: 'Envy Us Media Pvt Ltd',
@@ -196,16 +211,48 @@ export const projects: Project[] = [
   {
     name: 'Luxorlimo',
     tech: 'WordPress · Elementor · WooCommerce',
+    result:
+      'Canadian limo booking site — WooCommerce checkout, mobile-first UX, and lead-ready service pages.',
     url: 'https://luxorlimo.ca/',
   },
   {
     name: 'Luna By Navneet',
     tech: 'Next.js · Tailwind CSS',
+    result:
+      'Product catalog with ~40% faster load vs legacy build and SEO-optimized product landing pages.',
     url: 'https://lunanav.malwaland.in/',
   },
   {
     name: 'True Holiday Admin',
     tech: 'PHP · MySQL · Bootstrap',
+    result:
+      'Private admin dashboard managing 500+ holiday packages, bookings, and supplier workflows.',
+  },
+  {
+    name: 'Malwaland Business Hub',
+    tech: 'PHP · WordPress · Custom Themes',
+    result:
+      'Multi-client hosting hub — 6+ live business sites with shared deployment and maintenance workflows.',
+    url: 'https://malwaland.in/',
+  },
+  {
+    name: 'JWT Auth API Module',
+    tech: 'Node.js · Express · MongoDB',
+    result:
+      'Reusable auth service with JWT, role-based access, and 40% faster session validation for SaaS modules.',
+  },
+  {
+    name: 'Portfolio — jatinder.malwaland.in',
+    tech: 'Next.js · TypeScript · Tailwind CSS',
+    result:
+      'SEO-first portfolio with structured data, sitemap, and performance-focused static delivery.',
+    url: 'https://jatinder.malwaland.in/',
+  },
+  {
+    name: 'WooCommerce Booking Flow',
+    tech: 'WordPress · WooCommerce · PHP',
+    result:
+      'Custom booking availability and checkout flow for service businesses — real-time slot selection.',
   },
 ];
 
@@ -219,6 +266,8 @@ const serviceCopy: Record<string, string> = {
   Shopify: 'Storefront improvements, product flows, theme edits, and conversion-focused ecommerce UI.',
   'REST API': 'Structured endpoints, validation, JWT authentication, and practical API documentation.',
   Database: 'MySQL, MongoDB, PostgreSQL, schema planning, optimization, and data workflows.',
+  'AI Integration':
+    'ChatGPT API, Claude API, LLM features, and AI-powered tools — from smart forms to content automation and dev workflow acceleration.',
 };
 
 const serviceTags: Record<string, string> = {
@@ -229,6 +278,7 @@ const serviceTags: Record<string, string> = {
   Shopify: 'Commerce',
   'REST API': 'Backend',
   Database: 'Data',
+  'AI Integration': 'Intelligence',
 };
 
 const serviceStacks: Record<string, string[]> = {
@@ -239,6 +289,7 @@ const serviceStacks: Record<string, string[]> = {
   Shopify: ['Storefront', 'Theme', 'Checkout'],
   'REST API': ['JWT', 'Validation', 'Docs'],
   Database: ['MySQL', 'MongoDB', 'Postgres'],
+  'AI Integration': ['OpenAI', 'Claude', 'Cursor AI'],
 };
 
 const experienceFocus: Record<string, string[]> = {
@@ -292,7 +343,7 @@ export const skillsSection: SkillsSectionData = {
   title: 'Stack I use to build complete web products.',
   description:
     'Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.',
-  skillBars,
+  coreStrengths,
   techGroups: techGroups.map(group => ({
     category: group.category,
     items: group.items,
@@ -305,11 +356,11 @@ export const stats = [
     label: 'Years Experience',
   },
   {
-    value: '10+',
+    value: '25+',
     label: 'Projects Delivered',
   },
   {
-    value: '10+',
+    value: '20+',
     label: 'Happy Clients',
   },
   {

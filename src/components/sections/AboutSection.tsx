@@ -17,7 +17,7 @@ export function AboutSection({ section }: AboutSectionProps) {
       <div className="space-y-6 body-copy text-white/66">
         <p>{section.description}</p>
         <p>
-          My work spans PHP, Laravel, WordPress, React, Next.js, Node.js, MySQL, MongoDB, and API integrations. I like projects where design, performance, and business flow all matter.
+          My work spans PHP, Laravel, WordPress, React, Next.js, Node.js, MySQL, MongoDB, and API integrations — plus AI-assisted delivery with Cursor AI, Claude AI, and ChatGPT API. I like projects where design, performance, and business flow all matter.
         </p>
         <div className="grid gap-3 pt-3 sm:grid-cols-2">
           {techGroups.map((group) => (

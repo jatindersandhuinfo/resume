@@ -40,6 +40,7 @@ export interface ServicesSectionData extends SectionBase {
 export interface WorkItem {
   name: string;
   tech: string;
+  result: string;
   url?: string;
 }
 
@@ -67,9 +68,9 @@ export interface ExperienceSectionData extends SectionBase {
 }
 
 // Skills Section
-export interface SkillItem {
+export interface CoreStrengthItem {
   name: string;
-  level: number;
+  detail: string;
 }
 
 export interface TechItem {
@@ -79,6 +80,6 @@ export interface TechItem {
 
 export interface SkillsSectionData extends SectionBase {
   id: 'skills';
-  skillBars: SkillItem[];
+  coreStrengths: CoreStrengthItem[];
   techGroups: TechItem[];
 }

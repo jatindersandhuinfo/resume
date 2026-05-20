@@ -17,13 +17,14 @@ export interface ContactInfo {
   whatsapp: string;
   linkedin: string;
   github: string;
+  upwork: string;
   telegram: string;
   discord: string;
 }
 
-export interface Skill {
+export interface CoreStrength {
   name: string;
-  level: number; // 0-100
+  detail: string;
 }
 
 export interface TechGroup {
@@ -54,6 +55,7 @@ export interface Education {
 export interface Project {
   name: string;
   tech: string;
+  result: string;
   url?: string;
 }
 

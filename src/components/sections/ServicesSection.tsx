@@ -31,7 +31,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
             </p>
           </article>
           <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3 lg:grid-cols-1">
-            {['React / Next.js', 'PHP / Laravel', 'WordPress / Shopify'].map((item) => (
+            {['React / Next.js', 'PHP / Laravel', 'AI Integration'].map((item) => (
               <div key={item} className="bg-[#15191b] p-5">
                 <p className="meta-label text-white/32">Specialist Stack</p>
                 <p className="mt-2 text-base font-black text-white">{item}</p>
