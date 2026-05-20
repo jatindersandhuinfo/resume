@@ -64,9 +64,10 @@ export const techGroups: TechGroup[] = [
     items: ['React.js', 'Next.js', 'Tailwind CSS', 'JavaScript'],
     badges: [
       { label: 'Re', bg: '#61dafb22', color: '#61dafb', border: '#61dafb33' },
+      { label: 'Nx', bg: '#ffffff11', color: '#eee', border: '#333' },
       { label: 'Tw', bg: '#06b6d422', color: '#06b6d4', border: '#06b6d433' },
       { label: 'JS', bg: '#f0db4f22', color: '#f0db4f', border: '#f0db4f33' },
-      { label: 'Nx', bg: '#ffffff11', color: '#eee', border: '#333' },
+      
     ],
   },
   {
