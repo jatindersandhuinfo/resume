@@ -43,7 +43,7 @@ export const personal: PersonalInfo = {
     '6+ years building scalable web apps · PHP · React · Node.js · AI-assisted workflows',
   sideNote:
     'I work with Cursor AI and Claude AI daily for faster, cleaner delivery — fewer bugs and quicker turnaround on your project.',
-  heroImage: '/jatinderpng.png',
+  heroImage: '/jatinderpng.webp',
   heroImageRetina: 'https://jatinder.malwaland.in/jatindersandhu.png',
 };
 
