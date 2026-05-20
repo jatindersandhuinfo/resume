@@ -1,6 +1,6 @@
 // Section base type
 export interface SectionBase {
-  id: 'about' | 'services' | 'works' | 'experience' | 'skills';
+  id: 'about' | 'services' | 'works' | 'experience' | 'faq' | 'skills';
   kicker: string;
   title: string;
   description: string;
@@ -76,6 +76,16 @@ export interface CoreStrengthItem {
 export interface TechItem {
   category: string;
   items: string[];
+}
+
+export interface FaqItemData {
+  question: string;
+  answer: string;
+}
+
+export interface FaqSectionData extends SectionBase {
+  id: 'faq';
+  items: FaqItemData[];
 }
 
 export interface SkillsSectionData extends SectionBase {

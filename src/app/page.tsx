@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 
 import HeaderNav from '@/components/HeaderNav';
+import { HeroImage } from '@/components/HeroImage';
 
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { WorksSection } from '@/components/sections/WorksSection';
 import { ExperienceSection } from '@/components/sections/ExperienceSection';
+import { FaqSection } from '@/components/sections/FaqSection';
 import { SkillsSection } from '@/components/sections/SkillsSection';
 
 import {
@@ -18,6 +19,7 @@ import {
   servicesSection,
   worksSection,
   experienceSection,
+  faqSection,
   skillsSection,
 } from '@/lib/data';
 
@@ -104,16 +106,9 @@ export default function Home() {
 
           {/* Right Image Card */}
           <div className="animate-soft-in animate-delay-2 relative isolate aspect-[4/5] overflow-hidden rounded-lg border border-white/10 bg-[#141719] lg:h-full">
-            <Image
-              src="/jatindersandhu-1.webp"
-              alt={`${fullName}, ${personal.role}`}
-              fill
-              priority
-              quality={95}
-              className="z-0 object-cover object-top"
-            />
+            <HeroImage alt={`${fullName}, ${personal.role}`} />
 
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[42%] bg-gradient-to-t from-[#0b0d0e] via-[#0b0d0e]/55 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[34%] bg-gradient-to-t from-[#0b0d0e] via-[#0b0d0e]/40 to-transparent" />
 
             {/* Floating Badge */}
             <div className="absolute left-5 bottom-28 z-30 flex max-w-[calc(100%-40px)] items-center rounded-full border border-[#d6ad63]/55 bg-[#0b0d0e] px-4 py-2.5 text-xs font-black text-white shadow-2xl shadow-black/50 sm:left-6 sm:bottom-32 sm:px-5 sm:py-3 sm:text-sm">
@@ -170,6 +165,8 @@ export default function Home() {
 
       <ExperienceSection section={experienceSection} />
 
+      <FaqSection section={faqSection} />
+
       <SkillsSection section={skillsSection} />
 
       <footer className="border-t border-white/10 px-5 py-10 sm:px-8 lg:px-10">
@@ -179,6 +176,7 @@ export default function Home() {
             <a href="#services" className="transition hover:text-[#d6ad63]">Services</a>
             <a href="#works" className="transition hover:text-[#d6ad63]">Works</a>
             <a href="#experience" className="transition hover:text-[#d6ad63]">Experience</a>
+            <a href="#faq" className="transition hover:text-[#d6ad63]">FAQ</a>
             <a href="#contact" className="transition hover:text-[#d6ad63]">Contact</a>
           </nav>
           <p className="max-w-3xl text-sm leading-relaxed text-[#9ca3af]">

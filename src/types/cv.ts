@@ -9,6 +9,13 @@ export interface PersonalInfo {
   experience: string;
   summary: string;
   sideNote: string;
+  heroImage: string;
+  heroImageRetina: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export interface ContactInfo {

@@ -114,7 +114,7 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
-        <link rel="preload" as="image" href="/jatindersandhu-1.webp" />
+        <link rel="preload" as="image" href="/jatindersandhu-1.webp" type="image/webp" />
         <link rel="me" href={contact.linkedin} />
         <link rel="me" href={contact.github} />
         <link rel="me" href={contact.upwork} />

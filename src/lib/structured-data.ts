@@ -7,6 +7,7 @@ import {
   projects,
   experience,
   education,
+  faqs,
 } from '@/lib/data';
 
 const personId = `${seo.siteUrl}/#person`;
@@ -158,6 +159,18 @@ export function getStructuredData() {
             item: seo.siteUrl,
           },
         ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${seo.siteUrl}/#faq`,
+        mainEntity: faqs.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
       },
     ],
   };

@@ -182,6 +182,11 @@ a:focus-visible {
   will-change: transform, border-color, background-color;
 }
 
+.hero-image {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 @supports (animation-timeline: view()) {
   .content-section {
     animation: fade-up both;

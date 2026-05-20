@@ -8,12 +8,14 @@ import type {
   Project,
   Service,
   SeoMeta,
+  FaqItem,
 } from '@/types/cv';
 import type {
   AboutSectionData,
   ServicesSectionData,
   WorksSectionData,
   ExperienceSectionData,
+  FaqSectionData,
   SkillsSectionData,
 } from '@/types/sections';
 
@@ -41,6 +43,8 @@ export const personal: PersonalInfo = {
     '6+ years building scalable web apps · PHP · React · Node.js · AI-assisted workflows',
   sideNote:
     'I work with Cursor AI and Claude AI daily for faster, cleaner delivery — fewer bugs and quicker turnaround on your project.',
+  heroImage: '/jatinderpng.png',
+  heroImageRetina: 'https://jatinder.malwaland.in/jatindersandhu.png',
 };
 
 export const contact: ContactInfo = {
@@ -129,7 +133,7 @@ export const services: Service[] = [
 ];
 
 export type SectionData = {
-  id: 'about' | 'services' | 'works' | 'experience' | 'skills';
+  id: 'about' | 'services' | 'works' | 'experience' | 'faq' | 'skills';
   kicker: string;
   title: string;
   description: string;
@@ -164,11 +168,51 @@ export const sections: SectionData[] = [
       'A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.',
   },
   {
+    id: 'faq',
+    kicker: 'FAQ',
+    title: 'Common questions before we start your project.',
+    description:
+      'Quick answers about remote work, timelines, tech stack, and how I deliver projects for clients worldwide.',
+  },
+  {
     id: 'skills',
     kicker: 'Skills',
     title: 'Stack I use to build complete web products.',
     description:
       'Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.',
+  },
+];
+
+export const faqs: FaqItem[] = [
+  {
+    question: 'Do you work with international clients remotely?',
+    answer:
+      'Yes. I work with clients worldwide on a fully remote basis. Communication happens over email, WhatsApp, Slack, or your preferred tool, with progress updates and shared staging links throughout the build.',
+  },
+  {
+    question: 'What technologies do you specialize in?',
+    answer:
+      'React, Next.js, Node.js, PHP, Laravel, WordPress, WooCommerce, Shopify, MySQL, MongoDB, REST APIs, JWT auth, and AI integrations (ChatGPT API, Claude API, Cursor AI workflows). I pick the stack that fits your product and budget.',
+  },
+  {
+    question: 'How do we start a new project?',
+    answer:
+      'Share your scope, reference links, or a rough idea by email. I review the requirements, suggest the right approach, provide a timeline estimate, and begin with a clear milestone plan before development starts.',
+  },
+  {
+    question: 'Can you integrate AI features into my product?',
+    answer:
+      'Yes. I build AI-powered features such as smart forms, content automation, chat assistants, and API integrations using OpenAI and Claude — plus faster delivery using modern AI-assisted development workflows.',
+  },
+  {
+    question: 'What is a typical project timeline?',
+    answer:
+      'A focused business website often takes 2–4 weeks. Custom web apps, dashboards, or ecommerce builds typically run 4–8+ weeks depending on scope, integrations, and feedback rounds. I share realistic timelines upfront.',
+  },
+  {
+    question: 'Do you provide ongoing support after launch?',
+    answer:
+      'Yes. I offer post-launch support for bug fixes, small updates, performance improvements, and feature additions. Many clients retain me for maintenance after the initial build goes live.',
   },
 ];
 
@@ -326,6 +370,15 @@ export const worksSection: WorksSectionData = {
   title: 'Selected builds and production projects.',
   description: 'A focused sample of business websites, ecommerce work, and web applications built with practical stacks.',
   works: projects,
+};
+
+export const faqSection: FaqSectionData = {
+  id: 'faq',
+  kicker: 'FAQ',
+  title: 'Common questions before we start your project.',
+  description:
+    'Quick answers about remote work, timelines, tech stack, and how I deliver projects for clients worldwide.',
+  items: faqs,
 };
 
 export const experienceSection: ExperienceSectionData = {
