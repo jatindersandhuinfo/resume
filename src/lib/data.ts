@@ -25,7 +25,7 @@ export const seo: SeoMeta = {
     'Hire Jatinder Sandhu — remote full stack developer for clients worldwide. Based in India, 6+ years, 25+ projects, AI-assisted delivery with Cursor AI & Claude. React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, and API integrations.',
   keywords:
     'Jatinder Sandhu, Remote Full Stack Developer, Global Freelance Web Developer, Hire Full Stack Developer Worldwide, International Web Developer, React Developer Remote, Next.js Developer Remote, Node.js Developer Remote, PHP Laravel Developer, WordPress Developer, Shopify Developer, API Integration Developer, AI Integration Developer, Cursor AI Developer, Claude AI Developer, ChatGPT API Developer, OpenAI API Integration, Prompt Engineering, Custom Web Application Developer, Responsive Website Developer, Ecommerce Website Developer, CMS Developer, MySQL Developer, MongoDB Developer, Upwork Full Stack Developer, Full Stack Developer India, Full Stack Developer Punjab',
-  ogImage: 'https://jatinder.malwaland.in/jatindersandhu.png',
+  ogImage: 'https://jatinder.malwaland.in/jatinderpng.png',
   twitterHandle: '@jatindersandhuinfo',
   siteUrl: 'https://jatinder.malwaland.in',
 };
@@ -44,7 +44,7 @@ export const personal: PersonalInfo = {
   sideNote:
     'I work with Cursor AI and Claude AI daily for faster, cleaner delivery — fewer bugs and quicker turnaround on your project.',
   heroImage: '/jatinderpng.webp',
-  heroImageRetina: 'https://jatinder.malwaland.in/jatindersandhu.png',
+  heroImageRetina: 'https://jatinder.malwaland.in/jatinderpng.png',
 };
 
 export const contact: ContactInfo = {
