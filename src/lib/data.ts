@@ -25,9 +25,9 @@ export const seo: SeoMeta = {
     'Hire Jatinder Sandhu — remote full stack developer for clients worldwide. Based in India, 6+ years, 25+ projects, AI-assisted delivery with Cursor AI & Claude. React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, and API integrations.',
   keywords:
     'Jatinder Sandhu, Remote Full Stack Developer, Global Freelance Web Developer, Hire Full Stack Developer Worldwide, International Web Developer, React Developer Remote, Next.js Developer Remote, Node.js Developer Remote, PHP Laravel Developer, WordPress Developer, Shopify Developer, API Integration Developer, AI Integration Developer, Cursor AI Developer, Claude AI Developer, ChatGPT API Developer, OpenAI API Integration, Prompt Engineering, Custom Web Application Developer, Responsive Website Developer, Ecommerce Website Developer, CMS Developer, MySQL Developer, MongoDB Developer, Upwork Full Stack Developer, Full Stack Developer India, Full Stack Developer Punjab',
-  ogImage: 'https://jatinder.malwaland.in/jatinderpng.webp',
+  ogImage: 'https://jatinder.malwaland.com/jatinderpng.webp',
   twitterHandle: '@jatindersandhuinfo',
-  siteUrl: 'https://jatinder.malwaland.in',
+  siteUrl: 'https://jatinder.malwaland.com',
 };
 
 export const personal: PersonalInfo = {
@@ -44,12 +44,12 @@ export const personal: PersonalInfo = {
   sideNote:
     'I work with Cursor AI and Claude AI daily for faster, cleaner delivery — fewer bugs and quicker turnaround on your project.',
   heroImage: '/jatinderpng.webp',
-  heroImageRetina: 'https://jatinder.malwaland.in/jatinderpng.webp',
+  heroImageRetina: 'https://jatinder.malwaland.com/jatinderpng.webp',
 };
 
 export const contact: ContactInfo = {
   email: 'jatindersandhuinfo@gmail.com',
-  website: 'jatinder.malwaland.in',
+  website: 'jatinder.malwaland.com',
   phone: '+91 9888360667',
   whatsapp: 'https://wa.me/9888360667',
   linkedin: 'https://www.linkedin.com/in/jatindersandhuinfo/',
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     tech: 'Next.js · Tailwind CSS',
     result:
       'Product catalog with ~40% faster load vs legacy build and SEO-optimized product landing pages.',
-    url: 'https://lunanav.malwaland.in/',
+    url: 'https://lunanav.malwaland.com/',
   },
   {
     name: 'True Holiday Admin',
@@ -287,11 +287,11 @@ export const projects: Project[] = [
       'Reusable auth service with JWT, role-based access, and 40% faster session validation for SaaS modules.',
   },
   {
-    name: 'Portfolio — jatinder.malwaland.in',
+    name: 'Portfolio — jatinder.malwaland.com',
     tech: 'Next.js · TypeScript · Tailwind CSS',
     result:
       'SEO-first portfolio with structured data, sitemap, and performance-focused static delivery.',
-    url: 'https://jatinder.malwaland.in/',
+    url: 'https://jatinder.malwaland.com/',
   },
   {
     name: 'WooCommerce Booking Flow',
