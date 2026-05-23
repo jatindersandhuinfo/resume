@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { contact, personal } from '@/lib/data';
 
 const navItems = [
@@ -8,6 +9,7 @@ const navItems = [
   { label: 'What I Do', href: '#services' },
   { label: 'Works', href: '#works' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Blog', href: '/blog/how-to-hire-freelance-full-stack-developer' },
   { label: 'Hire Me', href: '#contact' },
 ];
 
@@ -22,15 +24,28 @@ export default function HeaderNav() {
         </a>
 
         <nav className="hidden items-center gap-7 text-sm uppercase tracking-[0.18em] md:flex" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="transition-colors duration-200 hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isHash = item.href.startsWith('#');
+            const className = "transition-colors duration-200 hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]";
+
+            return isHash ? (
+              <a
+                key={item.href}
+                href={item.href}
+                className={className}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={className}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -64,16 +79,31 @@ export default function HeaderNav() {
       {menuOpen ? (
         <div id="mobile-navigation" className="md:hidden border-t border-white/10 bg-[#0b0d0e] px-5 py-5">
           <nav className="flex flex-col gap-3" aria-label="Mobile navigation">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-2xl px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isHash = item.href.startsWith('#');
+              const className = "rounded-2xl px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]";
+              const onClick = () => setMenuOpen(false);
+
+              return isHash ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={className}
+                  onClick={onClick}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={className}
+                  onClick={onClick}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <a
               href={`mailto:${contact.email}`}
               className="rounded-2xl bg-[#d6ad63] px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white"

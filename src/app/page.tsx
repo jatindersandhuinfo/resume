@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import HeaderNav from '@/components/HeaderNav';
 import { HeroImage } from '@/components/HeroImage';
 
@@ -203,6 +204,7 @@ export default function Home() {
             <a href="#experience" className="transition hover:text-[#d6ad63]">Experience</a>
             <a href="#education" className="transition hover:text-[#d6ad63]">Education</a>
             <a href="#faq" className="transition hover:text-[#d6ad63]">FAQ</a>
+            <Link href="/blog/how-to-hire-freelance-full-stack-developer" className="transition hover:text-[#d6ad63]">Blog</Link>
             <a href="#contact" className="transition hover:text-[#d6ad63]">Contact</a>
           </nav>
           <p className="max-w-3xl text-sm leading-relaxed text-[#9ca3af]">
