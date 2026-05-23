@@ -27,13 +27,13 @@ export function ServicesSection({ section }: ServicesSectionProps) {
               Complete product delivery from idea to launch.
             </h3>
             <p className="mt-5 max-w-2xl body-copy text-[#e6e6e6]">
-              I can design the flow, build the responsive frontend, connect APIs, prepare the CMS or database, and keep the implementation practical for future changes.
+              {section.coreOfferDescription}
             </p>
           </article>
           <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3 lg:grid-cols-1">
-            {['React / Next.js', 'PHP / Laravel', 'AI Integration'].map((item) => (
+            {section.specialistStack.map((item) => (
               <div key={item} className="bg-[#15191b] p-5">
-                <p className="meta-label text-white/32">Specialist Stack</p>
+                <p className="meta-label text-white/45">Specialist Stack</p>
                 <p className="mt-2 text-base font-black text-white">{item}</p>
               </div>
             ))}

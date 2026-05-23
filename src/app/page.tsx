@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 
 import HeaderNav from '@/components/HeaderNav';
 import { HeroImage } from '@/components/HeroImage';
@@ -13,8 +12,9 @@ import { SkillsSection } from '@/components/sections/SkillsSection';
 import {
   contact,
   personal,
-  seo,
   stats,
+  techGroups,
+  education,
   aboutSection,
   servicesSection,
   worksSection,
@@ -23,18 +23,6 @@ import {
   skillsSection,
 } from '@/lib/data';
 
-export const metadata: Metadata = {
-  title: seo.title,
-  description: seo.description,
-  alternates: {
-    canonical: seo.siteUrl,
-  },
-  openGraph: {
-    url: seo.siteUrl,
-    title: seo.title,
-    description: seo.description,
-  },
-};
 
 const buttonBaseClass =
   'inline-flex min-h-[52px] items-center justify-center rounded-full px-7 text-sm font-semibold uppercase tracking-[0.14em] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]';
@@ -157,13 +145,50 @@ export default function Home() {
         </div>
       </section>
 
-      <AboutSection section={aboutSection} />
+      <AboutSection section={aboutSection} techGroups={techGroups} />
 
       <ServicesSection section={servicesSection} />
 
       <WorksSection section={worksSection} />
 
       <ExperienceSection section={experienceSection} />
+
+      {/* Education Section */}
+      <section id="education" className="content-section mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28" aria-labelledby="education-title">
+        <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1fr]">
+          <div>
+            <p className="section-kicker">Education</p>
+            <h2 id="education-title" className="mt-5 section-title text-white">
+              Academic foundation in computer science.
+            </h2>
+          </div>
+          <p className="max-w-2xl body-copy text-white/62 lg:pt-10">
+            Master&apos;s and bachelor&apos;s degrees from a NAAC A++ accredited university — covering advanced web technologies, databases, and software architecture.
+          </p>
+        </div>
+
+        <div className="border-t border-white/10">
+          {education.map((item, index) => (
+            <article
+              key={item.institution + item.degree}
+              className="interactive-card group grid gap-4 border-b border-white/10 py-7 transition hover:bg-white/[0.03] md:grid-cols-[72px_1fr_1.2fr_auto]"
+            >
+              <p className="text-sm font-black text-white/40">0{index + 1}</p>
+              <div>
+                <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
+                  {item.degree}
+                </h3>
+                <p className="mt-2 meta-label text-[#c7c7c7]">{item.institution}</p>
+              </div>
+              <p className="small-copy text-white/60">{item.description}</p>
+              <div className="flex shrink-0 flex-col items-end gap-2">
+                <span className="rounded-full border border-white/10 px-3 py-1 meta-label text-[#c7c7c7]">{item.period}</span>
+                <span className="rounded-full border border-[#d6ad63]/40 bg-[#d6ad63]/10 px-3 py-1 meta-label text-[#d6ad63]">{item.badge}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <FaqSection section={faqSection} />
 
@@ -176,6 +201,7 @@ export default function Home() {
             <a href="#services" className="transition hover:text-[#d6ad63]">Services</a>
             <a href="#works" className="transition hover:text-[#d6ad63]">Works</a>
             <a href="#experience" className="transition hover:text-[#d6ad63]">Experience</a>
+            <a href="#education" className="transition hover:text-[#d6ad63]">Education</a>
             <a href="#faq" className="transition hover:text-[#d6ad63]">FAQ</a>
             <a href="#contact" className="transition hover:text-[#d6ad63]">Contact</a>
           </nav>
@@ -197,7 +223,7 @@ export default function Home() {
               Upwork
             </a>
           </address>
-          <p className="text-xs text-white/35">
+          <p className="text-xs text-white/45">
             © {new Date().getFullYear()} {fullName}. {personal.role}.
           </p>
         </div>

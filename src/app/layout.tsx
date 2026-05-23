@@ -1,8 +1,23 @@
 import type { Metadata } from 'next';
+import { DM_Sans, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 
 import { seo, personal, contact } from '@/lib/data';
 import { getStructuredData, seoKeywords } from '@/lib/structured-data';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '900'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-bebas',
+  display: 'swap',
+});
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 
@@ -75,10 +90,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: seo.ogImage,
-        width: 1200,
-        height: 630,
+        width: 960,
+        height: 1200,
         alt: `${fullName} — ${personal.role}`,
-        type: 'image/png',
+        type: 'image/webp',
       },
     ],
   },
@@ -92,6 +107,7 @@ export const metadata: Metadata = {
     images: {
       url: seo.ogImage,
       alt: `${fullName} — Full Stack Developer Portfolio`,
+      type: 'image/webp',
     },
   },
 
@@ -112,9 +128,8 @@ export default function RootLayout({
   const structuredData = getStructuredData();
 
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" className={`${dmSans.variable} ${bebasNeue.variable}`}>
       <head>
-        <link rel="preload" as="image" href="/jatinderpng.webp" type="image/webp" />
         <link rel="me" href={contact.linkedin} />
         <link rel="me" href={contact.github} />
         <link rel="me" href={contact.upwork} />

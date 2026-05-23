@@ -1,6 +1,6 @@
 # Jatinder Sandhu — Portfolio CV (Next.js)
 
-A production-ready, component-based portfolio CV built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**.
+A production-ready, SEO-first portfolio CV built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**.
 
 ---
 
@@ -20,25 +20,32 @@ Open [http://localhost:3000](http://localhost:3000)
 ```
 src/
 ├── app/
-│   ├── layout.tsx       # Root layout — SEO metadata, fonts, JSON-LD
-│   ├── page.tsx         # Main page — assembles all columns
-│   ├── globals.css      # Tailwind + global styles
-│   └── sitemap.ts       # Auto-generated sitemap
-├── components/cv/
-│   ├── Sidebar.tsx      # Dark left sidebar
-│   ├── CenterColumn.tsx # Hero image + services
-│   ├── RightColumn.tsx  # Experience, education, projects, contact
-│   ├── SectionTitle.tsx # Reusable section heading
-│   ├── SkillBar.tsx     # Animated skill progress bar
-│   ├── TechBadge.tsx    # Tech stack icon badge
-│   ├── ExperienceItem.tsx
-│   ├── EducationItem.tsx
-│   ├── ProjectCard.tsx
-│   └── ContactSection.tsx
+│   ├── layout.tsx        # Root layout — SEO metadata, next/font, JSON-LD
+│   ├── page.tsx          # Main page — assembles all sections
+│   ├── globals.css       # Tailwind + global design tokens
+│   ├── not-found.tsx     # Custom 404 page
+│   ├── sitemap.ts        # Auto-generated XML sitemap
+│   ├── robots.ts         # robots.txt generator
+│   ├── manifest.ts       # PWA manifest
+│   └── blog/
+│       └── how-to-hire-freelance-full-stack-developer/
+│           └── page.tsx  # SEO blog article
+├── components/
+│   ├── HeaderNav.tsx     # Sticky nav with mobile hamburger
+│   ├── HeroImage.tsx     # Hero image using next/image
+│   └── sections/
+│       ├── AboutSection.tsx
+│       ├── ServicesSection.tsx
+│       ├── WorksSection.tsx
+│       ├── ExperienceSection.tsx
+│       ├── FaqSection.tsx       # Client component (accordion)
+│       └── SkillsSection.tsx    # Skills + Contact/Hire panel
 ├── lib/
-│   └── data.ts          # ← All content lives here. Edit this file only.
+│   ├── data.ts           # ← All content lives here. Edit this file only.
+│   └── structured-data.ts # JSON-LD schema.org generator
 └── types/
-    └── cv.ts            # TypeScript interfaces
+    ├── cv.ts             # Core TypeScript interfaces
+    └── sections.ts       # Section-specific interfaces
 ```
 
 ---
@@ -49,26 +56,43 @@ src/
 
 - Personal info → `personal`
 - Contact → `contact`
-- Skills → `skillBars`
-- Tech stack → `techGroups`
-- Experience → `experience`
+- Tech groups → `techGroups`
+- Core strengths → `coreStrengths`
+- Services → `services`, `serviceCopy`, `serviceTags`, `serviceStacks`
+- Experience → `experience`, `experienceFocus`
 - Education → `education`
 - Projects → `projects`
+- FAQ → `faqs`
+- Stats → `stats`
 - SEO → `seo`
+- Section composites → `aboutSection`, `servicesSection`, `worksSection`, `experienceSection`, `faqSection`, `skillsSection`
 
 ---
 
 ## SEO Features
 
 - ✅ Next.js `Metadata` API (title, description, keywords, OG, Twitter)
-- ✅ JSON-LD structured data (`Person` schema)
+- ✅ Rich JSON-LD structured data — `Person`, `ProfessionalService`, `FAQPage`, `ItemList`, `WebSite`, `WebPage`, `ProfilePage`, `BreadcrumbList`
 - ✅ Auto sitemap via `sitemap.ts`
-- ✅ `robots.txt`
+- ✅ `robots.txt` with AI crawler rules (GPTBot, ClaudeBot, Google-Extended)
 - ✅ Canonical URL
-- ✅ Semantic HTML (`<main>`, `<aside>`, `<section>`, `<article>`, `<h1>`–`<h3>`)
-- ✅ `aria-label` on all sections
-- ✅ `alt` text on all images
-- ✅ `next/font` for optimized font loading
+- ✅ Open Graph + Twitter Card metadata
+- ✅ Geo tags (`geo.region`, `geo.placename`)
+- ✅ `rel="me"` links for identity verification
+- ✅ Semantic HTML (`<main>`, `<section>`, `<article>`, `<h1>`–`<h3>`)
+- ✅ Full ARIA labelling on all sections and interactive elements
+- ✅ PWA manifest via `manifest.ts`
+
+---
+
+## Performance
+
+- ✅ `next/image` with `priority` for LCP hero image
+- ✅ `next/font` — DM Sans (body) + Bebas Neue (display)
+- ✅ `content-visibility: auto` on all page sections
+- ✅ CSS scroll-driven animations via `animation-timeline: view()`
+- ✅ `prefers-reduced-motion` fully respected
+- ✅ GPU-composited animations (transform + opacity only)
 
 ---
 
@@ -90,7 +114,8 @@ npx vercel
 ## Tech Stack
 
 - **Next.js 16** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **next/font** — Bebas Neue, DM Sans, DM Mono
-- **next/image** — optimized images
+- **React 19**
+- **TypeScript 5**
+- **Tailwind CSS 3**
+- **next/font** — DM Sans, Bebas Neue
+- **next/image** — optimized images with automatic WebP

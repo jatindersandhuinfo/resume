@@ -54,7 +54,7 @@ export const contact: ContactInfo = {
   whatsapp: 'https://wa.me/9888360667',
   linkedin: 'https://www.linkedin.com/in/jatindersandhuinfo/',
   github: 'https://github.com/jatindersandhuinfo',
-  upwork: 'https://www.upwork.com/freelancers/jatindersandhuinfo',
+  upwork: 'https://www.upwork.com/freelancers/~0136a3f5fb7a2c7b16',
   telegram: 'https://t.me/jatindersandhuinfo',
   discord: 'https://discord.gg/w7VjgHAA',
 };
@@ -350,6 +350,8 @@ export const aboutSection: AboutSectionData = {
   title: 'Transforming your vision into a dynamic web experience through clean UI and robust functionality.',
   description:
     "I'm Jatinder Sandhu, a remote full stack developer for clients worldwide — focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
+  secondaryDescription:
+    'My work spans PHP, Laravel, WordPress, React, Next.js, Node.js, MySQL, MongoDB, and API integrations — plus AI-assisted delivery with Cursor AI, Claude AI, and ChatGPT API. I collaborate remotely with clients across time zones and like projects where design, performance, and business flow all matter.',
 };
 
 export const servicesSection: ServicesSectionData = {
@@ -358,6 +360,9 @@ export const servicesSection: ServicesSectionData = {
   title: 'Full-stack services for websites, apps, and business systems.',
   description:
     'From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure. The focus is clean UI, dependable backend logic, and maintainable code.',
+  coreOfferDescription:
+    'I can design the flow, build the responsive frontend, connect APIs, prepare the CMS or database, and keep the implementation practical for future changes.',
+  specialistStack: ['React / Next.js', 'PHP / Laravel', 'AI Integration'],
   services,
   serviceCopy,
   serviceTags,
@@ -389,6 +394,7 @@ export const experienceSection: ExperienceSectionData = {
     'A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.',
   experience,
   experienceFocus,
+  yearsExperience: personal.experience,
 };
 
 export const skillsSection: SkillsSectionData = {
@@ -402,6 +408,14 @@ export const skillsSection: SkillsSectionData = {
     category: group.category,
     items: group.items,
   })),
+  hireSection: {
+    title: 'Have a project that needs a reliable developer?',
+    description:
+      'Send the scope, reference, or rough idea — wherever you are. I work remotely with clients worldwide and can help shape the flow, build the interface, connect the backend, and ship it cleanly.',
+    email: contact.email,
+    linkedin: contact.linkedin,
+    upwork: contact.upwork,
+  },
 };
 
 export const stats = [

@@ -1,5 +1,4 @@
 import { SkillsSectionData } from '@/types/sections';
-import { contact } from '@/lib/data';
 
 interface SkillsSectionProps {
   section: SkillsSectionData;
@@ -7,6 +6,7 @@ interface SkillsSectionProps {
 
 export function SkillsSection({ section }: SkillsSectionProps) {
   const uniqueTechItems = Array.from(new Set(section.techGroups.flatMap((group) => group.items)));
+  const { hireSection } = section;
 
   return (
     <section className="content-section border-y border-white/10 bg-[#0f1214]" aria-labelledby="skills-title">
@@ -43,27 +43,29 @@ export function SkillsSection({ section }: SkillsSectionProps) {
           </div>
         </div>
 
+        {/* Hire / Contact panel */}
         <div id="contact" className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0d0e] p-6 sm:p-8 lg:rounded-l-none">
           <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#d6ad63]/14 blur-3xl" />
           <div className="relative">
             <p className="section-kicker">Hire Me</p>
-            <h2 className="mt-4 section-title text-white">
-              Have a project that needs a reliable developer?
-            </h2>
+            {/* h3 — inside the skills section which already has an h2 above */}
+            <h3 className="mt-4 section-title text-white">
+              {hireSection.title}
+            </h3>
             <p className="mt-5 body-copy text-white/58">
-              Send the scope, reference, or rough idea — wherever you are. I work remotely with clients worldwide and can help shape the flow, build the interface, connect the backend, and ship it cleanly.
+              {hireSection.description}
             </p>
 
             <div className="mt-8 grid gap-3">
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 button-label text-[#0b0d0e] transition hover:bg-white"
-                href={`mailto:${contact.email}`}
+                href={`mailto:${hireSection.email}`}
               >
                 Let&apos;s Talk
               </a>
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 px-6 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                href={contact.linkedin}
+                href={hireSection.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -71,7 +73,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
               </a>
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 px-6 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                href={contact.upwork}
+                href={hireSection.upwork}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -80,9 +82,9 @@ export function SkillsSection({ section }: SkillsSectionProps) {
             </div>
 
             <div className="mt-8 border-t border-white/10 pt-6">
-              <p className="meta-label text-white/34">Direct Email</p>
-              <a className="mt-2 block break-words text-base font-black text-white transition hover:text-[#d6ad63]" href={`mailto:${contact.email}`}>
-                {contact.email}
+              <p className="meta-label text-white/40">Direct Email</p>
+              <a className="mt-2 block break-words text-base font-black text-white transition hover:text-[#d6ad63]" href={`mailto:${hireSection.email}`}>
+                {hireSection.email}
               </a>
             </div>
           </div>
@@ -91,3 +93,4 @@ export function SkillsSection({ section }: SkillsSectionProps) {
     </section>
   );
 }
+

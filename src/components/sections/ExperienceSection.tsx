@@ -1,5 +1,4 @@
 import { ExperienceSectionData } from '@/types/sections';
-import { personal } from '@/lib/data';
 
 interface ExperienceSectionProps {
   section: ExperienceSectionData;
@@ -17,12 +16,12 @@ export function ExperienceSection({ section }: ExperienceSectionProps) {
           <p className="mt-5 body-copy text-[#e6e6e6]">{section.description}</p>
           <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10">
             <div className="bg-[#0b0d0e] p-5">
-              <p className="card-title text-[#d6ad63]">{personal.experience}</p>
-              <p className="mt-2 meta-label text-white/38">Experience</p>
+              <p className="card-title text-[#d6ad63]">{section.yearsExperience}</p>
+              <p className="mt-2 meta-label text-white/45">Experience</p>
             </div>
             <div className="bg-[#0b0d0e] p-5">
               <p className="card-title text-[#d6ad63]">{section.experience.length}</p>
-              <p className="mt-2 meta-label text-white/38">Companies</p>
+              <p className="mt-2 meta-label text-white/45">Companies</p>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ export interface SectionBase {
 // About Section
 export interface AboutSectionData extends SectionBase {
   id: 'about';
+  secondaryDescription: string;
 }
 
 // Services Section
@@ -34,6 +35,8 @@ export interface ServicesSectionData extends SectionBase {
   serviceCopy: ServicesCopy;
   serviceTags: ServiceTag;
   serviceStacks: ServiceStack;
+  coreOfferDescription: string;
+  specialistStack: string[];
 }
 
 // Works Section
@@ -65,6 +68,7 @@ export interface ExperienceSectionData extends SectionBase {
   id: 'experience';
   experience: ExperienceItem[];
   experienceFocus: ExperienceFocus;
+  yearsExperience: string;
 }
 
 // Skills Section
@@ -88,8 +92,17 @@ export interface FaqSectionData extends SectionBase {
   items: FaqItemData[];
 }
 
+export interface HireSectionData {
+  title: string;
+  description: string;
+  email: string;
+  linkedin: string;
+  upwork: string;
+}
+
 export interface SkillsSectionData extends SectionBase {
   id: 'skills';
   coreStrengths: CoreStrengthItem[];
   techGroups: TechItem[];
+  hireSection: HireSectionData;
 }

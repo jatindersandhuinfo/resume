@@ -30,7 +30,7 @@ export function WorksSection({ section }: WorksSectionProps) {
               className="interactive-card group grid gap-4 border-b border-white/10 py-7 transition hover:bg-white/[0.03] md:grid-cols-[72px_1fr_1.1fr_auto] md:gap-5"
               {...props}
             >
-              <p className="text-sm font-black text-white/32">0{index + 1}</p>
+              <p className="text-sm font-black text-white/45">0{index + 1}</p>
               <div>
                 <h3 className="subsection-title text-white transition group-hover:text-[#d6ad63]">
                   {project.name}

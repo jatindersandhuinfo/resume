@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { personal } from '@/lib/data';
 
 interface HeroImageProps {
@@ -6,15 +7,13 @@ interface HeroImageProps {
 
 export function HeroImage({ alt }: HeroImageProps) {
   return (
-    <img
+    <Image
       src={personal.heroImage}
-      srcSet={`${personal.heroImage} 1x, ${personal.heroImageRetina} 2x`}
       alt={alt}
-      width={960}
-      height={1200}
-      decoding="async"
-      fetchPriority="high"
-      className="hero-image absolute inset-0 z-0 h-full w-full object-cover object-top"
+      fill
+      priority
+      sizes="(max-width: 1024px) 100vw, 70vw"
+      className="hero-image z-0 object-cover object-top"
     />
   );
 }
