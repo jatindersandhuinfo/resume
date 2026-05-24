@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#0b0d0e] px-5 text-center text-white">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-[#0b0d0e] px-5 text-center text-[#0b0d0e] dark:text-white">
       <h1 className="hero-title">404 — Page Not Found</h1>
-      <p className="mt-6 max-w-md body-copy text-white/60">
+      <p className="mt-6 max-w-md body-copy text-black/60 dark:text-white/60">
         This page does not exist. Return to the portfolio homepage.
       </p>
       <Link

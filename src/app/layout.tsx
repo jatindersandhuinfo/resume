@@ -20,6 +20,33 @@ const bebasNeue = Bebas_Neue({
 });
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
+const themeInitScript = `(() => {
+  try {
+    const key = 'resume-theme';
+    const saved = window.localStorage.getItem(key);
+    const theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  } catch {
+    document.documentElement.classList.add('dark');
+  }
+})();`;
+const sectionHashScrollScript = `(() => {
+  const TARGETS = new Set(['team', 'works']);
+  const OFFSET = 110;
+
+  const scrollToSectionHash = () => {
+    if (window.location.pathname !== '/') return;
+    const hash = window.location.hash.replace('#', '');
+    if (!TARGETS.has(hash)) return;
+    const el = document.getElementById(hash);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  window.addEventListener('hashchange', scrollToSectionHash);
+  window.addEventListener('load', () => requestAnimationFrame(scrollToSectionHash));
+})();`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(seo.siteUrl),
@@ -93,7 +120,7 @@ export const metadata: Metadata = {
         width: 960,
         height: 1200,
         alt: `${fullName} — ${personal.role}`,
-        type: 'image/webp',
+        type: 'image/png',
       },
     ],
   },
@@ -107,13 +134,13 @@ export const metadata: Metadata = {
     images: {
       url: seo.ogImage,
       alt: `${fullName} — Full Stack Developer Portfolio`,
-      type: 'image/webp',
+      type: 'image/png',
     },
   },
 
   other: {
     'theme-color': '#0b0d0e',
-    'color-scheme': 'dark',
+    'color-scheme': 'light dark',
     'geo.region': 'IN-PB',
     'geo.placename': 'Bathinda, Punjab, India',
     'content-language': 'en-IN',
@@ -128,11 +155,13 @@ export default function RootLayout({
   const structuredData = getStructuredData();
 
   return (
-    <html lang="en-IN" className={`${dmSans.variable} ${bebasNeue.variable}`}>
+    <html lang="en-IN" className={`${dmSans.variable} ${bebasNeue.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link rel="me" href={contact.linkedin} />
         <link rel="me" href={contact.github} />
         <link rel="me" href={contact.upwork} />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: sectionHashScrollScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -141,7 +170,12 @@ export default function RootLayout({
         />
       </head>
 
-      <body>{children}</body>
+      <body>
+        <a href="#page-content" className="skip-link">
+          Skip to main content
+        </a>
+        <div id="page-content">{children}</div>
+      </body>
     </html>
   );
 }

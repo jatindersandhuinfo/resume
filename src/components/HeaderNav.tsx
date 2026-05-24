@@ -3,40 +3,32 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { contact, personal } from '@/lib/data';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const navItems = [
-  { label: 'About Me', href: '#about' },
-  { label: 'What I Do', href: '#services' },
-  { label: 'Works', href: '#works' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'About Me', href: '/#about' },
+  { label: 'What I Do', href: '/#services' },
+  { label: 'Works', href: '/#works' },
+  { label: 'FAQ', href: '/#faq' },
   { label: 'Blog', href: '/blog/how-to-hire-freelance-full-stack-developer' },
-  { label: 'Hire Me', href: '#contact' },
+  { label: 'Hire Me', href: '/#contact' },
 ];
 
 export default function HeaderNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b0d0e]/92 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-black/10 dark:border-white/10 bg-white/95 text-[#0b0d0e] dark:bg-[#0b0d0e]/95 dark:text-white backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-[#0b0d0e]/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-10">
-        <a href="#" className="text-lg font-black uppercase tracking-[0.06em]">
+        <a href="#" className="text-lg font-black uppercase tracking-[0.06em] text-[#0b0d0e] dark:text-white">
           {personal.firstName}
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm uppercase tracking-[0.18em] md:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-5 text-sm uppercase tracking-[0.14em] text-black/80 dark:text-white/80 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => {
-            const isHash = item.href.startsWith('#');
-            const className = "transition-colors duration-200 hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]";
+            const className = "rounded-full px-1 py-1.5 transition-colors duration-200 hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]";
 
-            return isHash ? (
-              <a
-                key={item.href}
-                href={item.href}
-                className={className}
-              >
-                {item.label}
-              </a>
-            ) : (
+            return (
               <Link
                 key={item.href}
                 href={item.href}
@@ -49,15 +41,16 @@ export default function HeaderNav() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <a
-            className="hidden rounded-full border border-white/18 bg-[#d6ad63] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] md:inline-flex"
+            className="hidden rounded-full border border-black/18 dark:border-white/18 bg-[#d6ad63] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] dark:hover:bg-[#f0d49a] lg:inline-flex"
             href={`mailto:${contact.email}`}
           >
             Hire Me
           </a>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/18 text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63] md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/18 dark:border-white/18 text-[#0b0d0e] dark:text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63] lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -77,23 +70,13 @@ export default function HeaderNav() {
       </div>
 
       {menuOpen ? (
-        <div id="mobile-navigation" className="md:hidden border-t border-white/10 bg-[#0b0d0e] px-5 py-5">
+        <div id="mobile-navigation" className="lg:hidden border-t border-black/10 dark:border-white/10 bg-white text-[#0b0d0e] dark:bg-[#0b0d0e] dark:text-white px-5 py-5">
           <nav className="flex flex-col gap-3" aria-label="Mobile navigation">
             {navItems.map((item) => {
-              const isHash = item.href.startsWith('#');
-              const className = "rounded-2xl px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]";
+              const className = "rounded-2xl px-4 py-3 text-sm font-semibold text-[#0b0d0e] dark:text-white transition duration-200 hover:bg-black/[0.06] dark:hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63]";
               const onClick = () => setMenuOpen(false);
 
-              return isHash ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={className}
-                  onClick={onClick}
-                >
-                  {item.label}
-                </a>
-              ) : (
+              return (
                 <Link
                   key={item.href}
                   href={item.href}

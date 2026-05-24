@@ -18,11 +18,10 @@
   }
 
   body {
-    @apply min-h-screen bg-[#0b0d0e] font-dm antialiased;
+    @apply min-h-screen bg-white text-[#0b0d0e] dark:bg-[#0b0d0e] dark:text-[#e6e6e6] font-dm antialiased;
     padding: 0;
     font-size: 16px;
     line-height: 1.6;
-    color: #e6e6e6;
     font-synthesis: none;
   }
 
@@ -128,9 +127,30 @@
 }
 
 button:focus-visible,
-a:focus-visible {
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 3px solid #d6ad63;
   outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -120px;
+  z-index: 1000;
+  border-radius: 9999px;
+  background: #d6ad63;
+  color: #0b0d0e;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.75rem 1rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  top: 1rem;
 }
 
 .button-label {
@@ -157,6 +177,18 @@ a:focus-visible {
   contain-intrinsic-size: 900px;
 }
 
+/* Keep anchor targets visible below sticky header on hash navigation. */
+#about,
+#services,
+#experience,
+#skills,
+#education,
+#faq,
+#contact {
+  scroll-margin-top: 7.25rem;
+}
+
+
 .animate-fade-up {
   animation: fade-up 720ms ease both;
 }
@@ -182,9 +214,16 @@ a:focus-visible {
   will-change: transform, border-color, background-color;
 }
 
+.team-project-row {
+  transition: background 0.18s ease;
+}
+
+.team-project-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .hero-image {
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  image-rendering: auto;
 }
 
 @supports (animation-timeline: view()) {

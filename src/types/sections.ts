@@ -1,6 +1,6 @@
 // Section base type
 export interface SectionBase {
-  id: 'about' | 'services' | 'works' | 'experience' | 'faq' | 'skills';
+  id: 'about' | 'services' | 'works' | 'experience' | 'faq' | 'skills' | 'team';
   kicker: string;
   title: string;
   description: string;
@@ -41,10 +41,12 @@ export interface ServicesSectionData extends SectionBase {
 
 // Works Section
 export interface WorkItem {
+  slug: string;
   name: string;
   tech: string;
   result: string;
   url?: string;
+  category: string;
 }
 
 export interface WorksSectionData extends SectionBase {
@@ -98,6 +100,8 @@ export interface HireSectionData {
   email: string;
   linkedin: string;
   upwork: string;
+  fiverr?: string;
+  freelancer?: string;
 }
 
 export interface SkillsSectionData extends SectionBase {
@@ -105,4 +109,35 @@ export interface SkillsSectionData extends SectionBase {
   coreStrengths: CoreStrengthItem[];
   techGroups: TechItem[];
   hireSection: HireSectionData;
+}
+
+// Team Section
+export interface TeamProject {
+  slug?: string;
+  name: string;
+  tech: string;
+  result: string;
+  url?: string;
+  category: string;
+}
+
+export interface TeamMember {
+  slug: string;
+  name: string;
+  image?: string;
+  role: string;
+  bio: string;
+  avatar: string;
+  avatarBg: string;
+  avatarColor: string;
+  skills: string[];
+  projects: TeamProject[];
+  linkedin?: string;
+  github?: string;
+  website?: string;
+}
+
+export interface TeamSectionData extends SectionBase {
+  id: 'team';
+  members: TeamMember[];
 }

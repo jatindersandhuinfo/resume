@@ -26,6 +26,8 @@ export interface ContactInfo {
   linkedin: string;
   github: string;
   upwork: string;
+  fiverr: string;
+  freelancer: string;
   telegram: string;
   discord: string;
 }
@@ -60,11 +62,31 @@ export interface Education {
   description: string;
 }
 
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
+
+export interface TechStackGroup {
+  group: string;
+  items: string[];
+}
+
 export interface Project {
+  slug: string;
   name: string;
+  coverImage?: string;
+  tagline: string;
   tech: string;
   result: string;
   url?: string;
+  category: string;
+  year: string;
+  overview: string;
+  challenge: string;
+  solution: string;
+  metrics: ProjectMetric[];
+  techStack: TechStackGroup[];
 }
 
 export interface Service {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
+import HeaderNav from '@/components/HeaderNav';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How to Hire a Freelance Full Stack Developer (2026 Guide)';
@@ -56,48 +57,45 @@ const articleSchema = {
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen bg-[#0b0d0e] text-white">
+    <main className="min-h-screen bg-white dark:bg-[#0b0d0e] text-[#0b0d0e] dark:text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b0d0e]/92 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-10">
-          <Link href="/" className="text-lg font-black uppercase tracking-[0.06em]">
-            {personal.firstName}
-          </Link>
+      <HeaderNav />
+      <div className="border-b border-black/10 dark:border-white/10">
+        <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
           <Link
             href="/"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#d6ad63]"
+            className="text-sm font-semibold uppercase tracking-[0.12em] text-black/60 dark:text-white/60 transition hover:text-[#d6ad63]"
           >
             ← Back to Portfolio
           </Link>
         </div>
-      </header>
+      </div>
 
       {/* Article */}
       <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
+        <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/40 dark:text-white/40">
           <Link href="/" className="transition hover:text-[#d6ad63]">Home</Link>
           <span aria-hidden="true">›</span>
-          <span className="text-white/60">Blog</span>
+          <span className="text-black/60 dark:text-white/60">Blog</span>
         </nav>
 
         {/* Meta */}
         <p className="section-kicker mb-5">Guide · Full Stack Development</p>
-        <h1 className="hero-title text-white">{articleTitle}</h1>
-        <p className="mt-6 body-copy-lg text-white/60">{articleDescription}</p>
+        <h1 className="hero-title text-[#0b0d0e] dark:text-white">{articleTitle}</h1>
+        <p className="mt-6 body-copy-lg text-black/60 dark:text-white/60">{articleDescription}</p>
 
-        <div className="mt-6 flex items-center gap-4 border-b border-white/10 pb-8">
+        <div className="mt-6 flex items-center gap-4 border-b border-black/10 dark:border-white/10 pb-8">
           <div className="grid h-11 w-11 place-items-center rounded-full border border-[#d6ad63]/40 text-sm font-black text-[#d6ad63]">
             JS
           </div>
           <div>
-            <p className="text-sm font-bold text-white">{fullName}</p>
-            <p className="meta-label text-white/40">
+            <p className="text-sm font-bold text-[#0b0d0e] dark:text-white">{fullName}</p>
+            <p className="meta-label text-black/40 dark:text-white/40">
               Published {new Date(publishDate).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
           </div>
@@ -107,17 +105,17 @@ export default function BlogPost() {
         <div className="prose-content mt-10 space-y-10">
 
           <section aria-labelledby="why-freelance">
-            <h2 id="why-freelance" className="subsection-title text-white">Why Hire a Freelance Full Stack Developer?</h2>
-            <p className="mt-4 body-copy text-white/70">
+            <h2 id="why-freelance" className="subsection-title text-[#0b0d0e] dark:text-white">Why Hire a Freelance Full Stack Developer?</h2>
+            <p className="mt-4 body-copy text-black/70 dark:text-white/70">
               Hiring a freelance full stack developer gives you the flexibility to scale your team on demand, access niche expertise, and deliver projects faster — without the overhead of a full-time hire. A good freelancer handles both frontend and backend, reducing coordination complexity and handoff delays.
             </p>
-            <p className="mt-4 body-copy text-white/70">
+            <p className="mt-4 body-copy text-black/70 dark:text-white/70">
               For startups and growing businesses, a single trusted developer who knows your stack end-to-end is often more efficient than multiple specialists who need constant alignment.
             </p>
           </section>
 
           <section aria-labelledby="what-to-look-for">
-            <h2 id="what-to-look-for" className="subsection-title text-white">What to Look for in a Full Stack Developer</h2>
+            <h2 id="what-to-look-for" className="subsection-title text-[#0b0d0e] dark:text-white">What to Look for in a Full Stack Developer</h2>
             <div className="mt-4 space-y-4">
               {[
                 {
@@ -141,16 +139,16 @@ export default function BlogPost() {
                   body: "They should understand input validation, SQL injection prevention, secure API authentication (JWT, OAuth), and basic HTTPS/CORS setup — even if you're not building anything sensitive.",
                 },
               ].map((item) => (
-                <article key={item.title} className="rounded-lg border border-white/10 bg-white/[0.03] p-5">
-                  <h3 className="card-title text-white">{item.title}</h3>
-                  <p className="mt-3 small-copy text-white/65">{item.body}</p>
+                <article key={item.title} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                  <h3 className="card-title text-[#0b0d0e] dark:text-white">{item.title}</h3>
+                  <p className="mt-3 small-copy text-black/65 dark:text-white/65">{item.body}</p>
                 </article>
               ))}
             </div>
           </section>
 
           <section aria-labelledby="questions">
-            <h2 id="questions" className="subsection-title text-white">Questions to Ask Before Hiring</h2>
+            <h2 id="questions" className="subsection-title text-[#0b0d0e] dark:text-white">Questions to Ask Before Hiring</h2>
             <ul className="mt-4 space-y-3">
               {[
                 "What is your preferred tech stack, and why?",
@@ -164,14 +162,14 @@ export default function BlogPost() {
               ].map((q) => (
                 <li key={q} className="flex items-start gap-3">
                   <span aria-hidden="true" className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#d6ad63]" />
-                  <span className="small-copy text-white/70">{q}</span>
+                  <span className="small-copy text-black/70 dark:text-white/70">{q}</span>
                 </li>
               ))}
             </ul>
           </section>
 
           <section aria-labelledby="red-flags">
-            <h2 id="red-flags" className="subsection-title text-white">Red Flags to Avoid</h2>
+            <h2 id="red-flags" className="subsection-title text-[#0b0d0e] dark:text-white">Red Flags to Avoid</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {[
                 { flag: "No live examples", detail: "All projects are 'private' or demo-only." },
@@ -181,16 +179,16 @@ export default function BlogPost() {
                 { flag: "Disappears mid-project", detail: "Poor communication history on platforms or references." },
                 { flag: "Won't share code", detail: "Refuses to walk you through what they built or why." },
               ].map((item) => (
-                <div key={item.flag} className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
+                <div key={item.flag} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-4">
                   <p className="text-sm font-bold text-[#d6ad63]">{item.flag}</p>
-                  <p className="mt-1 small-copy text-white/60">{item.detail}</p>
+                  <p className="mt-1 small-copy text-black/60 dark:text-white/60">{item.detail}</p>
                 </div>
               ))}
             </div>
           </section>
 
           <section aria-labelledby="where-to-hire">
-            <h2 id="where-to-hire" className="subsection-title text-white">Where to Hire a Freelance Full Stack Developer</h2>
+            <h2 id="where-to-hire" className="subsection-title text-[#0b0d0e] dark:text-white">Where to Hire a Freelance Full Stack Developer</h2>
             <div className="mt-4 space-y-3">
               {[
                 { platform: 'Upwork', note: 'Best for vetted freelancers with verified work history and reviews.' },
@@ -200,16 +198,16 @@ export default function BlogPost() {
                 { platform: 'Personal Referral', note: 'Always the highest-trust channel — ask your network first.' },
               ].map((item) => (
                 <div key={item.platform} className="flex items-start gap-3">
-                  <span className="meta-label rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-[#d6ad63]">{item.platform}</span>
-                  <p className="small-copy mt-1.5 text-white/65">{item.note}</p>
+                  <span className="meta-label rounded-full border border-black/10 dark:border-white/10 bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1.5 text-[#d6ad63]">{item.platform}</span>
+                  <p className="small-copy mt-1.5 text-black/65 dark:text-white/65">{item.note}</p>
                 </div>
               ))}
             </div>
           </section>
 
           <section aria-labelledby="structure">
-            <h2 id="structure" className="subsection-title text-white">How to Structure the Engagement</h2>
-            <p className="mt-4 body-copy text-white/70">
+            <h2 id="structure" className="subsection-title text-[#0b0d0e] dark:text-white">How to Structure the Engagement</h2>
+            <p className="mt-4 body-copy text-black/70 dark:text-white/70">
               A clear structure prevents most freelance relationship problems. Here is a practical framework:
             </p>
             <ol className="mt-5 space-y-4">
@@ -221,12 +219,12 @@ export default function BlogPost() {
                 { step: 'Clarify IP ownership', detail: 'All code written for your project should transfer to you on final payment — put it in writing.' },
               ].map((item, index) => (
                 <li key={item.step} className="flex items-start gap-4">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/10 text-sm font-black text-[#d6ad63]">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-black/10 dark:border-white/10 text-sm font-black text-[#d6ad63]">
                     {index + 1}
                   </span>
                   <div>
-                    <p className="text-sm font-bold text-white">{item.step}</p>
-                    <p className="mt-1 small-copy text-white/60">{item.detail}</p>
+                    <p className="text-sm font-bold text-[#0b0d0e] dark:text-white">{item.step}</p>
+                    <p className="mt-1 small-copy text-black/60 dark:text-white/60">{item.detail}</p>
                   </div>
                 </li>
               ))}
@@ -236,12 +234,12 @@ export default function BlogPost() {
         </div>
 
         {/* CTA */}
-        <aside className="mt-14 rounded-lg border border-[#d6ad63]/30 bg-[#111416] p-7" aria-label="Hire developer CTA">
+        <aside className="mt-14 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
           <p className="section-kicker">Looking for a Developer?</p>
-          <h2 className="mt-3 subsection-title text-white">
+          <h2 className="mt-3 subsection-title text-[#0b0d0e] dark:text-white">
             {fullName} — Available for Freelance Worldwide
           </h2>
-          <p className="mt-4 body-copy text-white/65">
+          <p className="mt-4 body-copy text-black/65 dark:text-white/65">
             {personal.summary}. Remote-first, practical delivery, clean code.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -253,7 +251,7 @@ export default function BlogPost() {
             </a>
             <Link
               href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/14 px-6 button-label text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/14 dark:border-white/14 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
             >
               View Portfolio
             </Link>
@@ -262,8 +260,8 @@ export default function BlogPost() {
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 px-5 py-8 text-center">
-        <p className="text-xs text-white/30">
+      <footer className="border-t border-black/10 dark:border-white/10 px-5 py-8 text-center">
+        <p className="text-xs text-black/30 dark:text-white/30">
           © {new Date().getFullYear()} {fullName}. All rights reserved.
           {' · '}
           <Link href="/" className="transition hover:text-[#d6ad63]">Back to Portfolio</Link>
