@@ -38,7 +38,7 @@ export function TeamSection({ section }: TeamSectionProps) {
             {section.title}
           </h2>
         </div>
-        <p className="max-w-2xl body-copy text-black/62 dark:text-white/62 lg:pt-10">{section.description}</p>
+        <p className="max-w-2xl body-copy text-black/60 dark:text-white/60 lg:pt-10">{section.description}</p>
       </div>
 
       {/* ── Member cards ───────────────────────────────────────────── */}
@@ -51,7 +51,7 @@ export function TeamSection({ section }: TeamSectionProps) {
             <Link
               key={member.slug}
               href={`/team/${member.slug}`}
-              className="group relative overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] transition duration-300 hover:border-black/22 dark:hover:border-white/22 hover:shadow-2xl hover:shadow-black/40"
+              className="group relative overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] transition duration-300 hover:border-black/25 dark:hover:border-white/25 hover:shadow-2xl hover:shadow-black/40"
               aria-label={`View ${member.name}'s profile and projects`}
             >
               {/* Top glow on hover */}
@@ -132,7 +132,7 @@ export function TeamSection({ section }: TeamSectionProps) {
                   {member.skills.slice(0, 4).map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.04] px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.06em] text-black/45 dark:text-white/45"
+                      className="rounded-full border border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.04] px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.06em] text-black/40 dark:text-white/40"
                     >
                       {skill}
                     </span>
@@ -145,7 +145,7 @@ export function TeamSection({ section }: TeamSectionProps) {
                 </div>
 
                 {/* ── Project category chips ─────────────────── */}
-                <div className="mt-5 border-t border-black/08 dark:border-white/08 pt-5">
+                <div className="mt-5 border-t border-black/10 dark:border-white/10 pt-5">
                   <p className="mb-2.5 text-[0.65rem] font-bold uppercase tracking-[0.1em] text-black/40 dark:text-white/35">
                     Works in
                   </p>

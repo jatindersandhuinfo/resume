@@ -15,7 +15,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
               {section.title}
             </h2>
           </div>
-          <p className="max-w-2xl body-copy text-black/62 dark:text-white/62 lg:pt-10">
+          <p className="max-w-2xl body-copy text-black/60 dark:text-white/60 lg:pt-10">
             {section.description}
           </p>
         </div>
@@ -26,14 +26,14 @@ export function ServicesSection({ section }: ServicesSectionProps) {
             <h3 className="mt-5 subsection-title text-[#0b0d0e] dark:text-white">
               Complete product delivery from idea to launch.
             </h3>
-            <p className="mt-5 max-w-2xl body-copy text-black/62 dark:text-white/62">
+            <p className="mt-5 max-w-2xl body-copy text-black/60 dark:text-white/60">
               {section.coreOfferDescription}
             </p>
           </article>
           <div className="grid gap-px overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10 sm:grid-cols-3 lg:grid-cols-1">
             {section.specialistStack.map((item) => (
               <div key={item} className="bg-white dark:bg-[#15191b] p-5">
-                <p className="meta-label text-black/45 dark:text-white/45">Specialist Stack</p>
+                <p className="meta-label text-black/40 dark:text-white/40">Specialist Stack</p>
                 <p className="mt-2 text-base font-black text-[#0b0d0e] dark:text-white">{item}</p>
               </div>
             ))}
@@ -44,7 +44,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
           {section.services.map((service, index) => (
             <article
               key={service.label}
-              className="interactive-card group relative min-h-[280px] overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad63]/55 hover:bg-black/[0.03] dark:hover:bg-[#15191b]"
+              className="interactive-card group relative min-h-[280px] overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad63]/50 hover:bg-black/[0.03] dark:hover:bg-[#15191b]"
             >
               <p className="absolute -right-2 -top-3 text-[5.75rem] font-black leading-none text-black/[0.08] dark:text-white/[0.08] transition group-hover:text-[#d6ad63]/15">
                 0{index + 1}
@@ -54,7 +54,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
                 <span className="grid h-11 w-11 place-items-center rounded-full border border-black/10 dark:border-white/10 text-sm font-black text-[#d6ad63]">
                   0{index + 1}
                 </span>
-                <span className="rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-3 py-1 meta-label text-black/45 dark:text-white/45 transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
+                <span className="rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-3 py-1 meta-label text-black/40 dark:text-white/40 transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
                   {section.serviceTags[service.label] ?? 'Web'}
                 </span>
               </div>
@@ -68,7 +68,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
 
               <div className="relative mt-6 flex flex-wrap gap-2">
                 {(section.serviceStacks[service.label] ?? ['Web', 'Build', 'Support']).map((item) => (
-                  <span key={item} className="rounded-full bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1 text-xs font-bold text-black/45 dark:text-white/45">
+                  <span key={item} className="rounded-full bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1 text-xs font-bold text-black/40 dark:text-white/40">
                     {item}
                   </span>
                 ))}

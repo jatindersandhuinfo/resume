@@ -24,7 +24,7 @@ export function FaqSection({ section }: FaqSectionProps) {
               {section.title}
             </h2>
           </div>
-          <p className="max-w-2xl body-copy text-black/62 dark:text-white/62 lg:pt-10">{section.description}</p>
+          <p className="max-w-2xl body-copy text-black/60 dark:text-white/60 lg:pt-10">{section.description}</p>
         </div>
 
         <div className="space-y-3">
@@ -37,7 +37,7 @@ export function FaqSection({ section }: FaqSectionProps) {
               <article
                 key={item.question}
                 className={`interactive-card overflow-hidden rounded-lg border bg-white dark:bg-[#0b0d0e] transition duration-300 ${
-                  isOpen ? 'border-[#d6ad63]/55' : 'border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'
+                  isOpen ? 'border-[#d6ad63]/50' : 'border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'
                 }`}
               >
                 <h3>
@@ -77,7 +77,7 @@ export function FaqSection({ section }: FaqSectionProps) {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="border-t border-black/10 dark:border-white/10 px-5 pb-5 pt-4 small-copy leading-relaxed text-black/62 dark:text-white/62 sm:px-6 sm:pb-6 sm:pl-[4.75rem]">
+                    <p className="border-t border-black/10 dark:border-white/10 px-5 pb-5 pt-4 small-copy leading-relaxed text-black/60 dark:text-white/60 sm:px-6 sm:pb-6 sm:pl-[4.75rem]">
                       {item.answer}
                     </p>
                   </div>

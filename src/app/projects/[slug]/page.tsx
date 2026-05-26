@@ -21,21 +21,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fullName = `${personal.firstName} ${personal.lastName}`;
   const url = `${seo.siteUrl}/projects/${slug}`;
+  const title = `${project.name} — ${project.category} Project by ${fullName}`;
+  const techList = project.tech.split(',').map((t: string) => t.trim());
+  const description = `${project.tagline} Built with ${techList.slice(0, 4).join(', ')}. Case study by ${fullName}, freelance full stack developer.`;
+  const keywords = [
+    project.name,
+    ...techList,
+    project.category,
+    `${project.category} developer`,
+    fullName,
+    'freelance full stack developer',
+    'hire full stack developer',
+    'web development case study',
+  ].join(', ');
 
   return {
-    title: `${project.name} — ${fullName}`,
-    description: project.tagline,
+    title,
+    description,
+    keywords,
     alternates: { canonical: url },
     openGraph: {
-      type: 'website',
+      type: 'article',
       url,
-      title: `${project.name} — ${fullName}`,
-      description: project.tagline,
+      title,
+      description,
+      images: project.coverImage ? [{ url: `${seo.siteUrl}${project.coverImage}`, width: 1200, height: 630, alt: project.name }] : [{ url: seo.ogImage }],
+      siteName: `${fullName} — Portfolio`,
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${project.name} — ${fullName}`,
-      description: project.tagline,
+      title,
+      description,
+      images: project.coverImage ? [`${seo.siteUrl}${project.coverImage}`] : [seo.ogImage],
     },
   };
 }
@@ -117,7 +134,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             <span aria-hidden="true" className="text-black/20 dark:text-white/20">›</span>
             <Link href="/#works" className="transition hover:text-[#d6ad63]">Works</Link>
             <span aria-hidden="true" className="text-black/20 dark:text-white/20">›</span>
-            <span className="text-black/55 dark:text-white/55">{project.name}</span>
+            <span className="text-black/50 dark:text-white/50">{project.name}</span>
           </nav>
 
           <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -129,7 +146,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   <div className="w-full mb-8 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 aspect-video relative">
                     <Image
                       src={project.coverImage}
-                      alt={project.name}
+                      alt={`${project.name} — ${project.category} project by ${fullName}, freelance full stack developer`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 1280px) 100vw, 1280px"
@@ -161,7 +178,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               </h1>
 
               {/* Tagline */}
-              <p className="mt-5 body-copy-lg max-w-2xl text-black/62 dark:text-white/62">
+              <p className="mt-5 body-copy-lg max-w-2xl text-black/60 dark:text-white/60">
                 {project.tagline}
               </p>
 
@@ -170,7 +187,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.tech.split(' · ').map((t) => (
                   <span
                     key={t}
-                    className="meta-label rounded-full border border-black/12 dark:border-white/12 bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1.5 text-black/60 dark:text-white/60"
+                    className="meta-label rounded-full border border-black/10 dark:border-white/10 bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1.5 text-black/60 dark:text-white/60"
                   >
                     {t}
                   </span>
@@ -194,13 +211,13 @@ export default async function ProjectDetailPage({ params }: Props) {
                   </svg>
                 </a>
               ) : (
-                <span className="inline-flex min-h-[52px] items-center rounded-full border border-black/12 dark:border-white/12 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-black/40 dark:text-white/40">
+                <span className="inline-flex min-h-[52px] items-center rounded-full border border-black/10 dark:border-white/10 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-black/40 dark:text-white/40">
                   Private Project
                 </span>
               )}
               <Link
                 href={`mailto:${contact.email}`}
-                className="inline-flex min-h-[52px] items-center rounded-full border border-black/12 dark:border-white/12 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+                className="inline-flex min-h-[52px] items-center rounded-full border border-black/10 dark:border-white/10 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
               >
                 Hire Me
               </Link>
@@ -225,7 +242,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 >
                   {m.value}
                 </p>
-                <p className="mt-2.5 text-xs font-bold uppercase tracking-widest text-black/45 dark:text-white/45">
+                <p className="mt-2.5 text-xs font-bold uppercase tracking-widest text-black/40 dark:text-white/40">
                   {m.label}
                 </p>
               </div>
@@ -252,7 +269,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <p className="section-kicker" style={{ color: colors.accent }}>Overview</p>
               </div>
               <h2 className="subsection-title text-[#0b0d0e] dark:text-white">What is this project?</h2>
-              <p className="mt-5 body-copy text-black/62 dark:text-white/62 max-w-2xl">{project.overview}</p>
+              <p className="mt-5 body-copy text-black/60 dark:text-white/60 max-w-2xl">{project.overview}</p>
             </div>
 
             {/* Challenge */}
@@ -266,9 +283,9 @@ export default async function ProjectDetailPage({ params }: Props) {
               </div>
               <h2 className="subsection-title text-[#0b0d0e] dark:text-white">What problem needed solving?</h2>
               <div
-                className="mt-5 rounded-2xl border border-black/08 dark:border-white/08 bg-black/[0.02] dark:bg-white/[0.03] p-7"
+                className="mt-5 rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] p-7"
               >
-                <p className="body-copy text-black/62 dark:text-white/62 max-w-2xl">{project.challenge}</p>
+                <p className="body-copy text-black/60 dark:text-white/60 max-w-2xl">{project.challenge}</p>
               </div>
             </div>
 
@@ -283,7 +300,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <p className="section-kicker" style={{ color: colors.accent }}>The Solution</p>
               </div>
               <h2 className="subsection-title text-[#0b0d0e] dark:text-white">How was it built?</h2>
-              <p className="mt-5 body-copy text-black/62 dark:text-white/62 max-w-2xl">{project.solution}</p>
+              <p className="mt-5 body-copy text-black/60 dark:text-white/60 max-w-2xl">{project.solution}</p>
             </div>
 
           </div>
@@ -324,7 +341,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-black/20 dark:hover:border-white/20 hover:text-[#0b0d0e] dark:hover:text-white"
+                    className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-black/20 dark:hover:border-white/20 hover:text-[#0b0d0e] dark:hover:text-white"
                   >
                     <span>Live Site</span>
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -334,7 +351,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 )}
                 <a
                   href={`mailto:${contact.email}`}
-                  className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-[#d6ad63]/40 hover:text-[#d6ad63]"
+                  className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-[#d6ad63]/40 hover:text-[#d6ad63]"
                 >
                   <span>Hire Me for a Similar Project</span>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -345,7 +362,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   href={contact.fiverr}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-[#1dbf73]/40 hover:text-[#1dbf73]"
+                  className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-[#1dbf73]/40 hover:text-[#1dbf73]"
                 >
                   <span>Fiverr Profile</span>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -356,7 +373,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   href={contact.freelancer}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-[#29b2fe]/40 hover:text-[#29b2fe]"
+                  className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-[#29b2fe]/40 hover:text-[#29b2fe]"
                 >
                   <span>Freelancer Profile</span>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -365,7 +382,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </a>
                 <Link
                   href="/#works"
-                  className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-black/20 dark:hover:border-white/20 hover:text-[#0b0d0e] dark:hover:text-white"
+                  className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-black/20 dark:hover:border-white/20 hover:text-[#0b0d0e] dark:hover:text-white"
                 >
                   <span>← All Projects</span>
                 </Link>
@@ -504,7 +521,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </a>
                 <Link
                   href="/#works"
-                  className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-black/12 dark:border-white/12 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
                 >
                   View All Projects
                 </Link>

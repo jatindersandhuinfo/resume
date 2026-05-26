@@ -19,15 +19,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const member = teamSection.members.find((m) => m.slug === slug);
   if (!member) return {};
 
-  const title = `${member.name} — ${member.role} | ${personal.firstName} Sandhu`;
-  const description = member.bio;
+  const title = `${member.name} — ${member.role} | ${personal.firstName} Sandhu Team`;
+  const description = `${member.bio} Works on projects for ${personal.firstName} Sandhu’s freelance development team.`;
   const url = `${seo.siteUrl}/team/${slug}`;
+  const keywords = [
+    member.name,
+    member.role,
+    ...member.skills.slice(0, 6),
+    `${personal.firstName} Sandhu team`,
+    'freelance development team',
+    'web developer',
+    'hire developer',
+  ].join(', ');
 
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: url },
-    openGraph: { type: 'profile', url, title, description },
+    openGraph: {
+      type: 'profile',
+      url,
+      title,
+      description,
+      images: member.image ? [{ url: `${seo.siteUrl}${member.image}`, width: 800, height: 800, alt: member.name }] : [{ url: seo.ogImage }],
+    },
     twitter: { card: 'summary_large_image', title, description },
   };
 }
@@ -102,7 +118,7 @@ export default async function TeamMemberPage({ params }: Props) {
             <span aria-hidden="true" className="text-black/20 dark:text-white/20">›</span>
             <Link href="/#team" className="transition hover:text-[#d6ad63]">Team</Link>
             <span aria-hidden="true" className="text-black/20 dark:text-white/20">›</span>
-            <span className="text-black/55 dark:text-white/55">{member.name}</span>
+            <span className="text-black/50 dark:text-white/50">{member.name}</span>
           </nav>
 
           <div className="grid gap-12 lg:grid-cols-[1fr_360px] lg:items-start">
@@ -140,7 +156,7 @@ export default async function TeamMemberPage({ params }: Props) {
 
                 {/* Status dot */}
                 <div
-                  className="flex items-center gap-2.5 rounded-full border border-black/12 dark:border-white/12 bg-black/[0.04] dark:bg-white/[0.04] px-4 py-2"
+                  className="flex items-center gap-2.5 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.04] px-4 py-2"
                 >
                   <span
                     aria-hidden="true"
@@ -169,7 +185,7 @@ export default async function TeamMemberPage({ params }: Props) {
               </p>
 
               {/* Bio */}
-              <p className="mt-6 body-copy-lg max-w-xl text-black/62 dark:text-white/62">
+              <p className="mt-6 body-copy-lg max-w-xl text-black/60 dark:text-white/60">
                 {member.bio}
               </p>
 
@@ -178,7 +194,7 @@ export default async function TeamMemberPage({ params }: Props) {
                 {member.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="meta-label rounded-full border border-black/12 dark:border-white/12 bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1.5 text-black/60 dark:text-white/60"
+                    className="meta-label rounded-full border border-black/10 dark:border-white/10 bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1.5 text-black/60 dark:text-white/60"
                   >
                     {skill}
                   </span>
@@ -192,7 +208,7 @@ export default async function TeamMemberPage({ params }: Props) {
             >
               {/* Quick stats */}
               <div className="mb-7 grid grid-cols-2 gap-4">
-                <div className="rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] p-4 text-center">
+                <div className="rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-4 text-center">
                   <p className="text-2xl font-black" style={{ color: member.avatarColor }}>
                     {member.projects.length}
                   </p>
@@ -200,7 +216,7 @@ export default async function TeamMemberPage({ params }: Props) {
                     Projects
                   </p>
                 </div>
-                <div className="rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] p-4 text-center">
+                <div className="rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-4 text-center">
                   <p className="text-2xl font-black" style={{ color: member.avatarColor }}>
                     {member.skills.length}
                   </p>
@@ -218,7 +234,7 @@ export default async function TeamMemberPage({ params }: Props) {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-[#0077b5]/40 hover:text-[#0077b5]"
+                    className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-[#0077b5]/40 hover:text-[#0077b5]"
                   >
                     <span>LinkedIn</span>
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -231,7 +247,7 @@ export default async function TeamMemberPage({ params }: Props) {
                     href={member.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-black/25 dark:hover:border-white/25 hover:text-[#0b0d0e] dark:hover:text-white"
+                    className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-black/25 dark:hover:border-white/25 hover:text-[#0b0d0e] dark:hover:text-white"
                   >
                     <span>GitHub</span>
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -244,7 +260,7 @@ export default async function TeamMemberPage({ params }: Props) {
                     href={member.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-black/25 dark:hover:border-white/25 hover:text-[#0b0d0e] dark:hover:text-white"
+                    className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-black/25 dark:hover:border-white/25 hover:text-[#0b0d0e] dark:hover:text-white"
                   >
                     <span>Website</span>
                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -256,7 +272,7 @@ export default async function TeamMemberPage({ params }: Props) {
                   href={contact.fiverr}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-[#1dbf73]/40 hover:text-[#1dbf73]"
+                  className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-[#1dbf73]/40 hover:text-[#1dbf73]"
                 >
                   <span>Fiverr</span>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -267,7 +283,7 @@ export default async function TeamMemberPage({ params }: Props) {
                   href={contact.freelancer}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-black/08 dark:border-white/08 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-[#29b2fe]/40 hover:text-[#29b2fe]"
+                  className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-[#29b2fe]/40 hover:text-[#29b2fe]"
                 >
                   <span>Freelancer</span>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
@@ -309,7 +325,7 @@ export default async function TeamMemberPage({ params }: Props) {
               {member.name.split(' ')[0]}&apos;s projects.
             </h2>
           </div>
-          <p className="max-w-2xl body-copy text-black/62 dark:text-white/62 lg:pt-10">
+          <p className="max-w-2xl body-copy text-black/60 dark:text-white/60 lg:pt-10">
             {member.projects.length} projects across{' '}
             {[...new Set(member.projects.map((p) => p.category))].join(', ')}.
             Click any project to view the full case study.
@@ -336,7 +352,7 @@ export default async function TeamMemberPage({ params }: Props) {
                 <div className="relative flex h-full flex-col">
                   {/* Index + category */}
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="text-sm font-black text-black/45 dark:text-white/35">
+                    <span className="text-sm font-black text-black/40 dark:text-white/35">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span
@@ -534,7 +550,7 @@ export default async function TeamMemberPage({ params }: Props) {
                 </a>
                 <Link
                   href="/#team"
-                  className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-black/12 dark:border-white/12 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
                 >
                   View Full Team
                 </Link>

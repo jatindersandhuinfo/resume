@@ -21,15 +21,60 @@ import type {
 } from '@/types/sections';
 
 export const seo: SeoMeta = {
-  title: 'Jatinder Sandhu — Full Stack Developer | React, Next.js, Node.js, PHP | AI-Powered Development',
+  title: 'Hire Jatinder Sandhu — Freelance Full Stack Developer | React, Next.js, Node.js, PHP',
   description:
-    'Hire Jatinder Sandhu — remote full stack developer for clients worldwide. Based in India, 6+ years, 25+ projects, AI-assisted delivery with Cursor AI & Claude. React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, and API integrations.',
-  keywords:
-    'Jatinder Sandhu, Remote Full Stack Developer, Global Freelance Web Developer, Hire Full Stack Developer Worldwide, International Web Developer, React Developer Remote, Next.js Developer Remote, Node.js Developer Remote, PHP Laravel Developer, WordPress Developer, Shopify Developer, API Integration Developer, AI Integration Developer, Cursor AI Developer, Claude AI Developer, ChatGPT API Developer, OpenAI API Integration, Prompt Engineering, Custom Web Application Developer, Responsive Website Developer, Ecommerce Website Developer, CMS Developer, MySQL Developer, MongoDB Developer, Upwork Full Stack Developer, Full Stack Developer India, Full Stack Developer Punjab',
+    'Hire Jatinder Sandhu, a remote freelance full stack developer with 6+ years experience. Expert in React, Next.js, Node.js, PHP, Laravel, WordPress & AI-powered development. Available worldwide. 25+ projects delivered.',
+  keywords: [
+    // High-intent hire keywords (what clients search)
+    'hire freelance full stack developer',
+    'hire react developer remote',
+    'hire next.js developer',
+    'hire node.js developer',
+    'hire php laravel developer',
+    'hire wordpress developer',
+    'hire shopify developer',
+    'hire full stack developer india',
+    'freelance full stack developer for hire',
+    'remote full stack developer available',
+    // Name & Brand
+    'Jatinder Sandhu',
+    'Jatinder Sandhu developer',
+    'jatinder sandhu full stack',
+    // Technology-specific
+    'react developer freelance',
+    'next.js developer freelance',
+    'node.js developer freelance',
+    'php developer freelance',
+    'laravel developer freelance',
+    'wordpress developer freelance',
+    'shopify developer freelance',
+    'woocommerce developer',
+    'rest api developer',
+    'ai integration developer',
+    'openai api developer',
+    'chatgpt api integration',
+    // Use-case based (what clients need)
+    'custom web application development',
+    'ecommerce website developer',
+    'saas application developer',
+    'web app developer for startup',
+    'affordable full stack developer',
+    'full stack developer for small business',
+    'freelance developer upwork',
+    // Location signals
+    'full stack developer india',
+    'full stack developer punjab india',
+    'remote developer worldwide',
+    'indian developer for us clients',
+    'indian developer for uk clients',
+    'indian developer for canada clients',
+    'indian developer for australia clients',
+  ].join(', '),
   ogImage: 'https://jatinder.malwaland.com/jatinder.png',
   twitterHandle: '@jatindersandhuinfo',
   siteUrl: 'https://jatinder.malwaland.com',
 };
+
 
 export const personal: PersonalInfo = {
   firstName: 'Jatinder',

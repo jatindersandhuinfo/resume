@@ -43,14 +43,14 @@ export default function HeaderNav() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            className="hidden rounded-full border border-black/18 dark:border-white/18 bg-[#d6ad63] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] dark:hover:bg-[#f0d49a] lg:inline-flex"
+            className="hidden rounded-full border border-black/20 dark:border-white/20 bg-[#d6ad63] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] dark:hover:bg-[#f0d49a] lg:inline-flex"
             href={`mailto:${contact.email}`}
           >
             Hire Me
           </a>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/18 dark:border-white/18 text-[#0b0d0e] dark:text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63] lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/20 dark:border-white/20 text-[#0b0d0e] dark:text-white transition duration-200 hover:border-[#d6ad63] hover:text-[#d6ad63] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6ad63] lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}

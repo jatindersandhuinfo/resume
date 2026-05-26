@@ -251,7 +251,7 @@ export default function BlogPost() {
             </a>
             <Link
               href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/14 dark:border-white/14 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
             >
               View Portfolio
             </Link>
