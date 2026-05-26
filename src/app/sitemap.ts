@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { seo, projects, teamSection } from '@/lib/data';
+import { seo, projects, teamSection, services } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -18,6 +18,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const serviceUrls: MetadataRoute.Sitemap = services
+    .filter((s) => s.slug)
+    .map((s) => ({
+      url: `${seo.siteUrl}/services/${s.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }));
+
   return [
     {
       url: seo.siteUrl,
@@ -33,5 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...projectUrls,
     ...teamUrls,
+    ...serviceUrls,
   ];
 }

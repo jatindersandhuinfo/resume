@@ -12,9 +12,12 @@ export interface AboutSectionData extends SectionBase {
   secondaryDescription: string;
 }
 
-// Services Section
 export interface ServiceItem {
   label: string;
+  slug?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  description?: string;
 }
 
 export interface ServicesCopy {

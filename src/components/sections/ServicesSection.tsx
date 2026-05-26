@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ServicesSectionData } from '@/types/sections';
 
 interface ServicesSectionProps {
@@ -46,6 +47,14 @@ export function ServicesSection({ section }: ServicesSectionProps) {
               key={service.label}
               className="interactive-card group relative min-h-[280px] overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad63]/50 hover:bg-black/[0.03] dark:hover:bg-[#15191b]"
             >
+              {service.slug && (
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="absolute inset-0 z-10"
+                  aria-label={`Learn more about ${service.label}`}
+                />
+              )}
+
               <p className="absolute -right-2 -top-3 text-[5.75rem] font-black leading-none text-black/[0.08] dark:text-white/[0.08] transition group-hover:text-[#d6ad63]/15">
                 0{index + 1}
               </p>

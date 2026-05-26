@@ -91,6 +91,10 @@ export interface Project {
 
 export interface Service {
   label: string;
+  slug?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  description?: string;
 }
 
 export interface SeoMeta {

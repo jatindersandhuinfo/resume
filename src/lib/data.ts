@@ -170,14 +170,62 @@ export const techGroups: TechGroup[] = [
 ];
 
 export const services: Service[] = [
-  { label: 'Backend Dev' },
-  { label: 'Frontend Dev' },
-  { label: 'API Integration' },
-  { label: 'WordPress' },
-  { label: 'Shopify' },
-  { label: 'REST API' },
-  { label: 'Database' },
-  { label: 'AI Integration' },
+  {
+    label: 'Backend Dev',
+    slug: 'backend-development',
+    seoTitle: 'Backend Development Services | Jatinder Sandhu',
+    seoDescription: 'Custom backend development using Node.js, PHP, and Laravel. Secure API architecture, database design, and user authentication systems.',
+    description: 'Custom server-side architecture, user authentication, and API backend solutions built with Node.js, PHP, and Laravel.',
+  },
+  {
+    label: 'Frontend Dev',
+    slug: 'frontend-development',
+    seoTitle: 'Frontend Development Services | Jatinder Sandhu',
+    seoDescription: 'Custom frontend development with React, Next.js, and Tailwind CSS. Responsive, performant user interfaces built from Figma designs.',
+    description: 'Building responsive, high-performance web interfaces and single-page applications using React, Next.js, and Tailwind CSS.',
+  },
+  {
+    label: 'API Integration',
+    slug: 'api-integration',
+    seoTitle: 'API Integration Services | Jatinder Sandhu',
+    seoDescription: 'Secure third-party API integration services, including payment gateways, CRM systems, webhooks, and custom business automation tools.',
+    description: 'Connecting third-party services, payment gateways, CRM systems, and custom webhooks to automate data flows.',
+  },
+  {
+    label: 'WordPress',
+    slug: 'wordpress-development',
+    seoTitle: 'WordPress Development | Jatinder Sandhu',
+    seoDescription: 'Custom WordPress development, WooCommerce setup, custom themes, Elementor page building, and ongoing CMS maintenance.',
+    description: 'Building and maintaining custom WordPress websites, WooCommerce stores, and page templates with Elementor.',
+  },
+  {
+    label: 'Shopify',
+    slug: 'shopify-development',
+    seoTitle: 'Shopify Development Services | Jatinder Sandhu',
+    seoDescription: 'Shopify store customization, custom theme development, checkout optimization, and storefront performance enhancements.',
+    description: 'Enhancing and customizing Shopify storefronts, theme customization, checkout workflows, and product page layout updates.',
+  },
+  {
+    label: 'REST API',
+    slug: 'rest-api-development',
+    seoTitle: 'REST API Development | Jatinder Sandhu',
+    seoDescription: 'Designing secure REST APIs with JWT authentication, request validation, structured endpoints, and complete OpenAPI documentation.',
+    description: 'Designing and building structured REST APIs equipped with validation, JWT authentication, and clear endpoint documentation.',
+  },
+  {
+    label: 'Database',
+    slug: 'database-development',
+    seoTitle: 'Database Development & Schema Design | Jatinder Sandhu',
+    seoDescription: 'Database schema planning, optimization, and administration for MySQL, MongoDB, and PostgreSQL systems to ensure data integrity.',
+    description: 'Structuring, optimizing, and administrating databases utilizing MySQL, PostgreSQL, and MongoDB schemas.',
+  },
+  {
+    label: 'AI Integration',
+    slug: 'ai-integration-services',
+    seoTitle: 'AI & LLM Integration Services | Jatinder Sandhu',
+    seoDescription: 'Integrate OpenAI, Claude, and LLM capabilities into web applications for smart forms, content automation, and data parsing.',
+    description: 'Implementing AI capability into applications using OpenAI and Claude APIs for automation and content parsing.',
+  },
 ];
 
 export type SectionData = {
