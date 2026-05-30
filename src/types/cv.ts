@@ -76,6 +76,7 @@ export interface Project {
   slug: string;
   name: string;
   coverImage?: string;
+  images?: string[];
   tagline: string;
   tech: string;
   result: string;
@@ -87,6 +88,7 @@ export interface Project {
   solution: string;
   metrics: ProjectMetric[];
   techStack: TechStackGroup[];
+  developer?: string;
 }
 
 export interface Service {

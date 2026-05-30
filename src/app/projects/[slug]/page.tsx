@@ -2,21 +2,46 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { projects, personal, contact, seo } from '@/lib/data';
+import { projects, personal, contact, seo, teamSection } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import { ProjectDetailGallery } from '@/components/ProjectDetailGallery';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Props = { params: Promise<{ slug: string }> };
 
 // ── Static generation ─────────────────────────────────────────────────────────
 export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  const globalSlugs = projects.map((p) => ({ slug: p.slug }));
+  const teamSlugs = teamSection.members
+    .flatMap((m) => m.projects)
+    .filter((p) => p.slug)
+    .map((p) => ({ slug: p.slug! }));
+
+  return [...globalSlugs, ...teamSlugs];
 }
 
 // ── SEO ───────────────────────────────────────────────────────────────────────
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  
+  let project = projects.find((p) => p.slug === slug);
+  if (!project) {
+    for (const member of teamSection.members) {
+      const p = member.projects.find((proj) => proj.slug === slug);
+      if (p) {
+        project = {
+          slug: p.slug!,
+          name: p.name,
+          coverImage: p.coverImage,
+          tagline: p.result,
+          tech: p.tech,
+          category: p.category,
+        } as any;
+        break;
+      }
+    }
+  }
+
   if (!project) return {};
 
   const fullName = `${personal.firstName} ${personal.lastName}`;
@@ -78,7 +103,41 @@ function categoryColors(cat: string) {
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  
+  let project = projects.find((p) => p.slug === slug);
+  if (!project) {
+    for (const member of teamSection.members) {
+      const p = member.projects.find((proj) => proj.slug === slug);
+      if (p) {
+        project = {
+          slug: p.slug!,
+          name: p.name,
+          coverImage: p.coverImage || null,
+          tagline: p.result,
+          tech: p.tech,
+          result: p.result,
+          url: p.url || null,
+          category: p.category,
+          year: '2024',
+          overview: p.result,
+          challenge: 'A professional technical deliverable designed and launched to meet real-world business requirements.',
+          solution: `Rebuilt and implemented using ${p.tech} as part of the team collaboration for our clients.`,
+          metrics: [
+            { label: 'Category', value: p.category },
+            { label: 'Platform', value: p.tech.split(' · ')[0] },
+            { label: 'Deployment', value: 'Production' },
+            { label: 'Scope', value: 'Full Stack' },
+          ],
+          techStack: [
+            { group: 'Primary', items: p.tech.split(' · ') },
+            { group: 'Role', items: [member.role] },
+          ],
+        } as any;
+        break;
+      }
+    }
+  }
+
   if (!project) notFound();
 
   const fullName = `${personal.firstName} ${personal.lastName}`;
@@ -89,6 +148,11 @@ export default async function ProjectDetailPage({ params }: Props) {
     ...projects.filter((p) => p.slug !== slug && p.category === project.category),
     ...projects.filter((p) => p.slug !== slug && p.category !== project.category),
   ].slice(0, 2);
+
+  // Find team member(s) who worked on this project
+  const builtBy = teamSection.members.filter((m) =>
+    m.projects.some((p) => p.slug === slug)
+  );
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#0b0d0e] text-[#0b0d0e] dark:text-white">
@@ -303,6 +367,16 @@ export default async function ProjectDetailPage({ params }: Props) {
               <p className="mt-5 body-copy text-black/60 dark:text-white/60 max-w-2xl">{project.solution}</p>
             </div>
 
+            {/* Project Screenshots / Gallery */}
+            {project.images && project.images.length > 0 && (
+              <ProjectDetailGallery
+                projectName={project.name}
+                coverImage={project.coverImage}
+                images={project.images}
+                accentColor={colors.accent}
+              />
+            )}
+
           </div>
 
           {/* ── Right — sticky sidebar ─────────────────────────── */}
@@ -382,6 +456,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </a>
                 <Link
                   href="/#works"
+                  scroll={false}
                   className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/70 dark:text-white/70 transition hover:border-black/20 dark:hover:border-white/20 hover:text-[#0b0d0e] dark:hover:text-white"
                 >
                   <span>← All Projects</span>
@@ -406,6 +481,72 @@ export default async function ProjectDetailPage({ params }: Props) {
               <p className="mt-2 text-lg font-black text-[#0b0d0e] dark:text-white">{project.category}</p>
               <p className="meta-label mt-1 text-black/35 dark:text-white/35">{project.year}</p>
             </div>
+
+            {/* Built by — team member card */}
+            {builtBy.length > 0 && (
+              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#111416] p-6">
+                <p className="section-kicker mb-5 text-black/40 dark:text-white/40">
+                  {builtBy.some((m) => m.role.toLowerCase().includes('design')) ? 'Designed By' : 'Built By'}
+                </p>
+                <div className="space-y-4">
+                  {builtBy.map((member) => (
+                    <Link
+                      key={member.slug}
+                      href={`/team/${member.slug}`}
+                      className="group/member flex items-center gap-4 rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-4 transition hover:border-black/20 dark:hover:border-white/20 hover:shadow-lg hover:shadow-black/20"
+                    >
+                      {/* Avatar */}
+                      {member.image ? (
+                        <div className="relative shrink-0 overflow-hidden rounded-full border border-black/20 dark:border-white/20" style={{ width: 44, height: 44 }}>
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            sizes="44px"
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div
+                          aria-hidden="true"
+                          className="flex shrink-0 items-center justify-center rounded-full text-sm font-black"
+                          style={{
+                            width: 44,
+                            height: 44,
+                            background: member.avatarBg,
+                            border: `1.5px solid ${member.avatarColor}50`,
+                            color: member.avatarColor,
+                          }}
+                        >
+                          {member.avatar}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-[#0b0d0e] dark:text-white transition-colors group-hover/member:text-[#d6ad63]">
+                          {member.name}
+                        </p>
+                        <p
+                          className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.08em]"
+                          style={{ color: member.avatarColor }}
+                        >
+                          {member.role}
+                        </p>
+                      </div>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        aria-hidden="true"
+                        className="shrink-0 text-black/20 dark:text-white/20 transition-colors group-hover/member:text-[#d6ad63]"
+                      >
+                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
           </aside>
         </div>
@@ -521,6 +662,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </a>
                 <Link
                   href="/#works"
+                  scroll={false}
                   className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
                 >
                   View All Projects

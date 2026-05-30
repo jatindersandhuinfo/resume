@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { teamSection, personal, contact, seo } from '@/lib/data';
+import { teamSection, personal, contact, seo, projects } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import { ProjectGallery } from '@/components/ProjectGallery';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Props = { params: Promise<{ slug: string }> };
@@ -268,6 +269,17 @@ export default async function TeamMemberPage({ params }: Props) {
                     </svg>
                   </a>
                 )}
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="flex items-center justify-between rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-3 text-sm font-semibold text-black/60 dark:text-white/60 transition hover:border-black/25 dark:hover:border-white/25 hover:text-[#0b0d0e] dark:hover:text-white"
+                  >
+                    <span>Email</span>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                )}
                 <a
                   href={contact.fiverr}
                   target="_blank"
@@ -336,10 +348,33 @@ export default async function TeamMemberPage({ params }: Props) {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {member.projects.map((project, index) => {
             const c = cat(project.category);
+            const globalProj = project.slug ? projects.find((p) => p.slug === project.slug) : null;
             const isLinked = !!project.slug;
+            const coverImage = project.coverImage || globalProj?.coverImage;
+
+            // Pull rich detail from global project when available
+            const tagline = globalProj?.tagline || project.result;
+            const overview = globalProj?.overview;
+            const year = globalProj?.year;
+            const metrics = globalProj?.metrics;
+            const liveUrl = project.url || globalProj?.url;
 
             const CardContent = (
-              <div className="relative h-full overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] p-7 transition duration-300 group-hover:border-black/20 dark:group-hover:border-white/20 group-hover:shadow-2xl group-hover:shadow-black/40">
+              <div className="relative h-full overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] transition duration-300 group-hover:border-black/20 dark:group-hover:border-white/20 group-hover:shadow-2xl group-hover:shadow-black/40">
+                {/* Cover image — shown when work screenshot is provided */}
+                {coverImage && (
+                  <div className="relative aspect-video w-full overflow-hidden border-b border-black/10 dark:border-white/10">
+                    <Image
+                      src={coverImage}
+                      alt={`${project.name} — ${project.category} work by ${member.name}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                  </div>
+                )}
+
                 {/* Top glow on hover */}
                 <div
                   aria-hidden="true"
@@ -349,12 +384,19 @@ export default async function TeamMemberPage({ params }: Props) {
                   }}
                 />
 
-                <div className="relative flex h-full flex-col">
-                  {/* Index + category */}
+                <div className="relative flex h-full flex-col p-7">
+                  {/* Index + category + year */}
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="text-sm font-black text-black/40 dark:text-white/35">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-black text-black/40 dark:text-white/35">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      {year && (
+                        <span className="meta-label text-black/25 dark:text-white/25">
+                          · {year}
+                        </span>
+                      )}
+                    </div>
                     <span
                       className="meta-label rounded-full border px-3 py-1"
                       style={{ color: c.accent, background: c.bg, borderColor: c.border }}
@@ -374,38 +416,99 @@ export default async function TeamMemberPage({ params }: Props) {
                   {/* Tech */}
                   <p className="mt-3 meta-label text-black/30 dark:text-white/30">{project.tech}</p>
 
-                  {/* Result */}
-                  <p className="mt-4 small-copy flex-1 text-black/52 dark:text-white/52">{project.result}</p>
+                  {/* Tagline */}
+                  <p className="mt-4 small-copy text-black/60 dark:text-white/60 font-medium">{tagline}</p>
 
-                  {/* Bottom CTA */}
-                  <div className="mt-6 flex items-center justify-between">
-                    {project.url && !isLinked ? (
+                  {/* Overview — from global project */}
+                  {overview && (
+                    <p className="mt-3 small-copy text-black/45 dark:text-white/45 line-clamp-3">{overview}</p>
+                  )}
+
+                  {/* Metrics — from global project */}
+                  {metrics && metrics.length > 0 && (
+                    <div className="mt-5 grid grid-cols-2 gap-2">
+                      {metrics.slice(0, 4).map((m) => (
+                        <div
+                          key={m.label}
+                          className="rounded-lg border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] px-3 py-2 text-center"
+                        >
+                          <p className="text-sm font-black" style={{ color: c.accent }}>{m.value}</p>
+                          <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-black/35 dark:text-white/35">{m.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Extra gallery thumbnails */}
+                  {project.images && project.images.length > 0 && (
+                    <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+                      {project.images.map((img, i) => (
+                        <div
+                          key={i}
+                          className="relative shrink-0 h-14 w-20 overflow-hidden rounded-md border border-black/10 dark:border-white/10"
+                        >
+                          <Image
+                            src={img}
+                            alt={`${project.name} screenshot ${i + 1}`}
+                            fill
+                            sizes="80px"
+                            className="object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* CTA buttons */}
+                  <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-black/5 dark:border-white/5 pt-5">
+                    {isLinked && (
+                      <span
+                        className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] transition-colors duration-200"
+                        style={{ borderColor: `${c.accent}40`, color: c.accent }}
+                      >
+                        View Full Case Study
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                          <path d="M2 6H10M10 6L6.5 2.5M10 6L6.5 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                    )}
+                    {liveUrl && (
                       <span
                         className="meta-label rounded-full border px-3 py-1"
                         style={{ color: '#10a37f', background: '#10a37f10', borderColor: '#10a37f30' }}
                       >
                         Live ↗
                       </span>
-                    ) : project.slug ? (
-                      <span className="meta-label text-black/30 dark:text-white/30">Case Study</span>
-                    ) : (
-                      <span className="meta-label text-black/40 dark:text-white/35">Private</span>
                     )}
-
-                    {isLinked && (
-                      <span
-                        className="flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.12em] text-black/35 dark:text-white/35 transition-colors duration-200 group-hover:text-[#d6ad63]"
-                      >
-                        View Details
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                          <path d="M2 6H10M10 6L6.5 2.5M10 6L6.5 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </span>
+                    {!isLinked && !liveUrl && (
+                      <span className="meta-label text-black/40 dark:text-white/35">Portfolio</span>
                     )}
                   </div>
                 </div>
               </div>
             );
+
+            // ── Gallery card — for projects with actual image screenshots
+            if (coverImage && project.images && project.images.length > 0) {
+              return (
+                <ProjectGallery
+                  key={project.name}
+                  projectName={project.name}
+                  category={project.category}
+                  tech={project.tech}
+                  result={project.result}
+                  coverImage={coverImage}
+                  images={project.images}
+                  memberName={member.name}
+                  accentColor={c.accent}
+                  accentBg={c.bg}
+                  accentBorder={c.border}
+                  index={index}
+                  projectSlug={project.slug}
+                  projectUrl={project.url}
+                />
+              );
+            }
 
             if (isLinked) {
               return (

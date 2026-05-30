@@ -50,6 +50,7 @@ export interface WorkItem {
   result: string;
   url?: string;
   category: string;
+  developer?: string;
 }
 
 export interface WorksSectionData extends SectionBase {
@@ -122,6 +123,8 @@ export interface TeamProject {
   result: string;
   url?: string;
   category: string;
+  coverImage?: string;
+  images?: string[];   // extra gallery shots
 }
 
 export interface TeamMember {
@@ -138,6 +141,7 @@ export interface TeamMember {
   linkedin?: string;
   github?: string;
   website?: string;
+  email?: string;
 }
 
 export interface TeamSectionData extends SectionBase {

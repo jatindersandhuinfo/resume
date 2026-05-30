@@ -20,7 +20,7 @@ const categoryColors: Record<string, { bg: string; color: string; border: string
 };
 
 function getCat(cat: string) {
-  return categoryColors[cat] ?? { bg: '#ffffff0c', color: '#aaa', border: '#ffffff20' };
+  return categoryColors[cat] ?? { bg: '#d6ad6312', color: '#d6ad63', border: '#d6ad6328' };
 }
 
 export function TeamSection({ section }: TeamSectionProps) {

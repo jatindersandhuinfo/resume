@@ -30,7 +30,17 @@ export function WorksSection({ section }: WorksSectionProps) {
               <h3 className="subsection-title text-[#0b0d0e] dark:text-white transition group-hover:text-[#d6ad63]">
                 {project.name}
               </h3>
-              <p className="mt-2 meta-label text-black/40 dark:text-white/40">{project.tech}</p>
+              <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+                <span className="meta-label text-black/40 dark:text-white/40">{project.tech}</span>
+                {project.developer && (
+                  <>
+                    <span className="text-black/20 dark:text-white/20" aria-hidden="true">•</span>
+                    <span className="font-semibold text-[#d6ad63]/90 dark:text-[#d6ad63]/80 uppercase tracking-wider text-[10px]">
+                      {project.developer === 'Akanksha Baleghate' ? 'Designed by Akanksha' : `Built by ${project.developer.split(' ')[0]}`}
+                    </span>
+                  </>
+                )}
+              </div>
             </div>
             <p className="small-copy text-black/58 dark:text-white/58">{project.result}</p>
             <div className="flex shrink-0 flex-col items-end gap-2">

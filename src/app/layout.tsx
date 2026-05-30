@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Bebas_Neue } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import './globals.css';
 
 import { seo, personal, contact } from '@/lib/data';
@@ -9,13 +9,6 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '900'],
   variable: '--font-dm-sans',
-  display: 'swap',
-});
-
-const bebasNeue = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-bebas',
   display: 'swap',
 });
 
@@ -31,21 +24,71 @@ const themeInitScript = `(() => {
   }
 })();`;
 const sectionHashScrollScript = `(() => {
-  const TARGETS = new Set(['team', 'works']);
+  const TARGETS = new Set(['about', 'services', 'works', 'team', 'experience', 'skills', 'education', 'faq', 'contact']);
   const OFFSET = 110;
+  let scrollInterval = null;
+  let attempts = 0;
+  let lastTop = null;
+  let stableFrames = 0;
 
   const scrollToSectionHash = () => {
     if (window.location.pathname !== '/') return;
-    const hash = window.location.hash.replace('#', '');
+
+    if (window.location.hash.includes('#', 1)) {
+      const parts = window.location.hash.split('#').filter(Boolean);
+      if (parts.length > 0) {
+        window.history.replaceState(null, '', \`/#\${parts[0]}\`);
+      }
+    }
+
+    const hash = window.location.hash.split('#').filter(Boolean)[0] || '';
     if (!TARGETS.has(hash)) return;
-    const el = document.getElementById(hash);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
-    window.scrollTo({ top, behavior: 'smooth' });
+
+    if (scrollInterval) clearInterval(scrollInterval);
+    attempts = 0;
+    lastTop = null;
+    stableFrames = 0;
+
+    scrollInterval = setInterval(() => {
+      attempts++;
+      const el = document.getElementById(hash);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        const currentTop = rect.top + window.scrollY;
+
+        if (lastTop === currentTop) {
+          stableFrames++;
+        } else {
+          stableFrames = 0;
+          lastTop = currentTop;
+        }
+
+        // Trigger scroll only when layout has remained stable for 3 checks (150ms)
+        if (stableFrames >= 3 || attempts > 35) {
+          clearInterval(scrollInterval);
+          const top = currentTop - OFFSET;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+      if (attempts > 50) clearInterval(scrollInterval);
+    }, 50);
   };
 
   window.addEventListener('hashchange', scrollToSectionHash);
   window.addEventListener('load', () => requestAnimationFrame(scrollToSectionHash));
+
+  // Intercept client-side transitions (pushState, replaceState) in Next.js SPAs
+  const patchHistory = (type) => {
+    const orig = window.history[type];
+    return function(...args) {
+      const rv = orig.apply(this, args);
+      setTimeout(scrollToSectionHash, 100);
+      return rv;
+    };
+  };
+  window.history.pushState = patchHistory('pushState');
+  window.history.replaceState = patchHistory('replaceState');
+  window.addEventListener('popstate', () => setTimeout(scrollToSectionHash, 100));
 })();`;
 
 export const metadata: Metadata = {
@@ -155,7 +198,7 @@ export default function RootLayout({
   const structuredData = getStructuredData();
 
   return (
-    <html lang="en-IN" className={`${dmSans.variable} ${bebasNeue.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en-IN" className={dmSans.variable} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link rel="me" href={contact.linkedin} />
         <link rel="me" href={contact.github} />
