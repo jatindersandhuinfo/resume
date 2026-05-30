@@ -67,10 +67,10 @@ export default function BlogPost() {
       <div className="border-b border-black/10 dark:border-white/10">
         <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
           <Link
-            href="/"
+            href="/blog"
             className="text-sm font-semibold uppercase tracking-[0.12em] text-black/60 dark:text-white/60 transition hover:text-[#d6ad63]"
           >
-            ← Back to Portfolio
+            ← Back to Blog
           </Link>
         </div>
       </div>
@@ -81,7 +81,9 @@ export default function BlogPost() {
         <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/40 dark:text-white/40">
           <Link href="/" className="transition hover:text-[#d6ad63]">Home</Link>
           <span aria-hidden="true">›</span>
-          <span className="text-black/60 dark:text-white/60">Blog</span>
+          <Link href="/blog" className="transition hover:text-[#d6ad63]">Blog</Link>
+          <span aria-hidden="true">›</span>
+          <span className="text-black/60 dark:text-white/60">Hiring Guide</span>
         </nav>
 
         {/* Meta */}

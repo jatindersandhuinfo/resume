@@ -11,7 +11,7 @@ const navItems = [
   { label: 'What I Do', href: '/#services' },
   { label: 'Works', href: '/#works' },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'Blog', href: '/blog/how-to-hire-freelance-full-stack-developer' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Hire Me', href: '/#contact' },
 ];
 

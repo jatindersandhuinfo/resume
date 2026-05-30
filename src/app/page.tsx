@@ -207,7 +207,7 @@ export default function Home() {
             <a href="#skills" className="transition hover:text-[#d6ad63]">Skills</a>
             <a href="#education" className="transition hover:text-[#d6ad63]">Education</a>
             <a href="#faq" className="transition hover:text-[#d6ad63]">FAQ</a>
-            <Link href="/blog/how-to-hire-freelance-full-stack-developer" className="transition hover:text-[#d6ad63]">Blog</Link>
+            <Link href="/blog" className="transition hover:text-[#d6ad63]">Blog</Link>
           </nav>
           <nav aria-label="Team and project pages" className="flex flex-wrap justify-center gap-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#7a7a7a]">
             {teamSection.members.map((m) => (

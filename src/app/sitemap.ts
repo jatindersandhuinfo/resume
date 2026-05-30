@@ -35,6 +35,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${seo.siteUrl}/blog`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${seo.siteUrl}/blog/ai-tools-productivity-business-growth`,
+      lastModified: new Date('2026-05-30'),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
       url: `${seo.siteUrl}/blog/how-to-hire-freelance-full-stack-developer`,
       lastModified: new Date('2026-05-01'),
       changeFrequency: 'monthly',
