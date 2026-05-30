@@ -30,9 +30,9 @@ export default function HeaderNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 dark:border-white/10 bg-white/95 text-[#0b0d0e] dark:bg-[#0b0d0e]/95 dark:text-white backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-[#0b0d0e]/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-10">
-        <a href="#" className="text-lg font-black uppercase tracking-[0.06em] text-[#0b0d0e] dark:text-white">
+        <Link href="/" className="text-lg font-black uppercase tracking-[0.06em] text-[#0b0d0e] dark:text-white">
           {personal.firstName}
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-5 text-sm uppercase tracking-[0.14em] text-black/80 dark:text-white/80 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => {
