@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/', '/admin/', '/private/'],
       },
 
       // AI Crawlers
@@ -22,15 +23,9 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'ClaudeBot',
         allow: '/',
       },
-
-      // Block private/system paths
-      {
-        userAgent: '*',
-        disallow: ['/api/', '/admin/', '/private/'],
-      },
     ],
 
     sitemap: `${seo.siteUrl}/sitemap.xml`,
-    host: seo.siteUrl,
+    host: seo.siteUrl.replace(/^https?:\/\//, ''),
   };
 }
