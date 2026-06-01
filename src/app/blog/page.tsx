@@ -30,6 +30,106 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    title: '10 AI Business Ideas You Can Start This Month',
+    description:
+      'Discover 10 highly profitable AI business ideas you can start this month with minimal investment. Learn about startup costs, difficulty levels, scalability, and technical requirements.',
+    slug: '10-ai-business-ideas-you-can-start-this-month',
+    category: 'AI & Automation',
+    publishDate: '2026-06-01',
+    readTime: '10 min read',
+    kicker: 'Strategy · AI Business',
+  },
+  {
+    title: 'React vs Next.js: Which Should You Learn in 2026?',
+    description:
+      'Should you learn React or Next.js in 2026? Discover the core differences, learning curves, performance, SEO benefits, and career prospects in this comprehensive guide.',
+    slug: 'react-vs-nextjs-which-should-you-learn-2026',
+    category: 'Development',
+    publishDate: '2026-06-01',
+    readTime: '9 min read',
+    kicker: 'Career · Frontend Tech',
+  },
+  {
+    title: 'Best Website Features for Taxi and Car Rental Businesses in 2026',
+    description:
+      'Discover the best website features for taxi and car rental businesses in 2026. Learn how online booking systems, instant fare calculation, vehicle fleets, and secure online payments drive bookings and grow revenue.',
+    slug: 'best-website-features-taxi-car-rental-2026',
+    category: 'Fleet Tech',
+    publishDate: '2026-06-01',
+    readTime: '8 min read',
+    kicker: 'Fleet · Chauffeur Tech',
+  },
+  {
+    title: 'How Local Businesses Can Get More Customers with Google Business Profile',
+    description:
+      'Learn how to optimize your Google Business Profile to attract more customers in 2026. Discover expert strategies for profile verification, category selection, customer reviews, local SEO, and performance tracking.',
+    slug: 'how-local-businesses-get-customers-google-business-profile',
+    category: 'Local SEO',
+    publishDate: '2026-06-01',
+    readTime: '10 min read',
+    kicker: 'Deep Dive · Local SEO',
+  },
+  {
+    title: 'Why Every Small Business Needs a Website in 2026',
+    description:
+      'Discover why having a professional website is a necessity for small businesses in 2026. Learn how websites build credibility, drive local SEO, generate leads, and work 24/7 beyond social media limits.',
+    slug: 'why-every-small-business-needs-website-2026',
+    category: 'Business Growth',
+    publishDate: '2026-06-01',
+    readTime: '8 min read',
+    kicker: 'Strategy · Business Growth',
+  },
+  {
+    title: 'How to Get Your First Freelance Client as a Developer in 2026',
+    description:
+      'Landing your first freelance client as a web developer can be challenging. Discover practical, step-by-step client acquisition strategies using Upwork, LinkedIn, cold outreach, portfolios, and local business networking.',
+    slug: 'how-to-get-first-freelance-client-developer-2026',
+    category: 'Freelance Strategy',
+    publishDate: '2026-06-01',
+    readTime: '10 min read',
+    kicker: 'Guide · Freelance Developer',
+  },
+  {
+    title: 'Build an AI Agent with Node.js: Complete Guide (2026)',
+    description:
+      'Learn how to build an autonomous AI Agent with Node.js in 2026. This step-by-step technical guide covers LLM reasoning engines, short/long-term memory systems, tool calling, multi-step execution, and security.',
+    slug: 'build-ai-agent-nodejs-complete-guide',
+    category: 'AI & Automation',
+    publishDate: '2026-06-01',
+    readTime: '10 min read',
+    kicker: 'Deep Dive · AI Agents',
+  },
+  {
+    title: 'Complete Next.js SEO Guide for 2026',
+    description:
+      'Learn advanced Next.js SEO techniques to rank higher on Google in 2026. This comprehensive technical guide covers SSR/SSG metadata, structured data, Core Web Vitals, and mobile optimization.',
+    slug: 'complete-nextjs-seo-guide-2026',
+    category: 'Technical SEO',
+    publishDate: '2026-06-01',
+    readTime: '10 min read',
+    kicker: 'Deep Dive · Technical SEO',
+  },
+  {
+    title: 'How I Built a Full-Stack SaaS with Next.js and Node.js',
+    description:
+      'A comprehensive case study and developer guide on building a full-stack SaaS application with Next.js, Node.js, MongoDB, and modern cloud technologies. Learn about database design, authentication, RBAC, and deployment.',
+    slug: 'how-i-built-full-stack-saas-nextjs-nodejs',
+    category: 'Full Stack Development',
+    publishDate: '2026-06-01',
+    readTime: '8 min read',
+    kicker: 'Case Study · SaaS Architecture',
+  },
+  {
+    title: 'AI Tools That Save 10+ Hours Per Week: 10 Game-Changing AI Tools for Maximum Productivity in 2026',
+    description:
+      'Discover the best AI tools that save 10+ hours per week. Learn how professionals, business owners, freelancers, and developers use AI to automate work, boost productivity, and achieve more in less time.',
+    slug: 'ai-tools-that-save-10-hours-per-week',
+    category: 'AI & Automation',
+    publishDate: '2026-06-01',
+    readTime: '11 min read',
+    kicker: 'Deep Dive · AI Productivity',
+  },
+  {
     title: 'AI Tools: The Complete Guide to Boosting Productivity and Business Growth',
     description:
       'A comprehensive 2026 guide to understanding AI tools, choosing the right models, and leveraging AI workflow integrations (Cursor, Claude, GPT) to scale your business operations.',
