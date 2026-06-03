@@ -51,7 +51,7 @@ export function FaqSection({ section }: FaqSectionProps) {
                   >
                     <span className="flex items-start gap-4">
                       <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-black/10 dark:border-white/10 text-sm font-black text-[#d6ad63]">
-                        0{index + 1}
+                        {index + 1 < 10 ? `0${index + 1}` : index + 1}
                       </span>
                       <span className="card-title text-[#0b0d0e] dark:text-white transition group-hover:text-[#d6ad63]">
                         {item.question}

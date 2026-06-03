@@ -29,7 +29,7 @@ export function ExperienceSection({ section }: ExperienceSectionProps) {
           {section.experience.map((item, index) => (
             <article key={item.company} className="group relative grid gap-5 pl-14 md:grid-cols-[150px_1fr]">
               <div className="absolute left-0 top-1 grid h-11 w-11 place-items-center rounded-full border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] text-sm font-black text-[#d6ad63] transition group-hover:border-[#d6ad63]">
-                0{index + 1}
+                {index + 1 < 10 ? `0${index + 1}` : index + 1}
               </div>
               <div>
                 <p className="rounded-full border border-black/10 dark:border-white/10 px-4 py-2 text-center meta-label text-black/40 dark:text-white/40">

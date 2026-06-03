@@ -420,7 +420,7 @@ export default async function ServicePage({ params }: Props) {
                 className="p-6 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] shadow-sm transition hover:-translate-y-0.5 hover:border-[#d6ad63]/50 hover:shadow-md"
               >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#d6ad63]/10 border border-[#d6ad63]/20 text-xs font-bold text-[#d6ad63] mb-4">
-                  0{idx + 1}
+                  {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                 </span>
                 <h3 className="text-base font-bold text-[#0b0d0e] dark:text-white mb-2">{sub.title}</h3>
                 <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">{sub.description}</p>
@@ -511,7 +511,7 @@ export default async function ServicePage({ params }: Props) {
               >
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-[2.2rem] font-black leading-none text-black/10 dark:text-white/10">
-                    0{idx + 1}
+                    {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                   </span>
                   <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#d6ad63] bg-[#d6ad63]/10 border border-[#d6ad63]/20 px-2 py-0.5 rounded">
                     Phase {idx + 1}

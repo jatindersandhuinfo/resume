@@ -56,12 +56,12 @@ export function ServicesSection({ section }: ServicesSectionProps) {
               )}
 
               <p className="absolute -right-2 -top-3 text-[5.75rem] font-black leading-none text-black/[0.08] dark:text-white/[0.08] transition group-hover:text-[#d6ad63]/15">
-                0{index + 1}
+                {index + 1 < 10 ? `0${index + 1}` : index + 1}
               </p>
 
               <div className="relative flex items-start justify-between gap-5">
                 <span className="grid h-11 w-11 place-items-center rounded-full border border-black/10 dark:border-white/10 text-sm font-black text-[#d6ad63]">
-                  0{index + 1}
+                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </span>
                 <span className="rounded-full border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-3 py-1 meta-label text-black/40 dark:text-white/40 transition group-hover:border-[#d6ad63]/50 group-hover:text-[#d6ad63]">
                   {section.serviceTags[service.label] ?? 'Web'}

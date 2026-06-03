@@ -25,7 +25,9 @@ export function WorksSection({ section }: WorksSectionProps) {
             href={`/projects/${project.slug}`}
             className="interactive-card group grid gap-4 border-b border-black/10 dark:border-white/10 py-7 transition hover:bg-black/[0.03] dark:hover:bg-white/[0.03] md:grid-cols-[72px_1fr_1.1fr_auto] md:gap-5"
           >
-            <p className="text-sm font-black text-black/40 dark:text-white/40">0{index + 1}</p>
+            <p className="text-sm font-black text-black/40 dark:text-white/40">
+              {index + 1 < 10 ? `0${index + 1}` : index + 1}
+            </p>
             <div>
               <h3 className="subsection-title text-[#0b0d0e] dark:text-white transition group-hover:text-[#d6ad63]">
                 {project.name}
