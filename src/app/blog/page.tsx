@@ -30,6 +30,36 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    title: 'AI in Marketing: Practical Ways Businesses Use It in 2026',
+    description:
+      'Explore practical ways businesses use AI in marketing in 2026 to create content, manage social media, run email campaigns, optimize SEO, and improve advertising performance.',
+    slug: 'ai-in-marketing-practical-ways-businesses-use-it',
+    category: 'AI & Automation',
+    publishDate: '2026-06-03',
+    readTime: '8 min read',
+    kicker: 'Guide · AI Marketing',
+  },
+  {
+    title: 'How AI Improves Developer Productivity: Real Examples and Benefits',
+    description:
+      'Learn how AI-assisted development tools like Cursor, Copilot, ChatGPT, and Claude improve developer productivity with real-world examples, benefits, and best practices.',
+    slug: 'how-ai-improves-developer-productivity',
+    category: 'AI & Automation',
+    publishDate: '2026-06-03',
+    readTime: '7 min read',
+    kicker: 'Guide · AI Productivity',
+  },
+  {
+    title: 'AI Business Applications: Real Examples for Small Businesses',
+    description:
+      'Discover practical AI business applications for small businesses. Learn how AI helps with customer support, marketing, automation, content creation, and productivity.',
+    slug: 'ai-business-applications-real-examples-for-small-businesses',
+    category: 'AI & Automation',
+    publishDate: '2026-06-03',
+    readTime: '8 min read',
+    kicker: 'Guide · AI Business',
+  },
+  {
     title: 'AI Coding Assistant Limits Explained: How to Maximize Free Cursor, Copilot, and Codex Usage',
     description:
       'Understand usage limits and quotas across Cursor, Copilot, Claude, and Gemini. Learn strategies to stack multiple AI tools, optimize prompts, and extend free tier usage.',
