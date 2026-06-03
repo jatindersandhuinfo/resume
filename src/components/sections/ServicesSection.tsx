@@ -87,6 +87,15 @@ export function ServicesSection({ section }: ServicesSectionProps) {
             </article>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/services"
+            className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-black/10 dark:border-white/10 px-8 text-xs font-bold uppercase tracking-[0.14em] text-black dark:text-white hover:border-[#d6ad63] hover:text-[#d6ad63] transition duration-200"
+          >
+            Explore All 21 Specialized Services
+          </Link>
+        </div>
       </div>
     </section>
   );
