@@ -12,6 +12,7 @@ export function HeroImage({ alt }: HeroImageProps) {
       alt={alt}
       fill
       priority
+      loading="eager"
       quality={75}
       sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 100vw, 680px"
       className="hero-image z-0 object-cover object-top"
