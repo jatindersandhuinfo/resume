@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'AI Tools That Save 10+ Hours Per Week: 10 Game-Changing AI Tools for Maximum Productivity in 2026';
@@ -543,6 +545,69 @@ export default function AIToolsBlogPost() {
             </p>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. What AI tool saves the most time?',
+                            a: 'ChatGPT and Zapier typically provide the highest overall time savings for most professionals by combining general-purpose assistance with workflow automations.',
+                          },
+                          {
+                            q: '2. Are AI productivity tools worth paying for?',
+                            a: 'Yes. If a tool saves even a few hours monthly, the productivity gained and stress reduced easily pays for the subscription cost.',
+                          },
+                          {
+                            q: '3. Which AI tool is best for developers?',
+                            a: 'Cursor and GitHub Copilot are the industry leading tools for software developers, embedding AI right into the development workspace.',
+                          },
+                          {
+                            q: '4. Which AI tool is best for writing?',
+                            a: 'ChatGPT, Claude, and Grammarly are excellent writing assistants. ChatGPT is great for ideation, Claude is best for long-form research, and Grammarly is perfect for proofreading.',
+                          },
+                          {
+                            q: '5. Can AI replace employees?',
+                            a: 'AI is far more effective as a productivity enhancer than a complete replacement. It automates repetitive tasks so skilled professionals can focus on strategic, empathetic work.',
+                          },
+                          {
+                            q: '6. Is ChatGPT enough by itself?',
+                            a: 'For many users, ChatGPT covers a large percentage of AI-related productivity needs, particularly for drafting copy, answering questions, and summarizing notes.',
+                          },
+                          {
+                            q: '7. What is the best free AI tool?',
+                            a: 'ChatGPT’s free version remains one of the most powerful and accessible free AI tools available to the public today.',
+                          },
+                          {
+                            q: '8. How much time can AI realistically save?',
+                            a: 'Most professionals can realistically save between 5 and 15 hours per week with proper implementation and workflow integration.',
+                          },
+                          {
+                            q: '9. Which AI tool is best for business owners?',
+                            a: 'A combination of ChatGPT (for copywriting), Zapier (for operational integrations), Notion AI (for documentation), and Fireflies.ai (for meeting summaries) works extremely well.',
+                          },
+                          {
+                            q: '10. What AI tools should beginners start with?',
+                            a: 'Start with ChatGPT, Grammarly, and Canva AI. They have low learning curves, friendly interfaces, and offer immediate time-savings.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -558,89 +623,21 @@ export default function AIToolsBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. What AI tool saves the most time?',
-                  a: 'ChatGPT and Zapier typically provide the highest overall time savings for most professionals by combining general-purpose assistance with workflow automations.',
-                },
-                {
-                  q: '2. Are AI productivity tools worth paying for?',
-                  a: 'Yes. If a tool saves even a few hours monthly, the productivity gained and stress reduced easily pays for the subscription cost.',
-                },
-                {
-                  q: '3. Which AI tool is best for developers?',
-                  a: 'Cursor and GitHub Copilot are the industry leading tools for software developers, embedding AI right into the development workspace.',
-                },
-                {
-                  q: '4. Which AI tool is best for writing?',
-                  a: 'ChatGPT, Claude, and Grammarly are excellent writing assistants. ChatGPT is great for ideation, Claude is best for long-form research, and Grammarly is perfect for proofreading.',
-                },
-                {
-                  q: '5. Can AI replace employees?',
-                  a: 'AI is far more effective as a productivity enhancer than a complete replacement. It automates repetitive tasks so skilled professionals can focus on strategic, empathetic work.',
-                },
-                {
-                  q: '6. Is ChatGPT enough by itself?',
-                  a: 'For many users, ChatGPT covers a large percentage of AI-related productivity needs, particularly for drafting copy, answering questions, and summarizing notes.',
-                },
-                {
-                  q: '7. What is the best free AI tool?',
-                  a: 'ChatGPT’s free version remains one of the most powerful and accessible free AI tools available to the public today.',
-                },
-                {
-                  q: '8. How much time can AI realistically save?',
-                  a: 'Most professionals can realistically save between 5 and 15 hours per week with proper implementation and workflow integration.',
-                },
-                {
-                  q: '9. Which AI tool is best for business owners?',
-                  a: 'A combination of ChatGPT (for copywriting), Zapier (for operational integrations), Notion AI (for documentation), and Fireflies.ai (for meeting summaries) works extremely well.',
-                },
-                {
-                  q: '10. What AI tools should beginners start with?',
-                  a: 'Start with ChatGPT, Grammarly, and Canva AI. They have low learning curves, friendly interfaces, and offer immediate time-savings.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'ai-tools-productivity-business-growth', title: 'AI Tools: The Complete Guide to Boosting Productivity and Business Growth' },
+            { slug: '10-ai-business-ideas-you-can-start-this-month', title: '10 AI Business Ideas You Can Start This Month' },
+            { slug: 'build-ai-agent-nodejs-complete-guide', title: 'Build an AI Agent with Node.js: Complete Guide (2026)' },
+            { slug: 'how-to-get-first-freelance-client-developer-2026', title: 'How to Get Your First Freelance Client as a Developer in 2026' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Looking for AI Integrations?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Custom AI & Full Stack Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in integrating advanced AI workflows into web platforms. Whether you want to plug ChatGPT or Claude APIs into your custom CRM, automate business invoicing using LLMs, or build a high-performance Next.js app with speed and precision, our remote freelance team delivers clean, production-ready code worldwide.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

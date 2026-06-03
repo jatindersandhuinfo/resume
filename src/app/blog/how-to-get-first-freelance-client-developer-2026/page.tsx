@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How to Get Your First Freelance Client as a Developer in 2026';
@@ -533,6 +535,69 @@ export default function FreelanceBlogPost() {
             </p>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. How long does it take to get the first freelance client?',
+                            a: 'Typically between one and three months of persistent, daily marketing, proposal submissions, and direct outreach efforts.',
+                          },
+                          {
+                            q: '2. Do I need a portfolio before freelancing?',
+                            a: 'Yes. A personal portfolio website is absolutely essential to build trust, showcase project live links, and stand out from other freelancers.',
+                          },
+                          {
+                            q: '3. Which platform is best for beginners?',
+                            a: 'Upwork and Fiverr are standard starting points due to high client traffic. Direct networking on LinkedIn is also excellent.',
+                          },
+                          {
+                            q: '4. Should I work for free to gain experience?',
+                            a: 'No. Building complete personal projects or open-source tools is much better than working for free for commercial clients.',
+                          },
+                          {
+                            q: '5. How much should a beginner developer charge?',
+                            a: 'It depends on your Master stack and country rates. We recommend a balanced approach, starting with $25–$50 per hour.',
+                          },
+                          {
+                            q: '6. Is LinkedIn important for freelancers?',
+                            a: 'Absolutely. Many business owners search LinkedIn to hire contract experts and verify developer credentials before calling.',
+                          },
+                          {
+                            q: '7. Can I freelance while working a full-time job?',
+                            a: 'Yes. Many successful full-time freelancers start their businesses as a part-time side hustle during evenings.',
+                          },
+                          {
+                            q: '8. What services are most in demand?',
+                            a: 'Custom web app builds (Next.js/React), backend API development (Node.js), automated SaaS setups, and custom AI agent integrations.',
+                          },
+                          {
+                            q: '9. How do I stand out from other developers?',
+                            a: 'Choose a specialized niche, communicate with business clarity, and focus entirely on business outcomes rather than technical jargon.',
+                          },
+                          {
+                            q: '10. What is the fastest way to get clients?',
+                            a: 'Run direct cold email outreach to local businesses, actively bid on Upwork job posts, and optimize your LinkedIn profile simultaneously.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -548,89 +613,21 @@ export default function FreelanceBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. How long does it take to get the first freelance client?',
-                  a: 'Typically between one and three months of persistent, daily marketing, proposal submissions, and direct outreach efforts.',
-                },
-                {
-                  q: '2. Do I need a portfolio before freelancing?',
-                  a: 'Yes. A personal portfolio website is absolutely essential to build trust, showcase project live links, and stand out from other freelancers.',
-                },
-                {
-                  q: '3. Which platform is best for beginners?',
-                  a: 'Upwork and Fiverr are standard starting points due to high client traffic. Direct networking on LinkedIn is also excellent.',
-                },
-                {
-                  q: '4. Should I work for free to gain experience?',
-                  a: 'No. Building complete personal projects or open-source tools is much better than working for free for commercial clients.',
-                },
-                {
-                  q: '5. How much should a beginner developer charge?',
-                  a: 'It depends on your Master stack and country rates. We recommend a balanced approach, starting with $25–$50 per hour.',
-                },
-                {
-                  q: '6. Is LinkedIn important for freelancers?',
-                  a: 'Absolutely. Many business owners search LinkedIn to hire contract experts and verify developer credentials before calling.',
-                },
-                {
-                  q: '7. Can I freelance while working a full-time job?',
-                  a: 'Yes. Many successful full-time freelancers start their businesses as a part-time side hustle during evenings.',
-                },
-                {
-                  q: '8. What services are most in demand?',
-                  a: 'Custom web app builds (Next.js/React), backend API development (Node.js), automated SaaS setups, and custom AI agent integrations.',
-                },
-                {
-                  q: '9. How do I stand out from other developers?',
-                  a: 'Choose a specialized niche, communicate with business clarity, and focus entirely on business outcomes rather than technical jargon.',
-                },
-                {
-                  q: '10. What is the fastest way to get clients?',
-                  a: 'Run direct cold email outreach to local businesses, actively bid on Upwork job posts, and optimize your LinkedIn profile simultaneously.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'how-to-hire-freelance-full-stack-developer', title: 'How to Hire a Freelance Full Stack Developer (2026 Guide)' },
+            { slug: '10-ai-business-ideas-you-can-start-this-month', title: '10 AI Business Ideas You Can Start This Month' },
+            { slug: 'why-every-small-business-needs-website-2026', title: 'Why Every Small Business Needs a Website in 2026' },
+            { slug: 'react-vs-nextjs-which-should-you-learn-2026', title: 'React vs Next.js: Which Should You Learn in 2026?' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Looking for dynamic React or Node.js development?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Freelance & Custom Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in engineering robust, scalable, and responsive digital products worldwide. Whether you need a full-stack SaaS app, high-performance Next.js landing pages, API frameworks, or custom automation, our remote freelance team delivers clean, production-ready code.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'Why Every Small Business Needs a Website in 2026';
@@ -419,6 +421,69 @@ export default function SmallBusinessWebsiteBlogPost() {
             </p>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. Does every small business really need a website?',
+                            a: 'Yes. A professional website builds credibility, improves local SEO rankings, and automatically generates leads and customer inquiries.',
+                          },
+                          {
+                            q: '2. Isn’t social media enough?',
+                            a: 'No. While social platforms support marketing, they have severe limitations on search rankings and branding. You own your website completely.',
+                          },
+                          {
+                            q: '3. How much does a small business website cost?',
+                            a: 'Costs vary based on features, design, and complexity. A simple website starts from a few hundred dollars, while complex SaaS MVP builds cost more.',
+                          },
+                          {
+                            q: '4. Can a website generate customers automatically?',
+                            a: 'Yes. By using local SEO keywords, solid user experience layouts, and clear forms, websites can generate inbound leads continually.',
+                          },
+                          {
+                            q: '5. How important is mobile optimization?',
+                            a: 'Extremely important. Over 50% of web traffic comes from mobile devices, and Google ranks pages primarily based on mobile experiences.',
+                          },
+                          {
+                            q: '6. What pages should every business website have?',
+                            a: 'Every basic site needs a Homepage, About, Services, Contact, Testimonials, and a Blog section.',
+                          },
+                          {
+                            q: '7. Can a website help local businesses rank on Google?',
+                            a: 'Yes. Enforcing local SEO strategies (like dynamic location directories) will significantly improve your local search rankings.',
+                          },
+                          {
+                            q: '8. How long does it take to build a website?',
+                            a: 'A simple corporate website takes days to code and launch, whereas customized full-stack systems take several weeks.',
+                          },
+                          {
+                            q: '9. Should small businesses have a blog?',
+                            a: 'Yes. Regularly blogging improves search engine crawl rates, targets long-tail search keywords, and builds brand authority.',
+                          },
+                          {
+                            q: '10. What is the biggest benefit of having a website?',
+                            a: 'Reclaiming ownership of your digital presence and generating leads and customer bookings continuously 24/7.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -434,89 +499,21 @@ export default function SmallBusinessWebsiteBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. Does every small business really need a website?',
-                  a: 'Yes. A professional website builds credibility, improves local SEO rankings, and automatically generates leads and customer inquiries.',
-                },
-                {
-                  q: '2. Isn’t social media enough?',
-                  a: 'No. While social platforms support marketing, they have severe limitations on search rankings and branding. You own your website completely.',
-                },
-                {
-                  q: '3. How much does a small business website cost?',
-                  a: 'Costs vary based on features, design, and complexity. A simple website starts from a few hundred dollars, while complex SaaS MVP builds cost more.',
-                },
-                {
-                  q: '4. Can a website generate customers automatically?',
-                  a: 'Yes. By using local SEO keywords, solid user experience layouts, and clear forms, websites can generate inbound leads continually.',
-                },
-                {
-                  q: '5. How important is mobile optimization?',
-                  a: 'Extremely important. Over 50% of web traffic comes from mobile devices, and Google ranks pages primarily based on mobile experiences.',
-                },
-                {
-                  q: '6. What pages should every business website have?',
-                  a: 'Every basic site needs a Homepage, About, Services, Contact, Testimonials, and a Blog section.',
-                },
-                {
-                  q: '7. Can a website help local businesses rank on Google?',
-                  a: 'Yes. Enforcing local SEO strategies (like dynamic location directories) will significantly improve your local search rankings.',
-                },
-                {
-                  q: '8. How long does it take to build a website?',
-                  a: 'A simple corporate website takes days to code and launch, whereas customized full-stack systems take several weeks.',
-                },
-                {
-                  q: '9. Should small businesses have a blog?',
-                  a: 'Yes. Regularly blogging improves search engine crawl rates, targets long-tail search keywords, and builds brand authority.',
-                },
-                {
-                  q: '10. What is the biggest benefit of having a website?',
-                  a: 'Reclaiming ownership of your digital presence and generating leads and customer bookings continuously 24/7.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'how-local-businesses-get-customers-google-business-profile', title: 'How Local Businesses Can Get More Customers with Google Business Profile' },
+            { slug: 'best-website-features-taxi-car-rental-2026', title: 'Best Website Features for Taxi and Car Rental Businesses in 2026' },
+            { slug: 'complete-nextjs-seo-guide-2026', title: 'Complete Next.js SEO Guide for 2026' },
+            { slug: 'how-to-get-first-freelance-client-developer-2026', title: 'How to Get Your First Freelance Client as a Developer in 2026' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Ready to Scale Your Online Business?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Custom Web Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in creating premium, high-converting websites for small businesses and startups. From local SEO configuration and lightning-fast Next.js layouts to automated CRM forms and custom databases, our freelance team handles everything worldwide.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

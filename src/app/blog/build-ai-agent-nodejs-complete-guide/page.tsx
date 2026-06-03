@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'Build an AI Agent with Node.js: Complete Guide (2026)';
@@ -627,6 +629,69 @@ async function getAgentReasoning(prompt, history = []) {
             </p>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. What is an AI agent?',
+                            a: 'An AI agent is a software system that can analyze goals, reason across parameters, remember history, use tools, and complete multi-step tasks autonomously.',
+                          },
+                          {
+                            q: '2. Is Node.js good for AI agents?',
+                            a: 'Yes. Node.js is asynchronous and event-driven, letting you process thousands of concurrent API requests with minimal server resource overhead.',
+                          },
+                          {
+                            q: '3. Do AI agents need databases?',
+                            a: 'Yes. Databases are highly recommended to persist session memory history, user settings, preferences, and transaction details.',
+                          },
+                          {
+                            q: '4. Which database is best for AI agents?',
+                            a: 'MongoDB and PostgreSQL are excellent choices, offering reliable JSON caching and relation parameters.',
+                          },
+                          {
+                            q: '5. Can AI agents use external APIs?',
+                            a: 'Yes. Through tool calling, the AI reasoning engine decides when to invoke local code blocks, allowing agents to interface with external APIs and services.',
+                          },
+                          {
+                            q: '6. How much does it cost to run an AI agent?',
+                            a: 'Costs depend completely on transaction volumes, LLM model choice (GPT-4o, Sonnet, Gemini), history context lengths, and hosting server configs.',
+                          },
+                          {
+                            q: '7. Can I build an AI agent without machine learning knowledge?',
+                            a: 'Yes. Modern developer-friendly APIs (like OpenAI or Anthropic SDKs) make agent engineering highly accessible to standard web developers.',
+                          },
+                          {
+                            q: '8. Are AI agents secure?',
+                            a: 'Yes, when secure API key management, robust input sanitization, API rate limiting, and JWT server authentication are configured.',
+                          },
+                          {
+                            q: '9. Can AI agents be used in SaaS products?',
+                            a: 'Absolutely. Embedding agentic assistants inside SaaS dashboards is a primary standard in 2026 software development.',
+                          },
+                          {
+                            q: '10. What is the biggest challenge in AI agent development?',
+                            a: 'Effectively managing long-term and short-term memory structures, defining robust tool sets, protecting APIs against injections, and optimizing model call costs.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -642,89 +707,21 @@ async function getAgentReasoning(prompt, history = []) {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. What is an AI agent?',
-                  a: 'An AI agent is a software system that can analyze goals, reason across parameters, remember history, use tools, and complete multi-step tasks autonomously.',
-                },
-                {
-                  q: '2. Is Node.js good for AI agents?',
-                  a: 'Yes. Node.js is asynchronous and event-driven, letting you process thousands of concurrent API requests with minimal server resource overhead.',
-                },
-                {
-                  q: '3. Do AI agents need databases?',
-                  a: 'Yes. Databases are highly recommended to persist session memory history, user settings, preferences, and transaction details.',
-                },
-                {
-                  q: '4. Which database is best for AI agents?',
-                  a: 'MongoDB and PostgreSQL are excellent choices, offering reliable JSON caching and relation parameters.',
-                },
-                {
-                  q: '5. Can AI agents use external APIs?',
-                  a: 'Yes. Through tool calling, the AI reasoning engine decides when to invoke local code blocks, allowing agents to interface with external APIs and services.',
-                },
-                {
-                  q: '6. How much does it cost to run an AI agent?',
-                  a: 'Costs depend completely on transaction volumes, LLM model choice (GPT-4o, Sonnet, Gemini), history context lengths, and hosting server configs.',
-                },
-                {
-                  q: '7. Can I build an AI agent without machine learning knowledge?',
-                  a: 'Yes. Modern developer-friendly APIs (like OpenAI or Anthropic SDKs) make agent engineering highly accessible to standard web developers.',
-                },
-                {
-                  q: '8. Are AI agents secure?',
-                  a: 'Yes, when secure API key management, robust input sanitization, API rate limiting, and JWT server authentication are configured.',
-                },
-                {
-                  q: '9. Can AI agents be used in SaaS products?',
-                  a: 'Absolutely. Embedding agentic assistants inside SaaS dashboards is a primary standard in 2026 software development.',
-                },
-                {
-                  q: '10. What is the biggest challenge in AI agent development?',
-                  a: 'Effectively managing long-term and short-term memory structures, defining robust tool sets, protecting APIs against injections, and optimizing model call costs.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'token-optimization-guide', title: 'Token Optimization Guide: How to Structure AI Prompts and Coding Tasks for Maximum Efficiency' },
+            { slug: 'ai-coding-assistant-limits-explained', title: 'AI Coding Assistant Limits Explained: How to Maximize Free Cursor, Copilot, and Codex Usage' },
+            { slug: 'how-i-built-full-stack-saas-nextjs-nodejs', title: 'How I Built a Full-Stack SaaS with Next.js and Node.js' },
+            { slug: 'ai-tools-productivity-business-growth', title: 'AI Tools: The Complete Guide to Boosting Productivity and Business Growth' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Planning an Agentic AI Integration?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Custom AI Agent Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in engineering autonomous AI agents using Node.js and modern LLMs. From setting up short/long-term memory architectures and secure function calling hooks to building dashboard portals in Next.js, our remote team delivers robust, production-ready systems worldwide.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

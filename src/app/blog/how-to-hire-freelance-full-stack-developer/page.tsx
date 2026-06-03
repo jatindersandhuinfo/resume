@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How to Hire a Freelance Full Stack Developer (2026 Guide)';
@@ -233,32 +235,34 @@ export default function BlogPost() {
             </ol>
           </section>
 
+        
+
+          <section id="conclusion" className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
+              Conclusion
+            </h2>
+            <p className="body-copy leading-relaxed text-black/70 dark:text-white/70">
+              Hiring a freelance full-stack developer is a strategic decision that can accelerate your product roadmap and optimize software development costs. By outlining a clear brief, setting milestone-based deliverables, and verifying production experience, you can build a highly productive relationship.
+            </p>
+            <p className="body-copy leading-relaxed text-black/70 dark:text-white/70">
+              Take the time to screen candidates for depth, communication skills, and code quality before committing. A vetted, professional developer is one of the best investments you can make to establish a robust and scalable digital presence.
+            </p>
+          </section>
+
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'how-to-get-first-freelance-client-developer-2026', title: 'How to Get Your First Freelance Client as a Developer in 2026' },
+            { slug: 'how-i-built-full-stack-saas-nextjs-nodejs', title: 'How I Built a Full-Stack SaaS with Next.js and Node.js' },
+            { slug: 'react-vs-nextjs-which-should-you-learn-2026', title: 'React vs Next.js: Which Should You Learn in 2026?' },
+            { slug: 'why-every-small-business-needs-website-2026', title: 'Why Every Small Business Needs a Website in 2026' }
+            ]}
+          />
+
+
         </div>
 
-        {/* CTA */}
-        <aside className="mt-14 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker">Looking for a Developer?</p>
-          <h2 className="mt-3 subsection-title text-[#0b0d0e] dark:text-white">
-            {fullName} — Available for Freelance Worldwide
-          </h2>
-          <p className="mt-4 body-copy text-black/65 dark:text-white/65">
-            {personal.summary}. Remote-first, practical delivery, clean code.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 button-label text-[#0b0d0e] transition hover:bg-white"
-            >
-              Get in Touch
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Portfolio
-            </Link>
-          </div>
-        </aside>
+        {/* Portfolio CTA Sidebar Card */}
+        <BlogCta />
       </article>
 
       {/* Footer */}

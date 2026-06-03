@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How Local Businesses Can Get More Customers with Google Business Profile';
@@ -443,6 +445,69 @@ export default function GBPBlogPost() {
             </p>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. Is Google Business Profile free?',
+                            a: 'Yes. Google Business Profile is completely free to create, verify, and manage.',
+                          },
+                          {
+                            q: '2. How long does verification take?',
+                            a: 'Timeline depends on the method. Phone SMS is instant, email takes minutes, video review takes days, and postcard mailing takes up to 14 days.',
+                          },
+                          {
+                            q: '3. Do reviews help rankings?',
+                            a: 'Yes. Customer review volume, velocity, and ratings are primary local SEO ranking factors on Google Maps.',
+                          },
+                          {
+                            q: '4. How often should I post updates?',
+                            a: 'Posting updates weekly is generally recommended to keep your listing active and signal responsiveness to Google.',
+                          },
+                          {
+                            q: '5. Can I manage multiple locations?',
+                            a: 'Yes. Google Business Profile offers a centralized dashboard to manage and monitor multiple locations under one brand.',
+                          },
+                          {
+                            q: '6. What is the most important optimization factor?',
+                            a: 'Ensuring your information is complete and accurate, maintaining category accuracy, and collecting positive reviews.',
+                          },
+                          {
+                            q: '7. Do photos improve performance?',
+                            a: 'Yes. Listings featuring high-quality photos receive significantly higher engagement, website clicks, and map direction requests.',
+                          },
+                          {
+                            q: '8. Can Google Business Profile replace a website?',
+                            a: 'No. Your Google Profile and website work best together, feeding authority, backlinks, and traffic to one another.',
+                          },
+                          {
+                            q: '9. Does Google Business Profile help local SEO?',
+                            a: 'Absolutely. It is the single most important asset to drive local maps pack search rankings.',
+                          },
+                          {
+                            q: '10. How can I get more reviews?',
+                            a: 'Consistently ask satisfied customers upon completing projects and provide a clean, direct review URL link.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -458,89 +523,21 @@ export default function GBPBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. Is Google Business Profile free?',
-                  a: 'Yes. Google Business Profile is completely free to create, verify, and manage.',
-                },
-                {
-                  q: '2. How long does verification take?',
-                  a: 'Timeline depends on the method. Phone SMS is instant, email takes minutes, video review takes days, and postcard mailing takes up to 14 days.',
-                },
-                {
-                  q: '3. Do reviews help rankings?',
-                  a: 'Yes. Customer review volume, velocity, and ratings are primary local SEO ranking factors on Google Maps.',
-                },
-                {
-                  q: '4. How often should I post updates?',
-                  a: 'Posting updates weekly is generally recommended to keep your listing active and signal responsiveness to Google.',
-                },
-                {
-                  q: '5. Can I manage multiple locations?',
-                  a: 'Yes. Google Business Profile offers a centralized dashboard to manage and monitor multiple locations under one brand.',
-                },
-                {
-                  q: '6. What is the most important optimization factor?',
-                  a: 'Ensuring your information is complete and accurate, maintaining category accuracy, and collecting positive reviews.',
-                },
-                {
-                  q: '7. Do photos improve performance?',
-                  a: 'Yes. Listings featuring high-quality photos receive significantly higher engagement, website clicks, and map direction requests.',
-                },
-                {
-                  q: '8. Can Google Business Profile replace a website?',
-                  a: 'No. Your Google Profile and website work best together, feeding authority, backlinks, and traffic to one another.',
-                },
-                {
-                  q: '9. Does Google Business Profile help local SEO?',
-                  a: 'Absolutely. It is the single most important asset to drive local maps pack search rankings.',
-                },
-                {
-                  q: '10. How can I get more reviews?',
-                  a: 'Consistently ask satisfied customers upon completing projects and provide a clean, direct review URL link.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'why-every-small-business-needs-website-2026', title: 'Why Every Small Business Needs a Website in 2026' },
+            { slug: 'best-website-features-taxi-car-rental-2026', title: 'Best Website Features for Taxi and Car Rental Businesses in 2026' },
+            { slug: 'how-to-get-first-freelance-client-developer-2026', title: 'How to Get Your First Freelance Client as a Developer in 2026' },
+            { slug: 'complete-nextjs-seo-guide-2026', title: 'Complete Next.js SEO Guide for 2026' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Want to dominate your local market?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Local SEO & Web Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in helping local businesses capture targeted customers. From optimizing Google Business Profiles and deploying geo-targeted landing pages to building custom Booking Systems and fast Next.js sites, our team delivers high-converting results.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

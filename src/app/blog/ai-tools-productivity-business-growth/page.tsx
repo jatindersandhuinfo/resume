@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'AI Tools: The Complete Guide to Boosting Productivity and Business Growth';
@@ -422,8 +424,71 @@ export default function AIBlogPost() {
             </p>
           </section>
 
-          <section aria-labelledby="conclusion" className="space-y-4">
-            <h2 id="conclusion" className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">Conclusion</h2>
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section aria-labelledby="faqs" className="space-y-6">
+                      <h2 id="faqs" className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">Frequently Asked Questions</h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. What are AI tools?',
+                            a: 'AI tools are software applications that use artificial intelligence algorithms to automate processes, generate assets (text, images, code), analyze complex data matrices, and assist users in making logical decisions.',
+                          },
+                          {
+                            q: '2. Are AI tools free?',
+                            a: 'Many AI tools offer highly functional free tiers (such as the free versions of ChatGPT or Claude), while advanced features, higher context limits, and secure API capabilities require monthly paid subscriptions.',
+                          },
+                          {
+                            q: '3. Can AI replace human workers?',
+                            a: 'AI cannot fully replace human workers. It excels at automating repetitive, high-volume tasks but lack critical human traits like empathy, strategic vision, ethical alignment, and nuanced context. Think of AI as a productivity force-multiplier.',
+                          },
+                          {
+                            q: '4. Which AI tool is best for beginners?',
+                            a: 'ChatGPT by OpenAI is generally considered the best starting point for beginners due to its clean, simple chat interface, intuitive inputs, and wide range of general-purpose solutions.',
+                          },
+                          {
+                            q: '5. Are AI-generated contents good for SEO?',
+                            a: 'Yes, but only if they are properly structured, highly factual, edited to match a unique brand voice, and optimized specifically for genuine user search intent. Search engines penalize low-effort, low-value spam.',
+                          },
+                          {
+                            q: '6. Which AI tool is best for developers?',
+                            a: 'GitHub Copilot and Cursor AI are currently the gold standards for developers, integrating directly into major IDEs (like VS Code) to offer real-time, context-aware code autocomplete and debugging.',
+                          },
+                          {
+                            q: '7. Can students use AI for learning?',
+                            a: 'Absolutely. When used responsibly, AI is a powerful study companion for writing refinement, organizing lecture summaries, creating dynamic study guides, and learning complex technical topics.',
+                          },
+                          {
+                            q: '8. Are AI tools secure?',
+                            a: 'Security depends completely on the platform and its data-retention policies. Always review the software privacy policy and ensure you do not input sensitive personal information, proprietary credentials, or secure api keys.',
+                          },
+                          {
+                            q: '9. How can small businesses benefit from AI?',
+                            a: 'Small businesses can dramatically lower overhead costs and scale operations by automating administrative tasks, managing support queues with chatbots, drafting SEO marketing materials, and analyzing customer cohorts.',
+                          },
+                          {
+                            q: '10. What is the future of AI tools?',
+                            a: 'The future points toward hyper-integrated, autonomous AI agents. Instead of simply responding to prompts, future AI tools will work in the background to handle multi-step workflows, connect distinct APIs, and learn your specific business habits.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
+          <section id="conclusion" className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
+              Conclusion
+            </h2>
             <p className="body-copy leading-relaxed text-black/70 dark:text-white/70">
               AI tools have rapidly evolved from experimental technologies into practical solutions used by millions of people worldwide. Whether you’re a student, entrepreneur, developer, marketer, or business owner, AI can help you save time, improve productivity, and unlock new opportunities.
             </p>
@@ -432,87 +497,21 @@ export default function AIBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section aria-labelledby="faqs" className="space-y-6">
-            <h2 id="faqs" className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">Frequently Asked Questions</h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. What are AI tools?',
-                  a: 'AI tools are software applications that use artificial intelligence algorithms to automate processes, generate assets (text, images, code), analyze complex data matrices, and assist users in making logical decisions.',
-                },
-                {
-                  q: '2. Are AI tools free?',
-                  a: 'Many AI tools offer highly functional free tiers (such as the free versions of ChatGPT or Claude), while advanced features, higher context limits, and secure API capabilities require monthly paid subscriptions.',
-                },
-                {
-                  q: '3. Can AI replace human workers?',
-                  a: 'AI cannot fully replace human workers. It excels at automating repetitive, high-volume tasks but lack critical human traits like empathy, strategic vision, ethical alignment, and nuanced context. Think of AI as a productivity force-multiplier.',
-                },
-                {
-                  q: '4. Which AI tool is best for beginners?',
-                  a: 'ChatGPT by OpenAI is generally considered the best starting point for beginners due to its clean, simple chat interface, intuitive inputs, and wide range of general-purpose solutions.',
-                },
-                {
-                  q: '5. Are AI-generated contents good for SEO?',
-                  a: 'Yes, but only if they are properly structured, highly factual, edited to match a unique brand voice, and optimized specifically for genuine user search intent. Search engines penalize low-effort, low-value spam.',
-                },
-                {
-                  q: '6. Which AI tool is best for developers?',
-                  a: 'GitHub Copilot and Cursor AI are currently the gold standards for developers, integrating directly into major IDEs (like VS Code) to offer real-time, context-aware code autocomplete and debugging.',
-                },
-                {
-                  q: '7. Can students use AI for learning?',
-                  a: 'Absolutely. When used responsibly, AI is a powerful study companion for writing refinement, organizing lecture summaries, creating dynamic study guides, and learning complex technical topics.',
-                },
-                {
-                  q: '8. Are AI tools secure?',
-                  a: 'Security depends completely on the platform and its data-retention policies. Always review the software privacy policy and ensure you do not input sensitive personal information, proprietary credentials, or secure api keys.',
-                },
-                {
-                  q: '9. How can small businesses benefit from AI?',
-                  a: 'Small businesses can dramatically lower overhead costs and scale operations by automating administrative tasks, managing support queues with chatbots, drafting SEO marketing materials, and analyzing customer cohorts.',
-                },
-                {
-                  q: '10. What is the future of AI tools?',
-                  a: 'The future points toward hyper-integrated, autonomous AI agents. Instead of simply responding to prompts, future AI tools will work in the background to handle multi-step workflows, connect distinct APIs, and learn your specific business habits.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'ai-tools-that-save-10-hours-per-week', title: 'AI Tools That Save 10+ Hours Per Week' },
+            { slug: '10-ai-business-ideas-you-can-start-this-month', title: '10 AI Business Ideas You Can Start This Month' },
+            { slug: 'build-ai-agent-nodejs-complete-guide', title: 'Build an AI Agent with Node.js: Complete Guide (2026)' },
+            { slug: 'why-every-small-business-needs-website-2026', title: 'Why Every Small Business Needs a Website in 2026' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Looking for AI Integrations?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Custom AI & Full Stack Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in integrating advanced AI workflows into web platforms. Whether you want to plug ChatGPT or Claude APIs into your custom CRM, automate business invoicing using LLMs, or build a high-performance Next.js app with speed and precision, our remote freelance team delivers clean, production-ready code worldwide.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

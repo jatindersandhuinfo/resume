@@ -30,6 +30,36 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    title: 'AI Coding Assistant Limits Explained: How to Maximize Free Cursor, Copilot, and Codex Usage',
+    description:
+      'Understand usage limits and quotas across Cursor, Copilot, Claude, and Gemini. Learn strategies to stack multiple AI tools, optimize prompts, and extend free tier usage.',
+    slug: 'ai-coding-assistant-limits-explained',
+    category: 'AI & Automation',
+    publishDate: '2026-06-03',
+    readTime: '10 min read',
+    kicker: 'Guide · AI Coding Tools',
+  },
+  {
+    title: 'Token Optimization Guide: How to Structure AI Prompts and Coding Tasks for Maximum Efficiency',
+    description:
+      'Learn how to structure your AI prompts and coding tasks to optimize token usage. Minimize costs, prevent cooldown rate-limits, and improve LLM performance in ChatGPT, Claude, and Gemini.',
+    slug: 'token-optimization-guide',
+    category: 'AI & Automation',
+    publishDate: '2026-06-03',
+    readTime: '9 min read',
+    kicker: 'Deep Dive · AI Workflows',
+  },
+  {
+    title: 'Compute-Based Quotas Explained: How Cloud Resource Limits Improve Performance and Control Costs',
+    description:
+      'Learn how compute-based quotas govern cloud compute resources like CPU, memory, and storage, and discover best practices for quota management in AWS, Azure, Google Cloud, and Kubernetes.',
+    slug: 'compute-based-quotas-explained',
+    category: 'Cloud Tech',
+    publishDate: '2026-06-03',
+    readTime: '8 min read',
+    kicker: 'FinOps · Cloud Infrastructure',
+  },
+  {
     title: '10 AI Business Ideas You Can Start This Month',
     description:
       'Discover 10 highly profitable AI business ideas you can start this month with minimal investment. Learn about startup costs, difficulty levels, scalability, and technical requirements.',

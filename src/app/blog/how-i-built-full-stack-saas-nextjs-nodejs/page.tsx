@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How I Built a Full-Stack SaaS with Next.js and Node.js';
@@ -466,6 +468,53 @@ models/      # Mongoose schemas and indexes`}
             </ul>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: 'Is Next.js good for SaaS applications?',
+                            a: 'Yes. Next.js provides server-side rendering, asset compression, dynamic routing, and fast execution speeds that make it perfect for building responsive SaaS applications.',
+                          },
+                          {
+                            q: 'Why use Node.js for SaaS development?',
+                            a: 'Node.js is asynchronous and event-driven, letting you process thousands of concurrent API requests with minimal server resource overhead. Its package ecosystem is also massive.',
+                          },
+                          {
+                            q: 'Which database is best for SaaS applications?',
+                            a: 'MongoDB is a strong choice for flexible, rapidly evolving applications that store json-like documents. SQL databases like PostgreSQL are better for strict financial structures.',
+                          },
+                          {
+                            q: 'How long does it take to build a SaaS product?',
+                            a: 'Depending on feature complexity and database requirements, a high-quality SaaS MVP can take anywhere from a few weeks to several months to design, code, and test.',
+                          },
+                          {
+                            q: 'Is RBAC important in SaaS platforms?',
+                            a: 'Absolutely. Role-Based Access Control guarantees data security and privacy, ensuring users are strictly authorized to view only their assigned dashboard controls and entries.',
+                          },
+                          {
+                            q: 'Can a small team build a SaaS product?',
+                            a: 'Yes. Modern frameworks like Next.js, Node.js, and MongoDB coupled with hosting services like Vercel allow a small, agile team to build and launch powerful platforms efficiently.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -481,73 +530,21 @@ models/      # Mongoose schemas and indexes`}
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: 'Is Next.js good for SaaS applications?',
-                  a: 'Yes. Next.js provides server-side rendering, asset compression, dynamic routing, and fast execution speeds that make it perfect for building responsive SaaS applications.',
-                },
-                {
-                  q: 'Why use Node.js for SaaS development?',
-                  a: 'Node.js is asynchronous and event-driven, letting you process thousands of concurrent API requests with minimal server resource overhead. Its package ecosystem is also massive.',
-                },
-                {
-                  q: 'Which database is best for SaaS applications?',
-                  a: 'MongoDB is a strong choice for flexible, rapidly evolving applications that store json-like documents. SQL databases like PostgreSQL are better for strict financial structures.',
-                },
-                {
-                  q: 'How long does it take to build a SaaS product?',
-                  a: 'Depending on feature complexity and database requirements, a high-quality SaaS MVP can take anywhere from a few weeks to several months to design, code, and test.',
-                },
-                {
-                  q: 'Is RBAC important in SaaS platforms?',
-                  a: 'Absolutely. Role-Based Access Control guarantees data security and privacy, ensuring users are strictly authorized to view only their assigned dashboard controls and entries.',
-                },
-                {
-                  q: 'Can a small team build a SaaS product?',
-                  a: 'Yes. Modern frameworks like Next.js, Node.js, and MongoDB coupled with hosting services like Vercel allow a small, agile team to build and launch powerful platforms efficiently.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'react-vs-nextjs-which-should-you-learn-2026', title: 'React vs Next.js: Which Should You Learn in 2026?' },
+            { slug: 'complete-nextjs-seo-guide-2026', title: 'Complete Next.js SEO Guide for 2026' },
+            { slug: 'build-ai-agent-nodejs-complete-guide', title: 'Build an AI Agent with Node.js: Complete Guide (2026)' },
+            { slug: 'how-to-hire-freelance-full-stack-developer', title: 'How to Hire a Freelance Full Stack Developer (2026 Guide)' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Planning a Custom SaaS Application?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Premium SaaS & Full Stack Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in designing and engineering high-end, scalable Next.js and Node.js SaaS systems. From database structure and secure JWT auth setups to third-party integrations (Stripe, Cloudflare, CRM), our remote freelance team delivers production-ready code worldwide.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

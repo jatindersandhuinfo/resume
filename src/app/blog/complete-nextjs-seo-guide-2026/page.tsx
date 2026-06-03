@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'Complete Next.js SEO Guide for 2026';
@@ -584,6 +586,69 @@ Sitemap: https://yourwebsite.com/sitemap.xml`}
             </div>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. Is Next.js better than React for SEO?',
+                            a: 'Yes. Next.js provides built-in Server-Side Rendering (SSR) and Static Site Generation (SSG) that compile your pages into crawlable HTML, vastly outperforming client-side React apps.',
+                          },
+                          {
+                            q: '2. Does Google rank Next.js websites better?',
+                            a: 'Google ranks optimized websites better, and Next.js makes optimization easier by automating speed, structuring, and metadata features.',
+                          },
+                          {
+                            q: '3. What is the most important SEO factor in Next.js?',
+                            a: 'Unique metadata (titles/descriptions), lightning-fast page loading speeds (Core Web Vitals), and high-quality, relevant content.',
+                          },
+                          {
+                            q: '4. Should I use SSR or SSG?',
+                            a: 'Use SSG (Static Site Generation) whenever possible since static files load faster. Use SSR (Server-Side Rendering) for highly dynamic, user-specific data.',
+                          },
+                          {
+                            q: '5. Is sitemap generation necessary?',
+                            a: 'Yes. XML Sitemaps act like indexes, letting search engine bots discover, map, and rank deep links across your site.',
+                          },
+                          {
+                            q: '6. Does image optimization improve SEO?',
+                            a: 'Absolutely. Optimizing files keeps page loading fast, which significantly improves user experience and matches Google’s ranking criteria.',
+                          },
+                          {
+                            q: '7. What are Core Web Vitals?',
+                            a: 'A set of specific Google metrics used to measure load performance (LCP), user interactivity delay (FID), and visual layouts stability (CLS).',
+                          },
+                          {
+                            q: '8. Can Next.js help local businesses rank better?',
+                            a: 'Yes. Combining city-targeted location routes, local schema markup, and rapid loading speeds yields high visibility in local searches.',
+                          },
+                          {
+                            q: '9. How often should SEO audits be performed?',
+                            a: 'Perform audits at least quarterly (or monthly for growing sites) to detect broken links, outdated libraries, and layout shift anomalies.',
+                          },
+                          {
+                            q: '10. Is technical SEO enough to rank?',
+                            a: 'No. While technical SEO provides a vital foundation, high-quality content and reputable backlinks are also necessary to secure top rankings.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -599,89 +664,21 @@ Sitemap: https://yourwebsite.com/sitemap.xml`}
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. Is Next.js better than React for SEO?',
-                  a: 'Yes. Next.js provides built-in Server-Side Rendering (SSR) and Static Site Generation (SSG) that compile your pages into crawlable HTML, vastly outperforming client-side React apps.',
-                },
-                {
-                  q: '2. Does Google rank Next.js websites better?',
-                  a: 'Google ranks optimized websites better, and Next.js makes optimization easier by automating speed, structuring, and metadata features.',
-                },
-                {
-                  q: '3. What is the most important SEO factor in Next.js?',
-                  a: 'Unique metadata (titles/descriptions), lightning-fast page loading speeds (Core Web Vitals), and high-quality, relevant content.',
-                },
-                {
-                  q: '4. Should I use SSR or SSG?',
-                  a: 'Use SSG (Static Site Generation) whenever possible since static files load faster. Use SSR (Server-Side Rendering) for highly dynamic, user-specific data.',
-                },
-                {
-                  q: '5. Is sitemap generation necessary?',
-                  a: 'Yes. XML Sitemaps act like indexes, letting search engine bots discover, map, and rank deep links across your site.',
-                },
-                {
-                  q: '6. Does image optimization improve SEO?',
-                  a: 'Absolutely. Optimizing files keeps page loading fast, which significantly improves user experience and matches Google’s ranking criteria.',
-                },
-                {
-                  q: '7. What are Core Web Vitals?',
-                  a: 'A set of specific Google metrics used to measure load performance (LCP), user interactivity delay (FID), and visual layouts stability (CLS).',
-                },
-                {
-                  q: '8. Can Next.js help local businesses rank better?',
-                  a: 'Yes. Combining city-targeted location routes, local schema markup, and rapid loading speeds yields high visibility in local searches.',
-                },
-                {
-                  q: '9. How often should SEO audits be performed?',
-                  a: 'Perform audits at least quarterly (or monthly for growing sites) to detect broken links, outdated libraries, and layout shift anomalies.',
-                },
-                {
-                  q: '10. Is technical SEO enough to rank?',
-                  a: 'No. While technical SEO provides a vital foundation, high-quality content and reputable backlinks are also necessary to secure top rankings.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'react-vs-nextjs-which-should-you-learn-2026', title: 'React vs Next.js: Which Should You Learn in 2026?' },
+            { slug: 'why-every-small-business-needs-website-2026', title: 'Why Every Small Business Needs a Website in 2026' },
+            { slug: 'how-local-businesses-get-customers-google-business-profile', title: 'How Local Businesses Can Get More Customers with Google Business Profile' },
+            { slug: 'how-i-built-full-stack-saas-nextjs-nodejs', title: 'How I Built a Full-Stack SaaS with Next.js and Node.js' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Looking for Enterprise SEO Optimization?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Advanced SEO & Speed Optimization
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in engineering blistering-fast web architectures using Next.js. Whether you need help optimizing your Core Web Vitals, configuring dynamic robots/sitemap scripts, or injecting JSON-LD schema layers, our remote team guarantees premium results.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

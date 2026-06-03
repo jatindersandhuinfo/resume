@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = '10 AI Business Ideas You Can Start This Month';
@@ -504,6 +506,69 @@ export default function AiBusinessIdeasBlogPost() {
             </div>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. Do I need coding skills to start an AI business?',
+                            a: 'No. Many AI businesses focus on services, content writing, workflows consulting, lead generation, or corporate education.',
+                          },
+                          {
+                            q: '2. Which AI business is best for developers?',
+                            a: 'Developing autonomous AI agents, AI SaaS platforms, custom chatbot configurations, and system automation pipelines.',
+                          },
+                          {
+                            q: '3. Which AI business has the lowest startup cost?',
+                            a: 'Content creation agencies and AI education consulting require almost no initial capital other than software subscriptions.',
+                          },
+                          {
+                            q: '4. Can AI businesses generate recurring revenue?',
+                            a: 'Yes. Offering ongoing lead generation retainers, monthly content services, or AI SaaS subscriptions builds high-margin MRR.',
+                          },
+                          {
+                            q: '5. Is the AI market saturated?',
+                            a: 'No. While basic wrapper tools are common, businesses willing to pay for bespoke integrations and real problem-solving are expanding rapidly.',
+                          },
+                          {
+                            q: '6. How quickly can I start?',
+                            a: 'Many high-demand digital AI service models can be fully set up and launched in a matter of days or weeks.',
+                          },
+                          {
+                            q: '7. What industries need AI the most?',
+                            a: 'Professional healthcare clinics, real estate firms, taxi dispatches, logistics, client support hubs, and software tech platforms.',
+                          },
+                          {
+                            q: '8. Can freelancers benefit from AI?',
+                            a: 'Absolutely. AI lets freelancers boost their project delivery speeds by up to 5x while expanding their service catalog offerings.',
+                          },
+                          {
+                            q: '9. What is the most scalable AI business?',
+                            a: 'Software-as-a-Service (SaaS) and autonomous AI agent execution packages offer the highest profit scaling margins.',
+                          },
+                          {
+                            q: '10. What’s the biggest mistake beginners make?',
+                            a: 'Focusing excessively on AI features, tools, and algorithms instead of solving real, high-pain customer business problems.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -522,89 +587,21 @@ export default function AiBusinessIdeasBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. Do I need coding skills to start an AI business?',
-                  a: 'No. Many AI businesses focus on services, content writing, workflows consulting, lead generation, or corporate education.',
-                },
-                {
-                  q: '2. Which AI business is best for developers?',
-                  a: 'Developing autonomous AI agents, AI SaaS platforms, custom chatbot configurations, and system automation pipelines.',
-                },
-                {
-                  q: '3. Which AI business has the lowest startup cost?',
-                  a: 'Content creation agencies and AI education consulting require almost no initial capital other than software subscriptions.',
-                },
-                {
-                  q: '4. Can AI businesses generate recurring revenue?',
-                  a: 'Yes. Offering ongoing lead generation retainers, monthly content services, or AI SaaS subscriptions builds high-margin MRR.',
-                },
-                {
-                  q: '5. Is the AI market saturated?',
-                  a: 'No. While basic wrapper tools are common, businesses willing to pay for bespoke integrations and real problem-solving are expanding rapidly.',
-                },
-                {
-                  q: '6. How quickly can I start?',
-                  a: 'Many high-demand digital AI service models can be fully set up and launched in a matter of days or weeks.',
-                },
-                {
-                  q: '7. What industries need AI the most?',
-                  a: 'Professional healthcare clinics, real estate firms, taxi dispatches, logistics, client support hubs, and software tech platforms.',
-                },
-                {
-                  q: '8. Can freelancers benefit from AI?',
-                  a: 'Absolutely. AI lets freelancers boost their project delivery speeds by up to 5x while expanding their service catalog offerings.',
-                },
-                {
-                  q: '9. What is the most scalable AI business?',
-                  a: 'Software-as-a-Service (SaaS) and autonomous AI agent execution packages offer the highest profit scaling margins.',
-                },
-                {
-                  q: '10. What’s the biggest mistake beginners make?',
-                  a: 'Focusing excessively on AI features, tools, and algorithms instead of solving real, high-pain customer business problems.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'ai-tools-productivity-business-growth', title: 'AI Tools: The Complete Guide to Boosting Productivity and Business Growth' },
+            { slug: 'ai-tools-that-save-10-hours-per-week', title: 'AI Tools That Save 10+ Hours Per Week' },
+            { slug: 'build-ai-agent-nodejs-complete-guide', title: 'Build an AI Agent with Node.js: Complete Guide (2026)' },
+            { slug: 'how-to-get-first-freelance-client-developer-2026', title: 'How to Get Your First Freelance Client as a Developer in 2026' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Planning an AI system or SaaS product build?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Advanced AI & Full-Stack Development Services
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            We specialize in engineering robust, high-performance Next.js websites, autonomous AI agent workflows, smart conversational assistants, and secure SaaS solutions. Let us handle your technical roadmap so you can scale.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}

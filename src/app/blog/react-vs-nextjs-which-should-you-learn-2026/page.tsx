@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import AboutAuthor from '@/components/AboutAuthor';
+import BlogCta from '@/components/BlogCta';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'React vs Next.js: Which Should You Learn in 2026?';
@@ -640,6 +642,69 @@ export default function ReactVsNextjsBlogPost() {
             </p>
           </section>
 
+          
+
+          {/* FAQs Accordion Grid */}
+          
+
+        
+
+          <section id="faqs" className="space-y-6">
+                      <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+                        Frequently Asked Questions (FAQs)
+                      </h2>
+            
+                      <div className="space-y-4 mt-6">
+                        {[
+                          {
+                            q: '1. Should beginners learn React or Next.js first?',
+                            a: 'Learn React first to understand component lifecycle and state hooks, then move to Next.js.',
+                          },
+                          {
+                            q: '2. Is Next.js replacing React?',
+                            a: 'No. Next.js is a framework built on top of React. It uses React as its rendering engine.',
+                          },
+                          {
+                            q: '3. Which is better for SEO?',
+                            a: 'Next.js is significantly better because it pre-renders full HTML on the server, making it easily crawlable by search engines.',
+                          },
+                          {
+                            q: '4. Is React still worth learning in 2026?',
+                            a: 'Absolutely. React remains the foundational UI library for most modern web development globally.',
+                          },
+                          {
+                            q: '5. Which is easier to learn?',
+                            a: 'React is generally easier for complete beginners since it has fewer abstract full-stack architectural concepts to grasp initially.',
+                          },
+                          {
+                            q: '6. Which pays more?',
+                            a: 'Developers skilled in both React and Next.js command higher salaries and freelance rates because they can build complete, high-performance SEO-friendly systems.',
+                          },
+                          {
+                            q: '7. Can I build SaaS products with React?',
+                            a: 'Yes, but Next.js usually provides a better overall full-stack architecture, faster performance, and seamless SEO out-of-the-box.',
+                          },
+                          {
+                            q: '8. Is Next.js good for freelancing?',
+                            a: 'Yes. Freelance clients want outcomes like faster loading and better search engine rankings, which Next.js delivers efficiently.',
+                          },
+                          {
+                            q: '9. Can Next.js replace Node.js?',
+                            a: 'Not entirely. While Next.js handles serverless API routes excellently, complex, heavy, or long-running backend systems still require dedicated Node.js services.',
+                          },
+                          {
+                            q: '10. What should I learn after Next.js?',
+                            a: 'Focus on TypeScript, advanced databases (PostgreSQL, MongoDB), authentication protocols, cloud hosting architectures, and AI API integrations.',
+                          },
+                        ].map((faq, idx) => (
+                          <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
+                            <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
+                            <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+
           <section id="conclusion" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2">
               Conclusion
@@ -658,89 +723,21 @@ export default function ReactVsNextjsBlogPost() {
             </p>
           </section>
 
-          {/* FAQs Accordion Grid */}
-          <section id="faqs" className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight text-[#0b0d0e] dark:text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
-              Frequently Asked Questions (FAQs)
-            </h2>
-            
-            <div className="space-y-4 mt-6">
-              {[
-                {
-                  q: '1. Should beginners learn React or Next.js first?',
-                  a: 'Learn React first to understand component lifecycle and state hooks, then move to Next.js.',
-                },
-                {
-                  q: '2. Is Next.js replacing React?',
-                  a: 'No. Next.js is a framework built on top of React. It uses React as its rendering engine.',
-                },
-                {
-                  q: '3. Which is better for SEO?',
-                  a: 'Next.js is significantly better because it pre-renders full HTML on the server, making it easily crawlable by search engines.',
-                },
-                {
-                  q: '4. Is React still worth learning in 2026?',
-                  a: 'Absolutely. React remains the foundational UI library for most modern web development globally.',
-                },
-                {
-                  q: '5. Which is easier to learn?',
-                  a: 'React is generally easier for complete beginners since it has fewer abstract full-stack architectural concepts to grasp initially.',
-                },
-                {
-                  q: '6. Which pays more?',
-                  a: 'Developers skilled in both React and Next.js command higher salaries and freelance rates because they can build complete, high-performance SEO-friendly systems.',
-                },
-                {
-                  q: '7. Can I build SaaS products with React?',
-                  a: 'Yes, but Next.js usually provides a better overall full-stack architecture, faster performance, and seamless SEO out-of-the-box.',
-                },
-                {
-                  q: '8. Is Next.js good for freelancing?',
-                  a: 'Yes. Freelance clients want outcomes like faster loading and better search engine rankings, which Next.js delivers efficiently.',
-                },
-                {
-                  q: '9. Can Next.js replace Node.js?',
-                  a: 'Not entirely. While Next.js handles serverless API routes excellently, complex, heavy, or long-running backend systems still require dedicated Node.js services.',
-                },
-                {
-                  q: '10. What should I learn after Next.js?',
-                  a: 'Focus on TypeScript, advanced databases (PostgreSQL, MongoDB), authentication protocols, cloud hosting architectures, and AI API integrations.',
-                },
-              ].map((faq, idx) => (
-                <div key={idx} className="rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] p-5">
-                  <h3 className="text-sm font-bold text-[#d6ad63]">{faq.q}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-black/65 dark:text-white/65">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+                    <AboutAuthor
+            relatedArticles={[
+            { slug: 'complete-nextjs-seo-guide-2026', title: 'Complete Next.js SEO Guide for 2026' },
+            { slug: 'how-i-built-full-stack-saas-nextjs-nodejs', title: 'How I Built a Full-Stack SaaS with Next.js and Node.js' },
+            { slug: 'how-to-hire-freelance-full-stack-developer', title: 'How to Hire a Freelance Full Stack Developer (2026 Guide)' },
+            { slug: 'why-every-small-business-needs-website-2026', title: 'Why Every Small Business Needs a Website in 2026' }
+            ]}
+          />
+
+          
 
         </div>
 
         {/* Portfolio CTA Sidebar Card */}
-        <aside className="mt-16 rounded-lg border border-[#d6ad63]/30 bg-gray-50 dark:bg-[#111416] p-7" aria-label="Hire developer CTA">
-          <p className="section-kicker mb-1 text-xs font-bold uppercase tracking-wider text-[#d6ad63]">Ready to build your next web application?</p>
-          <h2 className="mt-3 text-xl font-black text-[#0b0d0e] dark:text-white">
-            Hire {fullName} for Custom React and Next.js Development
-          </h2>
-          <p className="mt-4 text-xs leading-relaxed text-black/65 dark:text-white/65">
-            Whether you need a high-performance Next.js SaaS platform, an SEO-optimized business website, a custom admin dashboard, or seamless AI integrations, we deliver clean, production-ready full-stack applications tailored to your business needs.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] transition hover:bg-white"
-            >
-              Consult with Jatinder
-            </a>
-            <Link
-              href="/"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-            >
-              View Our Projects
-            </Link>
-          </div>
-        </aside>
+        <BlogCta />
       </article>
 
       {/* Footer */}
