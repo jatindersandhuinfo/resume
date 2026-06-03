@@ -1,9 +1,12 @@
 import { MetadataRoute } from 'next';
 import { seo, projects, teamSection, services } from '@/lib/data';
+import fs from 'fs';
+import path from 'path';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  // Dynamic projects URLs
   const projectUrls: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${seo.siteUrl}/projects/${p.slug}`,
     lastModified: now,
@@ -11,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Dynamic team members URLs
   const teamUrls: MetadataRoute.Sitemap = teamSection.members.map((m) => ({
     url: `${seo.siteUrl}/team/${m.slug}`,
     lastModified: now,
@@ -18,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Dynamic service URLs
   const serviceUrls: MetadataRoute.Sitemap = services
     .filter((s) => s.slug)
     .map((s) => ({
@@ -26,6 +31,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     }));
+
+  // Automatically scan the blog directory for posts
+  const blogDir = path.join(process.cwd(), 'src/app/blog');
+  let blogUrls: MetadataRoute.Sitemap = [];
+  
+  if (fs.existsSync(blogDir)) {
+    const folders = fs.readdirSync(blogDir);
+    blogUrls = folders
+      .filter((folder) => {
+        const folderPath = path.join(blogDir, folder);
+        // Only include directories that contain page.tsx (filtering out helper files)
+        return fs.statSync(folderPath).isDirectory() && fs.existsSync(path.join(folderPath, 'page.tsx'));
+      })
+      .map((folder) => {
+        const pagePath = path.join(blogDir, folder, 'page.tsx');
+        const stats = fs.statSync(pagePath);
+        return {
+          url: `${seo.siteUrl}/blog/${folder}`,
+          lastModified: stats.mtime, // Automatically uses actual file update date
+          changeFrequency: 'monthly',
+          priority: 0.75,
+        };
+      });
+  }
 
   return [
     {
@@ -40,78 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    {
-      url: `${seo.siteUrl}/blog/10-ai-business-ideas-you-can-start-this-month`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/react-vs-nextjs-which-should-you-learn-2026`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/best-website-features-taxi-car-rental-2026`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/how-local-businesses-get-customers-google-business-profile`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/why-every-small-business-needs-website-2026`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/how-to-get-first-freelance-client-developer-2026`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/build-ai-agent-nodejs-complete-guide`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/complete-nextjs-seo-guide-2026`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/how-i-built-full-stack-saas-nextjs-nodejs`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/ai-tools-that-save-10-hours-per-week`,
-      lastModified: new Date('2026-06-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/ai-tools-productivity-business-growth`,
-      lastModified: new Date('2026-05-30'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
-      url: `${seo.siteUrl}/blog/how-to-hire-freelance-full-stack-developer`,
-      lastModified: new Date('2026-05-01'),
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
+    ...blogUrls,
     ...projectUrls,
     ...teamUrls,
     ...serviceUrls,
