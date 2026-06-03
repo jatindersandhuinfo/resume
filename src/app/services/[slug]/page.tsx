@@ -2,8 +2,26 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { services, projects, teamSection, seo, personal, contact, servicesSection } from '@/lib/data';
+import { services, projects, teamSection, seo, personal, contact } from '@/lib/data';
+import { servicesDetailData } from '@/lib/services-detail-data';
 import HeaderNav from '@/components/HeaderNav';
+import { 
+  CheckCircle2, 
+  HelpCircle, 
+  Settings, 
+  Cpu, 
+  Database as DbIcon, 
+  Zap, 
+  Terminal, 
+  Workflow, 
+  ShieldCheck,
+  Clock,
+  ArrowRight,
+  Code,
+  AlertCircle,
+  Play,
+  Briefcase
+} from 'lucide-react';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Props = { params: Promise<{ slug: string }> };
@@ -13,24 +31,24 @@ export async function generateStaticParams() {
   return services.filter((s) => s.slug).map((s) => ({ slug: s.slug }));
 }
 
-// ── SEO ───────────────────────────────────────────────────────────────────────
+// ── SEO Metadata ──────────────────────────────────────────────────────────────
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const title = service.seoTitle || `${service.label} Services | ${personal.firstName} Sandhu`;
-  const description = service.seoDescription || `Custom ${service.label} services built with precision.`;
+  const detail = servicesDetailData[slug];
+  const title = detail?.seoTitle || service.seoTitle || `${service.label} Services | ${personal.firstName} Sandhu`;
+  const description = detail?.seoDescription || service.seoDescription || `Custom ${service.label} services built with precision.`;
   const url = `${seo.siteUrl}/services/${slug}`;
-  const serviceStack = servicesSection.serviceStacks[service.label] || [];
   
   const keywords = [
-    service.label,
-    ...serviceStack,
+    detail?.primaryKeyword || service.label,
     `${personal.firstName} Sandhu`,
     'freelance full stack developer',
     'remote developer',
     'web development services',
+    'software engineering services'
   ].join(', ');
 
   return {
@@ -71,19 +89,16 @@ function cat(category: string) {
   return CATEGORY_COLORS[category] ?? { accent: '#d6ad63', glow: '#d6ad6315', bg: '#d6ad6310', border: '#d6ad6330' };
 }
 
-// ── Match Projects and Team members ──────────────────────────────────────────
+// ── Match Projects dynamically if not explicitly specified ───────────────────
 function getRelatedProjects(serviceLabel: string, stack: string[]) {
   const normalizedLabel = serviceLabel.toLowerCase();
   
   return projects.filter((p) => {
-    // 1. Direct category match
     if (p.category.toLowerCase().includes(normalizedLabel)) return true;
     
-    // 2. Overview / Solution keyword match
     const textToSearch = `${p.name} ${p.overview} ${p.challenge} ${p.solution}`.toLowerCase();
     if (normalizedLabel.split(' ').some(word => word.length > 2 && textToSearch.includes(word))) return true;
 
-    // 3. Tech Stack item match
     const flatTech = p.techStack.flatMap(group => group.items).map(item => item.toLowerCase());
     if (stack.some(tech => flatTech.includes(tech.toLowerCase()))) return true;
     
@@ -91,36 +106,111 @@ function getRelatedProjects(serviceLabel: string, stack: string[]) {
   }).slice(0, 3);
 }
 
-function getRelatedTeam(stack: string[]) {
-  return teamSection.members.filter((m) => {
-    const memberSkills = m.skills.map(s => s.toLowerCase());
-    return stack.some(tech => memberSkills.includes(tech.toLowerCase()));
-  });
-}
+// ── Development Process Data ──────────────────────────────────────────────────
+const DEVELOPMENT_PROCESS = [
+  {
+    phase: 'Discovery',
+    description: 'Understanding business goals, target audience flows, and scoping out requirements into a clear backlog document.',
+  },
+  {
+    phase: 'Planning',
+    description: 'Drafting data schema flowcharts, API specifications, user journeys, and structuring milestone-based delivery dates.',
+  },
+  {
+    phase: 'Architecture',
+    description: 'Selecting optimized technologies, designing relational table linkages or NoSQL patterns, and preparing environment structures.',
+  },
+  {
+    phase: 'Development',
+    description: 'Writing clean, typed, modular code with daily version control commits, strict validation guards, and design system hooks.',
+  },
+  {
+    phase: 'Testing',
+    description: 'Running unit validation scripts, API route calls, mobile-responsive layout testing, and security scanning for loops or leaks.',
+  },
+  {
+    phase: 'Deployment',
+    description: 'Publishing builds to secure edge servers with automatic compilation pipelines, database indexing checks, and custom domain paths.',
+  },
+  {
+    phase: 'Maintenance',
+    description: 'Monitoring server log files, installing safety package updates, generating databases backups, and executing performance tweaks.',
+  },
+];
 
-// ── Page Component ────────────────────────────────────────────────────────────
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
-  const label = service.label;
-  const description = service.description || '';
-  const copy = servicesSection.serviceCopy[label] || '';
-  const tag = servicesSection.serviceTags[label] || 'Web';
-  const stack = servicesSection.serviceStacks[label] || [];
+  // Load detailed rich SEO landing data
+  const detail = servicesDetailData[slug];
+  if (!detail) notFound();
 
-  const relatedProjects = getRelatedProjects(label, stack);
-  const relatedTeam = getRelatedTeam(stack);
-  const otherServices = services.filter((s) => s.slug && s.slug !== slug);
+  const label = detail.label;
+  const tag = detail.tag;
+  const stack = detail.technologies.map(t => t.name);
+
+  // Match Featured Projects (explicitly configured vs dynamically matched)
+  let relatedProjects = [];
+  if (detail.featuredProjectSlugs && detail.featuredProjectSlugs.length > 0) {
+    relatedProjects = projects.filter(p => detail.featuredProjectSlugs?.includes(p.slug));
+  } else {
+    relatedProjects = getRelatedProjects(label, stack);
+  }
+
+  // FAQ Schema JSON-LD
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: detail.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  // Service Schema JSON-LD
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: detail.hero.title,
+    provider: {
+      '@type': 'Person',
+      name: `${personal.firstName} ${personal.lastName}`,
+      url: seo.siteUrl,
+    },
+    areaServed: 'Worldwide',
+    serviceType: detail.label,
+    description: detail.seoDescription,
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: 'Negotiable',
+      priceRange: '$$',
+    },
+  };
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0b0d0e] text-[#0b0d0e] dark:text-white">
+    <main className="min-h-screen bg-white dark:bg-[#0b0d0e] text-[#0b0d0e] dark:text-white font-sans antialiased">
+      {/* Dynamic JSON-LD injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       <HeaderNav />
       
       {/* ── Breadcrumb & Utility Bar ───────────────────────────────────────── */}
       <div className="border-b border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01]">
-        <div className="mx-auto flex max-w-7xl justify-between items-center px-5 py-3 sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl justify-between items-center px-5 py-3.5 sm:px-8 lg:px-10">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/35 dark:text-white/35">
             <Link href="/" className="transition hover:text-[#d6ad63]">Home</Link>
             <span aria-hidden="true" className="text-black/20 dark:text-white/20">›</span>
@@ -129,7 +219,7 @@ export default async function ServicePage({ params }: Props) {
             <span className="text-black/50 dark:text-white/50">{label}</span>
           </nav>
           
-          <a
+          <Link
             href="/#services"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/60 dark:text-white/60 transition hover:text-[#d6ad63]"
           >
@@ -137,16 +227,15 @@ export default async function ServicePage({ params }: Props) {
               <path d="M5 3L10 8L5 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             All Services
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* ── Hero Section ───────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-b border-black/10 dark:border-white/10" aria-labelledby="service-title">
-        {/* Subtle decorative glowing background blur */}
+      <section className="relative overflow-hidden border-b border-black/10 dark:border-white/10 bg-gradient-to-b from-black/[0.01] to-transparent dark:from-white/[0.01] dark:to-transparent" aria-labelledby="service-title">
         <div
           aria-hidden="true"
-          className="absolute -top-40 left-1/4 h-[400px] w-[500px] rounded-full bg-[#d6ad63]/5 blur-[120px] dark:bg-[#d6ad63]/[0.03]"
+          className="absolute -top-40 left-1/4 h-[400px] w-[500px] rounded-full bg-[#d6ad63]/5 blur-[120px] dark:bg-[#d6ad63]/[0.02]"
         />
 
         <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
@@ -160,8 +249,8 @@ export default async function ServicePage({ params }: Props) {
                 </span>
                 
                 <div className="flex items-center gap-2.5 rounded-full border border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.04] px-3.5 py-1">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.75)]" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-500 dark:text-emerald-400">
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.75)] animate-pulse" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-600 dark:text-emerald-400">
                     Active Offering
                   </span>
                 </div>
@@ -169,61 +258,68 @@ export default async function ServicePage({ params }: Props) {
 
               <h1
                 id="service-title"
-                className="hero-title text-[#0b0d0e] dark:text-white leading-tight font-black"
+                className="hero-title text-[#0b0d0e] dark:text-white leading-tight font-black tracking-tight"
                 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)' }}
               >
-                {label}
+                {detail.hero.title}
               </h1>
               
-              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-black/75 dark:text-white/80">
-                {description}
-              </p>
-              
-              <p className="mt-6 max-w-3xl body-copy text-black/60 dark:text-white/60">
-                {copy}
+              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-black/75 dark:text-white/80 font-medium">
+                {detail.hero.subheading}
               </p>
 
-              {/* Technologies / Specializations Badges */}
-              <div className="mt-10">
-                <h2 className="meta-label text-black/45 dark:text-white/45 mb-4 uppercase tracking-[0.14em]">Core Stack & Competencies</h2>
-                <div className="flex flex-wrap gap-2.5">
-                  {stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-lg border border-black/5 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03] px-4 py-2 text-sm font-semibold text-black/70 dark:text-white/80"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              {/* Quick Jump Links */}
+              <div className="mt-8 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-[0.1em] text-black/45 dark:text-white/40">
+                <a href="#what-i-do" className="hover:text-[#d6ad63] transition">01. What I Do</a>
+                <span>•</span>
+                <a href="#services-included" className="hover:text-[#d6ad63] transition">02. Services Included</a>
+                <span>•</span>
+                <a href="#process" className="hover:text-[#d6ad63] transition">03. Development Process</a>
+                <span>•</span>
+                <a href="#faq" className="hover:text-[#d6ad63] transition">04. Service FAQ</a>
               </div>
             </div>
 
             {/* Right Column: Key Details Box */}
-            <aside className="rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] p-6 lg:p-8 backdrop-blur-sm">
-              <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-[#d6ad63] mb-6">Service Delivery</h3>
+            <aside className="rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] p-6 lg:p-8 backdrop-blur-sm shadow-xl shadow-black/[0.02] dark:shadow-black/20">
+              <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-[#d6ad63] mb-6 flex items-center gap-2">
+                <Briefcase size={16} /> Service Delivery
+              </h3>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase">Delivery Model</h4>
+                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase tracking-[0.05em] flex items-center gap-1.5">
+                    <Clock size={12} /> Delivery Model
+                  </h4>
                   <p className="mt-1 text-sm font-semibold">Remote Freelance (Global)</p>
                 </div>
 
                 <div className="border-t border-black/10 dark:border-white/10 pt-4">
-                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase">Common Tech</h4>
+                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase tracking-[0.05em] flex items-center gap-1.5">
+                    <Code size={12} /> Common Tech
+                  </h4>
                   <p className="mt-1 text-sm font-semibold">{stack.slice(0, 3).join(', ')}</p>
                 </div>
 
                 <div className="border-t border-black/10 dark:border-white/10 pt-4">
-                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase">Typical Timeline</h4>
-                  <p className="mt-1 text-sm font-semibold">1 to 4 weeks depending on scope</p>
+                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase tracking-[0.05em] flex items-center gap-1.5">
+                    <Settings size={12} /> Typical Timeline
+                  </h4>
+                  <p className="mt-1 text-sm font-semibold">2 to 6 weeks depending on scope</p>
+                </div>
+
+                <div className="border-t border-black/10 dark:border-white/10 pt-4">
+                  <h4 className="text-xs font-bold text-black/40 dark:text-white/40 uppercase tracking-[0.05em] flex items-center gap-1.5">
+                    <ShieldCheck size={12} /> IP Ownership
+                  </h4>
+                  <p className="mt-1 text-sm font-semibold">100% Client-Owned Source</p>
                 </div>
               </div>
 
               <div className="mt-8">
                 <a
                   href={`mailto:${contact.email}?subject=Inquiry regarding ${label} services`}
-                  className="flex w-full min-h-[50px] items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.14em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] border border-transparent hover:border-black/10 dark:hover:border-white/10"
+                  className="flex w-full min-h-[50px] items-center justify-center rounded-full bg-[#d6ad63] px-6 text-xs font-bold uppercase tracking-[0.14em] text-[#0b0d0e] transition duration-200 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black border border-transparent hover:border-black/10 dark:hover:border-white/10 shadow-md shadow-[#d6ad63]/10"
                 >
                   Book Service
                 </a>
@@ -234,75 +330,306 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── Case Studies Section ───────────────────────────────────────────── */}
-      {relatedProjects.length > 0 && (
-        <section className="border-b border-black/10 dark:border-white/10 py-20 lg:py-28" aria-labelledby="projects-heading">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-            <div className="mb-12">
-              <p className="section-kicker">Case Studies</p>
-              <h2 id="projects-heading" className="mt-3 section-title text-[#0b0d0e] dark:text-white">
-                Related Work & Projects
+      {/* ── Section: What I Do ──────────────────────────────────────────────── */}
+      <section id="what-i-do" className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 scroll-mt-10">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-2">
+            
+            {/* Left side: Detailed SEO Essay */}
+            <div>
+              <p className="section-kicker">01 / Overview</p>
+              <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+                Core Capabilities & Scope
               </h2>
-              <p className="mt-4 max-w-2xl small-copy text-black/60 dark:text-white/60">
-                Selected production builds demonstrating expertise and results in {label}.
+              <div className="mt-6 text-base leading-relaxed text-black/70 dark:text-white/70 space-y-4">
+                {/* Render paragraphs cleanly */}
+                {detail.whatIDo.description.split('\n\n').map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+
+            {/* Right side: High-density quick columns */}
+            <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1 lg:self-center">
+              
+              <div className="p-6 rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01]">
+                <h3 className="text-xs font-bold uppercase tracking-[0.1em] text-[#d6ad63] mb-3 flex items-center gap-1.5">
+                  <Play size={12} className="text-[#d6ad63]" /> Who It Is For
+                </h3>
+                <ul className="space-y-2 text-sm text-black/60 dark:text-white/60">
+                  {detail.whatIDo.whoIsItFor.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-[#d6ad63] font-bold mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="p-6 rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01]">
+                <h3 className="text-xs font-bold uppercase tracking-[0.1em] text-[#d6ad63] mb-3 flex items-center gap-1.5">
+                  <AlertCircle size={12} className="text-[#d6ad63]" /> Problems Solved
+                </h3>
+                <ul className="space-y-2 text-sm text-black/60 dark:text-white/60">
+                  {detail.whatIDo.problemsSolved.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="p-6 rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01]">
+                <h3 className="text-xs font-bold uppercase tracking-[0.1em] text-[#d6ad63] mb-3 flex items-center gap-1.5">
+                  <CheckCircle2 size={12} className="text-emerald-500" /> Core Benefits
+                </h3>
+                <ul className="space-y-2 text-sm text-black/60 dark:text-white/60">
+                  {detail.whatIDo.benefits.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-emerald-500 font-bold mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Services Included ───────────────────────────────────────── */}
+      <section id="services-included" className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] scroll-mt-10">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-12 text-center max-w-2xl mx-auto">
+            <p className="section-kicker text-center">02 / Offerings</p>
+            <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+              What Is Included
+            </h2>
+            <p className="mt-4 text-sm text-black/60 dark:text-white/60">
+              A comprehensive breakdown of all features and tasks handled under the {label} scope.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {detail.servicesIncluded.map((sub, idx) => (
+              <div 
+                key={idx}
+                className="p-6 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] shadow-sm transition hover:-translate-y-0.5 hover:border-[#d6ad63]/50 hover:shadow-md"
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#d6ad63]/10 border border-[#d6ad63]/20 text-xs font-bold text-[#d6ad63] mb-4">
+                  0{idx + 1}
+                </span>
+                <h3 className="text-base font-bold text-[#0b0d0e] dark:text-white mb-2">{sub.title}</h3>
+                <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">{sub.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Technologies Used ────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 scroll-mt-10">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[380px_1fr] lg:items-start">
+            
+            <div>
+              <p className="section-kicker">03 / Technologies</p>
+              <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+                Tech Stack Focus
+              </h2>
+              <p className="mt-4 text-sm text-black/60 dark:text-white/60 leading-relaxed">
+                We select technologies based on scalability, speed, and standard design principles. Each tool is configured for optimal compilation speeds.
               </p>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2">
+              {detail.technologies.map((tech, idx) => (
+                <div key={idx} className="p-6 rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01] flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-[#d6ad63]/5 border border-[#d6ad63]/15 text-[#d6ad63] shrink-0 mt-0.5">
+                    <Terminal size={16} />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-[#0b0d0e] dark:text-white mb-1.5">{tech.name}</h3>
+                    <p className="text-xs text-black/60 dark:text-white/65 leading-relaxed">{tech.explanation}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Solutions I Build ────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01]">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-12 text-center max-w-2xl mx-auto">
+            <p className="section-kicker text-center">04 / Product Scopes</p>
+            <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+              Solutions I Build
+            </h2>
+            <p className="mt-4 text-sm text-black/60 dark:text-white/60">
+              Custom applications and system layers I build to replace slow, manual operations.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {detail.solutionsBuilt.map((sol, idx) => (
+              <span 
+                key={idx} 
+                className="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] px-5 py-2.5 text-sm font-semibold text-black/80 dark:text-white/80 transition hover:border-[#d6ad63]/40"
+              >
+                <span className="h-2 w-2 rounded-full bg-[#d6ad63]/70" />
+                {sol}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Development Process ──────────────────────────────────────── */}
+      <section id="process" className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 scroll-mt-10">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-16">
+            <p className="section-kicker">05 / Methodology</p>
+            <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+              The Development Process
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm text-black/60 dark:text-white/60">
+              A structured lifecycle designed to build correct architectures, catch logical gaps early, and launch securely.
+            </p>
+          </div>
+
+          <div className="grid gap-px overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+            {DEVELOPMENT_PROCESS.map((step, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white dark:bg-[#0f1214] p-6 hover:bg-black/[0.02] dark:hover:bg-[#15191b] transition duration-200"
+              >
+                <div className="flex justify-between items-center mb-6">
+                  <span className="text-[2.2rem] font-black leading-none text-black/10 dark:text-white/10">
+                    0{idx + 1}
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#d6ad63] bg-[#d6ad63]/10 border border-[#d6ad63]/20 px-2 py-0.5 rounded">
+                    Phase {idx + 1}
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-[#0b0d0e] dark:text-white mb-2">{step.phase}</h3>
+                <p className="text-xs text-black/60 dark:text-white/65 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Why Work With Me ────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01]">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-12 text-center max-w-2xl mx-auto">
+            <p className="section-kicker text-center">06 / Commitment</p>
+            <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+              Why Work With Me
+            </h2>
+            <p className="mt-4 text-sm text-black/60 dark:text-white/60">
+              We focus on clean, secure code and direct communication pathways without broker layers.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {detail.whyWorkWithMe.map((item, idx) => (
+              <div key={idx} className="p-6 rounded-xl border border-black/5 dark:border-white/5 bg-white dark:bg-[#0f1214] flex items-start gap-4">
+                <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 shrink-0">
+                  <CheckCircle2 size={18} />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-[#0b0d0e] dark:text-white mb-1.5">{item.title}</h3>
+                  <p className="text-xs text-black/60 dark:text-white/60 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Featured Projects (Proof) ────────────────────────────────── */}
+      {relatedProjects.length > 0 && (
+        <section id="proof" className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 scroll-mt-10">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="mb-12">
+              <p className="section-kicker">07 / Case Studies</p>
+              <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+                Featured Projects & Proof
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm text-black/60 dark:text-white/60">
+                Selected production builds demonstrating engineering excellence in {label} services.
+              </p>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-2">
               {relatedProjects.map((p) => {
                 const colorObj = cat(p.category);
                 return (
                   <article
                     key={p.slug}
-                    className="interactive-card group overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] flex flex-col h-full"
+                    className="p-6 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] flex flex-col h-full hover:shadow-lg transition duration-300"
                   >
-                    {/* Visual aspect ratios */}
-                    {p.coverImage && (
-                      <div className="relative aspect-video overflow-hidden border-b border-black/10 dark:border-white/10">
-                        <Image
-                          src={p.coverImage}
-                          alt={`${p.name} case study - ${p.category} build`}
-                          fill
-                          sizes="(max-w-768px) 100vw, 33vw"
-                          className="object-cover transition duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                    <div className="flex justify-between items-center gap-4 mb-4">
+                      <span
+                        className="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em]"
+                        style={{
+                          color: colorObj.accent,
+                          backgroundColor: colorObj.bg,
+                          border: `1px solid ${colorObj.border}`,
+                        }}
+                      >
+                        {p.category}
+                      </span>
+                      <span className="text-xs font-semibold text-black/40 dark:text-white/40">{p.year}</span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-[#0b0d0e] dark:text-white hover:text-[#d6ad63] transition mb-3">
+                      <Link href={`/projects/${p.slug}`}>
+                        {p.name}
+                      </Link>
+                    </h3>
+
+                    <p className="text-sm text-black/60 dark:text-white/60 mb-6 font-medium">
+                      {p.tagline}
+                    </p>
+
+                    {/* Detailed Problem / Solution Grid for SEO structure */}
+                    <div className="space-y-4 mb-6 pt-4 border-t border-black/5 dark:border-white/5 flex-grow">
+                      <div>
+                        <h4 className="text-[11px] font-bold text-red-500 uppercase tracking-[0.05em] mb-1">Challenge</h4>
+                        <p className="text-xs text-black/58 dark:text-white/60 leading-relaxed line-clamp-3">{p.challenge}</p>
                       </div>
-                    )}
-
-                    <div className="p-6 flex flex-col flex-grow">
-                      <div className="flex justify-between items-center gap-4 mb-4">
-                        <span
-                          className="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em]"
-                          style={{
-                            color: colorObj.accent,
-                            backgroundColor: colorObj.bg,
-                            border: `1px solid ${colorObj.border}`,
-                          }}
-                        >
-                          {p.category}
-                        </span>
-                        <span className="text-[10px] font-semibold text-black/40 dark:text-white/40">{p.year}</span>
+                      <div>
+                        <h4 className="text-[11px] font-bold text-emerald-500 uppercase tracking-[0.05em] mb-1">Implemented Solution</h4>
+                        <p className="text-xs text-black/58 dark:text-white/60 leading-relaxed line-clamp-3">{p.solution}</p>
                       </div>
-
-                      <h3 className="card-title text-[#0b0d0e] dark:text-white group-hover:text-[#d6ad63] transition duration-200">
-                        <Link href={`/projects/${p.slug}`} className="focus:outline-none">
-                          {p.name}
-                        </Link>
-                      </h3>
-
-                      <p className="mt-3 small-copy text-black/58 dark:text-white/58 line-clamp-3 flex-grow">
-                        {p.overview}
-                      </p>
-
-                      <div className="mt-6 flex items-center justify-between border-t border-black/5 dark:border-white/5 pt-4">
-                        <span className="text-xs font-semibold text-[#d6ad63] group-hover:underline inline-flex items-center gap-1.5">
-                          Read Case Study
-                          <svg width="10" height="10" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition group-hover:translate-x-0.5">
-                            <path d="M5 3L10 8L5 13" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </span>
+                      <div>
+                        <h4 className="text-[11px] font-bold text-[#d6ad63] uppercase tracking-[0.05em] mb-1">Delivered Results</h4>
+                        <p className="text-xs text-black/58 dark:text-white/60 leading-relaxed line-clamp-2">{p.result}</p>
                       </div>
+                    </div>
+
+                    <div className="flex items-center justify-between border-t border-black/5 dark:border-white/5 pt-4">
+                      <div className="flex flex-wrap gap-1.5">
+                        {p.tech.split('·').slice(0, 3).map((t) => (
+                          <span key={t} className="px-2 py-0.5 rounded text-[10px] font-bold bg-black/[0.04] dark:bg-white/[0.04] text-black/50 dark:text-white/50">
+                            {t.trim()}
+                          </span>
+                        ))}
+                      </div>
+                      <Link 
+                        href={`/projects/${p.slug}`}
+                        className="text-xs font-bold text-[#d6ad63] hover:underline flex items-center gap-1.5"
+                      >
+                        Read Case Study <ArrowRight size={12} />
+                      </Link>
                     </div>
                   </article>
                 );
@@ -312,128 +639,58 @@ export default async function ServicePage({ params }: Props) {
         </section>
       )}
 
-      {/* ── Team Collaboration Section ──────────────────────────────────────── */}
-      {relatedTeam.length > 0 && (
-        <section className="border-b border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] py-20 lg:py-28" aria-labelledby="team-heading">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-            <div className="mb-12">
-              <p className="section-kicker">Expertise</p>
-              <h2 id="team-heading" className="mt-3 section-title text-[#0b0d0e] dark:text-white">
-                Team Capabilities
-              </h2>
-              <p className="mt-4 max-w-2xl small-copy text-black/60 dark:text-white/60">
-                Meet team members collaborating on {label} workflows to deliver exceptional product quality.
-              </p>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedTeam.map((m) => (
-                <div
-                  key={m.slug}
-                  className="interactive-card rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] p-6 flex items-center gap-5"
-                >
-                  {m.image ? (
-                    <div className="relative shrink-0 overflow-hidden rounded-full border border-black/10 dark:border-white/10" style={{ width: 64, height: 64 }}>
-                      <Image src={m.image} alt={m.name} fill className="object-cover" />
-                    </div>
-                  ) : (
-                    <div
-                      aria-hidden="true"
-                      className="flex shrink-0 items-center justify-center rounded-full text-base font-black"
-                      style={{
-                        width: 64,
-                        height: 64,
-                        background: m.avatarBg,
-                        border: `1.5px solid ${m.avatarColor}40`,
-                        color: m.avatarColor,
-                      }}
-                    >
-                      {m.avatar}
-                    </div>
-                  )}
-
-                  <div>
-                    <h3 className="text-base font-black text-[#0b0d0e] dark:text-white hover:text-[#d6ad63] transition duration-200">
-                      <Link href={`/team/${m.slug}`}>
-                        {m.name}
-                      </Link>
-                    </h3>
-                    <p className="text-xs font-semibold text-black/45 dark:text-white/45 mt-1">{m.role}</p>
-                    <p className="text-[11px] font-bold text-[#d6ad63] mt-2 uppercase tracking-[0.05em]">{m.skills.slice(0, 3).join(' • ')}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Dynamic FAQ Section ─────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" aria-labelledby="faq-heading">
+      {/* ── Section: Dynamic FAQ Section ──────────────────────────────────────── */}
+      <section id="faq" className="py-20 lg:py-28 border-b border-black/10 dark:border-white/10 bg-black/[0.01] dark:bg-white/[0.01] scroll-mt-10">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <div className="text-center mb-16">
-            <p className="section-kicker">Faq</p>
-            <h2 id="faq-heading" className="mt-3 section-title text-[#0b0d0e] dark:text-white">
+            <p className="section-kicker">08 / Questions</p>
+            <h2 className="mt-3 section-title text-[#0b0d0e] dark:text-white">
               Service FAQ
             </h2>
-            <p className="mt-4 max-w-xl mx-auto small-copy text-black/60 dark:text-white/60">
-              Clear answers regarding our workflow, onboarding, delivery formats, and engagement models.
+            <p className="mt-4 max-w-xl mx-auto text-sm text-black/60 dark:text-white/60">
+              Detailed answers regarding target scopes, pricing parameters, timelines, and contract conditions for {label} implementations.
             </p>
           </div>
 
           <div className="space-y-4">
-            <details className="group border border-black/10 dark:border-white/10 rounded-lg bg-black/[0.01] dark:bg-white/[0.01] [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-base font-bold text-[#0b0d0e] dark:text-white focus:outline-none focus:ring-1 focus:ring-[#d6ad63] rounded-lg">
-                <span>What is the first step in starting a {label} project?</span>
-                <span className="shrink-0 transition duration-300 group-open:-rotate-180 text-black/40 dark:text-white/40">
-                  ▼
-                </span>
-              </summary>
-              <div className="px-5 pb-5 pt-1 text-sm text-black/60 dark:text-white/65 leading-relaxed border-t border-black/5 dark:border-white/5 mt-2">
-                We begin with a brief email discovery and, if required, a technical brief consultation. Once requirements, scope, tech stack, and milestone timelines are defined, we sign a simple freelance services agreement and initiate development.
-              </div>
-            </details>
-
-            <details className="group border border-black/10 dark:border-white/10 rounded-lg bg-black/[0.01] dark:bg-white/[0.01] [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-base font-bold text-[#0b0d0e] dark:text-white focus:outline-none focus:ring-1 focus:ring-[#d6ad63] rounded-lg">
-                <span>Who owns the codebase and deployment assets?</span>
-                <span className="shrink-0 transition duration-300 group-open:-rotate-180 text-black/40 dark:text-white/40">
-                  ▼
-                </span>
-              </summary>
-              <div className="px-5 pb-5 pt-1 text-sm text-black/60 dark:text-white/65 leading-relaxed border-t border-black/5 dark:border-white/5 mt-2">
-                You own 100% of the IP, source code, repositories, and config variables. Code is pushed directly to your GitHub/GitLab account and we hand over all documentation upon successful completion of the deployment milestone.
-              </div>
-            </details>
-
-            <details className="group border border-black/10 dark:border-white/10 rounded-lg bg-black/[0.01] dark:bg-white/[0.01] [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-base font-bold text-[#0b0d0e] dark:text-white focus:outline-none focus:ring-1 focus:ring-[#d6ad63] rounded-lg">
-                <span>Do you provide maintenance and updates post-launch?</span>
-                <span className="shrink-0 transition duration-300 group-open:-rotate-180 text-black/40 dark:text-white/40">
-                  ▼
-                </span>
-              </summary>
-              <div className="px-5 pb-5 pt-1 text-sm text-black/60 dark:text-white/65 leading-relaxed border-t border-black/5 dark:border-white/5 mt-2">
-                Yes. Every project includes 14 days of free post-launch support covering bug fixes. Beyond that, we offer monthly maintenance retainers or hourly support agreements to keep your system fully updated and secure.
-              </div>
-            </details>
+            {detail.faqs.map((faq, idx) => (
+              <details 
+                key={idx}
+                className="group border border-black/10 dark:border-white/10 rounded-xl bg-white dark:bg-[#0f1214] [&_summary::-webkit-details-marker]:hidden transition duration-200"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-base font-bold text-[#0b0d0e] dark:text-white focus:outline-none focus:ring-1 focus:ring-[#d6ad63] rounded-xl select-none">
+                  <span className="flex gap-3 items-center">
+                    <HelpCircle size={18} className="text-[#d6ad63] shrink-0" />
+                    <span>{faq.question}</span>
+                  </span>
+                  <span className="shrink-0 transition duration-300 group-open:-rotate-180 text-black/40 dark:text-white/40 text-xs">
+                    ▼
+                  </span>
+                </summary>
+                <div className="px-5 pb-5 pt-1 text-sm text-black/65 dark:text-white/70 leading-relaxed border-t border-black/5 dark:border-white/5 mt-2">
+                  <div className="pl-7 pt-4">
+                    {faq.answer}
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── Action Section (CTA) ─────────────────────────────────────────────── */}
-      <section className="border-t border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] py-16 lg:py-24 text-center">
+      <section className="py-20 lg:py-28 text-center bg-white dark:bg-[#0b0d0e]">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
-          <h2 className="section-title text-[#0b0d0e] dark:text-white">
-            Need {label} support?
+          <h2 className="section-title text-[#0b0d0e] dark:text-white font-black leading-tight">
+            {detail.cta.headline}
           </h2>
-          <p className="mt-5 text-base text-black/60 dark:text-white/60 max-w-xl mx-auto">
-            Let&apos;s build a reliable solution using {stack.slice(0, 3).join(', ')}. Contact me to outline specifications and get a precise budget estimate.
+          <p className="mt-5 text-base text-black/60 dark:text-white/60 max-w-xl mx-auto leading-relaxed">
+            {detail.cta.subheadline}
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
               href={`mailto:${contact.email}?subject=Project Consultation: ${label}`}
-              className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#d6ad63] px-8 text-xs font-bold uppercase tracking-[0.14em] text-[#0b0d0e] transition duration-200 hover:bg-white hover:text-[#0b0d0e] border border-transparent hover:border-black/10 dark:hover:border-white/10"
+              className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#d6ad63] px-8 text-xs font-bold uppercase tracking-[0.14em] text-[#0b0d0e] transition duration-200 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black border border-transparent hover:border-black/10 dark:hover:border-white/10 shadow-md shadow-[#d6ad63]/10"
             >
               Start Conversation
             </a>

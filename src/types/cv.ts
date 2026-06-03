@@ -97,6 +97,7 @@ export interface Service {
   seoTitle?: string;
   seoDescription?: string;
   description?: string;
+  showOnHome?: boolean;
 }
 
 export interface SeoMeta {

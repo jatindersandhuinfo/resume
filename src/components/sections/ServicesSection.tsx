@@ -42,7 +42,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {section.services.map((service, index) => (
+          {section.services.filter(service => service.showOnHome).map((service, index) => (
             <article
               key={service.label}
               className="interactive-card group relative min-h-[280px] overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0f1214] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad63]/50 hover:bg-black/[0.03] dark:hover:bg-[#15191b]"
