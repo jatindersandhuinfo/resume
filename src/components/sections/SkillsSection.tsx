@@ -5,107 +5,139 @@ interface SkillsSectionProps {
 }
 
 export function SkillsSection({ section }: SkillsSectionProps) {
-  const uniqueTechItems = Array.from(new Set(section.techGroups.flatMap((group) => group.items)));
+  const uniqueTechItems = Array.from(new Set(section.techGroups.flatMap((g) => g.items)));
   const { hireSection } = section;
 
   return (
-    <section className="content-section border-y border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#0f1214]" aria-labelledby="skills-title">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-px px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-28">
-        <div className="rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#15191b] p-6 sm:p-8 lg:rounded-r-none">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div className="flex-col gap-4">
+    <section
+      id="skills"
+      className="content-section relative overflow-hidden border-b border-white/[0.07]"
+      aria-labelledby="skills-title"
+    >
+      {/* Decorative background number */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-8 top-1/2 -translate-y-1/2 font-bebas text-[20vw] font-normal leading-none text-white/[0.025] select-none"
+      >
+        06
+      </span>
+
+      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
+
+          {/* ── Left: Skills panel ── */}
+          <div className="flex flex-col gap-8">
+            {/* Header */}
+            <div>
               <p className="section-kicker">{section.kicker}</p>
-              <h2 id="skills-title" className="my-4 max-w-2xl section-title text-[#0b0d0e] dark:text-white">
+              <h2 id="skills-title" className="mt-5 section-title text-white">
                 {section.title}
               </h2>
-              <p className="max-w-sm small-copy text-black/58 dark:text-white/58">{section.description}</p>
+              <p className="mt-4 body-copy text-white/50 max-w-sm">{section.description}</p>
+            </div>
+
+            {/* Core strengths */}
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {section.coreStrengths.map((s) => (
+                <article
+                  key={s.name}
+                  className="interactive-card rounded-xl border border-white/[0.08] bg-[#0d0d0d] p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#f59e0b]/25"
+                >
+                  <h3 className="text-sm font-black text-white">{s.name}</h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-white/45">{s.detail}</p>
+                </article>
+              ))}
+            </div>
+
+            {/* Tech tag cloud */}
+            <div className="flex flex-wrap gap-2">
+              {uniqueTechItems.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/[0.07] bg-white/[0.02] px-4 py-1.5 text-xs font-bold text-white/35 transition hover:border-[#f59e0b]/30 hover:text-[#f59e0b]"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {section.coreStrengths.map((strength) => (
-              <article
-                key={strength.name}
-                className="interactive-card rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0b0d0e] p-5 transition hover:-translate-y-1 hover:border-[#d6ad63]/60"
-              >
-                <h3 className="card-title text-[#0b0d0e] dark:text-white">{strength.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-black/58 dark:text-white/58">{strength.detail}</p>
-              </article>
-            ))}
-          </div>
+          {/* ── Right: Hire CTA panel ── */}
+          <div
+            id="contact"
+            className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d0d] p-7 sm:p-9 lg:p-10"
+          >
+            {/* Amber glow */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-[#f59e0b]/15 blur-[80px]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-[#f59e0b]/08 blur-[60px]"
+            />
 
-          <div className="mt-8 flex flex-wrap gap-2">
-            {uniqueTechItems.map((item) => (
-              <span key={item} className="rounded-full border border-black/10 dark:border-white/10 px-4 py-2 meta-label text-black/40 dark:text-white/40">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
+            <div className="relative flex h-full flex-col">
+              <p className="section-kicker">Hire Me</p>
+              <h3 className="mt-4 text-2xl font-bold leading-snug text-white lg:text-3xl">
+                {hireSection.title}
+              </h3>
+              <p className="mt-5 body-copy text-white/50 flex-1">{hireSection.description}</p>
 
-        {/* Hire / Contact panel */}
-        <div id="contact" className="relative overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0b0d0e] p-6 sm:p-8 lg:rounded-l-none">
-          <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#d6ad63]/20 blur-3xl" />
-          <div className="relative">
-            <p className="section-kicker">Hire Me</p>
-            {/* h3 — inside the skills section which already has an h2 above */}
-            <h3 className="mt-4 section-title text-[#0b0d0e] dark:text-white">
-              {hireSection.title}
-            </h3>
-            <p className="mt-5 body-copy text-black/58 dark:text-white/58">
-              {hireSection.description}
-            </p>
-
-            <div className="mt-8 grid gap-3">
-              <a
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6ad63] px-6 button-label text-[#0b0d0e] transition hover:bg-white"
-                href={`mailto:${hireSection.email}`}
-              >
-                Let&apos;s Talk
-              </a>
-              <a
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                href={hireSection.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                href={hireSection.upwork}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Upwork Profile
-              </a>
-              {hireSection.fiverr ? (
+              <div className="mt-8 flex flex-col gap-3">
                 <a
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                  href={hireSection.fiverr}
+                  href={`mailto:${hireSection.email}`}
+                  className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#f59e0b] px-6 text-sm font-black uppercase tracking-[0.12em] text-[#0a0a0a] transition duration-200 hover:bg-[#fbbf24]"
+                >
+                  Let&apos;s Talk
+                </a>
+                <a
+                  href={hireSection.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
                 >
-                  Fiverr Profile
+                  LinkedIn
                 </a>
-              ) : null}
-              {hireSection.freelancer ? (
                 <a
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 px-6 button-label text-[#0b0d0e] dark:text-white transition hover:border-[#d6ad63] hover:text-[#d6ad63]"
-                  href={hireSection.freelancer}
+                  href={hireSection.upwork}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
                 >
-                  Freelancer Profile
+                  Upwork Profile
                 </a>
-              ) : null}
-            </div>
+                {hireSection.fiverr && (
+                  <a
+                    href={hireSection.fiverr}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                  >
+                    Fiverr Profile
+                  </a>
+                )}
+                {hireSection.freelancer && (
+                  <a
+                    href={hireSection.freelancer}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                  >
+                    Freelancer Profile
+                  </a>
+                )}
+              </div>
 
-            <div className="mt-8 border-t border-black/10 dark:border-white/10 pt-6">
-              <p className="meta-label text-black/40 dark:text-white/40">Direct Email</p>
-              <a className="mt-2 block break-words text-base font-black text-[#0b0d0e] dark:text-white transition hover:text-[#d6ad63]" href={`mailto:${hireSection.email}`}>
-                {hireSection.email}
-              </a>
+              <div className="mt-8 border-t border-white/[0.08] pt-6">
+                <p className="meta-label text-white/30">Direct Email</p>
+                <a
+                  href={`mailto:${hireSection.email}`}
+                  className="mt-2 block break-all text-base font-black text-white transition hover:text-[#f59e0b]"
+                >
+                  {hireSection.email}
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Sans } from 'next/font/google';
+import { DM_Sans, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 
 import { seo, personal, contact } from '@/lib/data';
@@ -12,17 +12,15 @@ const dmSans = DM_Sans({
   display: 'swap',
 });
 
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-bebas',
+  display: 'swap',
+});
+
 const fullName = `${personal.firstName} ${personal.lastName}`;
-const themeInitScript = `(() => {
-  try {
-    const key = 'resume-theme';
-    const saved = window.localStorage.getItem(key);
-    const theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  } catch {
-    document.documentElement.classList.add('dark');
-  }
-})();`;
+const themeInitScript = `(() => { document.documentElement.classList.add('dark'); })();`;
 const sectionHashScrollScript = `(() => {
   const TARGETS = new Set(['about', 'services', 'works', 'team', 'experience', 'skills', 'education', 'faq', 'contact']);
   const OFFSET = 110;
@@ -182,8 +180,8 @@ export const metadata: Metadata = {
   },
 
   other: {
-    'theme-color': '#0b0d0e',
-    'color-scheme': 'light dark',
+    'theme-color': '#0a0a0a',
+    'color-scheme': 'dark',
     'geo.region': 'IN-PB',
     'geo.placename': 'Bathinda, Punjab, India',
     'content-language': 'en-IN',
@@ -198,7 +196,7 @@ export default function RootLayout({
   const structuredData = getStructuredData();
 
   return (
-    <html lang="en-IN" className={dmSans.variable} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en-IN" className={`dark ${dmSans.variable} ${bebasNeue.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link rel="me" href={contact.linkedin} />
         <link rel="me" href={contact.github} />

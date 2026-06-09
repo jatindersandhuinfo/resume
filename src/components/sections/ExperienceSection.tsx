@@ -6,52 +6,87 @@ interface ExperienceSectionProps {
 
 export function ExperienceSection({ section }: ExperienceSectionProps) {
   return (
-    <section className="content-section border-y border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416]" aria-labelledby="experience-title">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:px-10 lg:py-28">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <p className="section-kicker">{section.kicker}</p>
-          <h2 id="experience-title" className="mt-5 section-title text-[#0b0d0e] dark:text-white">
-            {section.title}
-          </h2>
-          <p className="mt-5 body-copy text-black/60 dark:text-white/60">{section.description}</p>
-          <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-black/10 dark:border-white/10 bg-black/10 dark:bg-white/10">
-            <div className="bg-white dark:bg-[#0b0d0e] p-5">
-              <p className="card-title text-[#d6ad63]">{section.yearsExperience}</p>
-              <p className="mt-2 meta-label text-black/40 dark:text-white/40">Experience</p>
+    <section
+      id="experience"
+      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-[#0d0d0d]"
+      aria-labelledby="experience-title"
+    >
+      {/* Decorative background number */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-8 top-1/2 -translate-y-1/2 font-bebas text-[20vw] font-normal leading-none text-white/[0.025] select-none"
+      >
+        05
+      </span>
+
+      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+
+        {/* ── Header ── */}
+        <div className="mb-16 flex flex-col gap-6 border-b border-white/[0.07] pb-14 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-xl">
+            <p className="section-kicker">{section.kicker}</p>
+            <h2 id="experience-title" className="mt-5 section-title text-white">
+              {section.title}
+            </h2>
+            <p className="mt-5 body-copy text-white/50 max-w-sm">{section.description}</p>
+          </div>
+          {/* Summary stats */}
+          <div className="flex shrink-0 gap-10">
+            <div>
+              <p className="font-bebas text-[3rem] leading-none text-[#f59e0b]">
+                {section.yearsExperience}
+              </p>
+              <p className="mt-1.5 meta-label text-white/40">Experience</p>
             </div>
-            <div className="bg-white dark:bg-[#0b0d0e] p-5">
-              <p className="card-title text-[#d6ad63]">{section.experience.length}</p>
-              <p className="mt-2 meta-label text-black/40 dark:text-white/40">Companies</p>
+            <div>
+              <p className="font-bebas text-[3rem] leading-none text-[#f59e0b]">
+                {section.experience.length}
+              </p>
+              <p className="mt-1.5 meta-label text-white/40">Companies</p>
             </div>
           </div>
         </div>
-        <div className="relative space-y-6 before:absolute before:left-[21px] before:top-5 before:h-[calc(100%-40px)] before:w-px before:bg-black/10 dark:before:bg-white/10">
+
+        {/* ── Timeline entries ── */}
+        <div className="space-y-5">
           {section.experience.map((item, index) => (
-            <article key={item.company} className="group relative grid gap-5 pl-14 md:grid-cols-[150px_1fr]">
-              <div className="absolute left-0 top-1 grid h-11 w-11 place-items-center rounded-full border border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#111416] text-sm font-black text-[#d6ad63] transition group-hover:border-[#d6ad63]">
-                {index + 1 < 10 ? `0${index + 1}` : index + 1}
+            <article
+              key={item.company}
+              className="interactive-card group grid grid-cols-1 gap-5 md:grid-cols-[180px_1fr]"
+            >
+              {/* Left: period + number */}
+              <div className="flex items-start gap-4 md:flex-col md:gap-3">
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/[0.1] bg-[#0d0d0d] font-black text-sm text-[#f59e0b] transition duration-300 group-hover:border-[#f59e0b]/50 group-hover:bg-[#f59e0b]/10">
+                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                </div>
+                <p className="meta-label text-white/35 md:ml-0">{item.period}</p>
               </div>
-              <div>
-                <p className="rounded-full border border-black/10 dark:border-white/10 px-4 py-2 text-center meta-label text-black/40 dark:text-white/40">
-                  {item.period}
-                </p>
-              </div>
-              <div className="interactive-card rounded-lg border border-black/10 dark:border-white/10 bg-white dark:bg-[#0b0d0e] p-6 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#d6ad63]/50">
+
+              {/* Right: card */}
+              <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#111111] p-6 transition duration-300 group-hover:-translate-y-0.5 group-hover:border-[#f59e0b]/25">
+                {/* Top row */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h3 className="card-title text-[#0b0d0e] dark:text-white transition group-hover:text-[#d6ad63]">
+                    <h3 className="text-lg font-bold text-white transition duration-300 group-hover:text-[#f59e0b]">
                       {item.company}
                     </h3>
-                    <p className="mt-2 meta-label text-black/40 dark:text-white/40">{item.role}</p>
+                    <p className="mt-1.5 meta-label text-white/35">{item.role}</p>
                   </div>
-                  <span className="w-fit rounded-full bg-black/[0.05] dark:bg-white/[0.05] px-3 py-1 text-xs font-bold text-black/40 dark:text-white/40">
+                  <span className="w-fit rounded-full border border-white/[0.07] px-3 py-1 text-xs font-bold text-white/30">
                     Production
                   </span>
                 </div>
-                <p className="mt-5 small-copy text-black/60 dark:text-white/60">{item.description}</p>
-                <div className="mt-6 flex flex-wrap gap-2">
+
+                {/* Description */}
+                <p className="mt-5 small-copy text-white/50 leading-relaxed">{item.description}</p>
+
+                {/* Focus tags */}
+                <div className="mt-5 flex flex-wrap gap-2">
                   {(section.experienceFocus[item.company] ?? ['Development', 'Delivery']).map((focus) => (
-                    <span key={focus} className="rounded-full border border-black/10 dark:border-white/10 px-3 py-1 text-xs font-bold text-black/40 dark:text-white/40">
+                    <span
+                      key={focus}
+                      className="rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1 text-xs font-bold text-white/30 transition duration-300 group-hover:border-[#f59e0b]/20 group-hover:text-[#f59e0b]/70"
+                    >
                       {focus}
                     </span>
                   ))}

@@ -120,7 +120,7 @@ export function ProjectDetailGallery({
           <p className="section-kicker" style={{ color: accentColor }}>Project Screenshots</p>
           <div className="ml-auto flex items-center gap-2">
             {imgCount > 0 && (
-              <span className="text-[11px] font-bold text-black/35 dark:text-white/35">
+              <span className="text-[11px] font-bold text-white/35">
                 {imgCount} photo{imgCount !== 1 ? 's' : ''}
               </span>
             )}
@@ -140,7 +140,7 @@ export function ProjectDetailGallery({
             <button
               key={i}
               onClick={() => openLightbox(i)}
-              className="group/thumb relative aspect-video overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] transition hover:border-black/20 dark:hover:border-white/20 hover:shadow-lg hover:shadow-black/20 focus:outline-none focus:ring-2 focus:ring-[#d6ad63]"
+              className="group/thumb relative aspect-video overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02] transition hover:border-white/20 hover:shadow-lg hover:shadow-black/20 focus:outline-none focus:ring-2 focus:ring-[#f59e0b]"
               aria-label={`View ${isPdf(src) ? 'PDF document' : 'screenshot'} ${i + 1} of ${projectName}`}
             >
               {isPdf(src) ? (
@@ -267,7 +267,7 @@ export function ProjectDetailGallery({
                   onClick={() => setActiveIndex(i)}
                   className={`relative shrink-0 h-14 w-20 overflow-hidden rounded-lg transition-all duration-200 ${
                     i === activeIndex
-                      ? 'ring-2 ring-[#d6ad63] ring-offset-2 ring-offset-black/90 opacity-100 scale-105'
+                      ? 'ring-2 ring-[#f59e0b] ring-offset-2 ring-offset-black/90 opacity-100 scale-105'
                       : 'opacity-50 hover:opacity-80 hover:scale-105'
                   }`}
                   aria-label={`View file ${i + 1}`}

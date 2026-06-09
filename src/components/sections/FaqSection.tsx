@@ -13,21 +13,32 @@ export function FaqSection({ section }: FaqSectionProps) {
   return (
     <section
       id="faq"
-      className="content-section border-y border-black/10 dark:border-white/10 bg-gray-50 dark:bg-[#0f1214]"
+      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-[#0d0d0d]"
       aria-labelledby="faq-title"
     >
-      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1fr]">
-          <div>
+      {/* Decorative background number */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-8 top-1/2 -translate-y-1/2 font-bebas text-[20vw] font-normal leading-none text-white/[0.025] select-none"
+      >
+        07
+      </span>
+
+      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+
+        {/* ── Header ── */}
+        <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-xl">
             <p className="section-kicker">{section.kicker}</p>
-            <h2 id="faq-title" className="mt-5 section-title text-[#0b0d0e] dark:text-white">
+            <h2 id="faq-title" className="mt-5 section-title text-white">
               {section.title}
             </h2>
           </div>
-          <p className="max-w-2xl body-copy text-black/60 dark:text-white/60 lg:pt-10">{section.description}</p>
+          <p className="max-w-md body-copy text-white/50">{section.description}</p>
         </div>
 
-        <div className="space-y-3">
+        {/* ── Accordion ── */}
+        <div className="space-y-2">
           {section.items.map((item, index) => {
             const isOpen = openIndex === index;
             const panelId = `faq-panel-${index}`;
@@ -36,31 +47,33 @@ export function FaqSection({ section }: FaqSectionProps) {
             return (
               <article
                 key={item.question}
-                className={`interactive-card overflow-hidden rounded-lg border bg-white dark:bg-[#0b0d0e] transition duration-300 ${
-                  isOpen ? 'border-[#d6ad63]/50' : 'border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'
+                className={`interactive-card overflow-hidden rounded-xl border transition duration-300 ${
+                  isOpen
+                    ? 'border-[#f59e0b]/30 bg-[#f59e0b]/[0.03]'
+                    : 'border-white/[0.07] bg-[#111111] hover:border-white/[0.12]'
                 }`}
               >
                 <h3>
                   <button
                     id={buttonId}
                     type="button"
-                    className="flex w-full items-start justify-between gap-5 px-5 py-5 text-left sm:px-6 sm:py-6"
+                    className="flex w-full items-start justify-between gap-5 px-6 py-5 text-left sm:py-6"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                   >
                     <span className="flex items-start gap-4">
-                      <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-black/10 dark:border-white/10 text-sm font-black text-[#d6ad63]">
+                      <span className={`mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border text-xs font-black transition duration-300 ${isOpen ? 'border-[#f59e0b]/50 text-[#f59e0b]' : 'border-white/[0.1] text-white/30'}`}>
                         {index + 1 < 10 ? `0${index + 1}` : index + 1}
                       </span>
-                      <span className="card-title text-[#0b0d0e] dark:text-white transition group-hover:text-[#d6ad63]">
+                      <span className={`text-base font-bold leading-snug transition duration-300 ${isOpen ? 'text-white' : 'text-white/70'}`}>
                         {item.question}
                       </span>
                     </span>
                     <span
                       aria-hidden="true"
-                      className={`mt-1 shrink-0 text-xl font-light text-[#d6ad63] transition-transform duration-300 ${
-                        isOpen ? 'rotate-45' : ''
+                      className={`mt-0.5 shrink-0 text-lg font-light transition-all duration-300 ${
+                        isOpen ? 'rotate-45 text-[#f59e0b]' : 'text-white/25'
                       }`}
                     >
                       +
@@ -77,7 +90,7 @@ export function FaqSection({ section }: FaqSectionProps) {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="border-t border-black/10 dark:border-white/10 px-5 pb-5 pt-4 small-copy leading-relaxed text-black/60 dark:text-white/60 sm:px-6 sm:pb-6 sm:pl-[4.75rem]">
+                    <p className="border-t border-white/[0.06] px-6 pb-6 pt-4 text-sm leading-relaxed text-white/50 sm:pl-[4.5rem]">
                       {item.answer}
                     </p>
                   </div>

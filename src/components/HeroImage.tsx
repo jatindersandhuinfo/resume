@@ -13,8 +13,8 @@ export function HeroImage({ alt }: HeroImageProps) {
       fill
       priority
       loading="eager"
-      quality={75}
-      sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 100vw, 680px"
+      quality={100}
+      sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1280px) calc(100vw - 80px), 1152px"
       className="hero-image z-0 object-cover object-top"
     />
   );

@@ -13,7 +13,7 @@ module.exports = {
         mono: ['var(--font-dm-mono)', 'monospace'],
       },
       colors: {
-        accent: '#ff990a',
+        accent: '#f59e0b',
       },
     },
   },

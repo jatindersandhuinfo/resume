@@ -49,10 +49,10 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     tag: 'Architecture',
     hero: {
       title: 'Backend Development Services',
-      subheading: 'We build high-performance APIs, secure server architectures, and robust databases to power your web applications and SaaS platforms.'
+      subheading: 'I build high-performance APIs, secure server architectures, and robust databases to power your web applications and SaaS platforms.'
     },
     whatIDo: {
-      description: 'Reliable, scalable backend systems are the engine of every successful web application. I specialize in building custom server-side architectures that handle business logic, data storage, user authentication, and third-party integrations with maximum efficiency and security. By focusing on clean API design, optimized query speeds, and structured schema planning, I ensure your application can handle concurrent traffic spikes without slowing down. Whether you need to build a new REST API from scratch, design a relational MySQL/PostgreSQL schema, or deploy microservices using Node.js, I deliver production-ready code with complete documentation. Our backend architectures prioritize security, implement role-based access control, and follow best practices in security and performance.',
+      description: 'Reliable, scalable backend systems are the engine of every successful web application. I specialize in building custom server-side architectures that handle business logic, data storage, user authentication, and third-party integrations with maximum efficiency and security. By focusing on clean API design, optimized query speeds, and structured schema planning, I ensure your application can handle concurrent traffic spikes without slowing down. Whether you need to build a new REST API from scratch, design a relational MySQL/PostgreSQL schema, or deploy microservices using Node.js, I deliver production-ready code with complete documentation. My backend architectures prioritize security, implement role-based access control, and follow best practices in security and performance.',
       whoIsItFor: [
         'Startups needing a scalable backend MVP',
         'Businesses moving from spreadsheets to databases',
@@ -100,15 +100,15 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       { title: 'Scalable Architecture', description: 'Structuring codebases and query indexing so they handle rapid traffic increases seamlessly.' },
       { title: 'Clean, Testable Code', description: 'Using strict type checking, comprehensive request validation, and modular structures.' },
       { title: 'Direct Communication', description: 'You work directly with the engineer building your system — no project managers or agency layers.' },
-      { title: 'Documentation First', description: 'We ship comprehensive OpenAPI/Swagger documents for frontend developers and future maintainers.' },
+      { title: 'Documentation First', description: 'I ship comprehensive OpenAPI/Swagger documents for frontend developers and future maintainers.' },
       { title: '14-Day Free Support', description: 'Every backend project includes two weeks of post-launch monitoring and bug fixing.' }
     ],
     faqs: [
-      { question: 'What is the first step in starting a backend development project?', answer: 'We begin with a detailed requirements review. You share your feature list, user roles, and database needs. I create a schema outline and API specification before writing the first line of code.' },
+      { question: 'What is the first step in starting a backend development project?', answer: 'I begin with a detailed requirements review. You share your feature list, user roles, and database needs. I create a schema outline and API specification before writing the first line of code.' },
       { question: 'Which backend technology is best for my startup, Node.js or Laravel PHP?', answer: 'Node.js is ideal for real-time applications (chats, live trackers) and high-concurrency APIs. Laravel is excellent for data-heavy applications, rapid MVC builds, and structured CRM/ERP portals. I will advise on the best fit for your requirements.' },
       { question: 'Do you write API documentation?', answer: 'Yes. I provide detailed, interactive API documentation using Postman or Swagger/OpenAPI specifications, making it easy for any frontend developer or mobile developer to connect to the backend.' },
       { question: 'How do you keep my database secure?', answer: 'I implement parameterized queries to prevent SQL injections, hash passwords with bcrypt, use JWTs for session auth, configure strict CORS policies, and add rate-limiting to API routes.' },
-      { question: 'Who owns the backend source code when completed?', answer: 'You own 100% of the code. We push updates directly to your Git repository (GitHub/GitLab), and full access is transferred to you upon project sign-off.' },
+      { question: 'Who owns the backend source code when completed?', answer: 'You own 100% of the code. I push updates directly to your Git repository (GitHub/GitLab), and full access is transferred to you upon project sign-off.' },
       { question: 'Can you optimize my existing slow database queries?', answer: 'Yes. I audit slow query logs, optimize database index structures, rewrite complex joins, and implement Redis caching to dramatically reduce database read latency.' },
       { question: 'How do you handle backend deployments?', answer: 'I deploy backend applications to AWS, DigitalOcean, Vercel, or Heroku, setting up automated CI/CD pipelines so every commit to the main branch updates staging or production safely.' },
       { question: 'Do you offer monthly backend maintenance retainers?', answer: 'Yes. I offer maintenance plans that include monthly security patches, server performance monitoring, log auditing, database backups, and emergency bug fixing.' }
@@ -125,7 +125,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'Next.js Development',
     primaryKeyword: 'next.js development services',
     seoTitle: 'Next.js Development Services | Speed & SEO Optimized Apps',
-    seoDescription: 'High-performance Next.js development services. We build server-side rendered (SSR), static, and highly interactive web applications optimized for speed and SEO rankings.',
+    seoDescription: 'High-performance Next.js development services. I build server-side rendered (SSR), static, and highly interactive web applications optimized for speed and SEO rankings.',
     tag: 'Interface',
     hero: {
       title: 'Next.js Development Services',
@@ -176,10 +176,10 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       'Speed-Optimized Marketing Frameworks'
     ],
     whyWorkWithMe: [
-      { title: 'Full Stack Competency', description: 'We build both the fast Next.js UI and the robust Node/PHP server APIs that back it.' },
+      { title: 'Full Stack Competency', description: 'I build both the fast Next.js UI and the robust Node/PHP server APIs that back it.' },
       { title: 'SEO Best Practices', description: 'Semantic HTML, correct heading trees, automatic canonical links, and JSON-LD schema setups.' },
-      { title: 'Performance Obsessed', description: 'We target green Lighthouse scores (90+) for performance, SEO, accessibility, and best practices.' },
-      { title: 'No Visual Placeholders', description: 'We build polished, design-accurate components following responsive Figma layouts precisely.' },
+      { title: 'Performance Obsessed', description: 'I target green Lighthouse scores (90+) for performance, SEO, accessibility, and best practices.' },
+      { title: 'No Visual Placeholders', description: 'I build polished, design-accurate components following responsive Figma layouts precisely.' },
       { title: 'Vercel Deployment Setup', description: 'Configuring custom domains, SSL certificates, previews, and CI/CD pipelines on Vercel.' },
       { title: '6+ Years Experience', description: 'Experienced in handling transitions from legacy React systems to Next.js.' }
     ],
@@ -285,7 +285,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'Node.js Development',
     primaryKeyword: 'node.js development services',
     seoTitle: 'Node.js Development Services | Fast Asynchronous API Backends',
-    seoDescription: 'High-performance Node.js development services. We build fast, scalable, and secure REST APIs, web sockets, and microservices using Express, Fastify, and TypeScript.',
+    seoDescription: 'High-performance Node.js development services. I build fast, scalable, and secure REST APIs, web sockets, and microservices using Express, Fastify, and TypeScript.',
     tag: 'Architecture',
     hero: {
       title: 'Node.js Development Services',
@@ -337,7 +337,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     ],
     whyWorkWithMe: [
       { title: '6+ Years Experience', description: 'Proven experience designing database schemas and deploying APIs globally.' },
-      { title: 'TypeScript Focus', description: 'We write server code with clean interface types to catch errors before deployment.' },
+      { title: 'TypeScript Focus', description: 'I write server code with clean interface types to catch errors before deployment.' },
       { title: 'Performance Audits', description: 'Profiling server bottlenecks and optimizing DB queries to lower database read wait-times.' },
       { title: 'Security First', description: 'Implementing helmet headers, rate limits, request verification, and data encryption.' },
       { title: 'Clean Directory Models', description: 'Structuring code into controller, service, route, and validator folders for easy updates.' },
@@ -416,8 +416,8 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       'Field Data Collection & Report Portals'
     ],
     whyWorkWithMe: [
-      { title: 'Full Stack Mastery', description: 'We build both the UI mockups and the server-side database relationships under one roof.' },
-      { title: 'Process Oriented', description: 'We follow discovery, architecture mapping, and iterative sprints for predictable execution.' },
+      { title: 'Full Stack Mastery', description: 'I build both the UI mockups and the server-side database relationships under one roof.' },
+      { title: 'Process Oriented', description: 'I follow discovery, architecture mapping, and iterative sprints for predictable execution.' },
       { title: 'Zero Licencing Costs', description: 'You own the codebase and host it on your cloud. No user seats or monthly licenses.' },
       { title: 'Performance Focused', description: 'Optimized queries, lightweight scripts, and fast response times.' },
       { title: 'Security First', description: 'Configuring multi-tenant separation, parameter validation, and secure session management.' },
@@ -426,7 +426,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     faqs: [
       { question: 'What is a custom web application?', answer: 'A custom web application is bespoke software accessed via a browser, designed specifically around your business operations, replacing off-the-shelf software or spreadsheets.' },
       { question: 'Who owns the custom software when completed?', answer: 'You own 100% of the code, intellectual property, database layouts, and hosting configurations. There are no recurring seat licensing fees.' },
-      { question: 'Can you migrate our existing spreadsheets into a database?', answer: 'Yes. I write import scripts that clean, parse, and structure your Excel or CSV data, importing it safely into a normalized MySQL or PostgreSQL database.' },
+      { question: 'Can you migrate my existing spreadsheets into a database?', answer: 'Yes. I write import scripts that clean, parse, and structure your Excel or CSV data, importing it safely into a normalized MySQL or PostgreSQL database.' },
       { question: 'How do you handle different employee permissions?', answer: 'I build Role-Based Access Control (RBAC) schemas, defining strict roles (e.g. Admin, Manager, Staff, Client) that determine what routes, data, and buttons each user can access.' },
       { question: 'Where is the custom web app hosted?', answer: 'I set up hosting on cloud platforms like DigitalOcean, AWS, or Vercel under your company account, ensuring automatic data backups are configured.' },
       { question: 'Can the application adapt to mobile phones?', answer: 'Yes. All custom applications I develop are built with responsive Tailwind grids, meaning sidebars collapse and forms stack cleanly for mobile and tablet use.' },
@@ -445,7 +445,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'SaaS Development',
     primaryKeyword: 'saas application development',
     seoTitle: 'SaaS Application Development | Scalable Subscription Software',
-    seoDescription: 'Scalable SaaS application development services. We build multi-tenant architectures, Stripe billing integrations, and secure client dashboards.',
+    seoDescription: 'Scalable SaaS application development services. I build multi-tenant architectures, Stripe billing integrations, and secure client dashboards.',
     tag: 'Interface',
     hero: {
       title: 'SaaS Application Development',
@@ -501,7 +501,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       { title: 'Next.js & Serverless Scaling', description: 'Deploying dashboard assets that scale instantly to manage concurrent traffic spikes.' },
       { title: 'Clean TypeScript Schemas', description: 'Defining secure data interfaces to block unauthorized tenant cross-reads.' },
       { title: 'Direct Collaboration', description: 'Work directly with the lead developer to design the data relationships and SaaS flows.' },
-      { title: 'Fast MVP Delivery', description: 'We prioritize launch-ready features to get your software in front of users quickly.' }
+      { title: 'Fast MVP Delivery', description: 'I prioritize launch-ready features to get your software in front of users quickly.' }
     ],
     faqs: [
       { question: 'What is a multi-tenant SaaS architecture?', answer: 'In a multi-tenant SaaS, a single database and application instance serves multiple clients (tenants). Each client’s data is isolated and invisible to other tenants, managed securely by software filters.' },
@@ -658,8 +658,8 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     whyWorkWithMe: [
       { title: '6+ Years Developer Experience', description: 'Full stack developer experience, incorporating modern AI tools in production workflows.' },
       { title: 'API Integration Expertise', description: 'Deep experience handling rate limits, timeout states, and error retries for LLM endpoints.' },
-      { title: 'JSON Output Reliability', description: 'We implement function calling to ensure AI returns structured database values, not markdown.' },
-      { title: 'Token & Cost Control', description: 'We optimize prompt context sizes to keep your API bills low.' },
+      { title: 'JSON Output Reliability', description: 'I implement function calling to ensure AI returns structured database values, not markdown.' },
+      { title: 'Token & Cost Control', description: 'I optimize prompt context sizes to keep your API bills low.' },
       { title: 'Direct Architecture Setup', description: 'You work directly with the engineer coding your AI schemas and database connections.' },
       { title: 'Post-Launch Support', description: '14 days of free API tracking and performance monitoring after going live.' }
     ],
@@ -685,7 +685,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'OpenAI Integration',
     primaryKeyword: 'openai integration services',
     seoTitle: 'OpenAI Integration Services | GPT-4 API Web Development',
-    seoDescription: 'Professional OpenAI integration services. We connect web applications to GPT-4, DALL-E, and Whisper APIs for automated text, image, and voice processing.',
+    seoDescription: 'Professional OpenAI integration services. I connect web applications to GPT-4, DALL-E, and Whisper APIs for automated text, image, and voice processing.',
     tag: 'Intelligence',
     hero: {
       title: 'OpenAI Integration Services',
@@ -736,7 +736,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       'Custom GPT-Powered Smart Forms'
     ],
     whyWorkWithMe: [
-      { title: 'Structured Output Experts', description: 'We configure OpenAI to return database-ready JSON arrays on every request.' },
+      { title: 'Structured Output Experts', description: 'I configure OpenAI to return database-ready JSON arrays on every request.' },
       { title: 'API Resilience', description: 'Implementing robust queue and retry systems to handle API timeouts.' },
       { title: 'Token Count Optimization', description: 'Trimming unnecessary prompt text to minimize your monthly OpenAI bills.' },
       { title: 'Full Stack Integration', description: 'Building the dashboard pages, API endpoints, and database models under one roof.' },
@@ -765,7 +765,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'ChatGPT Integration',
     primaryKeyword: 'chatgpt integration services',
     seoTitle: 'ChatGPT Integration Services | Custom AI Chatbot Development',
-    seoDescription: 'Professional ChatGPT integration services. We build custom AI chatbots, customer support widgets, and interactive assistants utilizing OpenAI Assistant API.',
+    seoDescription: 'Professional ChatGPT integration services. I build custom AI chatbots, customer support widgets, and interactive assistants utilizing OpenAI Assistant API.',
     tag: 'Intelligence',
     hero: {
       title: 'ChatGPT Integration Services',
@@ -816,8 +816,8 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       'Interactive Website Navigation Guides'
     ],
     whyWorkWithMe: [
-      { title: 'Thread & Session Experts', description: 'We ensure user chat histories are saved and sync across multiple page reloads.' },
-      { title: 'Knowledge Base Setup', description: 'We structure company manuals to avoid chat hallucinations.' },
+      { title: 'Thread & Session Experts', description: 'I ensure user chat histories are saved and sync across multiple page reloads.' },
+      { title: 'Knowledge Base Setup', description: 'I structure company manuals to avoid chat hallucinations.' },
       { title: 'Streaming Responses', description: 'Building systems that write responses in real time, reducing user wait times.' },
       { title: 'Clean responsive CSS', description: 'Chat bubbles look premium on mobile phones and tablets.' },
       { title: '6+ Years Experience', description: 'Proven history of API integrations and frontend web development.' },
@@ -845,7 +845,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'AI Agent Dev',
     primaryKeyword: 'ai agent development',
     seoTitle: 'AI Agent Development Services | Autonomous Web Workflows',
-    seoDescription: 'High-performance AI agent development services. We build autonomous AI agents, tool-calling reasoning systems, and automated multi-step workflows.',
+    seoDescription: 'High-performance AI agent development services. I build autonomous AI agents, tool-calling reasoning systems, and automated multi-step workflows.',
     tag: 'Intelligence',
     hero: {
       title: 'AI Agent Development Services',
@@ -896,7 +896,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       'Log Audit & Notification Triggers'
     ],
     whyWorkWithMe: [
-      { title: 'Tool-Calling Experts', description: 'We write secure, validated code tools for agents to query DBs safely.' },
+      { title: 'Tool-Calling Experts', description: 'I write secure, validated code tools for agents to query DBs safely.' },
       { title: 'State Management Design', description: 'Ensuring multi-step agent runs maintain memory of past outputs.' },
       { title: 'API Security Focused', description: 'Strict parameters ensuring agents only trigger safe, read-scoped operations.' },
       { title: 'Log Tracking Shipped', description: 'Providing clear admin dashboards to review what actions the agent took.' },
@@ -905,8 +905,8 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     ],
     faqs: [
       { question: 'What is an autonomous AI agent?', answer: 'An AI agent is a software system that uses an LLM to reason, plan, and call custom code tools (like web search or database queries) to complete multi-step tasks independently.' },
-      { question: 'How does an agent call external tools?', answer: 'We register custom JavaScript functions (tools) with description metadata. The LLM reads the description, decides which tool is needed, and returns JSON arguments to execute the function.' },
-      { question: 'Is it safe to let an AI write to my database?', answer: 'Yes. We enforce strict data validation, schema validation, and parameter sanitization on all tools, ensuring the agent cannot execute arbitrary queries.' },
+      { question: 'How does an agent call external tools?', answer: 'I register custom JavaScript functions (tools) with description metadata. The LLM reads the description, decides which tool is needed, and returns JSON arguments to execute the function.' },
+      { question: 'Is it safe to let an AI write to my database?', answer: 'Yes. I enforce strict data validation, schema validation, and parameter sanitization on all tools, ensuring the agent cannot execute arbitrary queries.' },
       { question: 'What is the ReAct framework in AI agents?', answer: 'ReAct stands for Reasoning and Acting. The agent cycles through: Thought (planning what to do), Action (calling a tool), and Observation (evaluating the tool output).' },
       { question: 'Can an AI agent run in the background?', answer: 'Yes. I configure agents to run as background worker tasks triggered by cron schedules, incoming emails, webhooks, or user action alerts.' },
       { question: 'How do you prevent an AI agent from running in endless loops?', answer: 'I implement strict iteration caps (e.g. max 10 tool calls per run) and token usage limits to terminate runaway loops automatically.' },
@@ -925,7 +925,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'Business Automation',
     primaryKeyword: 'ai automation services',
     seoTitle: 'AI Business Automation Services | Workflow Streamlining',
-    seoDescription: 'Expert AI business automation services. We build automated workflow pipelines, connect CRM systems, and automate data parsing using OpenAI and Make/Zapier.',
+    seoDescription: 'Expert AI business automation services. I build automated workflow pipelines, connect CRM systems, and automate data parsing using OpenAI and Make/Zapier.',
     tag: 'Automation',
     hero: {
       title: 'AI Business Automation Services',
@@ -976,7 +976,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       'Real-Time Inventory Reconciliation Workflows'
     ],
     whyWorkWithMe: [
-      { title: 'Integration Coder Experts', description: 'We write clean, documented API bridges that eliminate manual seat licensing costs.' },
+      { title: 'Integration Coder Experts', description: 'I write clean, documented API bridges that eliminate manual seat licensing costs.' },
       { title: 'Resilient Webhook Handlers', description: 'Implementing error validation to handle corrupt incoming payloads safely.' },
       { title: 'Security First', description: 'Encrypting credentials and authenticating webhook headers before data writes.' },
       { title: 'Direct Execution Alignment', description: 'Work directly with the coder building the automation endpoints.' },
@@ -1165,7 +1165,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'Shopify',
     primaryKeyword: 'shopify development services',
     seoTitle: 'Shopify Development Services | Custom Theme Setup',
-    seoDescription: 'High-performance Shopify development services. We customize Shopify themes, set up e-commerce apps, optimize checkout flows, and improve store load speeds.',
+    seoDescription: 'High-performance Shopify development services. I customize Shopify themes, set up e-commerce apps, optimize checkout flows, and improve store load speeds.',
     tag: 'Commerce',
     hero: {
       title: 'Shopify Development Services',
@@ -1245,7 +1245,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'E-Commerce Dev',
     primaryKeyword: 'ecommerce development services',
     seoTitle: 'Ecommerce Development Services | Custom Storefronts',
-    seoDescription: 'High-performance ecommerce development services. We build custom headless Shopify/Next.js stores, WooCommerce integrations, and conversion-focused checkouts.',
+    seoDescription: 'High-performance ecommerce development services. I build custom headless Shopify/Next.js stores, WooCommerce integrations, and conversion-focused checkouts.',
     tag: 'Commerce',
     hero: {
       title: 'Ecommerce Development Services',
@@ -1325,7 +1325,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'MVP Development',
     primaryKeyword: 'mvp development services',
     seoTitle: 'MVP Development Services for Startups | Rapid Launch',
-    seoDescription: 'Professional MVP development services for startups. We build functional Minimum Viable Products quickly using React, Node.js, and Laravel.',
+    seoDescription: 'Professional MVP development services for startups. I build functional Minimum Viable Products quickly using React, Node.js, and Laravel.',
     tag: 'Interface',
     hero: {
       title: 'MVP Development Services for Startups',
@@ -1405,7 +1405,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'Database Dev',
     primaryKeyword: 'database development services',
     seoTitle: 'Database Development Services | Schema Optimization',
-    seoDescription: 'Expert database development services. We design secure schemas, optimize slow queries, and configure MySQL, PostgreSQL, and MongoDB architectures.',
+    seoDescription: 'Expert database development services. I design secure schemas, optimize slow queries, and configure MySQL, PostgreSQL, and MongoDB architectures.',
     tag: 'Data',
     hero: {
       title: 'Database Development Services',
@@ -1485,7 +1485,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'Frontend Development',
     primaryKeyword: 'frontend development services',
     seoTitle: 'Frontend Development Services | Custom Responsive Interfaces',
-    seoDescription: 'High-performance frontend development services. We build responsive, mobile-optimized, and pixel-perfect user interfaces using React, Next.js, and Tailwind.',
+    seoDescription: 'High-performance frontend development services. I build responsive, mobile-optimized, and pixel-perfect user interfaces using React, Next.js, and Tailwind.',
     tag: 'Interface',
     hero: {
       title: 'Frontend Development Services',
@@ -1565,7 +1565,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
     label: 'API Integration',
     primaryKeyword: 'api integration services',
     seoTitle: 'API Integration Services | Custom API Connectors',
-    seoDescription: 'Professional API integration services. We connect third-party payments, CRM databases, webhooks, and automation APIs to your web application.',
+    seoDescription: 'Professional API integration services. I connect third-party payments, CRM databases, webhooks, and automation APIs to your web application.',
     tag: 'Automation',
     hero: {
       title: 'API Integration Services',
@@ -1620,7 +1620,7 @@ export const servicesDetailData: Record<string, ServiceDetail> = {
       { title: 'Resilient Webhook Handlers', description: 'Implementing error validation to handle corrupt incoming payloads safely.' },
       { title: 'Security First', description: 'Encrypting credentials and authenticating webhook headers before data writes.' },
       { title: 'Direct Developer Contact', description: 'Speak directly to the developer modifying your API templates.' },
-      { title: 'Full Stack Competency', description: 'We build both the fast Next.js UI and the robust Node/PHP server APIs that back it.' },
+      { title: 'Full Stack Competency', description: 'I build both the fast Next.js UI and the robust Node/PHP server APIs that back it.' },
       { title: '14-Day Post-Launch Support', description: 'Monitoring checkouts and webhooks for two weeks after going live.' }
     ],
     faqs: [

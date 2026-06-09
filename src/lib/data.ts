@@ -21,9 +21,9 @@ import type {
 } from '@/types/sections';
 
 export const seo: SeoMeta = {
-  title: 'Hire Jatinder Sandhu — Freelance Full Stack Developer | React, Next.js, Node.js, PHP',
+  title: 'Jatinder Sandhu — Freelance Full Stack Developer | React, Next.js, Node.js, PHP',
   description:
-    'Hire Jatinder Sandhu, a remote freelance full stack developer with 6+ years experience. Expert in React, Next.js, Node.js, PHP, Laravel, WordPress & AI-powered development. Available worldwide. 25+ projects delivered.',
+    'Hire Jatinder Sandhu — freelance full stack developer with 6+ years experience. React, Next.js, Node.js, PHP, Laravel, WordPress & AI development. 25+ projects delivered. Available for remote work worldwide.',
   keywords: [
     // General Full Stack & Developer Hiring
     'full stack developer',
@@ -228,16 +228,16 @@ export const seo: SeoMeta = {
 export const personal: PersonalInfo = {
   firstName: 'Jatinder',
   lastName: 'Sandhu',
-  role: 'Full Stack Developer | React, Next.js, Node.js, PHP | AI-Powered Development',
+  role: 'Full Stack Developer | React, Next.js, Node.js, PHP | Available Worldwide',
   age: 31,
   location: 'Based in Bathinda, Punjab, India',
   serviceArea: 'Serving clients worldwide · Remote',
-  freelanceStatus: 'Available for Freelance · Worldwide',
+  freelanceStatus: 'Available for Work · Worldwide',
   experience: '6+ Years',
   summary:
-    '6+ years building scalable web apps · PHP · React · Node.js · AI-assisted workflows',
+    'Full stack developer · 6+ years · React · Next.js · Node.js · PHP · AI-powered delivery',
   sideNote:
-    'I work with Cursor AI and Claude AI daily for faster, cleaner delivery — fewer bugs and quicker turnaround on your project.',
+    'I use Cursor AI and Claude AI daily — faster delivery, cleaner code, and fewer bugs on your project.',
   heroImage: '/jatinder.png',
   heroImageRetina: 'https://jatinder.malwaland.com/jatinder.png',
 };
@@ -257,11 +257,11 @@ export const contact: ContactInfo = {
 };
 
 export const coreStrengths: CoreStrength[] = [
-  { name: 'PHP / Laravel', detail: '12+ production backends & CMS builds' },
-  { name: 'React / Next.js', detail: '10+ fast, SEO-friendly frontends' },
-  { name: 'WordPress / WooCommerce', detail: '8+ business & booking sites' },
-  { name: 'Node.js / APIs', detail: 'REST, JWT auth & third-party integrations' },
-  { name: 'AI-Assisted Delivery', detail: 'Cursor AI · Claude · ChatGPT API daily' },
+  { name: 'PHP / Laravel', detail: '12+ production backends, CMS builds & admin panels' },
+  { name: 'React / Next.js', detail: '10+ SEO-optimized, Core Web Vitals-passing frontends' },
+  { name: 'WordPress / WooCommerce', detail: '8+ business sites, booking portals & online stores' },
+  { name: 'Node.js / APIs', detail: 'Scalable REST APIs, JWT auth & third-party integrations' },
+  { name: 'AI-Assisted Delivery', detail: 'Cursor AI + Claude + OpenAI API — daily dev tools' },
 ];
 
 export const techGroups: TechGroup[] = [
@@ -306,12 +306,12 @@ export const techGroups: TechGroup[] = [
   {
     category: 'AI & Automation',
     icon: 'AI',
-    iconBg: '#d6ad6322',
-    iconColor: '#d6ad63',
-    borderColor: '#d6ad6333',
+    iconBg: '#f59e0b22',
+    iconColor: '#f59e0b',
+    borderColor: '#f59e0b33',
     items: ['Cursor AI', 'Claude AI', 'ChatGPT API', 'OpenAI API', 'Prompt Engineering'],
     badges: [
-      { label: 'Cu', bg: '#d6ad6322', color: '#d6ad63', border: '#d6ad6333' },
+      { label: 'Cu', bg: '#f59e0b22', color: '#f59e0b', border: '#f59e0b33' },
       { label: 'Cl', bg: '#cc785c22', color: '#e8a88a', border: '#cc785c33' },
       { label: 'GP', bg: '#10a37f22', color: '#10a37f', border: '#10a37f33' },
     ],
@@ -324,167 +324,167 @@ export const services: Service[] = [
     slug: 'backend-development',
     seoTitle: 'Backend Development Services | Custom API & Server Architecture',
     seoDescription: 'Professional backend development services. I build secure REST APIs, scalable database architectures, and robust server-side systems using Node.js, PHP, and Laravel.',
-    description: 'Custom server-side architecture, user authentication, and API backend solutions built with Node.js, PHP, and Laravel.',
+    description: 'Secure REST APIs, JWT authentication, scalable database schemas, and server-side business logic — built with Node.js, PHP, and Laravel for startups to enterprise.',
     showOnHome: true,
   },
   {
     label: 'Frontend Dev',
     slug: 'frontend-development',
-    seoTitle: 'Frontend Development Services | Custom Responsive Interfaces',
-    seoDescription: 'High-performance frontend development services. We build responsive, mobile-optimized, and pixel-perfect user interfaces using React, Next.js, and Tailwind.',
-    description: 'Building responsive, high-performance web interfaces and single-page applications using React, Next.js, and Tailwind CSS.',
+    seoTitle: 'Frontend Development Services | React & Next.js Interfaces',
+    seoDescription: 'Professional frontend development services. I build pixel-perfect, mobile-responsive React and Next.js interfaces optimized for Core Web Vitals, SEO, and real user engagement.',
+    description: 'Pixel-perfect React and Next.js frontends — mobile-first, Core Web Vitals optimized, and built to convert visitors into customers.',
     showOnHome: true,
   },
   {
     label: 'API Integration',
     slug: 'api-integration',
-    seoTitle: 'API Integration Services | Custom API Connectors',
-    seoDescription: 'Professional API integration services. We connect third-party payments, CRM databases, webhooks, and automation APIs to your web application.',
-    description: 'Connecting third-party services, payment gateways, CRM systems, and custom webhooks to automate data flows.',
+    seoTitle: 'API Integration Services | Third-Party & Custom API Connectors',
+    seoDescription: 'Professional API integration services. I connect payment gateways, CRM systems, booking platforms, webhooks, and automation APIs to your web application.',
+    description: 'Stripe payments, CRM systems, booking platforms, SMS/email automation, and custom webhooks — seamlessly integrated into your application.',
     showOnHome: true,
   },
   {
     label: 'WordPress',
     slug: 'wordpress-development',
-    seoTitle: 'WordPress Development Services | Custom Elementor Themes',
-    seoDescription: 'High-performance WordPress development services. I build responsive business sites, custom Elementor layouts, and WooCommerce stores optimized for speed and local SEO.',
-    description: 'Building and maintaining custom WordPress websites, WooCommerce stores, and page templates with Elementor.',
+    seoTitle: 'WordPress Development Services | Custom Sites & WooCommerce',
+    seoDescription: 'Professional WordPress development services. I build fast, responsive business websites, custom Elementor layouts, WooCommerce stores, and plugin configurations optimized for SEO.',
+    description: 'Custom WordPress websites, WooCommerce stores, Elementor builds, plugin configuration, and speed optimization for business owners.',
     showOnHome: true,
   },
   {
     label: 'Shopify',
     slug: 'shopify-development',
-    seoTitle: 'Shopify Development Services | Custom Theme Setup',
-    seoDescription: 'High-performance Shopify development services. We customize Shopify themes, set up e-commerce apps, optimize checkout flows, and improve store load speeds.',
-    description: 'Enhancing and customizing Shopify storefronts, theme customization, checkout workflows, and product page layout updates.',
+    seoTitle: 'Shopify Development Services | Theme & Checkout Optimization',
+    seoDescription: 'Professional Shopify development services. I customize Shopify themes, optimize checkout flows, integrate apps, and build conversion-focused e-commerce storefronts.',
+    description: 'Shopify theme customization, checkout optimization, app integrations, and conversion-focused product page improvements for online stores.',
     showOnHome: true,
   },
   {
     label: 'REST API',
     slug: 'rest-api-development',
-    seoTitle: 'REST API Development Services | Secure Scalable Integration',
-    seoDescription: 'High-performance REST API development services. I design and build secure, fast, and structured API endpoints with complete OpenAPI/Swagger documentation.',
-    description: 'Designing and building structured REST APIs equipped with validation, JWT authentication, and clear endpoint documentation.',
+    seoTitle: 'REST API Development Services | Secure & Documented Endpoints',
+    seoDescription: 'Professional REST API development services. I design and build secure, structured API endpoints with JWT authentication, request validation, and Swagger/Postman documentation.',
+    description: 'Structured REST endpoints with request validation, JWT authentication, rate limiting, and Swagger/Postman documentation — production-ready from day one.',
     showOnHome: true,
   },
   {
     label: 'Database',
     slug: 'database-development',
-    seoTitle: 'Database Development Services | Schema Optimization',
-    seoDescription: 'Expert database development services. We design secure schemas, optimize slow queries, and configure MySQL, PostgreSQL, and MongoDB architectures.',
-    description: 'Structuring, optimizing, and administrating databases utilizing MySQL, PostgreSQL, and MongoDB schemas.',
+    seoTitle: 'Database Development Services | MySQL, PostgreSQL & MongoDB',
+    seoDescription: 'Expert database development services. I design normalized schemas, optimize slow queries, configure indexes, and build MySQL, PostgreSQL, and MongoDB architectures for scale.',
+    description: 'Relational and NoSQL schema design, slow-query optimization, index configuration, and MySQL/PostgreSQL/MongoDB architecture for high-performance applications.',
     showOnHome: true,
   },
   {
     label: 'AI Integration',
     slug: 'ai-integration-services',
-    seoTitle: 'AI Integration Services | OpenAI & LLM Web Integration',
-    seoDescription: 'Professional AI integration services. I integrate OpenAI GPT, Anthropic Claude, and custom LLMs into web applications to automate processes and generate content.',
-    description: 'Implementing AI capability into applications using OpenAI and Claude APIs for automation and content parsing.',
+    seoTitle: 'AI Integration Services | OpenAI, Claude & LLM Web Integration',
+    seoDescription: 'Professional AI integration services. I integrate OpenAI GPT-4, Claude, and custom LLMs into web applications to power smart chatbots, content automation, and intelligent workflows.',
+    description: 'OpenAI GPT-4 and Claude API integrations — AI chatbots, content automation, intelligent search, and autonomous agent workflows built into your product.',
     showOnHome: true,
   },
   {
     label: 'Next.js Development',
     slug: 'nextjs-development',
-    seoTitle: 'Next.js Development Services | Speed & SEO Optimized Apps',
-    seoDescription: 'High-performance Next.js development services. We build server-side rendered (SSR), static, and highly interactive web applications optimized for speed and SEO rankings.',
-    description: 'Custom React applications featuring server-side rendering (SSR), static site generation (SSG), and edge performance.',
+    seoTitle: 'Next.js Development Services | SSR, SEO & Edge-Optimized Apps',
+    seoDescription: 'Professional Next.js development services. I build App Router applications with server-side rendering, static generation, incremental static regeneration, and edge-optimized performance.',
+    description: 'Next.js App Router applications with SSR, SSG, ISR, and edge performance — fast-loading, SEO-ready, and built for scale.',
     showOnHome: false,
   },
   {
     label: 'React Development',
     slug: 'react-development',
-    seoTitle: 'React Development Services | Custom Single Page Web Apps',
-    seoDescription: 'Professional React development services. I build scalable Single Page Applications (SPAs), dynamic user interfaces, and reusable custom React component libraries.',
-    description: 'Bespoke Single Page Applications (SPAs) and modular frontend code built with TypeScript and Tailwind CSS.',
+    seoTitle: 'React Development Services | Scalable SPAs & Component Libraries',
+    seoDescription: 'Professional React development services. I build scalable Single Page Applications, reusable component libraries, and TypeScript-based UIs with state management using Redux or Zustand.',
+    description: 'Scalable React SPAs with TypeScript, custom component libraries, Redux/Zustand state management, and clean, reusable UI architecture.',
     showOnHome: false,
   },
   {
     label: 'Node.js Development',
     slug: 'nodejs-development',
-    seoTitle: 'Node.js Development Services | Fast Asynchronous API Backends',
-    seoDescription: 'High-performance Node.js development services. We build fast, scalable, and secure REST APIs, web sockets, and microservices using Express, Fastify, and TypeScript.',
-    description: 'Asynchronous event-driven APIs, real-time engines, and background worker systems compiled with TypeScript.',
+    seoTitle: 'Node.js Development Services | Fast Async API Backends',
+    seoDescription: 'Professional Node.js development services. I build fast, scalable REST APIs, WebSocket servers, microservices, and background job queues using Express, Fastify, and TypeScript.',
+    description: 'Asynchronous Node.js REST APIs, WebSocket servers, microservices, and background job queues — TypeScript-first and built for real traffic.',
     showOnHome: false,
   },
   {
     label: 'Custom Web Applications',
     slug: 'custom-web-applications',
-    seoTitle: 'Custom Web Application Development | Bespoke Software Systems',
-    seoDescription: 'Premium custom web application development services. I build tailored web portals, database-backed tools, and custom software systems designed around your business needs.',
-    description: 'Bespoke corporate dashboards, employee portals, and automated CRM workflows built from scratch.',
+    seoTitle: 'Custom Web Application Development | Bespoke Business Software',
+    seoDescription: 'Custom web application development services. I build tailored business portals, employee dashboards, inventory systems, booking platforms, and CRM tools designed around your workflow.',
+    description: 'Purpose-built corporate portals, employee dashboards, inventory systems, and admin tools — designed exactly for your business workflow.',
     showOnHome: false,
   },
   {
     label: 'SaaS Development',
     slug: 'saas-development',
-    seoTitle: 'SaaS Application Development | Scalable Subscription Software',
-    seoDescription: 'Scalable SaaS application development services. We build multi-tenant architectures, Stripe billing integrations, and secure client dashboards.',
-    description: 'Multi-tenant client dashboards, subscription flows, and Stripe webhook handling routes.',
+    seoTitle: 'SaaS Application Development | Multi-Tenant Subscription Software',
+    seoDescription: 'Scalable SaaS development services. I build multi-tenant architectures, Stripe subscription billing, role-based access control, and secure client dashboards.',
+    description: 'Multi-tenant SaaS architecture with Stripe billing, role-based access control, client dashboards, and scalable database design.',
     showOnHome: false,
   },
   {
     label: 'API Development',
     slug: 'api-development',
-    seoTitle: 'REST API Development Services | Secure Scalable Integration',
-    seoDescription: 'High-performance REST API development services. I design and build secure, fast, and structured API endpoints with complete OpenAPI/Swagger documentation.',
-    description: 'Custom microservice APIs equipped with validation, JWT security parameters, and OpenAPI interactive layouts.',
+    seoTitle: 'API Development Services | Versioned, Documented REST Architecture',
+    seoDescription: 'Professional API development services. I build versioned REST APIs with microservice architecture, OpenAPI/Swagger documentation, and production-grade error handling.',
+    description: 'Versioned REST microservice APIs with OpenAPI/Swagger documentation, structured error handling, and production-grade request validation.',
     showOnHome: false,
   },
   {
     label: 'OpenAI Integration',
     slug: 'openai-integration',
-    seoTitle: 'OpenAI Integration Services | GPT-4 API Web Development',
-    seoDescription: 'Professional OpenAI integration services. We connect web applications to GPT-4, DALL-E, and Whisper APIs for automated text, image, and voice processing.',
-    description: 'Integrating GPT-4 text analysis, embeddings generation, and Whisper voice-to-text routes directly into databases.',
+    seoTitle: 'OpenAI Integration Services | GPT-4, DALL-E & Whisper API',
+    seoDescription: 'Professional OpenAI integration services. I connect web applications to GPT-4, DALL-E, Whisper, and embeddings APIs for automated text generation, image creation, and voice processing.',
+    description: 'GPT-4 text generation, DALL-E image creation, Whisper voice-to-text, and embeddings — OpenAI APIs fully integrated into your production web application.',
     showOnHome: false,
   },
   {
     label: 'ChatGPT Integration',
     slug: 'chatgpt-integration',
     seoTitle: 'ChatGPT Integration Services | Custom AI Chatbot Development',
-    seoDescription: 'Professional ChatGPT integration services. We build custom AI chatbots, customer support widgets, and interactive assistants utilizing OpenAI Assistant API.',
-    description: 'Deploying conversational support bubbles and sales representatives trained on custom knowledge bases.',
+    seoDescription: 'Professional ChatGPT integration services. I build custom AI chatbots, customer support assistants, and sales bots trained on your business knowledge base using OpenAI Assistant API.',
+    description: 'Custom ChatGPT-powered chatbots, customer support assistants, and sales bots trained on your business knowledge base — integrated directly into your website.',
     showOnHome: false,
   },
   {
     label: 'AI Agent Development',
     slug: 'ai-agent-development',
-    seoTitle: 'AI Agent Development Services | Autonomous Web Workflows',
-    seoDescription: 'High-performance AI agent development services. We build autonomous AI agents, tool-calling reasoning systems, and automated multi-step workflows.',
-    description: 'Tool-calling reasoning loops in Node.js designed to execute multi-step database operations autonomously.',
+    seoTitle: 'AI Agent Development Services | Autonomous Workflow Automation',
+    seoDescription: 'Professional AI agent development services. I build autonomous AI agents with tool-calling, multi-step reasoning, memory systems, and workflow automation using Node.js and LLM APIs.',
+    description: 'Autonomous AI agents with tool-calling, multi-step reasoning, memory systems, and complex workflow automation — built with Node.js and OpenAI Function Calling.',
     showOnHome: false,
   },
   {
     label: 'Business Automation',
     slug: 'ai-automation-services',
-    seoTitle: 'AI Business Automation Services | Workflow Streamlining',
-    seoDescription: 'Expert AI business automation services. We build automated workflow pipelines, connect CRM systems, and automate data parsing using OpenAI and Make/Zapier.',
-    description: 'Automating spreadsheet data entry, synchronizing CRM pipelines, and parsing receipt files using server code.',
+    seoTitle: 'AI Business Automation Services | Workflow & Data Pipeline Automation',
+    seoDescription: 'AI business automation services. I build automated data pipelines, CRM synchronization, invoice processing, email/SMS workflows, and Zapier/Make integrations to save your team hours weekly.',
+    description: 'Automated data pipelines, CRM sync, invoice processing, email/SMS workflows, and Zapier/Make integrations — saving your team hours every week.',
     showOnHome: false,
   },
   {
     label: 'Laravel Development',
     slug: 'laravel-development',
-    seoTitle: 'Laravel Development Services | Custom PHP App Development',
-    seoDescription: 'High-performance Laravel development services. I build secure PHP web applications, custom databases, and robust multi-role admin panels.',
-    description: 'Secure MVC backends, relational schema migrations, and admin dashboards built with Eloquent ORM.',
+    seoTitle: 'Laravel Development Services | Secure PHP Web Applications',
+    seoDescription: 'Professional Laravel development services. I build secure PHP MVC applications, Eloquent ORM schemas, multi-role admin panels, and production-ready Laravel APIs.',
+    description: 'Secure PHP MVC applications, Eloquent ORM schemas, multi-role admin panels, and production-ready Laravel APIs — clean architecture from day one.',
     showOnHome: false,
   },
   {
     label: 'Ecommerce Development',
     slug: 'ecommerce-development',
-    seoTitle: 'Ecommerce Development Services | Custom Storefronts',
-    seoDescription: 'High-performance ecommerce development services. We build custom headless Shopify/Next.js stores, WooCommerce integrations, and conversion-focused checkouts.',
-    description: 'Headless storefront builds, product filtration frameworks, and high-conversion payment checkouts.',
+    seoTitle: 'Ecommerce Development Services | Headless & Custom Storefronts',
+    seoDescription: 'Professional ecommerce development services. I build headless Shopify/Next.js storefronts, WooCommerce custom builds, product filter systems, and conversion-optimized checkouts.',
+    description: 'Headless Shopify + Next.js storefronts, WooCommerce custom builds, product filter systems, and conversion-optimized checkouts for online businesses.',
     showOnHome: false,
   },
   {
     label: 'MVP Development',
     slug: 'mvp-development',
-    seoTitle: 'MVP Development Services for Startups | Rapid Launch',
-    seoDescription: 'Professional MVP development services for startups. We build functional Minimum Viable Products quickly using React, Node.js, and Laravel.',
-    description: 'Validating startup concepts in weeks with a lightweight database, registration portal, and core dashboard.',
+    seoTitle: 'MVP Development for Startups | Launch-Ready in 4–6 Weeks',
+    seoDescription: 'MVP development services for startups. I build functional, launch-ready Minimum Viable Products in 4–6 weeks using React, Node.js, and Laravel — validated architecture, auth, and core user flows.',
+    description: 'Launch-ready MVPs in 4–6 weeks — validated architecture, core user flows, authentication, and deployment-ready code to start growing your startup.',
     showOnHome: false,
   },
 ];
@@ -542,34 +542,34 @@ export const sections: SectionData[] = [
 
 export const faqs: FaqItem[] = [
   {
+    question: 'What are your rates? How much does hiring you cost?',
+    answer:
+      'My rates depend on project scope and technology. Hourly work runs $25–$55/hr depending on complexity. Fixed-price projects are quoted before work begins — no surprises. Most clients find the cost significantly lower than hiring a local developer or agency. Contact me with your project details for a custom estimate.',
+  },
+  {
     question: 'Do you work with international clients remotely?',
     answer:
-      'Yes. I work with clients worldwide on a fully remote basis. Communication happens over email, WhatsApp, Slack, or your preferred tool, with progress updates and shared staging links throughout the build.',
+      'Yes — I work with clients in the US, UK, Canada, Australia, Netherlands, and worldwide on a fully remote basis. Communication runs via email, WhatsApp, Slack, or your preferred tool. I share staging links, milestone updates, and progress reports throughout the entire build.',
   },
   {
     question: 'What technologies do you specialize in?',
     answer:
-      'React, Next.js, Node.js, PHP, Laravel, WordPress, WooCommerce, Shopify, MySQL, MongoDB, REST APIs, JWT auth, and AI integrations (ChatGPT API, Claude API, Cursor AI workflows). I pick the stack that fits your product and budget.',
+      'My core stack covers React, Next.js, Node.js, PHP, Laravel, WordPress, WooCommerce, Shopify, MySQL, PostgreSQL, MongoDB, REST APIs, and JWT authentication. I also build AI-powered features using OpenAI GPT-4, Claude API, and custom LLM workflows. I choose the right stack for your project — not just the newest framework.',
   },
   {
     question: 'How do we start a new project?',
     answer:
-      'Share your scope, reference links, or a rough idea by email. I review the requirements, suggest the right approach, provide a timeline estimate, and begin with a clear milestone plan before development starts.',
-  },
-  {
-    question: 'Can you integrate AI features into my product?',
-    answer:
-      'Yes. I build AI-powered features such as smart forms, content automation, chat assistants, and API integrations using OpenAI and Claude — plus faster delivery using modern AI-assisted development workflows.',
+      'Email me your scope, reference links, or rough idea. I review the requirements, recommend the right technology approach, and provide a clear milestone plan and timeline estimate before any development begins. No upfront payment until we agree on scope.',
   },
   {
     question: 'What is a typical project timeline?',
     answer:
-      'A focused business website often takes 2–4 weeks. Custom web apps, dashboards, or ecommerce builds typically run 4–8+ weeks depending on scope, integrations, and feedback rounds. I share realistic timelines upfront.',
+      'A standard business website takes 2–4 weeks. Custom web apps, dashboards, SaaS platforms, and e-commerce builds typically run 4–8+ weeks depending on scope and integrations. I provide a realistic timeline before starting — and I stick to it. Rush delivery is available for smaller projects.',
   },
   {
     question: 'Do you provide ongoing support after launch?',
     answer:
-      'Yes. I offer post-launch support for bug fixes, small updates, performance improvements, and feature additions. Many clients retain me for maintenance after the initial build goes live.',
+      'Yes. Every project includes post-launch support for bug fixes. I also offer monthly maintenance retainers covering security patches, performance monitoring, feature additions, and priority support. Many clients retain me for 6–12 months after their initial build goes live.',
   },
 ];
 
@@ -579,14 +579,14 @@ export const experience: WorkExperience[] = [
     role: 'Full Stack Developer',
     period: 'Aug 2020 — Present',
     description:
-      'Built dynamic UIs with React.js + Redux. Developed scalable Node.js APIs with JWT auth. Optimized MongoDB schemas — 40% faster query response on high-traffic modules.',
+      'Building React + Redux dashboards, scalable Node.js REST APIs with JWT authentication, and MongoDB schemas — achieving 40% faster query response on high-traffic production modules.',
   },
   {
     company: 'Envy Us Media Pvt Ltd',
     role: 'PHP Developer',
     period: '2019 — 2020',
     description:
-      'Built custom CMS with PHP + MySQL. Created web services for third-party integrations. Maintained code quality through debugging and unit testing.',
+      'Built custom PHP + MySQL CMS platforms, developed RESTful web services for third-party integrations, and maintained code quality through unit testing and systematic debugging.',
   }
 ];
 
@@ -982,15 +982,15 @@ export const projects: Project[] = [
 // Section-specific data
 
 const serviceCopy: Record<string, string> = {
-  'Backend Dev': 'APIs, auth, database design, and server-side logic that can grow with the product.',
-  'Frontend Dev': 'Responsive interfaces built with React, Next.js, Tailwind CSS, and clean component systems.',
-  'API Integration': 'Payments, booking tools, CRMs, third-party data, and custom service integrations.',
-  WordPress: 'Custom WordPress builds, theme work, Elementor pages, WooCommerce, and CMS maintenance.',
-  Shopify: 'Storefront improvements, product flows, theme edits, and conversion-focused ecommerce UI.',
-  'REST API': 'Structured endpoints, validation, JWT authentication, and practical API documentation.',
-  Database: 'MySQL, MongoDB, PostgreSQL, schema planning, optimization, and data workflows.',
+  'Backend Dev': 'Secure REST APIs, JWT authentication, database schemas, and server-side business logic built for scale.',
+  'Frontend Dev': 'Pixel-perfect React and Next.js interfaces — mobile-first, Core Web Vitals optimized, built to convert.',
+  'API Integration': 'Stripe payments, CRM systems, booking platforms, SMS/email automation, and custom webhooks integrated cleanly.',
+  WordPress: 'Custom WordPress sites, WooCommerce stores, Elementor builds, and speed optimization for business owners.',
+  Shopify: 'Shopify theme customization, checkout optimization, app integrations, and conversion-focused product pages.',
+  'REST API': 'Structured endpoints with request validation, JWT auth, rate limiting, and Swagger/Postman documentation.',
+  Database: 'Relational and NoSQL schema design, query optimization, and MySQL/PostgreSQL/MongoDB architecture for production.',
   'AI Integration':
-    'ChatGPT API, Claude API, LLM features, and AI-powered tools — from smart forms to content automation and dev workflow acceleration.',
+    'OpenAI GPT-4 and Claude API integrations — smart chatbots, content automation, and AI-powered workflows for your product.',
 };
 
 const serviceTags: Record<string, string> = {
@@ -1025,21 +1025,21 @@ const experienceFocus: Record<string, string[]> = {
 export const aboutSection: AboutSectionData = {
   id: 'about',
   kicker: 'About Me',
-  title: 'Transforming your vision into a dynamic web experience through clean UI and robust functionality.',
+  title: '6+ years building production web applications for startups and businesses worldwide.',
   description:
-    "I'm Jatinder Sandhu, a remote full stack developer for clients worldwide — focused on practical builds: clean interfaces, solid backend logic, useful admin tools, and dependable deployment-ready code.",
+    "I'm Jatinder Sandhu — a full stack developer with 6+ years of experience building fast, scalable web applications for startups, agencies, and growing businesses across the US, UK, Canada, Australia, and India.",
   secondaryDescription:
-    'My work spans PHP, Laravel, WordPress, React, Next.js, Node.js, MySQL, MongoDB, and API integrations — plus AI-assisted delivery with Cursor AI, Claude AI, and ChatGPT API. I collaborate remotely with clients across time zones and like projects where design, performance, and business flow all matter.',
+    'My stack covers React, Next.js, Node.js, PHP, Laravel, WordPress, Shopify, MySQL, MongoDB, and REST APIs. I also build AI-powered features — OpenAI, Claude, and custom LLM workflows — to add smart capabilities to your product. Every project ships with clean code, clear documentation, and support after go-live.',
 };
 
 export const servicesSection: ServicesSectionData = {
   id: 'services',
   kicker: 'What I Do',
-  title: 'Full-stack services for websites, apps, and business systems.',
+  title: 'Professional web development services — frontend, backend, AI, and everything in between.',
   description:
-    'From the public website to the admin dashboard, I build the parts clients actually use, manage, and measure. The focus is clean UI, dependable backend logic, and maintainable code.',
+    'From React frontends and Node.js APIs to WordPress sites and AI integrations — I deliver complete, production-ready solutions for startups and growing businesses worldwide.',
   coreOfferDescription:
-    'I can design the flow, build the responsive frontend, connect APIs, prepare the CMS or database, and keep the implementation practical for future changes.',
+    'I handle the full stack — frontend interfaces, backend APIs, database design, CMS setup, third-party integrations, and AI features. One developer, full ownership, clean delivery.',
   specialistStack: ['React / Next.js', 'PHP / Laravel', 'AI Integration'],
   services,
   serviceCopy,
@@ -1050,26 +1050,26 @@ export const servicesSection: ServicesSectionData = {
 export const worksSection: WorksSectionData = {
   id: 'works',
   kicker: 'Works',
-  title: 'Selected builds and production projects.',
-  description: 'A focused sample of business websites, ecommerce work, and web applications built with practical stacks.',
+  title: '25+ projects delivered — real businesses, real results.',
+  description: 'Production websites, web applications, e-commerce platforms, and SaaS tools — built for businesses across Canada, UK, Netherlands, India, and beyond.',
   works: projects,
 };
 
 export const faqSection: FaqSectionData = {
   id: 'faq',
   kicker: 'FAQ',
-  title: 'Common questions before we start your project.',
+  title: 'Frequently asked questions about hiring a full stack developer.',
   description:
-    'Quick answers about remote work, timelines, tech stack, and how I deliver projects for clients worldwide.',
+    'Rates, timelines, tech stack, remote communication, and everything else you need to know before starting your project.',
   items: faqs,
 };
 
 export const experienceSection: ExperienceSectionData = {
   id: 'experience',
   kicker: 'Experience',
-  title: 'Production work across frontend, backend, and CMS.',
+  title: '6+ years shipping full-stack web applications at scale.',
   description:
-    'A practical background in shipping interfaces, APIs, CMS features, and database-backed tools for real business workflows.',
+    'From React dashboards and Node.js APIs to PHP backends and WordPress sites — a proven track record of building production systems that handle real users and real data.',
   experience,
   experienceFocus,
   yearsExperience: personal.experience,
@@ -1078,18 +1078,18 @@ export const experienceSection: ExperienceSectionData = {
 export const skillsSection: SkillsSectionData = {
   id: 'skills',
   kicker: 'Skills',
-  title: 'Stack I use to build complete web products.',
+  title: 'Full-stack expertise across frontend, backend, CMS, and AI.',
   description:
-    'Frontend, backend, CMS, database, and API work handled with one practical full-stack workflow.',
+    'React, Next.js, Node.js, PHP, Laravel, WordPress, MySQL, MongoDB, REST APIs, and AI integrations — the complete toolkit to build and ship your web product.',
   coreStrengths,
   techGroups: techGroups.map(group => ({
     category: group.category,
     items: group.items,
   })),
   hireSection: {
-    title: 'Have a project that needs a reliable developer?',
+    title: 'Ready to build your next web project?',
     description:
-      'Send the scope, reference, or rough idea — wherever you are. I work remotely with clients worldwide and can help shape the flow, build the interface, connect the backend, and ship it cleanly.',
+      'Send me your scope, idea, or requirements — I\'ll review it, recommend the right tech approach, and provide a clear quote and timeline. Available for immediate start.',
     email: contact.email,
     linkedin: contact.linkedin,
     upwork: contact.upwork,
@@ -1109,20 +1109,20 @@ export const stats = [
   },
   {
     value: '20+',
-    label: 'Happy Clients',
+    label: 'Global Clients',
   },
   {
-    value: '100%',
-    label: 'Clean & Scalable Code',
+    value: '15+',
+    label: 'Technologies Mastered',
   },
 ];
 
 export const teamSection: TeamSectionData = {
   id: 'team',
   kicker: 'The Team',
-  title: 'The people who build things that matter.',
+  title: 'Senior developers and designers who ship production-quality work.',
   description:
-    'A small, senior-level team of developers and designers working remotely — focused on shipping products that perform.',
+    'A focused team of full stack developers and UI/UX designers working remotely — building web applications, e-commerce platforms, and AI-powered products for clients worldwide.',
   members: [
     {
       slug: 'jatinder-sandhu',
@@ -1131,8 +1131,8 @@ export const teamSection: TeamSectionData = {
       role: 'Lead Full Stack Developer',
       bio: '6+ years building scalable web apps across PHP, React, Node.js and AI-assisted workflows. Focused on shipping clean, maintainable code for real business needs.',
       avatar: 'JS',
-      avatarBg: '#d6ad6322',
-      avatarColor: '#d6ad63',
+      avatarBg: '#f59e0b22',
+      avatarColor: '#f59e0b',
       skills: ['React / Next.js', 'PHP / Laravel', 'Node.js', 'AI Integration', 'MySQL', 'MongoDB'],
       projects: [
         {
