@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function AIBusinessApplicationsBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">AI Business</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Guide · AI Business</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Guide · AI Business</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">{articleDescription}</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,30 +103,30 @@ export default function AIBusinessApplicationsBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
 
  <section id="introduction" className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence (AI) is no longer a technology reserved for large corporations. Today, small businesses can use AI tools to save time, improve customer service, increase productivity, and make better business decisions without spending a fortune.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Whether you run a local shop, service business, online store, or startup, AI can help automate repetitive tasks and allow you to focus on growing your business.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In this guide, we’ll explore practical AI business applications that small businesses can start using today.
  </p>
  </section>
 
  <section id="what-is-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">What Is AI in Business?</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">What Is AI in Business?</h2>
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence (AI) refers to computer systems that can perform tasks that normally require human intelligence. These tasks include understanding text, analyzing data, generating content, answering customer questions, and automating workflows.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  For small businesses, AI is not about replacing people. Instead, it’s about helping business owners and teams work more efficiently.
  </p>
  </section>
 
  <section id="why-using-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Why Small Businesses Are Using AI</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Why Small Businesses Are Using AI</h2>
+ <p className="leading-relaxed text-white/70">
  Small businesses often operate with limited staff and resources. AI can help by:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
@@ -146,21 +137,21 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Analyzing business data</li>
  <li>Increasing productivity</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-3">
+ <p className="leading-relaxed text-white/70 mt-3">
  As AI tools become more accessible, businesses of all sizes can benefit from them.
  </p>
  </section>
 
  <section id="customer-support" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">1. AI-Powered Customer Support</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">1. AI-Powered Customer Support</h2>
+ <p className="leading-relaxed text-white/70">
  One of the most common uses of AI is customer support.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI chatbots can answer frequently asked questions, collect customer information, and provide support even outside business hours.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A local plumbing business can use an AI chatbot on its website to answer questions such as:
  </p>
@@ -176,11 +167,11 @@ export default function AIBusinessApplicationsBlogPost() {
  </section>
 
  <section id="content-creation" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">2. AI for Content Creation</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">2. AI for Content Creation</h2>
+ <p className="leading-relaxed text-white/70">
  Creating content regularly can be challenging for small business owners.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI writing tools can help generate:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
@@ -191,7 +182,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Marketing content</li>
  </ul>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A local bakery can use AI to generate weekly social media posts promoting new products and special offers.
  </p>
@@ -202,11 +193,11 @@ export default function AIBusinessApplicationsBlogPost() {
  </section>
 
  <section id="marketing" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">3. AI in Marketing</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">3. AI in Marketing</h2>
+ <p className="leading-relaxed text-white/70">
  Marketing is another area where AI can make a significant impact.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI tools can help businesses:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
@@ -217,7 +208,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Personalize customer communication</li>
  </ul>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  An online clothing store can use AI to create multiple versions of an advertisement and test which one performs best.
  </p>
@@ -225,11 +216,11 @@ export default function AIBusinessApplicationsBlogPost() {
  </section>
 
  <section id="automation" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">4. AI for Business Automation</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">4. AI for Business Automation</h2>
+ <p className="leading-relaxed text-white/70">
  Many businesses spend valuable time on repetitive administrative tasks.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI-powered automation can help streamline:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
@@ -240,7 +231,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Customer follow-ups</li>
  </ul>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A consulting business can automatically send appointment confirmations, reminders, and follow-up emails without manual effort.
  </p>
@@ -248,11 +239,11 @@ export default function AIBusinessApplicationsBlogPost() {
  </section>
 
  <section id="data-analysis" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">5. AI for Data Analysis</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">5. AI for Data Analysis</h2>
+ <p className="leading-relaxed text-white/70">
  Understanding business data is essential for growth.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI tools can help identify:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
@@ -262,7 +253,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Revenue opportunities</li>
  </ul>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A retail store can analyze sales data to determine which products perform best during different seasons.
  </p>
@@ -273,11 +264,11 @@ export default function AIBusinessApplicationsBlogPost() {
  </section>
 
  <section id="website-improvement" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">6. AI for Website Improvement</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">6. AI for Website Improvement</h2>
+ <p className="leading-relaxed text-white/70">
  A business website is often the first impression customers have of a company.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI tools can assist with:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
@@ -287,7 +278,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Website analytics</li>
  </ul>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A service-based business can use AI to identify the most searched topics related to its industry and create helpful content around those topics.
  </p>
@@ -295,33 +286,33 @@ export default function AIBusinessApplicationsBlogPost() {
  </section>
 
  <section id="benefits-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Benefits of AI for Small Businesses</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Benefits of AI for Small Businesses</h2>
+ <p className="leading-relaxed text-white/70">
  Businesses that effectively use AI may experience:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Productivity & Decisions</strong>
+ <strong className="block text-gold mb-1">Productivity & Decisions</strong>
  <p className="text-white/60">Increased productivity and faster decision-making across teams.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Customer Experience</strong>
+ <strong className="block text-gold mb-1">Customer Experience</strong>
  <p className="text-white/60">Better customer experiences with 24/7 instant response support systems.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Operational Costs</strong>
+ <strong className="block text-gold mb-1">Operational Costs</strong>
  <p className="text-white/60">Reduced operational costs through intelligent workflow automation.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Marketing Efficiency</strong>
+ <strong className="block text-gold mb-1">Marketing Efficiency</strong>
  <p className="text-white/60">Improved marketing performance and more efficient general business workflows.</p>
  </div>
  </div>
  </section>
 
  <section id="challenges" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Challenges to Consider</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Challenges to Consider</h2>
+ <p className="leading-relaxed text-white/70">
  While AI offers many advantages, businesses should also be aware of potential challenges:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
@@ -330,17 +321,17 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Verifying AI-generated content</li>
  <li>Protecting customer privacy</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  AI works best when combined with human expertise and oversight.
  </p>
  </section>
 
  <section id="getting-started" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Getting Started with AI</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Getting Started with AI</h2>
+ <p className="leading-relaxed text-white/70">
  If you’re new to AI, start small.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Choose one area of your business where AI can provide immediate value, such as:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1">
@@ -350,17 +341,17 @@ export default function AIBusinessApplicationsBlogPost() {
  <li>Scheduling</li>
  <li>Business automation</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-3">
+ <p className="leading-relaxed text-white/70 mt-3">
  Once you become comfortable using AI tools, you can gradually expand their use across other areas of your business.
  </p>
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Conclusion</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Conclusion</h2>
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence is becoming an essential tool for businesses of all sizes. From customer support and marketing to automation and data analysis, AI can help small businesses save time, improve efficiency, and provide better customer experiences.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  The key is to start with practical use cases that solve real business problems. By adopting AI strategically, small businesses can compete more effectively and position themselves for future growth.
  </p>
  </section>
@@ -381,14 +372,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

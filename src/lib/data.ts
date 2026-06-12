@@ -613,6 +613,7 @@ export const projects: Project[] = [
   {
     slug: 'luxorlimo',
     name: 'Luxorlimo',
+    featured: true,
     developer: 'Jatinder Sandhu',
     coverImage: '/images/team/jatinder/luxor/project2-image1.png',
     images: [
@@ -651,6 +652,7 @@ export const projects: Project[] = [
   {
     slug: 'luna-by-navneet',
     name: 'Luna By Navneet',
+    featured: true,
     developer: 'Jatinder Sandhu',
     coverImage: '/images/team/jatinder/lunanav/project1-cover.png',
     images: [
@@ -692,6 +694,7 @@ export const projects: Project[] = [
   {
     slug: 'true-holiday-admin-dashboard',
     name: 'True Holiday Admin Dashboard',
+    featured: true,
     developer: 'Jatinder Sandhu',
     coverImage: '/images/team/jatinder/True Holiday/image1.jpeg',
     images: [
@@ -729,6 +732,7 @@ export const projects: Project[] = [
   {
     slug: 'aracuda-inspection-saas-platform',
     name: 'Aracuda Inspection SaaS Platform',
+    featured: true,
     developer: 'Jatinder Sandhu',
     coverImage: '/images/team/jatinder/Aracuda/Screenshot 2026-05-23 at 9.26.00 PM.png',
     images: [

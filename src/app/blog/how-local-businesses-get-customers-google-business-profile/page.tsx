@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function GBPBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">Local SEO</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Deep Dive · Local SEO</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Deep Dive · Local SEO</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">How Local Businesses Can Get More Customers with Google Business Profile</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,16 +103,16 @@ export default function GBPBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
  
  <section id="introduction" className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Imagine owning a great business, offering excellent services, and having happy customers—but when people search for businesses like yours on Google, they find your competitors instead.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  That’s where Google Business Profile (GBP) comes in.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Formerly known as Google My Business, Google Business Profile is one of the most powerful free marketing tools available to local businesses. Whether you own a taxi company, restaurant, salon, real estate agency, repair shop, medical clinic, gym, or retail store, optimizing your Google Business Profile can significantly increase visibility, phone calls, website visits, and customer inquiries.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  When someone searches:
  </p>
  <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
@@ -130,22 +121,22 @@ export default function GBPBlogPost() {
  <li>“Web developer near me”</li>
  <li>“Car rental service”</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-4">
+ <p className="leading-relaxed text-white/70 mt-4">
  Google often displays local business listings before traditional website results. If your business appears in those results, you’re already ahead of many competitors.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In this guide, you’ll learn exactly how local businesses can use Google Business Profile to attract more customers in 2026.
  </p>
  </section>
 
  <section id="what-is-gbp" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  What Is Google Business Profile?
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Google Business Profile is a free tool provided by Google that allows businesses to manage how they appear in Google Search, Google Maps, and local search results.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Your profile displays key storefront information directly to searchers:
  </p>
  <ul className="grid grid-cols-2 gap-2 text-xs text-white/60 pl-4 list-disc">
@@ -158,28 +149,28 @@ export default function GBPBlogPost() {
  <li>Google Maps directions</li>
  <li>List of products & services</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 italic text-center font-medium mt-4">
+ <p className="leading-relaxed text-white/70 italic text-center font-medium mt-4">
  Think of it as your business’s digital storefront on Google. For many customers, your Google profile creates the absolute first impression of your business.
  </p>
  </section>
 
  <section id="why-it-matters" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Why Google Business Profile Matters
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Consumer behavior has changed dramatically. Before visiting a business, customers typically search online to verify details: Are you open? Where are you located? What do other customers think?
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Google Business Profile answers these questions instantly. Businesses that optimize their profiles often receive more phone calls, more website visits, more direction requests, and greater customer trust. Ignoring GBP is like refusing free advertising.
  </p>
  </section>
 
  <section id="benefits" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Benefits of Google Business Profile
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Actively managing your profile delivers five critical local business advantages:
  </p>
  <div className="space-y-4 mt-4 text-xs">
@@ -191,7 +182,7 @@ export default function GBPBlogPost() {
  { title: 'Free marketing Asset', desc: 'Unlike expensive paid ads, GBP generates continuous local organic leads at zero cost.' },
  ].map((benefit, idx) => (
  <div key={idx} className="flex gap-4 items-start pl-2">
- <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#f59e0b]/10 text-[10px] font-black text-[#f59e0b]">
+ <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/10 text-[10px] font-black text-gold">
  ✓
  </span>
  <div>
@@ -204,10 +195,10 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="creating-profile" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Creating Your Google Business Profile
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Getting set up takes only a few straightforward steps:
  </p>
  <ol className="mt-4 space-y-3 text-xs pl-2">
@@ -231,35 +222,35 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="verification" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Verifying Your Business
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Verification is a critical step. Without verification, you cannot fully manage your profile, and features like reviews, maps routing, and posts remain blocked.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Google uses several verification methods depending on business categories:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Postcard & Phone</span>
+ <span className="font-bold text-gold block mb-1">Postcard & Phone</span>
  <p className="text-white/60">Google mails a physical code to your business address or sends an instant verification SMS.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Email & Video</span>
+ <span className="font-bold text-gold block mb-1">Email & Video</span>
  <p className="text-white/60">Verification via corporate emails or direct video walkthroughs showing your tools, location, and registration.</p>
  </div>
  </div>
  </section>
 
  <section id="categories" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Choosing the Right Business Category
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Your primary category choice significantly impacts local SEO. Categories tell Google exactly what your business does and which local searches match your services.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold">
+ <p className="leading-relaxed text-white/70 font-semibold">
  Primary category matching examples:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
@@ -270,10 +261,10 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="optimizing-info" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Optimizing Business Information
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Complete, detailed profiles rank significantly higher on Google Maps search. Ensure you optimize:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
@@ -285,25 +276,25 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="photos" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Adding High-Quality Photos
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Photos influence customer decisions far more than most business owners realize. Listings featuring crisp, updated photos receive significantly higher maps direction requests.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Add diverse exterior views to help customers identify your location, clean interior layouts to build familiarity, team photos to humanize your services, and product closeups to showcase what you sell.
  </p>
  </section>
 
  <section id="reviews" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Collecting Customer Reviews
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Customer reviews are primary local ranking factors. Think of reviews as digital word-of-mouth marketing. Positive ratings influence both Google's search algorithms and customer purchasing decisions.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Ask every happy customer consistently:
  </p>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs italic text-black/75 text-white/75">
@@ -312,13 +303,13 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="managing-reviews" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Managing Reviews Professionally
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Make it a habit to respond to every incoming customer review.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold">
+ <p className="leading-relaxed text-white/70 font-semibold">
  Review management guidelines:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
@@ -328,31 +319,31 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="updates" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Posting Updates Regularly
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Google allows verified businesses to post social-media-style updates directly onto search listings. Publish regular updates to share seasonal promotions, introduce new services, announce achievements, and promote events. This signals to Google that your business is active and responsive.
  </p>
  </section>
 
  <section id="products-services" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Using Products and Services Sections
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Failing to use the Products and Services sections is a major missed opportunity.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Clearly outline your core business packages (e.g. airport taxi bookings, local SEO auditing, responsive portfolio development) and assign pricing bounds to help searchers find exactly what they need instantly.
  </p>
  </section>
 
  <section id="local-seo-optimization" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Optimizing for Local SEO
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Your Google listing and main business site must support each other to build local search authority:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
@@ -363,19 +354,19 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="performance" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Tracking Performance
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Google provides robust analytics tools directly inside the Business Profile dashboard. Track search views, phone calls initiated, website clicks, direction requests, and review growth to make smart, data-driven decisions.
  </p>
  </section>
 
  <section id="mistakes" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Common Mistakes to Avoid
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Avoid these common mistakes to protect your profile's visibility:
  </p>
 
@@ -408,10 +399,10 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="advanced-growth" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Advanced Growth Strategies
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Once your profile is optimized, you can accelerate growth further:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-3">
@@ -422,28 +413,28 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="real-world-example" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Real-World Example
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Let's evaluate two local taxi companies operating in the same area:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Company A</span>
+ <span className="font-bold text-gold block mb-1">Company A</span>
  <p className="text-white/60 leading-relaxed">
  Operates without an optimized Google profile. Has no reviews, no photos, and no listing updates. Customers cannot discover them on Google Maps.
  </p>
  </div>
 
- <div className="p-4 rounded-lg bg-[#f59e0b]/5 border border-[#f59e0b]/25">
+ <div className="p-4 rounded-lg bg-gold/5 border border-gold/25">
  <span className="font-bold text-white block mb-1">Company B</span>
  <p className="text-white/70 leading-relaxed">
  Maintains an optimized profile with 100+ positive reviews, crisp interior/exterior photos, weekly updates, and direct booking links.
  </p>
  </div>
  </div>
- <p className="body-copy leading-relaxed text-white/70 mt-6 italic text-center font-medium">
+ <p className="leading-relaxed text-white/70 mt-6 italic text-center font-medium">
  The answer is obvious: Company B will receive significantly more local calls and inquiries.
  </p>
  </section>
@@ -456,7 +447,7 @@ export default function GBPBlogPost() {
  
 
  <section id="faqs" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2 font-extrabold">
  Frequently Asked Questions (FAQs)
  </h2>
  
@@ -504,7 +495,7 @@ export default function GBPBlogPost() {
  },
  ].map((faq, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
- <h3 className="text-sm font-bold text-[#f59e0b]">{faq.q}</h3>
+ <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
  </div>
  ))}
@@ -512,16 +503,16 @@ export default function GBPBlogPost() {
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Google Business Profile is one of the most valuable tools available to local businesses in 2026. It helps increase visibility, build trust, improve local search rankings, and generate more customers—all without requiring a large marketing budget.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  By completing your profile, collecting reviews, posting updates, optimizing local SEO, and maintaining accurate information, you can dramatically improve your online presence and compete effectively in your local market.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  For many businesses, Google Business Profile is the difference between being discovered and being overlooked. The businesses that consistently invest time in optimizing their profiles are often the businesses that win more customers.
  </p>
  </section>
@@ -543,14 +534,7 @@ export default function GBPBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

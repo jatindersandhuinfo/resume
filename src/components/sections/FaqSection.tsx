@@ -13,7 +13,7 @@ export function FaqSection({ section }: FaqSectionProps) {
   return (
     <section
       id="faq"
-      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-[#0d0d0d]"
+      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-surface-alt"
       aria-labelledby="faq-title"
     >
       {/* Decorative background number */}
@@ -49,8 +49,8 @@ export function FaqSection({ section }: FaqSectionProps) {
                 key={item.question}
                 className={`interactive-card overflow-hidden rounded-xl border transition duration-300 ${
                   isOpen
-                    ? 'border-[#f59e0b]/30 bg-[#f59e0b]/[0.03]'
-                    : 'border-white/[0.07] bg-[#111111] hover:border-white/[0.12]'
+                    ? 'border-accent/30 bg-accent/[0.03]'
+                    : 'border-white/[0.07] bg-surface hover:border-white/[0.12]'
                 }`}
               >
                 <h3>
@@ -63,7 +63,7 @@ export function FaqSection({ section }: FaqSectionProps) {
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                   >
                     <span className="flex items-start gap-4">
-                      <span className={`mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border text-xs font-black transition duration-300 ${isOpen ? 'border-[#f59e0b]/50 text-[#f59e0b]' : 'border-white/[0.1] text-white/30'}`}>
+                      <span className={`mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border text-xs font-black transition duration-300 ${isOpen ? 'border-accent/50 text-accent' : 'border-white/[0.1] text-white/30'}`}>
                         {index + 1 < 10 ? `0${index + 1}` : index + 1}
                       </span>
                       <span className={`text-base font-bold leading-snug transition duration-300 ${isOpen ? 'text-white' : 'text-white/70'}`}>
@@ -73,7 +73,7 @@ export function FaqSection({ section }: FaqSectionProps) {
                     <span
                       aria-hidden="true"
                       className={`mt-0.5 shrink-0 text-lg font-light transition-all duration-300 ${
-                        isOpen ? 'rotate-45 text-[#f59e0b]' : 'text-white/25'
+                        isOpen ? 'rotate-45 text-accent' : 'text-white/25'
                       }`}
                     >
                       +

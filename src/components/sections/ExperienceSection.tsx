@@ -8,7 +8,7 @@ export function ExperienceSection({ section }: ExperienceSectionProps) {
   return (
     <section
       id="experience"
-      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-[#0d0d0d]"
+      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-surface-alt"
       aria-labelledby="experience-title"
     >
       {/* Decorative background number */}
@@ -33,13 +33,13 @@ export function ExperienceSection({ section }: ExperienceSectionProps) {
           {/* Summary stats */}
           <div className="flex shrink-0 gap-10">
             <div>
-              <p className="font-bebas text-[3rem] leading-none text-[#f59e0b]">
+              <p className="font-bebas text-[3rem] leading-none text-accent">
                 {section.yearsExperience}
               </p>
               <p className="mt-1.5 meta-label text-white/40">Experience</p>
             </div>
             <div>
-              <p className="font-bebas text-[3rem] leading-none text-[#f59e0b]">
+              <p className="font-bebas text-[3rem] leading-none text-accent">
                 {section.experience.length}
               </p>
               <p className="mt-1.5 meta-label text-white/40">Companies</p>
@@ -56,18 +56,18 @@ export function ExperienceSection({ section }: ExperienceSectionProps) {
             >
               {/* Left: period + number */}
               <div className="flex items-start gap-4 md:flex-col md:gap-3">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/[0.1] bg-[#0d0d0d] font-black text-sm text-[#f59e0b] transition duration-300 group-hover:border-[#f59e0b]/50 group-hover:bg-[#f59e0b]/10">
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/[0.1] bg-surface-alt font-black text-sm text-accent transition duration-300 group-hover:border-accent/50 group-hover:bg-accent/10">
                   {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </div>
                 <p className="meta-label text-white/35 md:ml-0">{item.period}</p>
               </div>
 
               {/* Right: card */}
-              <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#111111] p-6 transition duration-300 group-hover:-translate-y-0.5 group-hover:border-[#f59e0b]/25">
+              <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-surface p-6 transition duration-300 group-hover:-translate-y-0.5 group-hover:border-accent/25">
                 {/* Top row */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h3 className="text-lg font-bold text-white transition duration-300 group-hover:text-[#f59e0b]">
+                    <h3 className="text-lg font-bold text-white transition duration-300 group-hover:text-accent">
                       {item.company}
                     </h3>
                     <p className="mt-1.5 meta-label text-white/35">{item.role}</p>
@@ -85,7 +85,7 @@ export function ExperienceSection({ section }: ExperienceSectionProps) {
                   {(section.experienceFocus[item.company] ?? ['Development', 'Delivery']).map((focus) => (
                     <span
                       key={focus}
-                      className="rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1 text-xs font-bold text-white/30 transition duration-300 group-hover:border-[#f59e0b]/20 group-hover:text-[#f59e0b]/70"
+                      className="rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1 text-xs font-bold text-white/30 transition duration-300 group-hover:border-accent/20 group-hover:text-accent/70"
                     >
                       {focus}
                     </span>
