@@ -27,7 +27,7 @@ export function TeamSection({ section }: TeamSectionProps) {
   return (
     <section
       id="team"
-      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-[#0d0d0d]"
+      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-surface-alt"
       aria-labelledby="team-title"
     >
       {/* Decorative background number */}
@@ -60,7 +60,7 @@ export function TeamSection({ section }: TeamSectionProps) {
               <Link
                 key={member.slug}
                 href={`/team/${member.slug}`}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111111] transition duration-300 hover:border-[#f59e0b]/25 hover:shadow-xl hover:shadow-black/40"
+                className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface transition duration-300 hover:border-accent/25 hover:shadow-xl hover:shadow-black/40"
                 aria-label={`View ${member.name}'s profile and projects`}
               >
                 {/* Top amber glow on hover */}
@@ -113,7 +113,7 @@ export function TeamSection({ section }: TeamSectionProps) {
 
                   {/* Name + role */}
                   <h3
-                    className="font-bold text-white transition-colors duration-200 group-hover:text-[#f59e0b]"
+                    className="font-bold text-white transition-colors duration-200 group-hover:text-accent"
                     style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)' }}
                   >
                     {member.name}
@@ -165,7 +165,7 @@ export function TeamSection({ section }: TeamSectionProps) {
                   </div>
 
                   {/* CTA */}
-                  <div className="mt-6 flex items-center gap-2 text-[0.7rem] font-black uppercase tracking-[0.12em] text-white/25 transition-colors duration-200 group-hover:text-[#f59e0b]">
+                  <div className="mt-6 flex items-center gap-2 text-[0.7rem] font-black uppercase tracking-[0.12em] text-white/25 transition-colors duration-200 group-hover:text-accent">
                     View Profile & Projects
                     <svg width="12" height="12" viewBox="0 0 13 13" fill="none" aria-hidden="true">
                       <path d="M2 6.5H11M11 6.5L7 2.5M11 6.5L7 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>

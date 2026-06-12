@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function AIDeveloperProductivityBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">Developer Productivity</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Guide · AI Productivity</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Guide · AI Productivity</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">{articleDescription}</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,23 +103,23 @@ export default function AIDeveloperProductivityBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
 
  <section id="introduction" className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Software development has changed significantly with the rise of Artificial Intelligence (AI). Tasks that once took hours can now be completed in minutes with the help of modern AI tools.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  From writing code and fixing bugs to generating documentation and learning new technologies, AI is helping developers work faster and more efficiently.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In this guide, we’ll explore how AI improves developer productivity, practical examples, benefits, challenges, and tips for using AI effectively.
  </p>
  </section>
 
  <section id="what-is-ai-dev" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">What Is AI-Assisted Development?</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">What Is AI-Assisted Development?</h2>
+ <p className="leading-relaxed text-white/70">
  AI-assisted development refers to using AI tools to help with software development tasks.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  These tools can:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1 mt-2">
@@ -139,17 +130,17 @@ export default function AIDeveloperProductivityBlogPost() {
  <li>Help with testing</li>
  <li>Answer technical questions</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-3 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 mt-3 font-semibold text-gold">
  Instead of replacing developers, AI acts as a productivity assistant.
  </p>
  </section>
 
  <section id="why-using-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Why Developers Are Using AI</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Why Developers Are Using AI</h2>
+ <p className="leading-relaxed text-white/70">
  Modern applications are becoming more complex. Developers often spend time on repetitive tasks that don’t require deep problem-solving.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI helps reduce time spent on:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1 mt-2">
@@ -160,18 +151,18 @@ export default function AIDeveloperProductivityBlogPost() {
  <li>Refactoring</li>
  <li>Unit test generation</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-3">
+ <p className="leading-relaxed text-white/70 mt-3">
  This allows developers to focus more on architecture, business logic, and user experience.
  </p>
  </section>
 
  <section id="code-generation" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">1. Faster Code Generation</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">1. Faster Code Generation</h2>
+ <p className="leading-relaxed text-white/70">
  One of the most popular uses of AI is generating code.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A developer creating a login form can ask an AI tool to generate:
  </p>
@@ -188,15 +179,15 @@ export default function AIDeveloperProductivityBlogPost() {
  </section>
 
  <section id="faster-learning" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">2. Faster Learning</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">2. Faster Learning</h2>
+ <p className="leading-relaxed text-white/70">
  Developers constantly learn new frameworks and technologies.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI can explain Next.js concepts, React hooks, Node.js APIs, database queries, and system design patterns.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A developer learning Next.js can ask AI to explain server components or API routes with practical examples.
  </p>
@@ -207,15 +198,15 @@ export default function AIDeveloperProductivityBlogPost() {
  </section>
 
  <section id="better-debugging" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">3. Better Debugging</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">3. Better Debugging</h2>
+ <p className="leading-relaxed text-white/70">
  Finding bugs can sometimes take longer than writing code.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI tools can analyze error messages, suggest fixes, explain root causes, and recommend improvements.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  If an application crashes because of a database connection issue, AI can help identify potential causes and troubleshooting steps.
  </p>
@@ -223,15 +214,15 @@ export default function AIDeveloperProductivityBlogPost() {
  </section>
 
  <section id="doc-generation" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">4. Documentation Generation</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">4. Documentation Generation</h2>
+ <p className="leading-relaxed text-white/70">
  Documentation is important but often neglected.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI can generate API documentation, function descriptions, README files, and user guides.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Example</span>
+ <span className="font-bold text-gold block">Example</span>
  <p className="text-sm text-black/75 text-white/75">
  A developer finishing a project can quickly generate a professional README file instead of writing it manually.
  </p>
@@ -239,46 +230,46 @@ export default function AIDeveloperProductivityBlogPost() {
  </section>
 
  <section id="test-creation" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">5. Unit Test Creation</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">5. Unit Test Creation</h2>
+ <p className="leading-relaxed text-white/70">
  Testing improves software quality but can be time-consuming.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI can help create unit tests, integration tests, test cases, and mock data.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  This allows developers to improve code coverage with less effort.
  </p>
  </section>
 
  <section id="real-benefits" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Real-World Benefits</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Real-World Benefits</h2>
+ <p className="leading-relaxed text-white/70">
  Developers who use AI effectively often experience:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Development Speed</strong>
+ <strong className="block text-gold mb-1">Development Speed</strong>
  <p className="text-white/60">Faster development cycles and reduced time-to-market.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Less Repetitive Tasks</strong>
+ <strong className="block text-gold mb-1">Less Repetitive Tasks</strong>
  <p className="text-white/60">Reduced repetitive, boring manual work and boilerplates.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Learning Curve</strong>
+ <strong className="block text-gold mb-1">Learning Curve</strong>
  <p className="text-white/60">Improved learning speed when adopting new frameworks.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">High-Quality Assets</strong>
+ <strong className="block text-gold mb-1">High-Quality Assets</strong>
  <p className="text-white/60">Better documentation, automated tests, and increased general productivity.</p>
  </div>
  </div>
  </section>
 
  <section id="mistakes" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Common Mistakes</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Common Mistakes</h2>
+ <p className="leading-relaxed text-white/70">
  While AI is powerful, developers should avoid:
  </p>
  <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
@@ -287,13 +278,13 @@ export default function AIDeveloperProductivityBlogPost() {
  <li>Trusting every AI suggestion</li>
  <li>Skipping code reviews</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b] mt-3">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold mt-3">
  AI-generated code should always be reviewed before production use.
  </p>
  </section>
 
  <section id="best-practices" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Best Practices</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Best Practices</h2>
  <ol className="mt-5 space-y-4">
  {[
  {
@@ -318,7 +309,7 @@ export default function AIDeveloperProductivityBlogPost() {
  },
  ].map((step, idx) => (
  <li key={idx} className="flex gap-4">
- <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/[0.08] text-xs font-black text-[#f59e0b]">{idx + 1}</span>
+ <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/[0.08] text-xs font-black text-gold">{idx + 1}</span>
  <div>
  <h4 className="text-sm font-bold text-white">{step.title}</h4>
  <p className="text-xs text-white/60 mt-1 leading-relaxed">{step.text}</p>
@@ -329,15 +320,15 @@ export default function AIDeveloperProductivityBlogPost() {
  </section>
 
  <section id="replace-developers" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Will AI Replace Developers?</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Will AI Replace Developers?</h2>
+ <p className="leading-relaxed text-white/70">
  This is one of the most common questions in the industry.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The reality is that AI is more likely to change how developers work rather than replace them completely.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
- <span className="font-bold text-[#f59e0b] block">Businesses still need developers to:</span>
+ <span className="font-bold text-gold block">Businesses still need developers to:</span>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
  <li>Design systems and architecture</li>
  <li>Understand requirements and business logic</li>
@@ -346,17 +337,17 @@ export default function AIDeveloperProductivityBlogPost() {
  <li>Make final technical decisions</li>
  </ul>
  </div>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Developers who learn to use AI effectively will likely become more productive and valuable.
  </p>
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Conclusion</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Conclusion</h2>
+ <p className="leading-relaxed text-white/70">
  AI is transforming software development by helping developers write code faster, learn new technologies, generate documentation, and solve problems more efficiently.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  The most successful developers are not those who avoid AI, but those who learn how to use it as a productivity tool while continuing to build strong technical skills.
  </p>
  </section>
@@ -377,14 +368,7 @@ export default function AIDeveloperProductivityBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

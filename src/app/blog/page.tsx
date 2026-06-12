@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const pageTitle = `Developer Blog — Full Stack & AI Insights | ${fullName}`;
@@ -227,112 +228,148 @@ const blogPosts = [
 ];
 
 export default function BlogIndex() {
- return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
- <HeaderNav />
- 
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Portfolio
- </Link>
- </div>
- </div>
+  return (
+    <main className="min-h-screen bg-studio text-canvas pt-[73px]">
+      <HeaderNav />
 
- <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
- {/* Breadcrumb */}
- <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
- <span aria-hidden="true">›</span>
- <span className="text-white/60">Blog</span>
- </nav>
+      {/* ── Utility bar ── */}
+      <div className="border-b border-white/[0.07]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8 lg:px-10">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/35">
+            <Link href="/" className="transition hover:text-gold">Home</Link>
+            <span aria-hidden="true" className="text-white/20">›</span>
+            <span className="text-white/55">Blog</span>
+          </nav>
+          <Link
+            href="/"
+            className="text-xs font-bold uppercase tracking-[0.12em] text-white/40 transition hover:text-gold"
+          >
+            ← Back to Portfolio
+          </Link>
+        </div>
+      </div>
 
- {/* Header */}
- <div className="max-w-3xl border-b border-white/[0.08] pb-12">
- <p className="section-kicker mb-4">Insights & Resources</p>
- <h1 className="hero-title text-white">
- The Development & AI Blog
- </h1>
- <p className="mt-6 body-copy-lg text-white/60">
- Articles, guides, and practical advice on modern frontend/backend technologies, 
- artificial intelligence integrations, and successful remote team workflows.
- </p>
- </div>
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden border-b border-white/[0.07] bg-studio py-20 lg:py-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-40 left-1/4 h-[500px] w-[700px] rounded-full bg-gold/[0.05] blur-[120px]"
+        />
+        {/* Ghost label */}
+        <div className="pointer-events-none absolute right-8 top-8 select-none text-right" aria-hidden="true">
+          <p className="text-[0.6rem] font-bold tracking-[0.4em] uppercase text-white/10">Section</p>
+          <p className="chapter-number-bg leading-none">01</p>
+        </div>
 
- {/* Blog Post List */}
- <div className="mt-16 grid gap-10 md:grid-cols-2">
- {blogPosts.map((post) => {
- const postUrl = `/blog/${post.slug}`;
- return (
- <article 
- key={post.slug} 
- className="group relative flex flex-col justify-between rounded-xl border border-white/[0.08] bg-black/[0.02] p-6 transition duration-300 hover:border-[#f59e0b]/50 hover:bg-white/[0.04] "
- >
- <div>
- <div className="flex items-center justify-between gap-4 text-xs font-bold uppercase tracking-[0.12em] text-white/40 mb-4">
- <span className="text-[#f59e0b]">{post.category}</span>
- <span>{post.readTime}</span>
- </div>
- <h2 className="text-xl font-bold leading-snug text-white transition group-hover:text-[#f59e0b]">
- <Link href={postUrl} className="focus:outline-none">
- <span className="absolute inset-0" aria-hidden="true" />
- {post.title}
- </Link>
- </h2>
- <p className="mt-4 text-sm leading-relaxed text-white/60">
- {post.description}
- </p>
- </div>
- <div className="mt-8 flex items-center justify-between gap-4 border-t border-white/[0.08] pt-4 text-xs text-black/45 text-white/45 font-semibold">
- <span>By {fullName}</span>
- <span>
- {new Date(post.publishDate).toLocaleDateString('en-IN', {
- year: 'numeric',
- month: 'long',
- day: 'numeric',
- })}
- </span>
- </div>
- </article>
- );
- })}
- </div>
+        <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+          <p className="chapter-label mb-8">Insights &amp; Resources</p>
+          <h1 className="display-lg text-canvas">
+            THE DEVELOPMENT<br />
+            <span className="text-gold">&amp; AI BLOG</span>
+          </h1>
+          <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/60">
+            Articles, guides, and practical advice on modern frontend/backend technologies,
+            AI integrations, and successful remote team workflows.
+          </p>
+        </div>
+      </section>
 
- {/* Newsletter/Contact Mini-CTA */}
- <aside className="mt-20 rounded-xl border border-[#f59e0b]/25 bg-black/[0.03] p-8 text-center" aria-label="CTA">
- <h2 className="text-xl font-bold text-white">Have a specific project in mind?</h2>
- <p className="mt-3 text-sm text-black/65 text-white/65 max-w-xl mx-auto">
- From AI chatbots and automation to high-performance Next.js and Laravel applications,
- I build clean, scalable software for businesses worldwide.
- </p>
- <div className="mt-6 flex flex-wrap justify-center gap-4">
- <a
- href="mailto:jatindersandhuinfo@gmail.com?subject=Project Inquiry"
- className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#f59e0b] px-6 text-xs font-bold uppercase tracking-[0.12em] text-[#0a0a0a] transition hover:bg-[#fbbf24]"
- >
- Start a Conversation
- </a>
- <Link 
- href="/"
- className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 px-6 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
- >
- Explore Portfolio
- </Link>
- </div>
- </aside>
- </div>
+      {/* ── Post grid ── */}
+      <section className="bg-studio py-20 lg:py-28">
+        <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+          <div className="grid gap-px border border-white/[0.05] sm:grid-cols-2 lg:grid-cols-3">
+            {blogPosts.map((post, index) => {
+              const postUrl = `/blog/${post.slug}`;
+              return (
+                <article
+                  key={post.slug}
+                  className="group relative flex flex-col justify-between bg-studio p-8 transition duration-300 hover:bg-surface"
+                >
+                  {/* Hover accent bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-px scale-x-0 bg-gold/50 transition-transform duration-300 origin-left group-hover:scale-x-100" />
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
- </main>
- );
+                  {/* Index number */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute right-6 top-6 select-none font-bebas text-6xl leading-none text-white/[0.04] transition duration-300 group-hover:text-gold/[0.07]"
+                  >
+                    {index + 1 < 10 ? `0${index + 1}` : index + 1}
+                  </span>
+
+                  <div className="relative">
+                    {/* Category + read time */}
+                    <div className="mb-5 flex items-center justify-between gap-4">
+                      <span className="text-[0.65rem] font-bold uppercase tracking-[0.25em] text-gold">
+                        {post.category}
+                      </span>
+                      <span className="text-[0.65rem] font-bold uppercase tracking-[0.15em] text-white/35">
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <h2 className="text-base font-bold leading-snug text-canvas transition duration-200 group-hover:text-gold">
+                      <Link href={postUrl} className="focus:outline-none">
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        {post.title}
+                      </Link>
+                    </h2>
+                    <p className="mt-4 text-sm leading-relaxed text-white/55 line-clamp-3">
+                      {post.description}
+                    </p>
+                  </div>
+
+                  {/* Footer row */}
+                  <div className="relative mt-8 flex items-center justify-between gap-4 border-t border-white/[0.05] pt-5 text-[0.65rem] font-bold uppercase tracking-[0.12em]">
+                    <span className="text-white/40">By {fullName}</span>
+                    <span className="text-white/30">
+                      {new Date(post.publishDate).toLocaleDateString('en-IN', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </span>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="relative overflow-hidden border-t border-white/[0.07] bg-studio py-28 text-center lg:py-36">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 h-80 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.08] blur-[100px]"
+        />
+        <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+          <p className="chapter-label mb-8 justify-center">Let&apos;s Build Together</p>
+          <h2 className="display-md text-canvas">
+            HAVE A PROJECT<br />
+            <span className="text-gold">IN MIND?</span>
+          </h2>
+          <p className="mx-auto mt-8 max-w-xl text-sm leading-relaxed text-white/60">
+            From AI chatbots and automation to high-performance Next.js and Laravel applications,
+            I build clean, scalable software for businesses worldwide.
+          </p>
+          <div className="mt-12 flex flex-wrap justify-center gap-5">
+            <a
+              href="mailto:jatindersandhuinfo@gmail.com?subject=Project Inquiry"
+              className="inline-flex min-h-[50px] items-center justify-center rounded-none bg-gold px-10 text-xs font-bold uppercase tracking-[0.22em] text-studio transition duration-200 hover:bg-gold-light"
+            >
+              Start a Conversation →
+            </a>
+            <Link
+              href="/"
+              className="inline-flex min-h-[50px] items-center justify-center rounded-none border border-white/20 px-10 text-xs font-bold uppercase tracking-[0.22em] text-canvas transition duration-200 hover:border-gold/60 hover:text-gold"
+            >
+              Explore Portfolio
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
 }

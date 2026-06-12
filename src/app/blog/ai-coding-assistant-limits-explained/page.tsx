@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function AICodingLimitsBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">AI Limits Guide</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Deep Dive · AI Tool Limits & Coding Strategy</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Deep Dive · AI Tool Limits & Coding Strategy</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">How to Maximize Free Cursor, Copilot, and Codex Usage</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,40 +103,40 @@ export default function AICodingLimitsBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
 
  <section id="introduction" className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence has transformed software development. Tasks that once took hours—writing boilerplate code, debugging errors, generating tests, or documenting APIs—can now be completed in minutes using AI coding assistants.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Tools like Cursor, GitHub Copilot, OpenAI Codex, Claude, and other AI-powered coding platforms have become daily companions for developers around the world.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  However, many developers eventually encounter a common challenge: <strong>usage limits</strong>. You may suddenly see messages such as &quot;Rate limit exceeded&quot;, &quot;Daily quota reached&quot;, or &quot;Monthly requests exhausted&quot;.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold">
+ <p className="leading-relaxed text-white/70 font-semibold">
  Understanding how these limits work can help you get significantly more value from free plans while avoiding unnecessary interruptions.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In this guide, we&apos;ll explore how AI coding assistant quotas work and how to maximize your free usage.
  </p>
  </section>
 
  <section id="rise-of-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">The Rise of AI-Powered Development</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">The Rise of AI-Powered Development</h2>
+ <p className="leading-relaxed text-white/70">
  Just a few years ago, AI-generated code felt like science fiction. Today, developers routinely use AI for code generation, bug fixing, refactoring, unit testing, documentation, architecture planning, SQL query creation, and API development.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI assistants act like virtual pair programmers, helping developers work faster and more efficiently. As adoption grows, providers must balance infrastructure costs with user demand, which is why usage limits exist.
  </p>
  </section>
 
  <section id="why-limits" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Why AI Coding Tools Have Usage Limits</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Why AI Coding Tools Have Usage Limits</h2>
+ <p className="leading-relaxed text-white/70">
  AI models require enormous computing resources. Every request consumes GPU processing power, memory resources, storage systems, and networking infrastructure. A single complex coding request can involve thousands of tokens and significant computational effort.
  </p>
  <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-4">
- <p className="text-sm font-bold text-[#f59e0b]">Without quotas, providers would struggle to offer free access. Limits help:</p>
+ <p className="text-sm font-bold text-gold">Without quotas, providers would struggle to offer free access. Limits help:</p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
  <li><strong>Control Infrastructure Costs:</strong> Running large language models is highly expensive.</li>
  <li><strong>Prevent Abuse:</strong> Limits discourage automated misuse and excessive scraping.</li>
@@ -156,38 +147,38 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="free-tier-quotas" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Understanding Free Tier Quotas</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Understanding Free Tier Quotas</h2>
+ <p className="leading-relaxed text-white/70">
  A quota is simply a predefined usage allowance. Depending on the platform, quotas may be based on the number of requests, tokens consumed, daily usage, monthly usage, compute time, or premium model access.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  For example, a tool might allow 50 AI requests per day, 500 premium completions per month, or limited access to advanced models. Once you exceed the quota, additional restrictions are applied.
  </p>
  </section>
 
  <section id="measure-usage" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">How AI Coding Assistants Measure Usage</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">How AI Coding Assistants Measure Usage</h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">Request Count</h3>
+ <h3 className="text-sm font-bold text-gold">Request Count</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Every prompt counts as a request. Example: &quot;Generate a React component&quot; counts as one request.
  </p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">Token Usage</h3>
+ <h3 className="text-sm font-bold text-gold">Token Usage</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Large prompts and large responses consume more tokens. Pasting a 2,000-line application consumes far more tokens than reviewing a simple login function.
  </p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">Premium Model Consumption</h3>
+ <h3 className="text-sm font-bold text-gold">Premium Model Consumption</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Many platforms limit access to powerful, expensive models to manage usage costs.
  </p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">Compute Resources</h3>
+ <h3 className="text-sm font-bold text-gold">Compute Resources</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Some platforms measure actual computational effort. Complex requests may consume quotas faster than simple ones.
  </p>
@@ -196,32 +187,32 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="cursor-limits" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Cursor Free Plan Limits Explained</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Cursor Free Plan Limits Explained</h2>
+ <p className="leading-relaxed text-white/70">
  Cursor has become one of the most popular AI-powered code editors. The free plan typically includes AI code generation, chat assistance, autocomplete features, and limited premium model access.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  High-end premium models often have monthly limits. Once fast requests are exhausted, users may move to slower processing queues. Since limits evolve over time, developers should review the latest documentation before relying on free-tier availability.
  </p>
  </section>
 
  <section id="copilot-limits" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">GitHub Copilot Usage Limits</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">GitHub Copilot Usage Limits</h2>
+ <p className="leading-relaxed text-white/70">
  GitHub Copilot is deeply integrated into development IDEs, providing code completion, inline suggestions, chat assistance, and code explanations. Usage restrictions are plan-dependent and can apply to monthly completions or chat interactions. Students often qualify for special educational access programs that offer enhanced benefits.
  </p>
  </section>
 
  <section id="codex-quotas" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">OpenAI Codex and API Quotas</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">OpenAI Codex and API Quotas</h2>
+ <p className="leading-relaxed text-white/70">
  OpenAI provides AI coding capabilities through APIs and coding-focused models. Unlike subscription tools, API usage follows a consumption model where token consumption, model selection, request complexity, and rate limits affect quotas. Developers should closely monitor usage dashboards to avoid surprises.
  </p>
  </section>
 
  {/* Comparison Table */}
  <section id="comparing-tools" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Comparing Popular AI Coding Assistants</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Comparing Popular AI Coding Assistants</h2>
  <div className="overflow-x-auto my-6 rounded-lg border border-white/[0.08]">
  <table className="min-w-full divide-y divide-black/10 dark:divide-white/10 text-left text-xs sm:text-sm">
  <thead className="bg-black/[0.02] font-bold text-black text-white uppercase tracking-wider text-xs">
@@ -246,7 +237,7 @@ export default function AICodingLimitsBlogPost() {
  <td className="px-6 py-4">{row.free}</td>
  <td className="px-6 py-4">{row.gen}</td>
  <td className="px-6 py-4">{row.chat}</td>
- <td className="px-6 py-4 text-[#f59e0b] font-semibold">{row.limit}</td>
+ <td className="px-6 py-4 text-gold font-semibold">{row.limit}</td>
  </tr>
  ))}
  </tbody>
@@ -255,44 +246,44 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="hidden-restrictions" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Hidden Restrictions Developers Should Know</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Hidden Restrictions Developers Should Know</h2>
+ <p className="leading-relaxed text-white/70">
  Many users focus only on visible quotas. However, additional limitations exist, such as rate limits (too many requests in a short period), model access limits, context limits, and peak usage restrictions where free-tier performance is reduced during high demand.
  </p>
  </section>
 
  <section id="tokens-effects" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">How Token Consumption Affects Limits</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">How Token Consumption Affects Limits</h2>
+ <p className="leading-relaxed text-white/70">
  Tokens play a major role in AI economics. A prompt asking to fix a 20-line function consumes far fewer resources than analyzing an entire project of 50 files. Reducing token usage helps extend quotas, improve response speed, reduce costs, and avoid cooldowns.
  </p>
  </section>
 
  <section id="maximize-usage" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Strategies to Maximize Free Tier Usage</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Strategies to Maximize Free Tier Usage</h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Be Specific</strong>
+ <strong className="block text-gold mb-1">Be Specific</strong>
  <p className="text-white/60">Instead of &quot;Help me with React&quot;, use specific prompts like &quot;Optimize this React component&apos;s re-render performance.&quot;</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Submit Smaller Tasks</strong>
+ <strong className="block text-gold mb-1">Submit Smaller Tasks</strong>
  <p className="text-white/60">Break large projects into smaller pieces. This improves accuracy and conserves resources.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Reuse Context Summaries</strong>
+ <strong className="block text-gold mb-1">Reuse Context Summaries</strong>
  <p className="text-white/60">Maintain concise project summaries rather than repeatedly sharing entire repositories.</p>
  </div>
  <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
- <strong className="block text-[#f59e0b] mb-1">Request Focused Outputs</strong>
+ <strong className="block text-gold mb-1">Request Focused Outputs</strong>
  <p className="text-white/60">Ask only for specific bug fixes, code reviews, or specific components. Avoid broad, generic requests.</p>
  </div>
  </div>
  </section>
 
  <section id="stacking-tools" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">Stacking Multiple AI Coding Tools</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">Stacking Multiple AI Coding Tools</h2>
+ <p className="leading-relaxed text-white/70">
  Many developers use multiple tools strategically to distribute workload across platforms:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
@@ -305,21 +296,21 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="best-setups" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Setups for Developers</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Setups for Developers</h2>
  <div className="space-y-6 mt-4">
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Best Setup for Students</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Students should combine Cursor Free, GitHub Student Benefits (if eligible), ChatGPT Free, and Gemini Free to gain debugging assistance and learning support without significant monthly expenses.
  </p>
  </div>
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Best Setup for Freelancers</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Freelancers needing maximum productivity should use Cursor for development, Copilot for autocomplete, ChatGPT for architecture, and Claude for large code reviews to minimize bottlenecks.
  </p>
  </div>
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Best Setup for Startup Teams</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Startup teams should balance productivity and costs by deploying team-wide coding assistants, defining shared AI guidelines, practicing token optimization, and monitoring team usage.
@@ -329,14 +320,14 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="when-upgrade" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">When Should You Upgrade to a Paid Plan?</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">When Should You Upgrade to a Paid Plan?</h2>
+ <p className="leading-relaxed text-white/70">
  Free plans are excellent for experimentation. However, upgrading becomes worthwhile when quotas regularly interrupt work, development speed matters, team collaboration increases, advanced models become essential, and productivity gains exceed subscription costs. For professional developers, AI subscriptions quickly pay for themselves.
  </p>
  </section>
 
  <section id="common-mistakes" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Common Mistakes That Waste AI Quotas</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Common Mistakes That Waste AI Quotas</h2>
  <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
  <li><strong>Uploading Entire Repositories:</strong> Paste only the files relevant to the active bug.</li>
  <li><strong>Repeating Context:</strong> Avoid sending project descriptions in every prompt.</li>
@@ -347,8 +338,8 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="future" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">The Future of AI Coding Assistants</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">The Future of AI Coding Assistants</h2>
+ <p className="leading-relaxed text-white/70">
  AI coding tools continue evolving rapidly. Emerging trends include larger context windows (allowing analysis of entire codebases), agent-based development (AI systems handling multi-step tasks independently), personalized coding assistants that learn coding preferences, and smarter dynamic quota management.
  </p>
  </section>
@@ -361,7 +352,7 @@ export default function AICodingLimitsBlogPost() {
  
 
  <section id="faqs" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">Frequently Asked Questions</h2>
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2 font-extrabold">Frequently Asked Questions</h2>
  
  <div className="space-y-4 mt-6">
  {[
@@ -407,7 +398,7 @@ export default function AICodingLimitsBlogPost() {
  },
  ].map((faq, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
- <h3 className="text-sm font-bold text-[#f59e0b]">{faq.q}</h3>
+ <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
  </div>
  ))}
@@ -415,13 +406,13 @@ export default function AICodingLimitsBlogPost() {
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI coding assistants have become indispensable tools for modern software development. Whether you&apos;re using Cursor, GitHub Copilot, OpenAI Codex, Claude, or Gemini, understanding how quotas and limits work is essential for maximizing productivity.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  The most effective strategy isn&apos;t simply finding the largest free quota—it&apos;s learning how to use AI efficiently. Focused prompts, smaller tasks, token optimization, and strategic use of multiple tools can significantly extend free-tier usage while improving output quality.
  </p>
  </section>
@@ -443,14 +434,7 @@ export default function AICodingLimitsBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

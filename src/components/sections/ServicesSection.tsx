@@ -22,7 +22,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-[#0d0d0d]"
+      className="content-section relative overflow-hidden border-b border-white/[0.07] bg-surface-alt"
       aria-labelledby="services-title"
     >
       {/* Decorative background number */}
@@ -55,7 +55,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
             return (
               <article
                 key={service.label}
-                className={`interactive-card group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111111] transition duration-300 hover:-translate-y-0.5 hover:border-[#f59e0b]/30 hover:bg-[#151515] ${bentoSpan} ${featured ? 'min-h-[200px]' : 'min-h-[160px]'}`}
+                className={`interactive-card group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface transition duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-surface-dark ${bentoSpan} ${featured ? 'min-h-[200px]' : 'min-h-[160px]'}`}
               >
                 {service.slug && (
                   <Link
@@ -68,13 +68,13 @@ export function ServicesSection({ section }: ServicesSectionProps) {
                 {/* Amber glow on hover — top corner */}
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-[#f59e0b]/0 blur-[50px] transition-all duration-500 group-hover:bg-[#f59e0b]/15"
+                  className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-accent/0 blur-[50px] transition-all duration-500 group-hover:bg-accent/15"
                 />
 
                 {/* Decorative large number */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -right-2 -top-2 font-bebas text-[5.5rem] leading-none text-white/[0.04] transition duration-300 group-hover:text-[#f59e0b]/10 select-none"
+                  className="pointer-events-none absolute -right-2 -top-2 font-bebas text-[5.5rem] leading-none text-white/[0.04] transition duration-300 group-hover:text-accent/10 select-none"
                 >
                   {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </span>
@@ -82,17 +82,17 @@ export function ServicesSection({ section }: ServicesSectionProps) {
                 <div className={`relative flex h-full flex-col p-5 ${featured ? 'lg:p-7' : ''}`}>
                   {/* Top row: number badge + tag */}
                   <div className="flex items-start justify-between gap-3">
-                    <span className="grid h-9 w-9 place-items-center rounded-full border border-white/[0.1] text-xs font-black text-[#f59e0b] transition duration-300 group-hover:border-[#f59e0b]/40">
+                    <span className="grid h-9 w-9 place-items-center rounded-full border border-white/[0.1] text-xs font-black text-accent transition duration-300 group-hover:border-accent/40">
                       {index + 1 < 10 ? `0${index + 1}` : index + 1}
                     </span>
-                    <span className="rounded-full border border-white/[0.07] px-3 py-1 text-[0.65rem] font-black uppercase tracking-wider text-white/30 transition duration-300 group-hover:border-[#f59e0b]/30 group-hover:text-[#f59e0b]">
+                    <span className="rounded-full border border-white/[0.07] px-3 py-1 text-[0.65rem] font-black uppercase tracking-wider text-white/30 transition duration-300 group-hover:border-accent/30 group-hover:text-accent">
                       {section.serviceTags[service.label] ?? 'Web'}
                     </span>
                   </div>
 
                   {/* Service name */}
                   <h3
-                    className={`mt-auto pt-6 font-bold text-white transition duration-300 group-hover:text-[#f59e0b] ${featured ? 'text-xl lg:text-2xl' : 'text-base lg:text-lg'}`}
+                    className={`mt-auto pt-6 font-bold text-white transition duration-300 group-hover:text-accent ${featured ? 'text-xl lg:text-2xl' : 'text-base lg:text-lg'}`}
                   >
                     {service.label}
                   </h3>
@@ -117,7 +117,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
                   </div>
 
                   {/* Amber bottom line on hover */}
-                  <div className="absolute inset-x-5 bottom-0 h-px bg-white/[0.06] transition-all duration-300 group-hover:bg-[#f59e0b]/50" />
+                  <div className="absolute inset-x-5 bottom-0 h-px bg-white/[0.06] transition-all duration-300 group-hover:bg-accent/50" />
                 </div>
               </article>
             );
@@ -129,7 +129,7 @@ export function ServicesSection({ section }: ServicesSectionProps) {
           <p className="max-w-lg text-sm text-white/40">{section.coreOfferDescription}</p>
           <Link
             href="/services"
-            className="shrink-0 inline-flex min-h-[48px] items-center gap-2 rounded-full border border-[#f59e0b]/30 px-7 text-sm font-black uppercase tracking-[0.12em] text-[#f59e0b] transition duration-200 hover:bg-[#f59e0b] hover:text-[#0a0a0a]"
+            className="shrink-0 inline-flex min-h-[48px] items-center gap-2 rounded-full border border-accent/30 px-7 text-sm font-black uppercase tracking-[0.12em] text-accent transition duration-200 hover:bg-accent hover:text-deep"
           >
             All 21 Services →
           </Link>

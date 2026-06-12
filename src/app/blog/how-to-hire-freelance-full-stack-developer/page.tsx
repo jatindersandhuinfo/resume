@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function BlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">Hiring Guide</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5">Guide · Full Stack Development</p>
- <h1 className="hero-title text-white">{articleTitle}</h1>
- <p className="mt-6 body-copy-lg text-white/60">{articleDescription}</p>
+ <p className="chapter-label mb-5">Guide · Full Stack Development</p>
+ <h1 className="text-white">{articleTitle}</h1>
+ <p className="mt-6-lg text-white/60">{articleDescription}</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,17 +103,17 @@ export default function BlogPost() {
  <div className="prose-content mt-10 space-y-10">
 
  <section aria-labelledby="why-freelance">
- <h2 id="why-freelance" className="subsection-title text-white">Why Hire a Freelance Full Stack Developer?</h2>
- <p className="mt-4 body-copy text-white/70">
+ <h2 id="why-freelance" className="text-xl font-bold text-canvas">Why Hire a Freelance Full Stack Developer?</h2>
+ <p className="mt-4 text-white/70">
  Hiring a freelance full stack developer gives you the flexibility to scale your team on demand, access niche expertise, and deliver projects faster — without the overhead of a full-time hire. A good freelancer handles both frontend and backend, reducing coordination complexity and handoff delays.
  </p>
- <p className="mt-4 body-copy text-white/70">
+ <p className="mt-4 text-white/70">
  For startups and growing businesses, a single trusted developer who knows your stack end-to-end is often more efficient than multiple specialists who need constant alignment.
  </p>
  </section>
 
  <section aria-labelledby="what-to-look-for">
- <h2 id="what-to-look-for" className="subsection-title text-white">What to Look for in a Full Stack Developer</h2>
+ <h2 id="what-to-look-for" className="text-xl font-bold text-canvas">What to Look for in a Full Stack Developer</h2>
  <div className="mt-4 space-y-4">
  {[
  {
@@ -155,7 +146,7 @@ export default function BlogPost() {
  </section>
 
  <section aria-labelledby="questions">
- <h2 id="questions" className="subsection-title text-white">Questions to Ask Before Hiring</h2>
+ <h2 id="questions" className="text-xl font-bold text-canvas">Questions to Ask Before Hiring</h2>
  <ul className="mt-4 space-y-3">
  {[
  "What is your preferred tech stack, and why?",
@@ -168,7 +159,7 @@ export default function BlogPost() {
  "What does your post-launch support look like?",
  ].map((q) => (
  <li key={q} className="flex items-start gap-3">
- <span aria-hidden="true" className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#f59e0b]" />
+ <span aria-hidden="true" className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <span className="small-copy text-white/70">{q}</span>
  </li>
  ))}
@@ -176,7 +167,7 @@ export default function BlogPost() {
  </section>
 
  <section aria-labelledby="red-flags">
- <h2 id="red-flags" className="subsection-title text-white">Red Flags to Avoid</h2>
+ <h2 id="red-flags" className="text-xl font-bold text-canvas">Red Flags to Avoid</h2>
  <div className="mt-4 grid gap-3 sm:grid-cols-2">
  {[
  { flag: "No live examples", detail: "All projects are 'private' or demo-only." },
@@ -187,7 +178,7 @@ export default function BlogPost() {
  { flag: "Won't share code", detail: "Refuses to walk you through what they built or why." },
  ].map((item) => (
  <div key={item.flag} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-4">
- <p className="text-sm font-bold text-[#f59e0b]">{item.flag}</p>
+ <p className="text-sm font-bold text-gold">{item.flag}</p>
  <p className="mt-1 small-copy text-white/60">{item.detail}</p>
  </div>
  ))}
@@ -195,7 +186,7 @@ export default function BlogPost() {
  </section>
 
  <section aria-labelledby="where-to-hire">
- <h2 id="where-to-hire" className="subsection-title text-white">Where to Hire a Freelance Full Stack Developer</h2>
+ <h2 id="where-to-hire" className="text-xl font-bold text-canvas">Where to Hire a Freelance Full Stack Developer</h2>
  <div className="mt-4 space-y-3">
  {[
  { platform: 'Upwork', note: 'Best for vetted freelancers with verified work history and reviews.' },
@@ -205,7 +196,7 @@ export default function BlogPost() {
  { platform: 'Personal Referral', note: 'Always the highest-trust channel — ask your network first.' },
  ].map((item) => (
  <div key={item.platform} className="flex items-start gap-3">
- <span className="meta-label rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1.5 text-[#f59e0b]">{item.platform}</span>
+ <span className="meta-label rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1.5 text-gold">{item.platform}</span>
  <p className="small-copy mt-1.5 text-black/65 text-white/65">{item.note}</p>
  </div>
  ))}
@@ -213,8 +204,8 @@ export default function BlogPost() {
  </section>
 
  <section aria-labelledby="structure">
- <h2 id="structure" className="subsection-title text-white">How to Structure the Engagement</h2>
- <p className="mt-4 body-copy text-white/70">
+ <h2 id="structure" className="text-xl font-bold text-canvas">How to Structure the Engagement</h2>
+ <p className="mt-4 text-white/70">
  A clear structure prevents most freelance relationship problems. Here is a practical framework:
  </p>
  <ol className="mt-5 space-y-4">
@@ -226,7 +217,7 @@ export default function BlogPost() {
  { step: 'Clarify IP ownership', detail: 'All code written for your project should transfer to you on final payment — put it in writing.' },
  ].map((item, index) => (
  <li key={item.step} className="flex items-start gap-4">
- <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/[0.08] text-sm font-black text-[#f59e0b]">
+ <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/[0.08] text-sm font-black text-gold">
  {index + 1}
  </span>
  <div>
@@ -241,13 +232,13 @@ export default function BlogPost() {
  
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Hiring a freelance full-stack developer is a strategic decision that can accelerate your product roadmap and optimize software development costs. By outlining a clear brief, setting milestone-based deliverables, and verifying production experience, you can build a highly productive relationship.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Take the time to screen candidates for depth, communication skills, and code quality before committing. A vetted, professional developer is one of the best investments you can make to establish a robust and scalable digital presence.
  </p>
  </section>
@@ -268,14 +259,7 @@ export default function BlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

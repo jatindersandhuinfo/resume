@@ -3,11 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { projects, personal, contact, seo, teamSection } from '@/lib/data';
+import type { Project } from '@/types/cv';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import { ProjectDetailGallery } from '@/components/ProjectDetailGallery';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Props = { params: Promise<{ slug: string }> };
+
+// Minimal shape needed for SEO metadata when sourced from a team-member project
+type ProjectMeta = Pick<Project, 'slug' | 'name' | 'coverImage' | 'tagline' | 'tech' | 'category'>;
 
 // ── Static generation ─────────────────────────────────────────────────────────
 export async function generateStaticParams() {
@@ -23,8 +28,8 @@ export async function generateStaticParams() {
 // ── SEO ───────────────────────────────────────────────────────────────────────
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
  const { slug } = await params;
- 
- let project = projects.find((p) => p.slug === slug);
+
+ let project: ProjectMeta | undefined = projects.find((p) => p.slug === slug);
  if (!project) {
  for (const member of teamSection.members) {
  const p = member.projects.find((proj) => proj.slug === slug);
@@ -36,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  tagline: p.result,
  tech: p.tech,
  category: p.category,
- } as any;
+ };
  break;
  }
  }
@@ -112,11 +117,11 @@ export default async function ProjectDetailPage({ params }: Props) {
  project = {
  slug: p.slug!,
  name: p.name,
- coverImage: p.coverImage || null,
+ coverImage: p.coverImage || undefined,
  tagline: p.result,
  tech: p.tech,
  result: p.result,
- url: p.url || null,
+ url: p.url || undefined,
  category: p.category,
  year: '2024',
  overview: p.result,
@@ -132,7 +137,7 @@ export default async function ProjectDetailPage({ params }: Props) {
  { group: 'Primary', items: p.tech.split(' · ') },
  { group: 'Role', items: [member.role] },
  ],
- } as any;
+ };
  break;
  }
  }
@@ -154,531 +159,303 @@ export default async function ProjectDetailPage({ params }: Props) {
  m.projects.some((p) => p.slug === slug)
  );
 
- return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+  return (
+    <main className="min-h-screen bg-studio text-canvas pt-[73px]">
+      <HeaderNav />
 
- <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <a
- href="/#works"
- className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
- <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- Back to Works
- </a>
- </div>
- </div>
+      {/* ── Utility bar ── */}
+      <div className="border-b border-white/[0.07]">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3.5 sm:px-10 lg:px-14">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/35">
+            <Link href="/" className="transition hover:text-gold">Home</Link>
+            <span aria-hidden="true" className="text-white/20">›</span>
+            <Link href="/projects" className="transition hover:text-gold">Projects</Link>
+            <span aria-hidden="true" className="text-white/20">›</span>
+            <span className="text-white/55">{project.name}</span>
+          </nav>
+          <Link href="/projects" className="text-xs font-bold uppercase tracking-[0.12em] text-white/40 transition hover:text-gold">
+            ← All Projects
+          </Link>
+        </div>
+      </div>
 
- {/* ── Hero ──────────────────────────────────────────────────────── */}
- <section
- className="relative overflow-hidden border-b border-white/[0.08]"
- aria-labelledby="project-title"
- >
- {/* Gradient glow */}
- <div
- aria-hidden="true"
- style={{
- position: 'absolute',
- inset: 0,
- background: `radial-gradient(ellipse 90% 55% at 50% -10%, ${colors.glow}, transparent 70%)`,
- pointerEvents: 'none',
- }}
- />
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden border-b border-white/[0.07] bg-studio" aria-labelledby="project-title">
+        <div
+          aria-hidden="true"
+          style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse 80% 50% at 50% -5%, ${colors.glow}, transparent 65%)`, pointerEvents: 'none' }}
+        />
+        <div className="relative mx-auto max-w-[1400px] px-6 py-20 sm:px-10 lg:px-14 lg:py-28">
+          {/* Cover image */}
+          {project.coverImage && (
+            <div className="relative mb-12 w-full overflow-hidden border border-white/[0.07]" style={{ aspectRatio: '16/9' }}>
+              <Image
+                src={project.coverImage}
+                alt={`${project.name} — ${project.category} project by ${fullName}`}
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1400px) 100vw, 1400px"
+                priority
+              />
+            </div>
+          )}
 
- <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
- {/* Breadcrumb */}
- <nav
- aria-label="Breadcrumb"
- className="mb-10 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/35"
- >
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
- <span aria-hidden="true" className="text-white/20">›</span>
- <Link href="/#works" className="transition hover:text-[#f59e0b]">Works</Link>
- <span aria-hidden="true" className="text-white/20">›</span>
- <span className="text-white/50">{project.name}</span>
- </nav>
+          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              {/* Badges */}
+              <div className="mb-8 flex flex-wrap items-center gap-3">
+                <span
+                  className="px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.2em]"
+                  style={{ color: colors.accent, border: `1px solid ${colors.accent}40`, background: colors.badge }}
+                >
+                  {project.category}
+                </span>
+                <span className="border border-white/[0.07] bg-white/[0.03] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/45">
+                  {project.year}
+                </span>
+              </div>
 
- <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
- {/* Left */}
- <div>
- {/* Category + Year badges */}
- <div className="mb-7 flex flex-wrap items-center gap-3">
- {project.coverImage && (
- <div className="w-full mb-8 overflow-hidden rounded-2xl border border-white/[0.08] aspect-video relative">
- <Image
- src={project.coverImage}
- alt={`${project.name} — ${project.category} project by ${fullName}, full stack developer`}
- fill
- className="object-cover"
- sizes="(max-width: 1280px) 100vw, 1280px"
- priority
- />
- </div>
- )}
- <span
- className="section-kicker rounded-full border px-4 py-1.5"
- style={{
- color: colors.accent,
- borderColor: `${colors.accent}40`,
- background: colors.badge,
- }}
- >
- {project.category}
- </span>
- <span className="meta-label rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-1.5 text-white/50">
- {project.year}
- </span>
- </div>
+              <h1 id="project-title" className="font-bebas text-[clamp(2.8rem,7vw,8rem)] leading-[0.9] uppercase text-canvas">
+                {project.name}
+              </h1>
+              <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60">
+                {project.tagline}
+              </p>
 
- {/* Title */}
- <h1
- id="project-title"
- className="hero-title max-w-3xl text-white"
- >
- {project.name}
- </h1>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {project.tech.split(' · ').map((t) => (
+                  <span key={t} className="border border-white/[0.07] bg-surface px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/50">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
 
- {/* Tagline */}
- <p className="mt-5 body-copy-lg max-w-2xl text-white/60">
- {project.tagline}
- </p>
+            {/* CTA buttons */}
+            <div className="flex flex-wrap items-center gap-3 lg:flex-col lg:items-end">
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[50px] items-center gap-2.5 bg-gold px-8 text-xs font-bold uppercase tracking-[0.2em] text-studio transition hover:bg-gold-light"
+                >
+                  Visit Live Site →
+                </a>
+              ) : (
+                <span className="inline-flex min-h-[50px] items-center border border-white/[0.07] px-8 text-xs font-bold uppercase tracking-[0.2em] text-white/30">
+                  Private Project
+                </span>
+              )}
+              <a
+                href={`mailto:${contact.email}`}
+                className="inline-flex min-h-[50px] items-center border border-white/[0.1] px-8 text-xs font-bold uppercase tracking-[0.2em] text-white/60 transition hover:border-gold/50 hover:text-gold"
+              >
+                Hire Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
- {/* Tech pills */}
- <div className="mt-8 flex flex-wrap gap-2">
- {project.tech.split(' · ').map((t) => (
- <span
- key={t}
- className="meta-label rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1.5 text-white/60"
- >
- {t}
- </span>
- ))}
- </div>
- </div>
+      {/* ── Metrics ── */}
+      <section className="border-b border-white/[0.07] bg-surface" aria-label="Project metrics">
+        <div className="mx-auto max-w-[1400px] px-6 py-10 sm:px-10 lg:px-14">
+          <div className="grid grid-cols-2 gap-px border border-white/[0.05] sm:grid-cols-4">
+            {project.metrics.map((m) => (
+              <div key={m.label} className="bg-studio p-6 text-center">
+                <p className="font-bebas text-3xl text-gold sm:text-4xl">{m.value}</p>
+                <p className="mt-2 text-[0.6rem] font-bold uppercase tracking-[0.15em] text-white/35">{m.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
- {/* Right — CTA */}
- <div className="flex flex-wrap items-center gap-3 lg:flex-col lg:items-end">
- {project.url ? (
- <a
- href={project.url}
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex min-h-[52px] items-center gap-2.5 rounded-full bg-[#f59e0b] px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0a0a0a] transition duration-200 hover:bg-[#fbbf24]"
- >
- Visit Live Site
- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
- <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </a>
- ) : (
- <span className="inline-flex min-h-[52px] items-center rounded-full border border-white/[0.08] px-7 text-sm font-semibold uppercase tracking-[0.14em] text-white/40">
- Private Project
- </span>
- )}
- <Link
- href={`mailto:${contact.email}`}
- className="inline-flex min-h-[52px] items-center rounded-full border border-white/[0.08] px-7 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
- >
- Hire Me
- </Link>
- </div>
- </div>
- </div>
- </section>
+      {/* ── Body ── */}
+      <section className="bg-studio py-20 lg:py-28">
+        <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+          <div className="grid gap-16 lg:grid-cols-[1fr_300px]">
 
- {/* ── Metrics ───────────────────────────────────────────────────── */}
- <section className="border-b border-white/[0.08]" aria-label="Project metrics">
- <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
- <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
- {project.metrics.map((m) => (
- <div
- key={m.label}
- className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 text-center"
- style={{ backdropFilter: 'blur(8px)' }}
- >
- <p
- className="text-2xl font-black sm:text-3xl text-[#f59e0b]"
- >
- {m.value}
- </p>
- <p className="mt-2.5 text-xs font-bold uppercase tracking-widest text-white/40">
- {m.label}
- </p>
- </div>
- ))}
- </div>
- </div>
- </section>
+            {/* Left prose */}
+            <div className="space-y-14">
+              {[
+                { kicker: 'Overview', title: 'What is this project?', body: project.overview, accent: true },
+                { kicker: 'The Challenge', title: 'What problem needed solving?', body: project.challenge, accent: false },
+                { kicker: 'The Solution', title: 'How was it built?', body: project.solution, accent: true },
+              ].map((section) => (
+                <div key={section.kicker}>
+                  <p className="chapter-label mb-5">{section.kicker}</p>
+                  <h2 className="text-xl font-bold text-canvas">{section.title}</h2>
+                  <div className={`mt-5 ${!section.accent ? 'border border-white/[0.06] bg-surface p-6' : ''}`}>
+                    <p className="text-sm leading-relaxed text-white/65 max-w-2xl">{section.body}</p>
+                  </div>
+                </div>
+              ))}
 
- {/* ── Body — two column ─────────────────────────────────────────── */}
- <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
- <div className="grid gap-16 lg:grid-cols-[1fr_320px]">
+              {project.images && project.images.length > 0 && (
+                <ProjectDetailGallery
+                  projectName={project.name}
+                  coverImage={project.coverImage}
+                  images={project.images}
+                  accentColor={colors.accent}
+                />
+              )}
+            </div>
 
- {/* ── Left — prose ─────────────────────────────────────── */}
- <div className="space-y-14">
+            {/* Sticky sidebar */}
+            <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
+              {/* Tech Stack */}
+              <div className="border border-white/[0.07] bg-surface p-6">
+                <p className="chapter-label mb-5">Tech Stack</p>
+                <div className="space-y-4">
+                  {project.techStack.map((group) => (
+                    <div key={group.group}>
+                      <p className="mb-2 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-white/30">{group.group}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {group.items.map((item) => (
+                          <span key={item} className="border border-white/[0.06] bg-studio px-2.5 py-1 text-[0.65rem] font-bold text-white/55">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
- {/* Overview */}
- <div>
- <div className="mb-5 flex items-center gap-3">
- <span
- aria-hidden="true"
- className="h-px w-8 rounded"
- style={{ background: "#f59e0b" }}
- />
- <p className="section-kicker text-[#f59e0b]">Overview</p>
- </div>
- <h2 className="subsection-title text-white">What is this project?</h2>
- <p className="mt-5 body-copy text-white/60 max-w-2xl">{project.overview}</p>
- </div>
+              {/* Quick links */}
+              <div className="border border-white/[0.07] bg-surface p-6">
+                <p className="mb-4 text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/25">Quick Links</p>
+                <div className="space-y-2">
+                  {project.url && (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center justify-between border border-white/[0.06] bg-studio px-4 py-3 text-xs font-semibold text-white/60 transition hover:border-gold/30 hover:text-gold">
+                      <span>Live Site</span><span>↗</span>
+                    </a>
+                  )}
+                  <a href={`mailto:${contact.email}`}
+                    className="flex items-center justify-between border border-white/[0.06] bg-studio px-4 py-3 text-xs font-semibold text-white/60 transition hover:border-gold/30 hover:text-gold">
+                    <span>Hire Me for Similar</span><span>→</span>
+                  </a>
+                  <Link href="/projects"
+                    className="flex items-center justify-between border border-white/[0.06] bg-studio px-4 py-3 text-xs font-semibold text-white/60 transition hover:border-gold/30 hover:text-gold">
+                    <span>← All Projects</span>
+                  </Link>
+                </div>
+              </div>
 
- {/* Challenge */}
- <div>
- <div className="mb-5 flex items-center gap-3">
- <span
- aria-hidden="true"
- className="h-px w-8 rounded bg-white/20"
- />
- <p className="section-kicker text-white/40">The Challenge</p>
- </div>
- <h2 className="subsection-title text-white">What problem needed solving?</h2>
- <div
- className="mt-5 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7"
- >
- <p className="body-copy text-white/60 max-w-2xl">{project.challenge}</p>
- </div>
- </div>
+              {/* Category */}
+              <div
+                className="border p-5 text-center"
+                style={{ borderColor: `${colors.accent}25`, background: colors.badge }}
+              >
+                <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em]" style={{ color: colors.accent }}>Category</p>
+                <p className="mt-2 text-lg font-bold text-canvas">{project.category}</p>
+                <p className="mt-1 text-[0.6rem] font-bold uppercase tracking-[0.15em] text-white/35">{project.year}</p>
+              </div>
 
- {/* Solution */}
- <div>
- <div className="mb-5 flex items-center gap-3">
- <span
- aria-hidden="true"
- className="h-px w-8 rounded"
- style={{ background: "#f59e0b" }}
- />
- <p className="section-kicker text-[#f59e0b]">The Solution</p>
- </div>
- <h2 className="subsection-title text-white">How was it built?</h2>
- <p className="mt-5 body-copy text-white/60 max-w-2xl">{project.solution}</p>
- </div>
+              {/* Built by */}
+              {builtBy.length > 0 && (
+                <div className="border border-white/[0.07] bg-surface p-6">
+                  <p className="mb-4 text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/25">
+                    {builtBy.some((m) => m.role.toLowerCase().includes('design')) ? 'Designed By' : 'Built By'}
+                  </p>
+                  <div className="space-y-3">
+                    {builtBy.map((member) => (
+                      <Link key={member.slug} href={`/team/${member.slug}`}
+                        className="group/m flex items-center gap-3 border border-white/[0.06] bg-studio p-3 transition hover:border-gold/25">
+                        {member.image ? (
+                          <div className="relative shrink-0 overflow-hidden border border-white/10" style={{ width: 36, height: 36 }}>
+                            <Image src={member.image} alt={member.name} fill sizes="36px" className="object-cover" />
+                          </div>
+                        ) : (
+                          <div className="flex shrink-0 items-center justify-center text-sm font-black"
+                            style={{ width: 36, height: 36, background: member.avatarBg, border: `1px solid ${member.avatarColor}40`, color: member.avatarColor }}>
+                            {member.avatar}
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-bold text-canvas transition group-hover/m:text-gold">{member.name}</p>
+                          <p className="text-[0.6rem] font-bold uppercase tracking-[0.1em] text-gold/70">{member.role}</p>
+                        </div>
+                        <span className="text-white/20 text-xs transition group-hover/m:text-gold">→</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </aside>
+          </div>
+        </div>
+      </section>
 
- {/* Project Screenshots / Gallery */}
- {project.images && project.images.length > 0 && (
- <ProjectDetailGallery
- projectName={project.name}
- coverImage={project.coverImage}
- images={project.images}
- accentColor={colors.accent}
- />
- )}
+      {/* ── Related Projects ── */}
+      {related.length > 0 && (
+        <section className="border-t border-white/[0.07] bg-surface py-20" aria-labelledby="related-title">
+          <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+            <p className="chapter-label mb-8">More Work</p>
+            <h2 id="related-title" className="font-bebas text-[clamp(2rem,4vw,5rem)] leading-[0.9] uppercase text-canvas mb-12">
+              Related Projects
+            </h2>
+            <div className="grid gap-px border border-white/[0.05] sm:grid-cols-2">
+              {related.map((rel) => {
+                const rc = categoryColors(rel.category);
+                return (
+                  <Link key={rel.slug} href={`/projects/${rel.slug}`}
+                    className="group relative overflow-hidden bg-studio p-8 transition duration-300 hover:bg-surface-dark">
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      style={{ background: `radial-gradient(ellipse 60% 50% at 50% 0%, ${rc.glow}, transparent)` }} />
+                    <div className="relative">
+                      <div className="mb-4 flex items-center gap-2">
+                        <span className="px-2.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-[0.12em]"
+                          style={{ color: rc.accent, background: rc.badge, border: `1px solid ${rc.accent}30` }}>
+                          {rel.category}
+                        </span>
+                        <span className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-white/30">{rel.year}</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-canvas transition group-hover:text-gold">{rel.name}</h3>
+                      <p className="mt-3 text-xs text-white/50 line-clamp-2">{rel.tagline}</p>
+                      <p className="mt-4 text-[0.6rem] font-bold uppercase tracking-[0.1em] text-white/25">{rel.tech}</p>
+                      <div className="mt-6 flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-white/35 transition group-hover:text-gold">
+                        View Project →
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
- </div>
+      {/* ── Hire CTA ── */}
+      <section className="relative overflow-hidden border-t border-white/[0.07] bg-studio py-28 text-center lg:py-36">
+        <div aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 h-80 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.07] blur-[100px]" />
+        <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+          <p className="chapter-label mb-8 justify-center">Work With Me</p>
+          <h2 className="font-bebas text-[clamp(2.5rem,6vw,7rem)] leading-[0.9] uppercase text-canvas">
+            NEED A RELIABLE<br />
+            <span className="text-gold">DEVELOPER?</span>
+          </h2>
+          <p className="mx-auto mt-8 max-w-xl text-sm leading-relaxed text-white/60">
+            Clean code, practical delivery, and remote-friendly across time zones.
+          </p>
+          <div className="mt-12 flex flex-wrap justify-center gap-5">
+            <a href={`mailto:${contact.email}`}
+              className="inline-flex min-h-[50px] items-center justify-center bg-gold px-10 text-xs font-bold uppercase tracking-[0.22em] text-studio transition hover:bg-gold-light">
+              Get in Touch →
+            </a>
+            <Link href="/projects"
+              className="inline-flex min-h-[50px] items-center justify-center border border-white/20 px-10 text-xs font-bold uppercase tracking-[0.22em] text-canvas transition hover:border-gold/60 hover:text-gold">
+              View All Projects
+            </Link>
+          </div>
+        </div>
+      </section>
 
- {/* ── Right — sticky sidebar ─────────────────────────── */}
- <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
-
- {/* Tech Stack card */}
- <div className="rounded-2xl border border-white/[0.08] bg-[#111111] p-6">
- <p className="section-kicker mb-5 text-[#f59e0b]">
- Tech Stack
- </p>
- <div className="space-y-5">
- {project.techStack.map((group) => (
- <div key={group.group}>
- <p className="meta-label mb-2.5 text-white/35">{group.group}</p>
- <div className="flex flex-wrap gap-2">
- {group.items.map((item) => (
- <span
- key={item}
- className="small-copy rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 text-white/65"
- >
- {item}
- </span>
- ))}
- </div>
- </div>
- ))}
- </div>
- </div>
-
- {/* Quick links */}
- <div className="rounded-2xl border border-white/[0.08] bg-[#111111] p-6">
- <p className="section-kicker mb-5 text-white/40">Quick Links</p>
- <div className="space-y-3">
- {project.url && (
- <a
- href={project.url}
- target="_blank"
- rel="noopener noreferrer"
- className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-white/20 hover:text-white"
- >
- <span>Live Site</span>
- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
- <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </a>
- )}
- <a
- href={`mailto:${contact.email}`}
- className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[#f59e0b]/40 hover:text-[#f59e0b]"
- >
- <span>Hire Me for a Similar Project</span>
- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
- <path d="M2 6.5H11M11 6.5L7 2.5M11 6.5L7 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </a>
- <a
- href={contact.fiverr}
- target="_blank"
- rel="noopener noreferrer"
- className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[#1dbf73]/40 hover:text-[#1dbf73]"
- >
- <span>Fiverr Profile</span>
- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
- <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </a>
- <a
- href={contact.freelancer}
- target="_blank"
- rel="noopener noreferrer"
- className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[#29b2fe]/40 hover:text-[#29b2fe]"
- >
- <span>Freelancer Profile</span>
- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
- <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </a>
- <Link
- href="/#works"
- scroll={false}
- className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-white/20 hover:text-white"
- >
- <span>← All Projects</span>
- </Link>
- </div>
- </div>
-
- {/* Category badge */}
- <div
- className="rounded-2xl border p-5 text-center"
- style={{
- borderColor: `${colors.accent}30`,
- background: colors.badge,
- }}
- >
- <p
- className="text-xs font-bold uppercase tracking-[0.12em] text-[#f59e0b]"
- >
- Category
- </p>
- <p className="mt-2 text-lg font-black text-white">{project.category}</p>
- <p className="meta-label mt-1 text-white/35">{project.year}</p>
- </div>
-
- {/* Built by — team member card */}
- {builtBy.length > 0 && (
- <div className="rounded-2xl border border-white/[0.08] bg-[#111111] p-6">
- <p className="section-kicker mb-5 text-white/40">
- {builtBy.some((m) => m.role.toLowerCase().includes('design')) ? 'Designed By' : 'Built By'}
- </p>
- <div className="space-y-4">
- {builtBy.map((member) => (
- <Link
- key={member.slug}
- href={`/team/${member.slug}`}
- className="group/member flex items-center gap-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 transition hover:border-white/20 hover:shadow-lg hover:shadow-black/20"
- >
- {/* Avatar */}
- {member.image ? (
- <div className="relative shrink-0 overflow-hidden rounded-full border border-white/15" style={{ width: 44, height: 44 }}>
- <Image
- src={member.image}
- alt={member.name}
- fill
- sizes="44px"
- className="object-cover"
- />
- </div>
- ) : (
- <div
- aria-hidden="true"
- className="flex shrink-0 items-center justify-center rounded-full text-sm font-black"
- style={{
- width: 44,
- height: 44,
- background: member.avatarBg,
- border: `1.5px solid ${member.avatarColor}50`,
- color: member.avatarColor,
- }}
- >
- {member.avatar}
- </div>
- )}
- <div className="flex-1 min-w-0">
- <p className="text-sm font-bold text-white transition-colors group-hover/member:text-[#f59e0b]">
- {member.name}
- </p>
- <p
- className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#f59e0b]"
- >
- {member.role}
- </p>
- </div>
- <svg
- width="14"
- height="14"
- viewBox="0 0 14 14"
- fill="none"
- aria-hidden="true"
- className="shrink-0 text-white/20 transition-colors group-hover/member:text-[#f59e0b]"
- >
- <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </Link>
- ))}
- </div>
- </div>
- )}
-
- </aside>
- </div>
- </section>
-
- {/* ── Related Projects ──────────────────────────────────────────── */}
- {related.length > 0 && (
- <section
- className="border-t border-white/[0.08]"
- aria-labelledby="related-title"
- >
- <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
- <p className="section-kicker mb-4">More Work</p>
- <h2 id="related-title" className="section-title text-white mb-12">
- Related projects.
- </h2>
-
- <div className="grid gap-5 sm:grid-cols-2">
- {related.map((rel) => {
- const relColors = categoryColors(rel.category);
- return (
- <Link
- key={rel.slug}
- href={`/projects/${rel.slug}`}
- className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d0d] p-7 transition duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-black/40"
- >
- {/* Hover glow */}
- <div
- aria-hidden="true"
- className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
- style={{
- background: `radial-gradient(ellipse 60% 50% at 50% 0%, ${relColors.glow}, transparent)`,
- }}
- />
-
- <div className="relative">
- {/* Category + year */}
- <div className="mb-4 flex items-center gap-2">
- <span
- className="meta-label rounded-full border px-3 py-1"
- style={{
- color: relColors.accent,
- borderColor: `${relColors.accent}35`,
- background: relColors.badge,
- }}
- >
- {rel.category}
- </span>
- <span className="meta-label text-white/30">{rel.year}</span>
- </div>
-
- {/* Name */}
- <h3 className="subsection-title text-white transition-colors duration-200 group-hover:text-[#f59e0b]">
- {rel.name}
- </h3>
-
- {/* Tagline */}
- <p className="mt-3 small-copy text-white/50 line-clamp-2">
- {rel.tagline}
- </p>
-
- {/* Tech */}
- <p className="mt-4 meta-label text-white/30">{rel.tech}</p>
-
- {/* Arrow */}
- <div className="mt-6 flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-white/40 transition-colors duration-200 group-hover:text-[#f59e0b]">
- View Project
- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
- <path d="M2 6.5H11M11 6.5L7 2.5M11 6.5L7 10.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
- </svg>
- </div>
- </div>
- </Link>
- );
- })}
- </div>
- </div>
- </section>
- )}
-
- {/* ── Hire CTA ──────────────────────────────────────────────────── */}
- <section className="border-t border-white/[0.08]" aria-label="Hire CTA">
- <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
- <aside
- className="relative overflow-hidden rounded-2xl border border-[#f59e0b]/20 bg-[#111111] p-10 sm:p-14"
- >
- {/* Gold glow */}
- <div
- aria-hidden="true"
- className="pointer-events-none absolute inset-0"
- style={{
- background: 'radial-gradient(ellipse 70% 60% at 100% 0%, #f59e0b10, transparent)',
- }}
- />
-
- <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
- <div>
- <p className="section-kicker">Work with me</p>
- <h2 className="mt-4 section-title text-white max-w-xl">
- Have a project that needs a reliable developer?
- </h2>
- <p className="mt-5 body-copy text-white/60 max-w-lg">
- {personal.summary}. Clean code, practical delivery, and remote-friendly across time zones.
- </p>
- </div>
-
- <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
- <a
- href={`mailto:${contact.email}`}
- className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#f59e0b] px-7 text-sm font-semibold uppercase tracking-[0.14em] text-[#0a0a0a] transition hover:bg-[#fbbf24]"
- >
- Get in Touch
- </a>
- <Link
- href="/#works"
- scroll={false}
- className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/[0.08] px-7 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-[#f59e0b] hover:text-[#f59e0b]"
- >
- View All Projects
- </Link>
- </div>
- </div>
- </aside>
- </div>
- </section>
-
- {/* ── Footer ────────────────────────────────────────────────────── */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}.{' '}
- <Link href="/" className="transition hover:text-[#f59e0b]">
- Back to Portfolio
- </Link>
- </p>
- </footer>
-
- </main>
- );
+      <Footer />
+    </main>
+  );
 }

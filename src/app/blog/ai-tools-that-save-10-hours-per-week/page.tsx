@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function AIToolsBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">AI Productivity</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Deep Dive · AI & Automation</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Deep Dive · AI & Automation</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">AI Tools That Save 10+ Hours Per Week: The Ultimate Productivity Guide</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,25 +103,25 @@ export default function AIToolsBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
  
  <section id="why-essential" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Why AI Productivity Tools Are Essential in 2026
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence is no longer a futuristic concept. It has become a daily productivity partner for millions of professionals worldwide. Whether you’re a business owner, freelancer, developer, marketer, or student, AI tools can automate repetitive tasks, reduce manual effort, and help you focus on high-value work.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Many professionals spend hours each week on tasks such as writing emails, creating reports, conducting research, taking meeting notes, designing graphics, or debugging code. AI tools can handle much of this workload automatically.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  The result? More productivity, less stress, and significant time savings.
  </p>
  </section>
 
  <section id="how-ai-saves-time" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  How AI Can Save More Than 10 Hours Weekly
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Think about how much time is spent on:
  </p>
  <ul className="grid gap-2 sm:grid-cols-2 text-sm text-black/75 text-white/75 mt-3 pl-4 list-disc">
@@ -144,33 +135,33 @@ export default function AIToolsBlogPost() {
  <li>Reviewing code</li>
  <li>Automating repetitive workflows</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-4">
+ <p className="leading-relaxed text-white/70 mt-4">
  Even saving one or two hours per day adds up quickly. Just 2 hours saved daily equals:
  </p>
  <div className="grid gap-3 my-6 sm:grid-cols-3">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-[#f59e0b]/25 text-center">
- <span className="font-extrabold text-2xl text-[#f59e0b] block">10 Hours</span>
+ <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25 text-center">
+ <span className="font-extrabold text-2xl text-gold block">10 Hours</span>
  <span className="text-xs text-white/60">per work week</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-[#f59e0b]/25 text-center">
- <span className="font-extrabold text-2xl text-[#f59e0b] block">40+ Hours</span>
+ <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25 text-center">
+ <span className="font-extrabold text-2xl text-gold block">40+ Hours</span>
  <span className="text-xs text-white/60">per month</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-[#f59e0b]/25 text-center">
- <span className="font-extrabold text-2xl text-[#f59e0b] block">500+ Hours</span>
+ <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25 text-center">
+ <span className="font-extrabold text-2xl text-gold block">500+ Hours</span>
  <span className="text-xs text-white/60">annually</span>
  </div>
  </div>
- <p className="body-copy leading-relaxed text-white/70 italic text-center font-medium">
+ <p className="leading-relaxed text-white/70 italic text-center font-medium">
  That’s nearly three months of full-time work saved every year.
  </p>
  </section>
 
  <section id="what-makes-great-tool" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  What Makes a Great AI Productivity Tool?
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The best AI tools share several characteristics:
  </p>
  <div className="space-y-4 mt-4">
@@ -182,7 +173,7 @@ export default function AIToolsBlogPost() {
  { title: 'Scalability', desc: 'The tool should grow alongside your business or career.' },
  ].map((char, index) => (
  <div key={index} className="flex gap-4 items-start pl-2">
- <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#f59e0b]/10 text-xs font-black text-[#f59e0b]">
+ <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/10 text-xs font-black text-gold">
  ✓
  </span>
  <div>
@@ -192,19 +183,19 @@ export default function AIToolsBlogPost() {
  </div>
  ))}
  </div>
- <p className="body-copy leading-relaxed text-white/70 mt-6">
+ <p className="leading-relaxed text-white/70 mt-6">
  Now let’s explore the tools that deliver the highest return on your time.
  </p>
  </section>
 
  <section id="chatgpt" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  1. ChatGPT – Your Virtual Assistant
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  ChatGPT has become one of the most widely used AI tools globally. It acts like a virtual assistant that understands context and is available 24/7.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  It can help with:
  </p>
  <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
@@ -220,13 +211,13 @@ export default function AIToolsBlogPost() {
 
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <h4 className="text-sm font-bold text-[#f59e0b]">Best Use Cases</h4>
+ <h4 className="text-sm font-bold text-gold">Best Use Cases</h4>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
  For <strong>business owners</strong>, ChatGPT acts like an assistant available 24/7. For <strong>developers</strong>, it helps generate boilerplate code, explain errors, and speed up debugging. For <strong>marketers</strong>, it creates content ideas and marketing copy within seconds.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] flex flex-col justify-center">
- <h4 className="text-sm font-bold text-[#f59e0b]">Time Saved Per Week</h4>
+ <h4 className="text-sm font-bold text-gold">Time Saved Per Week</h4>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
  Average users report saving between <strong>5 and 15 hours weekly</strong> depending on usage.
  </p>
@@ -235,14 +226,14 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="claude" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  2. Claude – Long-Form Content and Research Expert
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Claude excels at processing large documents and producing highly detailed, analytical responses. Unlike many AI systems, Claude handles long-form content exceptionally well, offering writing that feels authentic and deeply researched.
  </p>
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
- <h3 className="text-sm font-bold text-[#f59e0b]">Why Professionals Love Claude</h3>
+ <h3 className="text-sm font-bold text-gold">Why Professionals Love Claude</h3>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
  Claude is ideal for:
  </p>
@@ -254,20 +245,20 @@ export default function AIToolsBlogPost() {
  <li>Policy reviews</li>
  <li>Contract summaries</li>
  </ul>
- <p className="mt-4 text-xs text-[#f59e0b] font-semibold">
+ <p className="mt-4 text-xs text-gold font-semibold">
  Professionals who work with large amounts of information can save several hours every week.
  </p>
  </div>
  </section>
 
  <section id="perplexity" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  3. Perplexity – AI-Powered Search Engine
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Perplexity combines AI intelligence with real-time web research. Instead of opening dozens of browser tabs, typing queries, and sifting through ads, users receive concise answers with inline sources.
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-[#f59e0b]/5 border-l-4 border-l-[#f59e0b] mt-4">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-gold/5 border-l-4 border-l-[#f59e0b] mt-4">
  <h3 className="text-sm font-bold text-white">Benefits for Research and Learning</h3>
  <p className="mt-2 text-xs text-white/70 leading-relaxed">
  Perplexity helps users:
@@ -286,14 +277,14 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="cursor" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  4. Cursor – AI Coding Assistant
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Cursor is rapidly becoming the favorite among software developers. Built around AI-assisted development and integrated as an editor fork, Cursor significantly reduces coding time.
  </p>
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
- <h3 className="text-sm font-bold text-[#f59e0b]">Perfect for Developers</h3>
+ <h3 className="text-sm font-bold text-gold">Perfect for Developers</h3>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed font-semibold">
  Cursor helps developers with:
  </p>
@@ -311,14 +302,14 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="github-copilot" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  5. GitHub Copilot – Pair Programming with AI
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  GitHub Copilot functions like a brilliant, real-time AI-powered coding partner directly inside your editor. It analyzes your syntax patterns and suggests lines or entire blocks of code dynamically.
  </p>
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
- <h3 className="text-sm font-bold text-[#f59e0b]">Coding Tasks It Automates</h3>
+ <h3 className="text-sm font-bold text-gold">Coding Tasks It Automates</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
  <li>Completing complex loops, algorithms, and boilerplate functions automatically</li>
  <li>Suggesting smart API endpoint integrations and database queries</li>
@@ -333,13 +324,13 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="notion-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  6. Notion AI – Smarter Documentation
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Notion AI transforms note-taking, project management, and documentation by embedding generative intelligence directly into your workspace.
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-[#f59e0b]/5 border-l-4 border-l-[#f59e0b] mt-4">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-gold/5 border-l-4 border-l-[#f59e0b] mt-4">
  <h3 className="text-sm font-bold text-white">Productivity Benefits</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
  <li><strong>Summarize meetings:</strong> Turn transcripts into highly organized summaries.</li>
@@ -355,36 +346,36 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="grammarly" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  7. Grammarly – Writing Without Mistakes
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Grammarly helps professionals communicate clearly, concisely, and confidently across emails, documents, and corporate messaging tools.
  </p>
  <div className="grid gap-4 mt-4 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Clarity & Correction</span>
+ <span className="font-bold text-gold block mb-1">Clarity & Correction</span>
  <p className="text-black/65 text-white/65">Fixes punctuation, grammar errors, and passive phrasing in real time.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Tone & Rewriting</span>
+ <span className="font-bold text-gold block mb-1">Tone & Rewriting</span>
  <p className="text-black/65 text-white/65">Rewrites paragraphs to match different tones (professional, warm, direct, confident) to match your audience.</p>
  </div>
  </div>
- <p className="body-copy leading-relaxed text-white/70 mt-2">
+ <p className="leading-relaxed text-white/70 mt-2">
  Whether you’re drafting emails, reports, or client proposals, Grammarly ensures a polished standard of quality while reducing manual proofreading and editing time.
  </p>
  </section>
 
  <section id="canva-ai" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  8. Canva AI – Design in Minutes
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Canva AI has democratized graphic design. It translates natural language prompts into stunning visual assets, layouts, and templates instantly.
  </p>
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
- <h3 className="text-sm font-bold text-[#f59e0b]">Tasks Canva AI Simplifies</h3>
+ <h3 className="text-sm font-bold text-gold">Tasks Canva AI Simplifies</h3>
  <ul className="grid grid-cols-2 gap-2 text-xs text-white/60 mt-3 pl-4 list-disc">
  <li>Social media graphics</li>
  <li>Pitch presentations</li>
@@ -399,14 +390,14 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="zapier" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  9. Zapier – Workflow Automation
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Zapier connects thousands of applications to construct seamless, automatic processes that run continuously in the background without code.
  </p>
- <div className="p-5 rounded-lg border border-[#f59e0b]/20 bg-black/[0.02] mt-4">
- <h3 className="text-sm font-bold text-[#f59e0b]">Examples of Zapier Automation</h3>
+ <div className="p-5 rounded-lg border border-gold/20 bg-black/[0.02] mt-4">
+ <h3 className="text-sm font-bold text-gold">Examples of Zapier Automation</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
  <li><strong>Lead management:</strong> Instantly pipe leads from Facebook Ads into your CRM database and notify sales teams on Slack.</li>
  <li><strong>Email automation:</strong> Trigger automatic welcome emails and follow-ups based on specific app behaviors.</li>
@@ -414,45 +405,45 @@ export default function AIToolsBlogPost() {
  <li><strong>Task creation:</strong> Create tasks in Trello, Asana, or Jira automatically whenever an email is starred or a deal closes.</li>
  <li><strong>Data synchronization:</strong> Keep directories, Google Sheets, and dashboards in absolute sync.</li>
  </ul>
- <p className="mt-4 text-xs text-[#f59e0b] font-bold">
+ <p className="mt-4 text-xs text-gold font-bold">
  Many businesses save dozens of hours every single month by using custom-designed Zapier automations to handle administrative overhead.
  </p>
  </div>
  </section>
 
  <section id="fireflies" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  10. Fireflies.ai – Automated Meeting Notes
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Fireflies.ai records, transcribes, and summarizes meetings automatically by plugging directly into your Google Meet, Zoom, or Microsoft Teams calls.
  </p>
  <div className="grid gap-4 mt-4 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Interactive Search</span>
+ <span className="font-bold text-gold block mb-1">Interactive Search</span>
  <p className="text-black/65 text-white/65">Allows you to search entire meetings for keywords, key metrics, or speaker actions in seconds.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Collaboration Hub</span>
+ <span className="font-bold text-gold block mb-1">Collaboration Hub</span>
  <p className="text-black/65 text-white/65">Leaves transcripts, structured bullet summaries, and action trackers ready for the team.</p>
  </div>
  </div>
- <p className="body-copy leading-relaxed text-white/70 mt-2 font-semibold">
+ <p className="leading-relaxed text-white/70 mt-2 font-semibold">
  Instead of manually documenting meetings and assigning tasks post-call, teams can focus entirely on the discussion itself, reclaiming hours of administrative overhead.
  </p>
  </section>
 
  <section id="best-stacks" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Best AI Tool Stack for Different Professionals
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Depending on your day-to-day responsibilities, here is the most efficient combination of tools to maximize your time-savings:
  </p>
 
  <div className="grid gap-4 mt-4 sm:grid-cols-2">
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b] uppercase tracking-wider">For Business Owners</h3>
+ <h3 className="text-sm font-bold text-gold uppercase tracking-wider">For Business Owners</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
  <li><strong>ChatGPT:</strong> General assistant & customer communications</li>
  <li><strong>Zapier:</strong> Cross-platform operational automations</li>
@@ -462,7 +453,7 @@ export default function AIToolsBlogPost() {
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b] uppercase tracking-wider">For Developers</h3>
+ <h3 className="text-sm font-bold text-gold uppercase tracking-wider">For Developers</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
  <li><strong>Cursor:</strong> Primary code editor & workspace generator</li>
  <li><strong>GitHub Copilot:</strong> Real-time code autocompletion</li>
@@ -472,7 +463,7 @@ export default function AIToolsBlogPost() {
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b] uppercase tracking-wider">For Content Creators</h3>
+ <h3 className="text-sm font-bold text-gold uppercase tracking-wider">For Content Creators</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
  <li><strong>ChatGPT:</strong> Idea generation & outline scripting</li>
  <li><strong>Claude:</strong> Drafting detailed articles & essays</li>
@@ -482,7 +473,7 @@ export default function AIToolsBlogPost() {
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b] uppercase tracking-wider">For Marketing Agencies</h3>
+ <h3 className="text-sm font-bold text-gold uppercase tracking-wider">For Marketing Agencies</h3>
  <ul className="mt-3 pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
  <li><strong>ChatGPT:</strong> Generating ad copy & messaging frameworks</li>
  <li><strong>Canva AI:</strong> Creating scale ad graphics and mockups</li>
@@ -494,10 +485,10 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="common-mistakes" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Common Mistakes When Using AI Tools
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Avoid these common pitfalls to maximize your productivity improvements:
  </p>
 
@@ -530,10 +521,10 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="future-productivity" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Future of AI Productivity
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI is evolving rapidly. Future tools will do far more than reply to prompt questions. Next-generation systems will:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
@@ -543,7 +534,7 @@ export default function AIToolsBlogPost() {
  <li>Automate customer support queues with high-empathy, contextual chatbots.</li>
  <li>Assist with high-level strategic decision-making and business planning.</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-4">
+ <p className="leading-relaxed text-white/70 mt-4">
  Organizations and professionals that adopt AI early will gain a significant competitive advantage. As the technology continues to mature, saving 10 hours weekly will likely become the minimum expectation rather than the exception.
  </p>
  </section>
@@ -556,7 +547,7 @@ export default function AIToolsBlogPost() {
  
 
  <section id="faqs" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2 font-extrabold">
  Frequently Asked Questions (FAQs)
  </h2>
  
@@ -604,7 +595,7 @@ export default function AIToolsBlogPost() {
  },
  ].map((faq, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
- <h3 className="text-sm font-bold text-[#f59e0b]">{faq.q}</h3>
+ <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
  </div>
  ))}
@@ -612,16 +603,16 @@ export default function AIToolsBlogPost() {
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI tools are transforming how people work. Whether you’re a developer, business owner, freelancer, marketer, or student, the right AI tools can eliminate repetitive tasks and help you focus on what truly matters.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  If your goal is to reclaim more time, increase productivity, and work smarter, start with a simple AI stack consisting of <strong>ChatGPT, Claude, Perplexity</strong>, and one automation tool like <strong>Zapier</strong>.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  The cumulative effect of saving just a few hours each week can dramatically improve both your professional performance and personal life.
  </p>
  </section>
@@ -643,14 +634,7 @@ export default function AIToolsBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

@@ -89,6 +89,8 @@ export interface Project {
   metrics: ProjectMetric[];
   techStack: TechStackGroup[];
   developer?: string;
+  /** Mark true to show this project in the homepage featured section */
+  featured?: boolean;
 }
 
 export interface Service {

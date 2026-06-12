@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { contact, personal } from '@/lib/data';
 
+// homeOnly: only show on home page (section anchors)
 const navItems = [
-  { label: 'About',      href: '/#about' },
-  { label: 'Services',   href: '/#services' },
-  { label: 'Works',      href: '/#works' },
-  { label: 'Team',       href: '/#team' },
-  { label: 'Experience', href: '/#experience' },
-  { label: 'Blog',       href: '/blog' },
+  { label: 'About',      href: '/#about',      page: null,         homeOnly: true },
+  { label: 'Services',   href: '/#services',   page: '/services',  homeOnly: false },
+  { label: 'Works',      href: '/#works',      page: null,         homeOnly: true },
+  { label: 'Team',       href: '/#team',       page: null,         homeOnly: true },
+  { label: 'Experience', href: '/#experience', page: null,         homeOnly: true },
+  { label: 'Blog',       href: '/blog',        page: '/blog',      homeOnly: false },
 ];
 
 export default function HeaderNav() {
@@ -52,15 +53,20 @@ export default function HeaderNav() {
   // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  const getHref = (href: string) => {
-    if (isHome && href.startsWith('/#')) return href.substring(1);
-    return href;
+  // Items to render — home-only items are hidden on inner pages
+  const visibleItems = isHome ? navItems : navItems.filter((item) => !item.homeOnly);
+
+  const getHref = (item: typeof navItems[0]) => {
+    if (isHome && item.href.startsWith('/#')) return item.href.substring(1);
+    if (!isHome && item.page) return item.page;
+    return item.href;
   };
 
-  const isActive = (href: string) => {
-    if (href === '/blog') return pathname.startsWith('/blog');
+  const isActive = (item: typeof navItems[0]) => {
+    if (item.href === '/blog') return pathname.startsWith('/blog');
+    if (item.page === '/services') return pathname.startsWith('/services');
     if (!isHome) return false;
-    const hash = href.replace('/#', '');
+    const hash = item.href.replace('/#', '');
     return activeSection === hash;
   };
 
@@ -68,7 +74,7 @@ export default function HeaderNav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0a0a0a]/90 backdrop-blur-2xl border-b border-white/[0.07] shadow-[0_1px_0_rgba(255,255,255,0.04)]'
+          ? 'bg-studio/90 backdrop-blur-2xl border-b border-white/[0.07] shadow-[0_1px_0_rgba(255,255,255,0.04)]'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
@@ -77,34 +83,34 @@ export default function HeaderNav() {
         {/* Logo */}
         <Link href="/" className="group flex shrink-0 items-center gap-2.5">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f59e0b] opacity-50" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f59e0b]" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-50" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gold" />
           </span>
-          <span className="font-bebas text-[1.35rem] tracking-[0.12em] text-white transition-colors duration-200 group-hover:text-[#f59e0b]">
+          <span className="font-bebas text-[1.35rem] tracking-[0.12em] text-white transition-colors duration-200 group-hover:text-gold">
             {personal.firstName[0]}{personal.lastName[0]}
           </span>
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary navigation">
-          {navItems.map((item) => {
-            const targetHref = getHref(item.href);
-            const isHash = item.href.startsWith('/#');
-            const active = isActive(item.href);
+          {visibleItems.map((item) => {
+            const targetHref = getHref(item);
+            const isHash = item.href.startsWith('/#') && isHome;
+            const active = isActive(item);
             return (
               <Link
                 key={item.href}
                 href={targetHref}
                 scroll={isHash ? false : undefined}
-                className={`relative rounded-full px-3.5 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.12em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] ${
+                className={`relative rounded-full px-3.5 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.12em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                   active
-                    ? 'text-[#f59e0b]'
+                    ? 'text-gold'
                     : 'text-white/50 hover:text-white'
                 }`}
               >
                 {item.label}
                 {active && (
-                  <span className="absolute bottom-1 left-1/2 h-0.5 w-3 -translate-x-1/2 rounded-full bg-[#f59e0b]" />
+                  <span className="absolute bottom-1 left-1/2 h-0.5 w-3 -translate-x-1/2 rounded-full bg-gold" />
                 )}
               </Link>
             );
@@ -115,7 +121,7 @@ export default function HeaderNav() {
         <div className="flex shrink-0 items-center gap-3">
           <a
             href={`mailto:${contact.email}`}
-            className="hidden lg:inline-flex items-center gap-2 rounded-full border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-5 py-2 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#f59e0b] transition duration-200 hover:bg-[#f59e0b] hover:text-[#0a0a0a] hover:border-[#f59e0b]"
+            className="hidden lg:inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-2 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-gold transition duration-200 hover:bg-gold hover:text-deep hover:border-gold"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
             Available · Hire Me
@@ -124,7 +130,7 @@ export default function HeaderNav() {
           {/* Mobile toggle */}
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition duration-200 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -147,21 +153,21 @@ export default function HeaderNav() {
       {menuOpen && (
         <div
           id="mobile-navigation"
-          className="border-t border-white/[0.07] bg-[#0a0a0a]/98 backdrop-blur-2xl px-5 py-5 lg:hidden"
+          className="border-t border-white/[0.07] bg-studio/95 backdrop-blur-2xl px-5 py-5 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-            {navItems.map((item) => {
-              const targetHref = getHref(item.href);
-              const isHash = item.href.startsWith('/#');
-              const active = isActive(item.href);
+            {visibleItems.map((item) => {
+              const targetHref = getHref(item);
+              const isHash = item.href.startsWith('/#') && isHome;
+              const active = isActive(item);
               return (
                 <Link
                   key={item.href}
                   href={targetHref}
                   scroll={isHash ? false : undefined}
-                  className={`rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.1em] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] ${
+                  className={`rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.1em] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                     active
-                      ? 'bg-[#f59e0b]/10 text-[#f59e0b]'
+                      ? 'bg-gold/10 text-gold'
                       : 'text-white/55 hover:bg-white/[0.05] hover:text-white'
                   }`}
                   onClick={() => setMenuOpen(false)}
@@ -172,7 +178,7 @@ export default function HeaderNav() {
             })}
             <a
               href={`mailto:${contact.email}`}
-              className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-[#f59e0b]/40 bg-[#f59e0b]/10 px-4 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#f59e0b] transition hover:bg-[#f59e0b] hover:text-[#0a0a0a]"
+              className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-sm font-bold uppercase tracking-[0.12em] text-gold transition hover:bg-gold hover:text-deep"
               onClick={() => setMenuOpen(false)}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />

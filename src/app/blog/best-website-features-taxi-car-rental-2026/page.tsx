@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function TaxiWebsiteFeaturesBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">Fleet Features</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Fleet & Transportation Strategy</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Fleet & Transportation Strategy</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">Best Website Features for Taxi and Car Rental Businesses</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,31 +103,31 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
  
  <section id="introduction" className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The transportation industry has changed dramatically over the last few years. Customers no longer want to call a business, wait on hold, and manually book a taxi or rental car. They expect a fast, mobile-friendly, and convenient online experience.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  If you’re running a taxi company, chauffeur service, airport transfer business, limo rental service, or car rental company, your website is often the first interaction a customer has with your brand.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-red-500 dark:text-red-400">
+ <p className="leading-relaxed text-white/70 font-semibold text-red-500 dark:text-red-400">
  A poorly designed website can drive customers away. A professional website can generate bookings 24/7.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In 2026, customers expect more than just a contact page and phone number. They want instant booking, online payments, vehicle selection, real-time pricing, and seamless communication.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  This guide covers the most important website features every taxi and car rental business should have to attract more customers, increase bookings, and grow revenue.
  </p>
  </section>
 
  <section id="why-modern-website" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Why Taxi and Car Rental Businesses Need Modern Websites
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Many transportation businesses still depend on phone calls, manual WhatsApp messages, Facebook updates, or slow booking pipelines. While these methods still work to a degree, they’re no longer sufficient.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Modern travelers expect:
  </p>
  <ul className="grid grid-cols-2 gap-2 text-xs text-white/60 pl-4 list-disc">
@@ -146,19 +137,19 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  <li>Secure cashless online payments</li>
  <li>High-speed mobile accessibility</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-4 italic font-medium text-[#f59e0b] text-center">
+ <p className="leading-relaxed text-white/70 mt-4 italic font-medium text-gold text-center">
  Your website should act as your digital booking office. Even while you’re sleeping, customers should be able to request rides and rent vehicles.
  </p>
  </section>
 
  <section id="booking-system" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Online Booking System
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The single most important feature is an online booking system. Without a friction-free online booking form, customers will quickly leave and choose your competitors.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold">
+ <p className="leading-relaxed text-white/70 font-semibold">
  An optimized booking form should capture:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
@@ -170,28 +161,28 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </section>
 
  <section id="fare-estimation" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Instant Fare Estimation
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Customers dislike pricing uncertainty. One of the primary reasons users abandon booking forms midway is the lack of clear pricing.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Your calculator should dynamically calculate: estimated trip distance and duration fees, vehicle profile multipliers, additional night/toll charges, taxes, and airport pick-up fees. Transparent, upfront pricing builds massive trust.
  </p>
  </section>
 
  <section id="vehicle-selection" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Vehicle Selection & Fleet Grid
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Different travelers have different requirements. Present your fleet clearly:
  </p>
 
  <div className="grid gap-4 mt-4 sm:grid-cols-2 text-xs">
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b] uppercase tracking-wider">Sedan / Economy</h3>
+ <h3 className="text-sm font-bold text-gold uppercase tracking-wider">Sedan / Economy</h3>
  <ul className="mt-2 text-white/60 space-y-1">
  <li><strong>Capacity:</strong> Max 4 Passengers, 2 Bags</li>
  <li><strong>Use Case:</strong> Everyday rides, business commutes</li>
@@ -199,23 +190,23 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b] uppercase tracking-wider">Luxury SUV</h3>
+ <h3 className="text-sm font-bold text-gold uppercase tracking-wider">Luxury SUV</h3>
  <ul className="mt-2 text-white/60 space-y-1">
  <li><strong>Capacity:</strong> Max 6 Passengers, 4 Bags</li>
  <li><strong>Use Case:</strong> Chauffeur airport transfers, group travel</li>
  </ul>
  </div>
  </div>
- <p className="body-copy leading-relaxed text-white/70 mt-2 font-medium italic text-center">
+ <p className="leading-relaxed text-white/70 mt-2 font-medium italic text-center">
  Each vehicle should display professional photos, seating capacities, features, and base fare rates.
  </p>
  </section>
 
  <section id="portals" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Customer Account Management
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  A private customer portal drastically raises client retention rates:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
@@ -226,91 +217,91 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </section>
 
  <section id="driver-system" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Driver Management System
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  For fleet operators, integrating a driver management panel streamlines daily operations. Administrators can establish driver profiles, assign fleet vehicles, track active driver shifts, and allocate booking dispatches efficiently based on coordinates.
  </p>
  </section>
 
  <section id="booking-dashboard" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Real-Time Booking Dashboard
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  A centralized dashboard is the operational control center of your business. Administrators can monitor active trip statuses, process completed transactions, manage incoming ride requests, track fleet stats, and review driver performance in real-time.
  </p>
  </section>
 
  <section id="payments" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Online Payment Integration
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Modern travelers prefer cashless transactions. Integrating secure processors (like Stripe or PayPal) alongside Apple Pay and Google Pay guarantees rapid checkouts, drastically reduces booking cancellations, and elevates customer experience.
  </p>
  </section>
 
  <section id="mobile-design" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Mobile-Friendly Design
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Over 70% of taxi and car bookings occur directly on smartphones. Your platform must load in under two seconds, feature large touch-friendly buttons, and offer frictionless page navigation to prevent bounce-offs.
  </p>
  </section>
 
  <section id="google-maps" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Google Maps Integration
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Map integration is a standard industry expectation. By leveraging the Google Maps API, users can visually pin pickup zones, verify destinations, view real-time travel routes, and receive highly accurate distance calculations.
  </p>
  </section>
 
  <section id="whatsapp" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  WhatsApp Integration
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Many customers prefer immediate chat support. Adding a clean "Book via WhatsApp" chat widget allows users to ask questions, verify pricing, and resolve booking hiccups with zero friction.
  </p>
  </section>
 
  <section id="multi-language" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  Multi-Language Support
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Taxi and car rental businesses serve a large volume of international tourists and corporate business travelers. Offering multi-language toggles (English, Spanish, French, German) broadens your brand reach and lifts booking conversion rates.
  </p>
  </section>
 
  <section id="seo" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/25 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/25 pb-2">
  SEO Optimization & Location Pages
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  A high-end platform is useless if local customers cannot find it. We recommend creating optimized location pages:
  </p>
- <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-[#f59e0b] overflow-x-auto leading-relaxed">
+ <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
 {`src/app/blog/
 ├── taxi-service-london/page.tsx
 ├── airport-transfer-manchester/page.tsx
 └── car-rental-birmingham/page.tsx`}
  </pre>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  This hyper-local page strategy attracts organic search terms, driving targeted booking leads continuously.
  </p>
  </section>
 
  <section id="security" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Security Requirements
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Protecting customer information is non-negotiable. Modern booking systems demand:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
@@ -321,44 +312,44 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </section>
 
  <section id="ai-features" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  AI Features for Taxi Businesses
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence is driving massive efficiency leaps in modern fleet operations:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Smart Dispatching</span>
+ <span className="font-bold text-gold block mb-1">Smart Dispatching</span>
  <p className="text-black/65 text-white/65">AI engines assign drivers based on dynamic traffic, reducing fuel spend and wait times.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">AI Support Bots</span>
+ <span className="font-bold text-gold block mb-1">AI Support Bots</span>
  <p className="text-black/65 text-white/65">Resolves client booking modifications, fare estimations, and cancellation requests 24/7.</p>
  </div>
  </div>
  </section>
 
  <section id="real-world-comparison" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Real-World Comparison
  </h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Company A</span>
+ <span className="font-bold text-gold block mb-1">Company A</span>
  <p className="text-white/60 leading-relaxed">
  Depends solely on manual phone dispatches, lacks fare estimations, and offers no credit card checkouts. Customers quickly bounce to competitors.
  </p>
  </div>
 
- <div className="p-4 rounded-lg bg-[#f59e0b]/5 border border-[#f59e0b]/25">
+ <div className="p-4 rounded-lg bg-gold/5 border border-gold/25">
  <span className="font-bold text-white block mb-1">Company B</span>
  <p className="text-white/70 leading-relaxed">
  Has a modern Next.js booking platform. Offers instant fare estimates, secure card transactions, fleet images, and active WhatsApp support.
  </p>
  </div>
  </div>
- <p className="body-copy leading-relaxed text-white/70 mt-6 italic text-center font-medium">
+ <p className="leading-relaxed text-white/70 mt-6 italic text-center font-medium">
  The result: Company B captures over 4x more customer bookings.
  </p>
  </section>
@@ -371,7 +362,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  
 
  <section id="faqs" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2 font-extrabold">
  Frequently Asked Questions (FAQs)
  </h2>
  
@@ -419,7 +410,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  },
  ].map((faq, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
- <h3 className="text-sm font-bold text-[#f59e0b]">{faq.q}</h3>
+ <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
  </div>
  ))}
@@ -427,16 +418,16 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  A modern taxi or car rental website is far more than an online brochure. It functions as a booking platform, customer support center, marketing tool, and business management system.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Features such as online booking, fare estimation, vehicle selection, mobile optimization, payment integration, and AI-powered automation help businesses increase bookings and improve customer satisfaction.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  As customer expectations continue to evolve, transportation companies that invest in modern digital experiences will be better positioned to compete and grow. The businesses that win in 2026 won’t necessarily have the largest fleets—they’ll have the most convenient customer experiences.
  </p>
  </section>
@@ -458,14 +449,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

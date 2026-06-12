@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function AIBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">AI Tools Guide</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Deep Dive · AI & Automation</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Deep Dive · AI & Automation</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">{articleDescription}</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,43 +103,43 @@ export default function AIBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
  
  <section className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence (AI) is no longer a futuristic concept reserved for technology giants and research laboratories. Today, AI tools are transforming how people work, learn, create, and run businesses. Whether you’re a student trying to study smarter, a business owner looking to automate tasks, or a professional aiming to improve productivity, AI tools have become an essential part of modern life.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Think of AI tools as digital assistants that never sleep. They can write content, generate images, analyze data, answer questions, create videos, and even help developers write code. What once required hours of manual effort can now be completed in minutes.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In this comprehensive guide, we’ll explore what AI tools are, why they matter, the different types available, and how you can use them effectively to stay ahead in a rapidly evolving world.
  </p>
  </section>
 
  <section aria-labelledby="what-are-ai-tools" className="space-y-4">
- <h2 id="what-are-ai-tools" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">What Are AI Tools?</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="what-are-ai-tools" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">What Are AI Tools?</h2>
+ <p className="leading-relaxed text-white/70">
  AI tools are software applications that use artificial intelligence technologies to perform tasks that typically require human intelligence. These tasks include learning, reasoning, problem-solving, language understanding, content creation, and decision-making.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Instead of following rigid, pre-programmed instructions, AI systems can analyze massive datasets, recognize complex semantic patterns, and generate intelligent, context-aware responses.
  </p>
  
  <div className="mt-6 space-y-3">
  <p className="text-sm font-bold uppercase tracking-wider text-white/50">For Example:</p>
  <div className="grid gap-3 sm:grid-cols-2">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block">AI Writing Tools</span>
+ <div className="p-4 rounded-lg bg-surface border border-white/[0.07]">
+ <span className="font-bold text-gold block">AI Writing Tools</span>
  <span className="text-xs text-white/60">Generate highly structured blog posts, persuasive emails, and advertising copy.</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block">AI Image Generators</span>
+ <div className="p-4 rounded-lg bg-surface border border-white/[0.07]">
+ <span className="font-bold text-gold block">AI Image Generators</span>
  <span className="text-xs text-white/60">Produce hyper-realistic marketing visuals and branding elements from text prompts.</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block">AI Coding Assistants</span>
+ <div className="p-4 rounded-lg bg-surface border border-white/[0.07]">
+ <span className="font-bold text-gold block">AI Coding Assistants</span>
  <span className="text-xs text-white/60">Autofill complex algorithms, suggest boilerplate integrations, and debug syntax.</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block">AI Chatbots</span>
+ <div className="p-4 rounded-lg bg-surface border border-white/[0.07]">
+ <span className="font-bold text-gold block">AI Chatbots</span>
  <span className="text-xs text-white/60">Resolve customer service inquiries 24/7 with zero human intervention.</span>
  </div>
  </div>
@@ -156,54 +147,54 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="why-essential" className="space-y-4">
- <h2 id="why-essential" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Why AI Tools Are Becoming Essential</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="why-essential" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Why AI Tools Are Becoming Essential</h2>
+ <p className="leading-relaxed text-white/70">
  The modern world moves quickly. Businesses need efficiency, professionals need productivity, and customers expect immediate, hyper-personalized responses. This is where AI tools provide an unmatched competitive advantage.
  </p>
  
- <blockquote className="border-l-4 border-[#f59e0b] pl-4 my-6 italic text-lg text-white/60">
+ <blockquote className="border-l-4 border-gold pl-4 my-6 italic text-lg text-white/60">
  &ldquo;AI is not replacing humans; it is helping humans become dramatically more productive.&rdquo;
  </blockquote>
  
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Organizations use AI to automate repetitive workflows, drive down operational costs, optimize customer service pipelines, and execute data-driven strategies. Individuals leverage AI to learn complex topics, craft content, and manage daily responsibilities in a fraction of the time.
  </p>
  </section>
 
  <section aria-labelledby="changing-industries" className="space-y-6">
- <h2 id="changing-industries" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">How Artificial Intelligence Is Changing Industries</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="changing-industries" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">How Artificial Intelligence Is Changing Industries</h2>
+ <p className="leading-relaxed text-white/70">
  AI is creating a cascading disruption across almost every primary industry, enabling remote freelancers and small teams to compete on a global playing field.
  </p>
 
  <div className="space-y-6 mt-6">
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Business</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Small businesses can now leverage technologies that were once exclusively available to multi-million dollar corporations. Business workflows utilize AI for customer support automation, marketing optimization, sales forecasting, high-throughput data analysis, and intelligent invoicing.
  </p>
  </div>
 
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Education</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Students and educators benefit from hyper-personalized learning pathways, research drafting, massive document summarization, instant cross-language translation, and responsive interactive tutors that simplify complex concepts.
  </p>
  </div>
 
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Marketing</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Marketing professionals use generative models to test hundreds of ad variations, analyze customer cohorts on the fly, structure perfect SEO parameters, and curate real-time personalized shopping experiences.
  </p>
  </div>
 
- <div className="pl-4 border-l-2 border-[#f59e0b]/40">
+ <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Software Development</h3>
  <p className="text-sm text-black/65 text-white/65 mt-1">
  Developers are no longer writing code from absolute scratch. Through pair programming companions, developers achieve massive productivity leaps, leveraging AI for code generation, bug fixing, test automation, dynamic documentation, and infrastructure configuration.
  </p>
- <div className="mt-3 p-3 rounded bg-[#f59e0b]/5 border border-[#f59e0b]/20 text-xs text-[#f59e0b]/90 font-medium">
+ <div className="mt-3 p-3 rounded bg-gold/5 border border-gold/20 text-xs text-gold/90 font-medium">
  <strong>Portfolio Spotlight:</strong> At Jatinder Sandhu&apos;s development desk, we leverage advanced AI-assisted pair-programming tools daily. By integrating systems like Cursor and Claude 3.5 Sonnet directly into our workflow, we deliver production-ready, clean TypeScript, React, and Laravel code in a fraction of the traditional timeline.
  </div>
  </div>
@@ -211,35 +202,35 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="benefits" className="space-y-4">
- <h2 id="benefits" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Benefits of Using AI Tools</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="benefits" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Benefits of Using AI Tools</h2>
+ <p className="leading-relaxed text-white/70">
  Integrating AI into your professional ecosystem yields four primary compounding advantages:
  </p>
 
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-base font-bold text-[#f59e0b]">1. Time Savings</h3>
+ <h3 className="text-base font-bold text-gold">1. Time Savings</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Completing a complex five-hour task (like summarizing data sheets or formatting blog outlines) in thirty minutes. AI automates the mundane, freeing up mental bandwidth for high-impact creative tasks.
  </p>
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-base font-bold text-[#f59e0b]">2. Cost Reduction</h3>
+ <h3 className="text-base font-bold text-gold">2. Cost Reduction</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Businesses eliminate huge overhead costs. Customer support pipelines, recurring graphic design elements, and routine administrative tasks can be largely automated using AI integrations.
  </p>
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-base font-bold text-[#f59e0b]">3. Improved Accuracy</h3>
+ <h3 className="text-base font-bold text-gold">3. Improved Accuracy</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Advanced models process gigabytes of complex transactional logs or documentation with virtually zero human typos or calculation slip-ups, maintaining a highly robust data standard.
  </p>
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-base font-bold text-[#f59e0b]">4. Better Decision-Making</h3>
+ <h3 className="text-base font-bold text-gold">4. Better Decision-Making</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  AI processes customer habits, search patterns, and backend performance metrics to offer predictive insights that humans might completely miss, accelerating logical business choices.
  </p>
@@ -248,42 +239,42 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="types-of-tools" className="space-y-4">
- <h2 id="types-of-tools" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Types of AI Tools</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="types-of-tools" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Types of AI Tools</h2>
+ <p className="leading-relaxed text-white/70">
  The modern artificial intelligence ecosystem is expanding rapidly, forming specific classes of specialized software:
  </p>
 
  <ul className="mt-6 space-y-4">
  <li className="flex gap-3">
- <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#f59e0b]" />
+ <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Writing Tools: </strong>
  <span className="text-xs text-black/65 text-white/65">Ideal for outlining blog posts, copywriting, drafting social media content, and refining grammar. Leading examples include ChatGPT, Claude, and Jasper.</span>
  </div>
  </li>
  <li className="flex gap-3">
- <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#f59e0b]" />
+ <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Image Generation Tools: </strong>
  <span className="text-xs text-black/65 text-white/65">Allow users to output custom visual materials, design layouts, and icons instantly using natural language prompts. Key leaders are Midjourney and DALL·E.</span>
  </div>
  </li>
  <li className="flex gap-3">
- <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#f59e0b]" />
+ <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Video Creation Tools: </strong>
  <span className="text-xs text-black/65 text-white/65">Generate high-quality video content from text inputs and scripts, dramatically decreasing video editing timelines for online creators.</span>
  </div>
  </li>
  <li className="flex gap-3">
- <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#f59e0b]" />
+ <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Coding Assistants: </strong>
  <span className="text-xs text-black/65 text-white/65">Autofill complex functions, find performance bottlenecks, build mock APIs, and write clean unit tests in real time. Standard-setters include GitHub Copilot and Cursor.</span>
  </div>
  </li>
  <li className="flex gap-3">
- <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#f59e0b]" />
+ <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Chatbots: </strong>
  <span className="text-xs text-black/65 text-white/65">Manage interactive customer support queues, nurture marketing leads, schedule client calendar bookings, and resolve FAQs.</span>
@@ -293,8 +284,8 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="best-tools-2026" className="space-y-6">
- <h2 id="best-tools-2026" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Best AI Tools in 2026</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="best-tools-2026" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Best AI Tools in 2026</h2>
+ <p className="leading-relaxed text-white/70">
  The following frontrunners represent the gold standard of AI capability in 2026:
  </p>
 
@@ -322,7 +313,7 @@ export default function AIBlogPost() {
  },
  ].map((tool, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.01] p-5">
- <h3 className="text-base font-bold text-[#f59e0b]">{tool.name}</h3>
+ <h3 className="text-base font-bold text-gold">{tool.name}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{tool.desc}</p>
  </div>
  ))}
@@ -330,8 +321,8 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="choose-right-tool" className="space-y-4">
- <h2 id="choose-right-tool" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">How to Choose the Right AI Tool</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="choose-right-tool" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">How to Choose the Right AI Tool</h2>
+ <p className="leading-relaxed text-white/70">
  With hundreds of options flooding the market, selection must be highly systematic:
  </p>
 
@@ -351,7 +342,7 @@ export default function AIBlogPost() {
  },
  ].map((step, idx) => (
  <li key={idx} className="flex gap-4">
- <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/[0.08] text-xs font-black text-[#f59e0b]">{idx + 1}</span>
+ <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/[0.08] text-xs font-black text-gold">{idx + 1}</span>
  <div>
  <h4 className="text-sm font-bold text-white">{step.title}</h4>
  <p className="text-xs text-white/60 mt-1 leading-relaxed">{step.text}</p>
@@ -362,8 +353,8 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="common-mistakes" className="space-y-4">
- <h2 id="common-mistakes" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">Common Mistakes When Using AI Tools</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="common-mistakes" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Common Mistakes When Using AI Tools</h2>
+ <p className="leading-relaxed text-white/70">
  Avoid these common pitfalls to maximize productivity without compromising quality:
  </p>
 
@@ -388,11 +379,11 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="use-cases" className="space-y-6">
- <h2 id="use-cases" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">AI Leverage Across Audiences</h2>
+ <h2 id="use-cases" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">AI Leverage Across Audiences</h2>
  
  <div className="space-y-5">
  <div>
- <h3 className="text-base font-bold text-[#f59e0b]">AI Tools for Small Businesses</h3>
+ <h3 className="text-base font-bold text-gold">AI Tools for Small Businesses</h3>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
  Small business owners utilize automation pipelines to run cold outreach campaigns, automate client support with dynamic FAQ chatbots, draft high-volume product listings, and streamline complex business operations. 
  </p>
@@ -402,14 +393,14 @@ export default function AIBlogPost() {
  </div>
 
  <div>
- <h3 className="text-base font-bold text-[#f59e0b]">AI Tools for Students</h3>
+ <h3 className="text-base font-bold text-gold">AI Tools for Students</h3>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
  Students use AI for advanced academic research, organizing extensive lecture transcripts, structural essay reviews, creating custom study plans, and learning foreign languages via customized conversational bots.
  </p>
  </div>
 
  <div>
- <h3 className="text-base font-bold text-[#f59e0b]">AI Tools for Content Creators</h3>
+ <h3 className="text-base font-bold text-gold">AI Tools for Content Creators</h3>
  <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
  Creators can leverage generative engines to script YouTube outlines, optimize titles for Click-Through Rates (CTR), draft blog structures, design custom graphical templates, and generate video captions.
  </p>
@@ -418,11 +409,11 @@ export default function AIBlogPost() {
  </section>
 
  <section aria-labelledby="future" className="space-y-4">
- <h2 id="future" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">The Future of AI Tools</h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <h2 id="future" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">The Future of AI Tools</h2>
+ <p className="leading-relaxed text-white/70">
  The future of AI is incredibly exciting. Experts predict that AI tools will become far more personalized, contextually accurate, autonomous, and deeply integrated into daily workflows.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  We are rapidly moving toward a world where AI agents become as standard and indispensable as emails, smartphones, or high-speed internet. Businesses that adopt AI systems early will capture significant competitive advantages. At the same time, maintaining robust data transparency, cybersecurity protocols, and ethical governance will remain paramount.
  </p>
  </section>
@@ -435,7 +426,7 @@ export default function AIBlogPost() {
  
 
  <section aria-labelledby="faqs" className="space-y-6">
- <h2 id="faqs" className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">Frequently Asked Questions</h2>
+ <h2 id="faqs" className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2 font-extrabold">Frequently Asked Questions</h2>
  
  <div className="space-y-4 mt-6">
  {[
@@ -481,7 +472,7 @@ export default function AIBlogPost() {
  },
  ].map((faq, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
- <h3 className="text-sm font-bold text-[#f59e0b]">{faq.q}</h3>
+ <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
  </div>
  ))}
@@ -489,13 +480,13 @@ export default function AIBlogPost() {
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI tools have rapidly evolved from experimental technologies into practical solutions used by millions of people worldwide. Whether you’re a student, entrepreneur, developer, marketer, or business owner, AI can help you save time, improve productivity, and unlock new opportunities.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The key is not simply using AI but learning how to use it effectively. By choosing the right tools, creating clear instructions, and combining AI capabilities with human expertise, you can achieve remarkable results. As artificial intelligence continues to evolve, those who embrace it thoughtfully will be better positioned to succeed in the digital economy.
  </p>
  </section>
@@ -517,14 +508,7 @@ export default function AIBlogPost() {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

@@ -40,7 +40,7 @@ export function AboutSection({ section, techGroups }: AboutSectionProps) {
           <div className="flex shrink-0 flex-wrap gap-10">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <p className="font-bebas text-[2.8rem] leading-none text-[#f59e0b] tracking-wide">
+                <p className="font-bebas text-[2.8rem] leading-none text-accent tracking-wide">
                   {stat.value}
                 </p>
                 <p className="mt-1.5 meta-label text-white/40">{stat.label}</p>
@@ -62,9 +62,9 @@ export function AboutSection({ section, techGroups }: AboutSectionProps) {
             {techGroups.map((group) => (
               <div
                 key={group.category}
-                className="group rounded-xl border border-white/[0.07] bg-white/[0.02] p-5 transition duration-300 hover:border-[#f59e0b]/30 hover:bg-[#f59e0b]/[0.04]"
+                className="group rounded-xl border border-white/[0.07] bg-white/[0.02] p-5 transition duration-300 hover:border-accent/30 hover:bg-accent/[0.04]"
               >
-                <p className="text-[0.7rem] font-black uppercase tracking-[0.12em] text-[#f59e0b]/80">
+                <p className="text-[0.7rem] font-black uppercase tracking-[0.12em] text-accent/80">
                   {group.category}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-white/45">

@@ -59,7 +59,7 @@ function LightboxThumb({
       onClick={onClick}
       className={`relative shrink-0 h-14 w-20 overflow-hidden rounded-lg transition-all duration-200 ${
         active
-          ? 'ring-2 ring-[#f59e0b] ring-offset-2 ring-offset-black/90 opacity-100 scale-105'
+          ? 'ring-2 ring-accent ring-offset-2 ring-offset-black/90 opacity-100 scale-105'
           : 'opacity-50 hover:opacity-80 hover:scale-105'
       }`}
       aria-label={alt}
@@ -223,7 +223,7 @@ export function ProjectGallery({
     <>
       {/* ── Project Card ─────────────────────────────────────────────────── */}
       <div
-        className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111111] transition duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-black/40 cursor-pointer"
+        className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-surface transition duration-300 hover:border-white/20 hover:shadow-2xl hover:shadow-black/40 cursor-pointer"
         onClick={() => openLightbox(0)}
         role="button"
         tabIndex={0}
@@ -293,7 +293,7 @@ export function ProjectGallery({
           </div>
 
           <h3
-            className="subsection-title text-white transition-colors duration-200 group-hover:text-[#f59e0b]"
+            className="font-bebas text-xl uppercase text-white transition-colors duration-200 group-hover:text-gold"
             style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)' }}
           >
             {projectName}
@@ -309,7 +309,7 @@ export function ProjectGallery({
                 <button
                   key={i}
                   onClick={(e) => { e.stopPropagation(); openLightbox(i + 1); }}
-                  className="relative shrink-0 focus:outline-none focus:ring-1 focus:ring-[#f59e0b] rounded-md"
+                  className="relative shrink-0 focus:outline-none focus:ring-1 focus:ring-accent rounded-md"
                   aria-label={`View ${isPdf(src) ? 'PDF' : 'image'} ${i + 2} of ${projectName}`}
                 >
                   <StripThumb src={src} alt={`${projectName} file ${i + 2}`} />
@@ -330,7 +330,7 @@ export function ProjectGallery({
                 <Link
                   href={`/projects/${projectSlug}`}
                   onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white/60 transition hover:border-[#f59e0b]/40 hover:text-[#f59e0b]"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white/60 transition hover:border-gold/40 hover:text-gold"
                 >
                   View Case Study
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -357,7 +357,7 @@ export function ProjectGallery({
 
           <div className="mt-5 flex items-center justify-between border-t border-white/[0.05] pt-4">
             <span className="meta-label text-white/35">{projectSlug ? 'Case Study + Gallery' : 'Design Portfolio'}</span>
-            <span className="flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.12em] text-white/35 transition-colors duration-200 group-hover:text-[#f59e0b]">
+            <span className="flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.12em] text-white/35 transition-colors duration-200 group-hover:text-gold">
               View Gallery
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                 <path d="M2 6H10M10 6L6.5 2.5M10 6L6.5 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
@@ -410,7 +410,7 @@ export function ProjectGallery({
               </a>
               <button
                 onClick={closeLightbox}
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/15 hover:text-white focus:outline-none focus:ring-1 focus:ring-[#f59e0b]"
+                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:bg-white/15 hover:text-white focus:outline-none focus:ring-1 focus:ring-accent"
                 aria-label="Close gallery"
               >
                 ✕
@@ -427,7 +427,7 @@ export function ProjectGallery({
             {allMedia.length > 1 && (
               <button
                 onClick={prev}
-                className="absolute left-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-1 focus:ring-[#f59e0b]"
+                className="absolute left-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-1 focus:ring-accent"
                 aria-label="Previous"
               >
                 ‹
@@ -443,7 +443,7 @@ export function ProjectGallery({
             {allMedia.length > 1 && (
               <button
                 onClick={next}
-                className="absolute right-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-1 focus:ring-[#f59e0b]"
+                className="absolute right-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-1 focus:ring-accent"
                 aria-label="Next"
               >
                 ›

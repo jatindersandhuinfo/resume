@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
 
@@ -62,42 +63,32 @@ const articleSchema = {
 
 export default function AIAgentBlogPost() {
  return (
- <main className="min-h-screen bg-[#0a0a0a] text-white pt-[73px]">
+ <main className="min-h-screen bg-studio text-canvas pt-[73px]">
  <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
  />
 
  <HeaderNav />
- <div className="border-b border-white/[0.08]">
- <div className="mx-auto flex max-w-7xl justify-end px-5 py-3 sm:px-8 lg:px-10">
- <Link
- href="/blog"
- className="text-sm font-semibold uppercase tracking-[0.12em] text-white/60 transition hover:text-[#f59e0b]"
- >
- ← Back to Blog
- </Link>
- </div>
- </div>
 
  {/* Article */}
  <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
  {/* Breadcrumb */}
  <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-white/40">
- <Link href="/" className="transition hover:text-[#f59e0b]">Home</Link>
+ <Link href="/" className="transition hover:text-gold">Home</Link>
  <span aria-hidden="true">›</span>
- <Link href="/blog" className="transition hover:text-[#f59e0b]">Blog</Link>
+ <Link href="/blog" className="transition hover:text-gold">Blog</Link>
  <span aria-hidden="true">›</span>
  <span className="text-white/60">AI Agents</span>
  </nav>
 
  {/* Meta */}
- <p className="section-kicker mb-5 font-black text-[#f59e0b] uppercase tracking-[0.15em] text-xs">Deep Dive · AI & Agentic Workflows</p>
- <h1 className="hero-title text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
+ <p className="chapter-label mb-5 font-black text-gold uppercase tracking-[0.15em] text-xs">Deep Dive · AI & Agentic Workflows</p>
+ <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">{articleTitle}</h1>
  <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 font-medium">Build an AI Agent with Node.js: Complete Guide</p>
 
  <div className="mt-6 flex items-center gap-4 border-b border-white/[0.08] pb-8">
- <div className="grid h-11 w-11 place-items-center rounded-full border border-[#f59e0b]/40 text-sm font-black text-[#f59e0b]">
+ <div className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-sm font-black text-gold">
  JS
  </div>
  <div>
@@ -112,10 +103,10 @@ export default function AIAgentBlogPost() {
  <div className="prose-content mt-10 space-y-12 text-white">
  
  <section id="introduction" className="space-y-4">
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Artificial Intelligence is no longer limited to chatbots and text generators. Today’s AI agents can perform tasks, make decisions, interact with APIs, analyze data, and automate workflows with minimal human intervention.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Businesses are using AI agents for:
  </p>
  <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
@@ -126,38 +117,38 @@ export default function AIAgentBlogPost() {
  <li>Content creation</li>
  <li>Internal automation</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-4">
+ <p className="leading-relaxed text-white/70 mt-4">
  If you’ve ever wondered how tools like ChatGPT, Claude, or AI-powered assistants work behind the scenes, you’re in the right place.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  In this complete guide, you’ll learn how to build an AI Agent using Node.js, understand its architecture, connect it to Large Language Models (LLMs), and deploy it for real-world use.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Whether you’re a developer, startup founder, freelancer, or business owner, this guide will help you understand the future of AI automation.
  </p>
  </section>
 
  <section id="what-is-agent" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  What Is an AI Agent?
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Before writing code, let’s understand what an AI agent actually is. Most people think AI equals a chatbot, but that’s not entirely true.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  A chatbot responds to questions by matching text patterns or returning structured replies.
  </p>
 
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs">
- <span className="font-bold text-[#f59e0b] block mb-1">A Chatbot:</span>
+ <span className="font-bold text-gold block mb-1">A Chatbot:</span>
  <p className="text-white/60 leading-relaxed">
  Acts like a calculator. It strictly responds to direct input using standard static rules and lacks independent agency.
  </p>
  </div>
 
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs">
- <span className="font-bold text-[#f59e0b] block mb-1">An AI Agent:</span>
+ <span className="font-bold text-gold block mb-1">An AI Agent:</span>
  <p className="text-white/60 leading-relaxed">
  Acts like a virtual employee. It can understand goals, make independent decisions, use external tools (like databases and APIs), remember previous user interactions, and complete multi-step tasks autonomously.
  </p>
@@ -166,10 +157,10 @@ export default function AIAgentBlogPost() {
  </section>
 
  <section id="growing-fast" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Why AI Agents Are Growing Fast
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Companies worldwide are actively looking for ways to reduce operational costs and eliminate repetitive work. AI agents can automate:
  </p>
  <div className="space-y-4 mt-4 text-xs">
@@ -181,7 +172,7 @@ export default function AIAgentBlogPost() {
  { area: 'Development Support', desc: 'Assisting developers with code autocomplete, debugging, unit test scripting, and refactoring.' },
  ].map((item, idx) => (
  <div key={idx} className="flex gap-4 items-start pl-2">
- <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#f59e0b]/10 text-[10px] font-black text-[#f59e0b]">
+ <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/10 text-[10px] font-black text-gold">
  ✓
  </span>
  <div>
@@ -194,37 +185,37 @@ export default function AIAgentBlogPost() {
  </section>
 
  <section id="architecture" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  AI Agent Architecture
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Every modern autonomous AI agent relies on four crucial layers working in concert:
  </p>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4 space-y-4">
- <div className="pl-3 border-l-2 border-[#f59e0b]">
- <strong className="text-xs text-[#f59e0b] block uppercase tracking-wider">1. User Input Layer</strong>
+ <div className="pl-3 border-l-2 border-gold">
+ <strong className="text-xs text-gold block uppercase tracking-wider">1. User Input Layer</strong>
  <p className="text-xs text-black/65 text-white/65 mt-1">
  Receives instructions and parameters from users via chat portals, web dashboard interfaces, companion mobile apps, or webhook integrations.
  </p>
  </div>
 
- <div className="pl-3 border-l-2 border-[#f59e0b]">
- <strong className="text-xs text-[#f59e0b] block uppercase tracking-wider">2. Reasoning Engine</strong>
+ <div className="pl-3 border-l-2 border-gold">
+ <strong className="text-xs text-gold block uppercase tracking-wider">2. Reasoning Engine</strong>
  <p className="text-xs text-black/65 text-white/65 mt-1">
  The central brain. Uses Large Language Models (OpenAI, Claude, Gemini) to analyze instructions, build logic, and decide which actions to execute.
  </p>
  </div>
 
- <div className="pl-3 border-l-2 border-[#f59e0b]">
- <strong className="text-xs text-[#f59e0b] block uppercase tracking-wider">3. Memory Layer</strong>
+ <div className="pl-3 border-l-2 border-gold">
+ <strong className="text-xs text-gold block uppercase tracking-wider">3. Memory Layer</strong>
  <p className="text-xs text-black/65 text-white/65 mt-1">
  Maintains historical context. Short-term memory tracks the current conversation flow, while long-term memory stores user habits and persistent parameters inside a database.
  </p>
  </div>
 
- <div className="pl-3 border-l-2 border-[#f59e0b]">
- <strong className="text-xs text-[#f59e0b] block uppercase tracking-wider">4. Tool & Execution Layer</strong>
+ <div className="pl-3 border-l-2 border-gold">
+ <strong className="text-xs text-gold block uppercase tracking-wider">4. Tool & Execution Layer</strong>
  <p className="text-xs text-black/65 text-white/65 mt-1">
  Gives the agent hands. Allows the model to execute external actions, query backend databases, invoke APIs, dispatch emails, or compile spreadsheets.
  </p>
@@ -233,54 +224,54 @@ export default function AIAgentBlogPost() {
  </section>
 
  <section id="tech-stack" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Choosing the Right Tech Stack
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  For engineering high-performance agentic applications, I recommend the following stack:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.01] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block mb-1">Frontend Layer</span>
+ <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <span className="font-bold text-gold block mb-1">Frontend Layer</span>
  <p className="text-white/60">Next.js, React, and Tailwind CSS for designing premium, responsive dashboards and portal screens.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.01] border border-black/5 dark:bg-white/5">
- <span className="font-bold text-[#f59e0b] block mb-1">Backend Server</span>
+ <span className="font-bold text-gold block mb-1">Backend Server</span>
  <p className="text-white/60">Node.js and Express.js for compiling fast, highly concurrent API architectures and tool calling processes.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block mb-1">Database & Memory</span>
+ <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <span className="font-bold text-gold block mb-1">Database & Memory</span>
  <p className="text-white/60">MongoDB or PostgreSQL for persisting session history matrices, user settings, and agent parameters.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-black/5 dark:border-white/5">
- <span className="font-bold text-[#f59e0b] block mb-1">LLM APIs</span>
+ <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <span className="font-bold text-gold block mb-1">LLM APIs</span>
  <p className="text-white/60">OpenAI (GPT-4o), Anthropic (Claude 3.5 Sonnet), or Google Gemini APIs as your core reasoning engines.</p>
  </div>
  </div>
  </section>
 
  <section id="setup" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Setting Up a Node.js Project
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Let's initialize our project. Open your terminal inside your workspace and execute:
  </p>
- <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-[#f59e0b] overflow-x-auto leading-relaxed">
+ <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
 {`mkdir ai-agent
 cd ai-agent
 npm init -y`}
  </pre>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Install the required dependencies:
  </p>
  <pre className="p-3 rounded bg-black/5 dark:bg-white/5 text-[11px] font-mono text-white/70 overflow-x-auto leading-relaxed">
 {`npm install express dotenv cors openai`}
  </pre>
- <p className="body-copy leading-relaxed text-white/70 mt-4">
+ <p className="leading-relaxed text-white/70 mt-4">
  Create a clean structure:
  </p>
- <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-[#f59e0b] overflow-x-auto leading-relaxed">
+ <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
 {`src/
 ├── controllers/ # API route parameters
 ├── services/ # Core LLM connections & logic
@@ -290,19 +281,19 @@ npm init -y`}
 ├── agents/ # Agent role templates & system prompt configurations
 └── utils/ # Key parsing helpers`}
  </pre>
- <p className="body-copy leading-relaxed text-white/70 italic text-center font-medium">
+ <p className="leading-relaxed text-white/70 italic text-center font-medium">
  Enforcing a clean, decoupled architecture from day one prevents major structural headaches down the road.
  </p>
  </section>
 
  <section id="express" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Creating the Express Server
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Let's establish our entrypoint Express server:
  </p>
- <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-[#f59e0b] overflow-x-auto leading-relaxed">
+ <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
 {`// src/server.js
 require("dotenv").config();
 const express = require("express");
@@ -320,13 +311,13 @@ app.listen(PORT, () => {
  </section>
 
  <section id="connecting-llm" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Connecting to AI Models
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The AI model API serves as our reasoning engine. In our service layer, we connect to the provider to process requests:
  </p>
- <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-[#f59e0b] overflow-x-auto leading-relaxed">
+ <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
 {`// src/services/openai.js
 const { OpenAI } = require("openai");
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -346,16 +337,16 @@ async function getAgentReasoning(prompt, history = []) {
  return response.choices[0].message.content;
 }`}
  </pre>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Remember, the model does not simply match rules. It parses user intent, reasons across contextual constraints, and chooses the best response.
  </p>
  </section>
 
  <section id="prompt-engineering" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Understanding Prompt Engineering
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Prompt quality directly impacts agent reliability and output consistency. Think of prompts as formal job descriptions for your AI.
  </p>
 
@@ -366,8 +357,8 @@ async function getAgentReasoning(prompt, history = []) {
  <p className="text-[10px] text-white/60 mt-2">Yields generic, surface-level suggestions without structured severity layers.</p>
  </div>
 
- <div className="p-4 rounded-lg bg-[#f59e0b]/5 border border-[#f59e0b]/25">
- <span className="font-bold text-[#f59e0b] block mb-1">✓ Structured Prompt</span>
+ <div className="p-4 rounded-lg bg-gold/5 border border-gold/25">
+ <span className="font-bold text-gold block mb-1">✓ Structured Prompt</span>
  <p className="text-white/70 font-semibold">
  "Act as a senior Node.js security engineer. Analyze the attached code for access vulnerabilities, suggest secure code replacements, rank risks (High/Med/Low), and explain CORS security details."
  </p>
@@ -377,22 +368,22 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="memory-systems" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Building Memory Systems
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Memory transforms a simple chatbot into a highly capable personal assistant. Without memory systems, every session starts from absolute zero.
  </p>
  <div className="grid gap-4 mt-4 sm:grid-cols-2">
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">Short-Term Memory</h3>
+ <h3 className="text-sm font-bold text-gold">Short-Term Memory</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Stores immediate context and conversation transcripts within the active server state. Messages are pushed into an array structure and sent to the LLM context.
  </p>
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">Long-Term Memory</h3>
+ <h3 className="text-sm font-bold text-gold">Long-Term Memory</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Persists user details, previous workflows, billing states, and preferences in a database like MongoDB. The agent queries this memory at session startup to load the context.
  </p>
@@ -401,13 +392,13 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="tool-calling" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Tool Calling and Function Execution
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  This is where AI becomes powerful. Using tool calling (or function calling), we provide our model with structural definitions of backend functions. The model analyzes user requests and outputs a formatted JSON object indicating which function should be run and with what arguments.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Examples of automated tools:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
@@ -415,21 +406,21 @@ async function getAgentReasoning(prompt, history = []) {
  <li><strong>createLead(name, email, phone):</strong> Adds qualified visitors directly to your CRM.</li>
  <li><strong>searchDatabase(query):</strong> Queries backend tables for details.</li>
  </ul>
- <p className="body-copy leading-relaxed text-white/70 mt-3">
+ <p className="leading-relaxed text-white/70 mt-3">
  The Express server receives the model's call instruction, executes the local code block, and pipes the result back to the model to complete the user's prompt.
  </p>
  </section>
 
  <section id="reasoning" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Multi-Step Reasoning
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Advanced agents operate under multi-step reasoning cycles (like ReAct—Reason and Action). When a user poses a compound question, the agent iterates:
  </p>
  
- <div className="p-5 rounded-lg border border-[#f59e0b]/20 bg-black/[0.02] mt-4">
- <strong className="text-xs text-[#f59e0b] block uppercase tracking-wider mb-2">Example User Query:</strong>
+ <div className="p-5 rounded-lg border border-gold/20 bg-black/[0.02] mt-4">
+ <strong className="text-xs text-gold block uppercase tracking-wider mb-2">Example User Query:</strong>
  <p className="text-xs text-white/70 italic mb-4">
  "Which leads haven't responded to emails in the past 30 days, and what are their emails?"
  </p>
@@ -445,30 +436,30 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="use-cases" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  AI Agent Use Cases across Businesses
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI agents are being deployed in real-world environments to drive customer engagement:
  </p>
 
  <div className="grid gap-4 mt-4 sm:grid-cols-3">
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">1. Customer Support</h3>
+ <h3 className="text-sm font-bold text-gold">1. Customer Support</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Answers repetitive business FAQs, details package shipping statuses, modifies customer bookings, and escalates complex issues to human agents.
  </p>
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">2. Lead Generation</h3>
+ <h3 className="text-sm font-bold text-gold">2. Lead Generation</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Greets incoming landing page visitors, asks qualifying questions, matches product catalogs, and schedules appointments automatically.
  </p>
  </div>
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
- <h3 className="text-sm font-bold text-[#f59e0b]">3. SaaS Assistants</h3>
+ <h3 className="text-sm font-bold text-gold">3. SaaS Assistants</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Acts as an onboarding companion, generates complex aggregated database reports, and structures user workflows via simple chat commands.
  </p>
@@ -477,13 +468,13 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="database-design" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-[#f59e0b]/20 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">
  Database Design for AI Agents
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  A standard MongoDB database design to store user parameters and contextual memory:
  </p>
- <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-[#f59e0b] overflow-x-auto leading-relaxed">
+ <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
 {`// MongoDB User Collection
 {
  "_id": "60d5ec49f3b3b3a31c8d5a1a",
@@ -515,10 +506,10 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="security-practices" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Security Best Practices
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Production integrations demand strict security standards to defend customer data:
  </p>
  <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
@@ -530,51 +521,51 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="performance-optimization" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Performance Optimization
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI models incur transaction costs and response latency. You can optimize performance by:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Caching Common Answers</span>
+ <span className="font-bold text-gold block mb-1">Caching Common Answers</span>
  <p className="text-black/65 text-white/65">Stores predictable replies (such as operational hours) in memory caches to bypass LLM calls.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Limiting History Context</span>
+ <span className="font-bold text-gold block mb-1">Limiting History Context</span>
  <p className="text-black/65 text-white/65">Pipes only the most recent conversation messages, keeping token usage low and API responses fast.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Asynchronous Queues</span>
+ <span className="font-bold text-gold block mb-1">Asynchronous Queues</span>
  <p className="text-black/65 text-white/65">Routes slow operations through a background task manager (like BullMQ), preventing thread blocks.</p>
  </div>
  <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
- <span className="font-bold text-[#f59e0b] block mb-1">Efficient Prompts</span>
+ <span className="font-bold text-gold block mb-1">Efficient Prompts</span>
  <p className="text-black/65 text-white/65">Drafts shorter, highly structured system prompts to reduce input tokens and lower transaction costs.</p>
  </div>
  </div>
  </section>
 
  <section id="deployment" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Deployment Strategy
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Deploy your agent layers using specialized hosting services:
  </p>
  <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
  <ul className="space-y-4 text-xs text-black/65 text-white/65">
  <li>
- <strong className="text-sm text-[#f59e0b] block">1. Frontend UI: Next.js on Vercel</strong>
+ <strong className="text-sm text-gold block">1. Frontend UI: Next.js on Vercel</strong>
  Gives you global edge caching, instant deployments, and automatic image optimizations.
  </li>
  <li>
- <strong className="text-sm text-[#f59e0b] block">2. Express APIs: Node.js on Railway or AWS</strong>
+ <strong className="text-sm text-gold block">2. Express APIs: Node.js on Railway or AWS</strong>
  Railway or AWS ECS clusters provide stable Docker deployments, environment managers, and automatic resource scaling.
  </li>
  <li>
- <strong className="text-sm text-[#f59e0b] block">3. Memory Storage: MongoDB Atlas or Supabase</strong>
+ <strong className="text-sm text-gold block">3. Memory Storage: MongoDB Atlas or Supabase</strong>
  Cloud MongoDB Atlas or PostgreSQL databases provide reliable database hosting, auto-backups, and low latency.
  </li>
  </ul>
@@ -582,10 +573,10 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="common-mistakes" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Common Mistakes Developers Make
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Avoid these common mistakes when building agentic software:
  </p>
 
@@ -618,16 +609,16 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="future-agents" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  The Future of AI Agents
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  The next generation of AI agents will perform complex tasks autonomously, manage business workflows end-to-end, integrate seamlessly with enterprise systems, learn continuously from user habits, and operate across multiple platforms.
  </p>
- <p className="body-copy leading-relaxed text-white/70 italic font-semibold text-[#f59e0b] text-center">
+ <p className="leading-relaxed text-white/70 italic font-semibold text-gold text-center">
  Imagine hiring a virtual employee that never sleeps. That’s where AI agents are heading.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Businesses and developers who adopt these technologies early will gain massive competitive advantages, driving down overhead while scaling customer operations.
  </p>
  </section>
@@ -640,7 +631,7 @@ async function getAgentReasoning(prompt, history = []) {
  
 
  <section id="faqs" className="space-y-6">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2 font-extrabold">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2 font-extrabold">
  Frequently Asked Questions (FAQs)
  </h2>
  
@@ -688,7 +679,7 @@ async function getAgentReasoning(prompt, history = []) {
  },
  ].map((faq, idx) => (
  <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
- <h3 className="text-sm font-bold text-[#f59e0b]">{faq.q}</h3>
+ <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
  <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
  </div>
  ))}
@@ -696,16 +687,16 @@ async function getAgentReasoning(prompt, history = []) {
  </section>
 
  <section id="conclusion" className="space-y-4">
- <h2 className="text-2xl font-bold tracking-tight text-white border-b border-black/5 dark:border-white/5 pb-2">
+ <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">
  Conclusion
  </h2>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  AI agents represent one of the biggest opportunities in software development today. By combining Node.js, modern AI models, databases, memory systems, and tool integrations, developers can build powerful assistants capable of automating real business processes.
  </p>
- <p className="body-copy leading-relaxed text-white/70">
+ <p className="leading-relaxed text-white/70">
  Whether you’re creating customer support systems, lead generation platforms, SaaS assistants, or workflow automation tools, Node.js provides an excellent foundation for AI agent development.
  </p>
- <p className="body-copy leading-relaxed text-white/70 font-semibold text-[#f59e0b]">
+ <p className="leading-relaxed text-white/70 font-semibold text-gold">
  The future isn’t about replacing humans. It’s about empowering humans with intelligent software that handles repetitive work while allowing people to focus on creativity, strategy, and growth.
  </p>
  </section>
@@ -727,14 +718,7 @@ async function getAgentReasoning(prompt, history = []) {
  <BlogCta />
  </article>
 
- {/* Footer */}
- <footer className="border-t border-white/[0.08] px-5 py-8 text-center">
- <p className="text-xs text-white/30">
- © {new Date().getFullYear()} {fullName}. All rights reserved.
- {' · '}
- <Link href="/" className="transition hover:text-[#f59e0b]">Back to Portfolio</Link>
- </p>
- </footer>
+      <Footer />
  </main>
  );
 }

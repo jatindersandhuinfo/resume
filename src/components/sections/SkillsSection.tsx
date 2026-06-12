@@ -41,7 +41,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
               {section.coreStrengths.map((s) => (
                 <article
                   key={s.name}
-                  className="interactive-card rounded-xl border border-white/[0.08] bg-[#0d0d0d] p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#f59e0b]/25"
+                  className="interactive-card rounded-xl border border-white/[0.08] bg-surface-alt p-5 transition duration-300 hover:-translate-y-0.5 hover:border-accent/25"
                 >
                   <h3 className="text-sm font-black text-white">{s.name}</h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-white/45">{s.detail}</p>
@@ -54,7 +54,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
               {uniqueTechItems.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/[0.07] bg-white/[0.02] px-4 py-1.5 text-xs font-bold text-white/35 transition hover:border-[#f59e0b]/30 hover:text-[#f59e0b]"
+                  className="rounded-full border border-white/[0.07] bg-white/[0.02] px-4 py-1.5 text-xs font-bold text-white/35 transition hover:border-accent/30 hover:text-accent"
                 >
                   {item}
                 </span>
@@ -65,16 +65,16 @@ export function SkillsSection({ section }: SkillsSectionProps) {
           {/* ── Right: Hire CTA panel ── */}
           <div
             id="contact"
-            className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d0d] p-7 sm:p-9 lg:p-10"
+            className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-alt p-7 sm:p-9 lg:p-10"
           >
             {/* Amber glow */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-[#f59e0b]/15 blur-[80px]"
+              className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-accent/15 blur-[80px]"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-[#f59e0b]/08 blur-[60px]"
+              className="pointer-events-none absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-accent/08 blur-[60px]"
             />
 
             <div className="relative flex h-full flex-col">
@@ -87,7 +87,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
               <div className="mt-8 flex flex-col gap-3">
                 <a
                   href={`mailto:${hireSection.email}`}
-                  className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-[#f59e0b] px-6 text-sm font-black uppercase tracking-[0.12em] text-[#0a0a0a] transition duration-200 hover:bg-[#fbbf24]"
+                  className="inline-flex min-h-[50px] items-center justify-center rounded-full bg-accent px-6 text-sm font-black uppercase tracking-[0.12em] text-deep transition duration-200 hover:bg-accent-light"
                 >
                   Let&apos;s Talk
                 </a>
@@ -95,7 +95,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
                   href={hireSection.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                  className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-accent/50 hover:text-accent"
                 >
                   LinkedIn
                 </a>
@@ -103,7 +103,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
                   href={hireSection.upwork}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                  className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-accent/50 hover:text-accent"
                 >
                   Upwork Profile
                 </a>
@@ -112,7 +112,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
                     href={hireSection.fiverr}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                    className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-accent/50 hover:text-accent"
                   >
                     Fiverr Profile
                   </a>
@@ -122,7 +122,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
                     href={hireSection.freelancer}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
+                    className="inline-flex min-h-[50px] items-center justify-center rounded-full border border-white/15 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition duration-200 hover:border-accent/50 hover:text-accent"
                   >
                     Freelancer Profile
                   </a>
@@ -133,7 +133,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
                 <p className="meta-label text-white/30">Direct Email</p>
                 <a
                   href={`mailto:${hireSection.email}`}
-                  className="mt-2 block break-all text-base font-black text-white transition hover:text-[#f59e0b]"
+                  className="mt-2 block break-all text-base font-black text-white transition hover:text-accent"
                 >
                   {hireSection.email}
                 </a>
