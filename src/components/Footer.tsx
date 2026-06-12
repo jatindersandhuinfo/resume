@@ -46,7 +46,7 @@ export default function Footer() {
               <span className="font-bebas text-xl tracking-[0.16em] text-canvas">JS</span>
             </div>
             <p className="mt-5 max-w-xs text-xs leading-relaxed text-white/45">
-              {personal.tagline || `Full Stack Developer — React, Next.js, Node.js, Laravel & AI. Building production software for businesses worldwide.`}
+              {personal.summary || `Full Stack Developer — React, Next.js, Node.js, Laravel & AI. Building production software for businesses worldwide.`}
             </p>
             <div className="mt-8 flex items-center gap-5">
               {SOCIAL.map((s) => (
