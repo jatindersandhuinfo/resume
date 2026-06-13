@@ -60,6 +60,8 @@ export const metadata: Metadata = {
     canonical: seo.siteUrl,
     languages: {
       'en-IN': seo.siteUrl,
+      'en-US': seo.siteUrl,
+      'x-default': seo.siteUrl,
     },
   },
 

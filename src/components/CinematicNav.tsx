@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { contact } from '@/lib/data';
 
 const CHAPTERS = [
   { id: 'chapter-1', label: '01', name: 'Intro' },
@@ -12,7 +11,7 @@ const CHAPTERS = [
   { id: 'chapter-4', label: '04', name: 'Process' },
   { id: 'chapter-5', label: '05', name: 'Philosophy' },
   { id: 'chapter-6', label: '06', name: 'Proof' },
-  { id: 'chapter-7', label: '07', name: 'Contact' },
+  { id: 'contact', label: '07', name: 'Contact' },
 ];
 
 export default function CinematicNav() {
@@ -102,12 +101,12 @@ export default function CinematicNav() {
 
           {/* Right actions */}
           <div className="flex items-center gap-4">
-            <a
-              href={`mailto:${contact.email}`}
+            <Link
+              href="/contact"
               className="hidden text-xs font-bold tracking-[0.2em] uppercase text-gold transition-opacity hover:opacity-70 lg:block"
             >
-              Start a Project →
-            </a>
+              Hire Me →
+            </Link>
 
             {/* Mobile menu toggle */}
             <button
@@ -154,13 +153,13 @@ export default function CinematicNav() {
                   <span className="h-px flex-1 bg-white/[0.05]" />
                 </button>
               ))}
-              <a
-                href={`mailto:${contact.email}`}
+              <Link
+                href="/contact"
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 text-sm font-bold tracking-[0.14em] uppercase text-gold"
               >
-                Start a Project →
-              </a>
+                Hire Me →
+              </Link>
             </nav>
           </motion.div>
         )}

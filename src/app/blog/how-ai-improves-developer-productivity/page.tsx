@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How AI Improves Developer Productivity: Real Examples and Benefits';
@@ -12,6 +18,7 @@ const articleDescription =
  'Learn how AI-assisted development tools like Cursor, Copilot, ChatGPT, and Claude improve developer productivity with real-world examples, benefits, and best practices.';
 const articleUrl = `${seo.siteUrl}/blog/how-ai-improves-developer-productivity`;
 const publishDate = '2026-06-03';
+const modifiedDate = '2026-06-03';
 
 export const metadata: Metadata = {
  title: 'How AI Improves Developer Productivity: Real Examples and Benefits',
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: 'How AI Improves Developer Productivity: Real Examples and Benefits',
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: 'How AI Improves Developer Productivity: Real Examples and Benefits',
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function AIDeveloperProductivityBlogPost() {
+  const relatedPosts = getRelatedPosts('how-ai-improves-developer-productivity')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="AI & Automation"
+        keywords="AI developer productivity, Cursor AI, GitHub Copilot, AI coding"
+      />
 
  <HeaderNav />
 
@@ -352,7 +346,8 @@ export default function AIDeveloperProductivityBlogPost() {
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'ai-business-applications-real-examples-for-small-businesses', title: 'AI Business Applications: Real Examples for Small Businesses' },
  { slug: 'ai-in-marketing-practical-ways-businesses-use-it', title: 'AI in Marketing: Practical Ways Businesses Use It in 2026' },
@@ -365,7 +360,8 @@ export default function AIDeveloperProductivityBlogPost() {
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />

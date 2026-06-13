@@ -16,7 +16,7 @@ const AVAILABILITY_ITEMS = [
 const SOCIAL_LINKS = [
   { label: 'Email', href: `mailto:${contact.email}`, value: contact.email },
   { label: 'LinkedIn', href: contact.linkedin, value: 'jatindersandhuinfo' },
-  { label: 'Upwork', href: contact.upwork, value: 'Top-Rated Profile' },
+  { label: 'Upwork', href: contact.upwork, value: 'Hire on Upwork →' },
   { label: 'WhatsApp', href: contact.whatsapp, value: '+91 9888360667' },
 ];
 
@@ -46,7 +46,7 @@ export function Chapter7Conversion() {
 
   return (
     <section
-      id="chapter-7"
+      id="contact"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

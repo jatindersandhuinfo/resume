@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'Compute-Based Quotas Explained';
@@ -12,6 +18,7 @@ const articleDescription =
  'Learn how compute-based quotas govern cloud compute resources, CPU, memory, and virtual machines. Discover best practices for quota management in AWS, Azure, Google Cloud, and Kubernetes to control costs and boost stability.';
 const articleUrl = `${seo.siteUrl}/blog/compute-based-quotas-explained`;
 const publishDate = '2026-06-03';
+const modifiedDate = '2026-06-03';
 
 export const metadata: Metadata = {
  title: `${articleTitle} · How Cloud Resource Limits Improve Performance and Control Costs`,
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: `${articleTitle} · How Cloud Resource Limits Improve Performance and Control Costs`,
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: `${articleTitle}: How Cloud Resource Limits Improve Performance and Control Costs`,
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function ComputeQuotasBlogPost() {
+  const relatedPosts = getRelatedPosts('compute-based-quotas-explained')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="Cloud Tech"
+        keywords="compute quotas, cloud resource limits, AWS quotas, Azure limits"
+      />
 
  <HeaderNav />
 
@@ -484,7 +478,8 @@ spec:
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'token-optimization-guide', title: 'Token Optimization Guide: How to Structure AI Prompts and Coding Tasks for Maximum Efficiency' },
  { slug: 'ai-coding-assistant-limits-explained', title: 'AI Coding Assistant Limits Explained: How to Maximize Free Cursor, Copilot, and Codex Usage' },
@@ -498,7 +493,8 @@ spec:
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />

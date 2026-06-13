@@ -7,6 +7,7 @@ import type { Project } from '@/types/cv';
 import HeaderNav from '@/components/HeaderNav';
 import Footer from '@/components/Footer';
 import { ProjectDetailGallery } from '@/components/ProjectDetailGallery';
+import { buildBreadcrumbSchema } from '@/lib/structured-data';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Props = { params: Promise<{ slug: string }> };
@@ -159,8 +160,19 @@ export default async function ProjectDetailPage({ params }: Props) {
  m.projects.some((p) => p.slug === slug)
  );
 
+  const projectUrl = `${seo.siteUrl}/projects/${slug}`
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: seo.siteUrl },
+    { name: 'Projects', url: `${seo.siteUrl}/projects` },
+    { name: project.name, url: projectUrl },
+  ])
+
   return (
     <main className="min-h-screen bg-studio text-canvas pt-[73px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <HeaderNav />
 
       {/* ── Utility bar ── */}

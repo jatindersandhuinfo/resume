@@ -7,6 +7,7 @@ const LINKS = {
     { label: 'Services', href: '/services' },
     { label: 'Projects', href: '/projects' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
   ],
   services: [
     { label: 'All Services', href: '/services' },
@@ -19,6 +20,7 @@ const LINKS = {
   resources: [
     { label: 'Blog', href: '/blog' },
     { label: 'All Projects', href: '/projects' },
+    { label: 'Hire Me', href: '/contact' },
     { label: 'Start a Project', href: `mailto:${contact.email}?subject=Project Inquiry` },
   ],
 };
@@ -137,6 +139,9 @@ export default function Footer() {
             </Link>
             <Link href="/projects" className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-white/25 transition hover:text-gold">
               Projects
+            </Link>
+            <Link href="/contact" className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-white/25 transition hover:text-gold">
+              Contact
             </Link>
           </div>
         </div>
