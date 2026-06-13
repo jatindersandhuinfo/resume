@@ -13,6 +13,7 @@ const navItems = [
   { label: 'Team',       href: '/#team',       page: null,         homeOnly: true },
   { label: 'Experience', href: '/#experience', page: null,         homeOnly: true },
   { label: 'Blog',       href: '/blog',        page: '/blog',      homeOnly: false },
+  { label: 'Contact',    href: '/#contact',    page: '/contact',   homeOnly: false },
 ];
 
 export default function HeaderNav() {
@@ -33,7 +34,7 @@ export default function HeaderNav() {
   // Active section highlight — track which nav section is in view
   useEffect(() => {
     if (!isHome) return;
-    const sectionIds = ['about', 'services', 'works', 'team', 'experience', 'skills', 'education', 'faq'];
+    const sectionIds = ['about', 'services', 'works', 'team', 'experience', 'skills', 'education', 'faq', 'contact'];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -65,6 +66,7 @@ export default function HeaderNav() {
   const isActive = (item: typeof navItems[0]) => {
     if (item.href === '/blog') return pathname.startsWith('/blog');
     if (item.page === '/services') return pathname.startsWith('/services');
+    if (item.page === '/contact') return pathname === '/contact';
     if (!isHome) return false;
     const hash = item.href.replace('/#', '');
     return activeSection === hash;
@@ -119,13 +121,13 @@ export default function HeaderNav() {
 
         {/* Right */}
         <div className="flex shrink-0 items-center gap-3">
-          <a
-            href={`mailto:${contact.email}`}
+          <Link
+            href="/contact"
             className="hidden lg:inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-2 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-gold transition duration-200 hover:bg-gold hover:text-deep hover:border-gold"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
             Available · Hire Me
-          </a>
+          </Link>
 
           {/* Mobile toggle */}
           <button
@@ -176,14 +178,14 @@ export default function HeaderNav() {
                 </Link>
               );
             })}
-            <a
-              href={`mailto:${contact.email}`}
+            <Link
+              href="/contact"
               className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3 text-sm font-bold uppercase tracking-[0.12em] text-gold transition hover:bg-gold hover:text-deep"
               onClick={() => setMenuOpen(false)}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
               Available · Hire Me
-            </a>
+            </Link>
           </nav>
         </div>
       )}

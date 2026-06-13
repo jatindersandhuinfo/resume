@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How to Get Your First Freelance Client as a Developer in 2026';
@@ -12,6 +18,7 @@ const articleDescription =
  'Landing your first freelance client as a web developer can be challenging. Discover practical, step-by-step client acquisition strategies using Upwork, LinkedIn, cold outreach, portfolios, and local business networking.';
 const articleUrl = `${seo.siteUrl}/blog/how-to-get-first-freelance-client-developer-2026`;
 const publishDate = '2026-06-01';
+const modifiedDate = '2026-06-01';
 
 export const metadata: Metadata = {
  title: articleTitle,
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: articleTitle,
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: articleTitle,
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function FreelanceBlogPost() {
+  const relatedPosts = getRelatedPosts('how-to-get-first-freelance-client-developer-2026')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="Freelance Strategy"
+        keywords="freelance developer clients, get freelance clients, developer freelancing"
+      />
 
  <HeaderNav />
 
@@ -607,7 +601,8 @@ export default function FreelanceBlogPost() {
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'how-to-hire-freelance-full-stack-developer', title: 'How to Hire a Freelance Full Stack Developer (2026 Guide)' },
  { slug: '10-ai-business-ideas-you-can-start-this-month', title: '10 AI Business Ideas You Can Start This Month' },
@@ -621,7 +616,8 @@ export default function FreelanceBlogPost() {
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />

@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'Why Every Small Business Needs a Website in 2026';
@@ -12,6 +18,7 @@ const articleDescription =
  'Discover why having a professional website is a necessity for small businesses in 2026. Learn how websites build credibility, drive local SEO, generate leads, and work 24/7 beyond social media limits.';
 const articleUrl = `${seo.siteUrl}/blog/why-every-small-business-needs-website-2026`;
 const publishDate = '2026-06-01';
+const modifiedDate = '2026-06-01';
 
 export const metadata: Metadata = {
  title: articleTitle,
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: articleTitle,
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: articleTitle,
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function SmallBusinessWebsiteBlogPost() {
+  const relatedPosts = getRelatedPosts('why-every-small-business-needs-website-2026')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="Business Growth"
+        keywords="small business website, why have a website, business website importance"
+      />
 
  <HeaderNav />
 
@@ -493,7 +487,8 @@ export default function SmallBusinessWebsiteBlogPost() {
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'how-local-businesses-get-customers-google-business-profile', title: 'How Local Businesses Can Get More Customers with Google Business Profile' },
  { slug: 'best-website-features-taxi-car-rental-2026', title: 'Best Website Features for Taxi and Car Rental Businesses in 2026' },
@@ -507,7 +502,8 @@ export default function SmallBusinessWebsiteBlogPost() {
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />

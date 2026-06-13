@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'AI in Marketing: Practical Ways Businesses Use It in 2026';
@@ -12,6 +18,7 @@ const articleDescription =
  'Explore practical ways businesses use AI in marketing in 2026 to create content, manage social media, run email campaigns, optimize SEO, and improve advertising performance.';
 const articleUrl = `${seo.siteUrl}/blog/ai-in-marketing-practical-ways-businesses-use-it`;
 const publishDate = '2026-06-03';
+const modifiedDate = '2026-06-03';
 
 export const metadata: Metadata = {
  title: 'AI in Marketing: Practical Ways Businesses Use It in 2026',
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: 'AI in Marketing: Practical Ways Businesses Use It in 2026',
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: 'AI in Marketing: Practical Ways Businesses Use It in 2026',
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function AIMarketingBlogPost() {
+  const relatedPosts = getRelatedPosts('ai-in-marketing-practical-ways-businesses-use-it')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="AI & Automation"
+        keywords="AI in marketing, AI marketing tools, business AI marketing"
+      />
 
  <HeaderNav />
 
@@ -329,7 +323,8 @@ export default function AIMarketingBlogPost() {
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'ai-business-applications-real-examples-for-small-businesses', title: 'AI Business Applications: Real Examples for Small Businesses' },
  { slug: 'how-ai-improves-developer-productivity', title: 'How AI Improves Developer Productivity: Real Examples and Benefits' },
@@ -342,7 +337,8 @@ export default function AIMarketingBlogPost() {
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />

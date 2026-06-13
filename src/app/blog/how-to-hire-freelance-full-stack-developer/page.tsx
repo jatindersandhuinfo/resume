@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How to Hire a Freelance Full Stack Developer (2026 Guide)';
@@ -12,6 +18,7 @@ const articleDescription =
  'A practical guide to hiring the right freelance full stack developer for your project — what to look for, questions to ask, red flags to avoid, and how to structure the engagement.';
 const articleUrl = `${seo.siteUrl}/blog/how-to-hire-freelance-full-stack-developer`;
 const publishDate = '2026-05-01';
+const modifiedDate = '2026-05-01';
 
 export const metadata: Metadata = {
  title: articleTitle,
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: articleTitle,
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: articleTitle,
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function BlogPost() {
+  const relatedPosts = getRelatedPosts('how-to-hire-freelance-full-stack-developer')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="Hiring & Strategy"
+        keywords="hire full stack developer, freelance developer, developer hiring guide"
+      />
 
  <HeaderNav />
 
@@ -243,7 +237,8 @@ export default function BlogPost() {
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'how-to-get-first-freelance-client-developer-2026', title: 'How to Get Your First Freelance Client as a Developer in 2026' },
  { slug: 'how-i-built-full-stack-saas-nextjs-nodejs', title: 'How I Built a Full-Stack SaaS with Next.js and Node.js' },
@@ -256,7 +251,8 @@ export default function BlogPost() {
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />

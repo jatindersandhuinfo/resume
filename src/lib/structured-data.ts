@@ -8,7 +8,37 @@ import {
   experience,
   education,
   faqs,
-} from '@/lib/data';
+} from '@/lib/data'
+
+export interface BreadcrumbItem {
+  name: string
+  url: string
+}
+
+/**
+ * Generates a BreadcrumbList JSON-LD object.
+ * Pass an array of { name, url } from root to current page.
+ *
+ * Example:
+ *   buildBreadcrumbSchema([
+ *     { name: 'Home', url: 'https://...' },
+ *     { name: 'Blog', url: 'https://.../blog' },
+ *     { name: 'Article Title', url: 'https://.../blog/slug' },
+ *   ])
+ */
+export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  }
+}
+
 
 const personId = `${seo.siteUrl}/#person`;
 const websiteId = `${seo.siteUrl}/#website`;

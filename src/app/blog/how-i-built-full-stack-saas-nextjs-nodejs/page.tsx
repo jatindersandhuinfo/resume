@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { seo, personal, contact } from '@/lib/data';
 import HeaderNav from '@/components/HeaderNav';
+import ReadingProgress from '@/components/ReadingProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BlogPostSchemas from '@/components/BlogPostSchemas';
 import Footer from '@/components/Footer';
 import AboutAuthor from '@/components/AboutAuthor';
 import BlogCta from '@/components/BlogCta';
+import ShareButtons from '@/components/ShareButtons';
+import RelatedPosts from '@/components/RelatedPosts';
+import { getRelatedPosts } from '@/lib/blog-data';
 
 const fullName = `${personal.firstName} ${personal.lastName}`;
 const articleTitle = 'How I Built a Full-Stack SaaS with Next.js and Node.js';
@@ -12,6 +18,7 @@ const articleDescription =
  'A comprehensive case study and developer guide on building a full-stack SaaS application with Next.js, Node.js, MongoDB, and modern cloud technologies. Learn about database design, authentication, RBAC, and deployment.';
 const articleUrl = `${seo.siteUrl}/blog/how-i-built-full-stack-saas-nextjs-nodejs`;
 const publishDate = '2026-06-01';
+const modifiedDate = '2026-06-01';
 
 export const metadata: Metadata = {
  title: articleTitle,
@@ -25,6 +32,7 @@ export const metadata: Metadata = {
  title: articleTitle,
  description: articleDescription,
  publishedTime: publishDate,
+   modifiedTime: modifiedDate,
  authors: [fullName],
  images: [{ url: seo.ogImage, width: 960, height: 1200, alt: articleTitle }],
  },
@@ -36,38 +44,24 @@ export const metadata: Metadata = {
  },
 };
 
-const articleSchema = {
- '@context': 'https://schema.org',
- '@type': 'Article',
- headline: articleTitle,
- description: articleDescription,
- url: articleUrl,
- datePublished: publishDate,
- dateModified: publishDate,
- image: seo.ogImage,
- author: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- publisher: {
- '@type': 'Person',
- name: fullName,
- url: seo.siteUrl,
- },
- mainEntityOfPage: {
- '@type': 'WebPage',
- '@id': articleUrl,
- },
-};
 
 export default function SaaSBlogPost() {
+  const relatedPosts = getRelatedPosts('how-i-built-full-stack-saas-nextjs-nodejs')
  return (
  <main className="min-h-screen bg-studio text-canvas pt-[73px]">
- <script
- type="application/ld+json"
- dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
- />
+      <ReadingProgress />
+      <ScrollToTop />
+ <BlogPostSchemas
+        title={articleTitle}
+        description={articleDescription}
+        url={articleUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        authorName={fullName}
+        authorUrl={seo.siteUrl}
+        articleSection="Full Stack Development"
+        keywords="SaaS Next.js, full stack SaaS, Node.js SaaS architecture"
+      />
 
  <HeaderNav />
 
@@ -524,7 +518,8 @@ models/ # Mongoose schemas and indexes`}
  </p>
  </section>
 
- <AboutAuthor
+ <ShareButtons url={articleUrl} title={articleTitle} />
+        <AboutAuthor
  relatedArticles={[
  { slug: 'react-vs-nextjs-which-should-you-learn-2026', title: 'React vs Next.js: Which Should You Learn in 2026?' },
  { slug: 'complete-nextjs-seo-guide-2026', title: 'Complete Next.js SEO Guide for 2026' },
@@ -538,7 +533,8 @@ models/ # Mongoose schemas and indexes`}
  </div>
 
  {/* Portfolio CTA Sidebar Card */}
- <BlogCta />
+ <RelatedPosts posts={relatedPosts} />
+        <BlogCta />
  </article>
 
       <Footer />
