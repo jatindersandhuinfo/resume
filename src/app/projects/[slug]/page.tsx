@@ -171,7 +171,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     <main className="min-h-screen bg-studio text-canvas pt-[73px]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/<\/script>/gi, '<\\/script>') }}
       />
       <HeaderNav />
 

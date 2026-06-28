@@ -123,8 +123,8 @@ const faqs = [
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-studio text-canvas pt-[73px]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/<\/script>/gi, '<\\/script>') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema).replace(/<\/script>/gi, '<\\/script>') }} />
       <ScrollToTop />
       <HeaderNav />
 

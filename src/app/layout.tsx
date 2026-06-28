@@ -5,6 +5,7 @@ import './globals.css';
 import { seo, personal, contact } from '@/lib/data';
 import { getStructuredData, seoKeywords } from '@/lib/structured-data';
 import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
+import ClarityInit from '@/components/ClarityInit';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -144,12 +145,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
+            __html: JSON.stringify(structuredData).replace(/<\/script>/gi, '<\\/script>'),
           }}
         />
       </head>
 
       <body>
+        <ClarityInit />
         <a href="#page-content" className="skip-link">
           Skip to main content
         </a>
