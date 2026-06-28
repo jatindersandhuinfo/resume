@@ -201,11 +201,11 @@ export default async function ServicePage({ params }: Props) {
       {/* Dynamic JSON-LD injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/<\/script>/gi, '<\\/script>') }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/<\/script>/gi, '<\\/script>') }}
       />
 
       <HeaderNav />
