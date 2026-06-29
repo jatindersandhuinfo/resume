@@ -17,6 +17,61 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: 'Next.js vs WordPress: Which is Better for Business Websites in 2026?',
+    description:
+      'Comparing Next.js and WordPress for business websites in 2026 — performance, SEO, cost, maintenance, and when to choose each one for your project.',
+    slug: 'nextjs-vs-wordpress-for-business-websites',
+    category: 'Development',
+    publishDate: '2026-06-29',
+    modifiedDate: '2026-06-29',
+    readTime: '9 min read',
+    kicker: 'Guide · Next.js · WordPress',
+  },
+  {
+    title: 'Node.js vs Laravel: Which Backend Should You Choose in 2026?',
+    description:
+      'A direct comparison of Node.js and Laravel for backend development — performance, ecosystem, scalability, developer experience, and which one fits your project best.',
+    slug: 'nodejs-vs-laravel-which-backend-is-better',
+    category: 'Development',
+    publishDate: '2026-06-29',
+    modifiedDate: '2026-06-29',
+    readTime: '9 min read',
+    kicker: 'Guide · Backend Development',
+  },
+  {
+    title: 'Best AI Coding Tools in 2026 (Ranked for Real Developer Use)',
+    description:
+      'A practical ranking of the best AI coding tools in 2026 — Cursor, GitHub Copilot, Claude, ChatGPT, and more — based on real daily developer use across frontend, backend, and debugging.',
+    slug: 'best-ai-coding-tools-2026',
+    category: 'AI & Automation',
+    publishDate: '2026-06-29',
+    modifiedDate: '2026-06-29',
+    readTime: '8 min read',
+    kicker: 'Guide · AI Tools',
+  },
+  {
+    title: 'How Much Does It Cost to Build a Website in 2026?',
+    description:
+      'A transparent breakdown of website development costs in 2026 — from simple landing pages to full web apps — covering design, development, hosting, and ongoing maintenance.',
+    slug: 'how-much-does-it-cost-to-build-a-website-2026',
+    category: 'Business',
+    publishDate: '2026-06-29',
+    modifiedDate: '2026-06-29',
+    readTime: '8 min read',
+    kicker: 'Guide · Web Development Cost',
+  },
+  {
+    title: 'Case Study: How I Built the LUNA Fashion Website (Next.js)',
+    description:
+      'A full technical case study of building the LUNA by Navneet boutique e-commerce website — architecture decisions, SEO strategy, WhatsApp integration, and results delivered.',
+    slug: 'how-i-built-luna-fashion-website',
+    category: 'Case Study',
+    publishDate: '2026-06-29',
+    modifiedDate: '2026-06-29',
+    readTime: '10 min read',
+    kicker: 'Case Study · Next.js · E-Commerce',
+  },
+  {
     title: 'AI in Marketing: Practical Ways Businesses Use It in 2026',
     description:
       'Explore practical ways businesses use AI in marketing in 2026 to create content, manage social media, run email campaigns, optimize SEO, and improve advertising performance.',
