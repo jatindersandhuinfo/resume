@@ -121,7 +121,7 @@ export default function AiBusinessIdeasBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI is transforming how businesses operate. Companies across all sectors want:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-1.5 mt-2">
  <li><strong>Faster Workflows:</strong> Delivering projects and customer tasks in hours instead of days.</li>
  <li><strong>Lower Costs:</strong> Replacing highly repetitive manual labor with automated scripts and AI tools.</li>
  <li><strong>Better Customer Experiences:</strong> Providing 24/7 conversational support and instant issue resolution.</li>
@@ -144,15 +144,15 @@ export default function AiBusinessIdeasBlogPost() {
  Content remains one of the most powerful digital marketing tools. Businesses need blog articles, website copy, social media posts, email campaigns, and product descriptions, but manual writing is slow and expensive. AI content tools can dramatically accelerate production.
  </p>
  <div className="grid gap-4 sm:grid-cols-3 text-xs my-4">
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Services You Can Offer</strong>
  <p className="text-white/60">SEO blog writing, website content, email copy, product listings, and social captions.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Startup Cost</strong>
  <p className="text-white/60">Very Low (subscriptions to writing assistants & SEO tools).</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Ideal Clients</strong>
  <p className="text-white/60">Small local businesses, marketing agencies, e-commerce stores, and SaaS companies.</p>
  </div>
@@ -167,15 +167,15 @@ export default function AiBusinessIdeasBlogPost() {
  Businesses increasingly want modern websites with native AI capabilities, such as smart search bars, integrated customer support bots, automated data processing, and dynamic AI-driven layouts. If you’re a developer, this opportunity is especially lucrative.
  </p>
  <div className="grid gap-4 sm:grid-cols-3 text-xs my-4">
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Popular Technologies</strong>
  <p className="text-white/60">Next.js, Node.js, OpenAI APIs, Claude APIs, PostgreSQL/MongoDB, and Vercel hosting.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Revenue Potential</strong>
  <p className="text-white/60">Medium to High. Businesses willingly pay premium rates for custom AI-enhanced solutions.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Differentiating Factor</strong>
  <p className="text-white/60">Providing pre-configured AI routing and caching modules that cut client API costs.</p>
  </div>
@@ -211,7 +211,7 @@ export default function AiBusinessIdeasBlogPost() {
  <p className="leading-relaxed text-white/70">
  Most businesses waste countless hours every week on manual, repetitive digital tasks. As an AI automation consultant, you will analyze a company's workflows and implement custom automated pipelines using tools like Make, Zapier, and custom Node.js scripts.
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-1.5 mt-2">
  <li><strong>Automated Data Entry:</strong> Moving information between CRM platforms, email systems, and sheets.</li>
  <li><strong>Lead Qualification:</strong> Instantly parsing and scoring incoming form requests via LLM filters.</li>
  <li><strong>Instant Email Responders:</strong> Answering general inquiries or quotes immediately with AI-drafted messages.</li>
@@ -253,7 +253,7 @@ export default function AiBusinessIdeasBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  Key components of this agency:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-1.5 mt-2">
  <li><strong>Prospect Research:</strong> Using AI search engines to find specific business decision-makers.</li>
  <li><strong>Email Personalization:</strong> Creating hyper-customized introductory lines based on prospects' recent articles or profile updates.</li>
  <li><strong>Pipeline Management:</strong> Connecting forms and responses automatically to CRM systems like HubSpot.</li>
@@ -292,11 +292,11 @@ export default function AiBusinessIdeasBlogPost() {
  There is a massive knowledge gap between the capabilities of modern AI and what average corporate teams and professionals actually know how to use. If you enjoy teaching, you can capitalize on this demand by launching an education and training business.
  </p>
  <div className="grid gap-4 sm:grid-cols-2 text-xs my-4">
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Online Courses</strong>
  <p className="text-white/60">Create step-by-step video courses on prompt engineering, workflow automation, or custom coding with AI.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Corporate Training</strong>
  <p className="text-white/60">Host custom live workshops for corporate divisions to train employees on boosting daily productivity by 40% using AI.</p>
  </div>
@@ -312,8 +312,8 @@ export default function AiBusinessIdeasBlogPost() {
  </p>
 
  <div className="overflow-x-auto my-6 rounded-lg border border-white/[0.08]">
- <table className="min-w-full divide-y divide-black/10 dark:divide-white/10 text-left text-xs sm:text-sm">
- <thead className="bg-black/[0.02] font-bold text-black text-white uppercase tracking-wider text-xs">
+ <table className="min-w-full divide-y divide-white/10 text-left text-xs sm:text-sm">
+ <thead className="bg-white/[0.04] font-bold text-white uppercase tracking-wider text-xs">
  <tr>
  <th className="px-6 py-4">Business Idea</th>
  <th className="px-6 py-4">Startup Cost</th>
@@ -321,7 +321,7 @@ export default function AiBusinessIdeasBlogPost() {
  <th className="px-6 py-4">Scalability</th>
  </tr>
  </thead>
- <tbody className="divide-y divide-black/10 dark:divide-white/10 text-white/70">
+ <tbody className="divide-y divide-white/10 text-white/70">
  <tr>
  <td className="px-6 py-4 font-bold text-white">Content Agency</td>
  <td className="px-6 py-4 text-green-500 font-semibold">Low</td>
@@ -395,15 +395,15 @@ export default function AiBusinessIdeasBlogPost() {
  Evaluating the right opportunity comes down to matching your existing skill levels and interest areas:
  </p>
  <div className="grid gap-4 sm:grid-cols-3 text-xs sm:text-sm">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h4 className="font-bold text-white">Do You Have Technical Skills?</h4>
  <p className="mt-2 text-white/60 leading-relaxed">Consider building custom AI agents, trained Q&A chatbots, and full-stack AI website integrations.</p>
  </div>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h4 className="font-bold text-white">Do You Enjoy Marketing?</h4>
  <p className="mt-2 text-white/60 leading-relaxed">Consider launching high-ticket SEO content services, B2B lead generation systems, or social media agencies.</p>
  </div>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h4 className="font-bold text-white">Do You Like Teaching?</h4>
  <p className="mt-2 text-white/60 leading-relaxed">Consider setting up corporate prompt engineering training, digital masterclass courses, or consultancies.</p>
  </div>
@@ -417,7 +417,7 @@ export default function AiBusinessIdeasBlogPost() {
  <p className="leading-relaxed text-white/70">
  Many tech-savvy entrepreneurs launch AI startups but fail quickly because they make these avoidable strategic mistakes:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>Selling AI Instead of Solutions:</strong> Clients do not buy "machine learning models" or "GPT integrations"—they buy speed, traffic, leads, and operational cost savings. Always sell the outcome.</li>
  <li><strong>Trying to Serve Everyone:</strong> Launching a generic "AI automation agency" is too broad. Focus on a narrow niche first (e.g. AI automation for dental clinics or AI agents for real estate brokers).</li>
  <li><strong>Ignoring Customer Needs:</strong> Don't spend months coding a complex AI dashboard before verifying that clients actually have that problem and are willing to pay to solve it.</li>
@@ -459,7 +459,7 @@ export default function AiBusinessIdeasBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI technology continues to expand rapidly. Emerging fields representing future multi-million dollar spaces include:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>Autonomous AI Agents:</strong> Handling complex multi-step logical operations with zero human supervision.</li>
  <li><strong>AI-Powered SaaS Platforms:</strong> Subscription software scaling globally with zero inventory costs.</li>
  <li><strong>Industry-Specific AI Solutions:</strong> Custom trained LLM interfaces tailored for legal, mechanical, or agricultural data sets.</li>
@@ -475,19 +475,19 @@ export default function AiBusinessIdeasBlogPost() {
  Earnings potential depends on your experience, marketing abilities, business model, and client niches:
  </p>
  <div className="grid gap-3 sm:grid-cols-4 text-xs font-bold text-center mt-4">
- <div className="p-4 border rounded bg-black/[0.01] ">
+ <div className="p-4 border rounded bg-white/[0.03] ">
  <span className="text-gold text-lg block mb-1">$500 - $5k+</span>
  <span className="text-white/60">Per Freelance Project</span>
  </div>
- <div className="p-4 border rounded bg-black/[0.01] ">
+ <div className="p-4 border rounded bg-white/[0.03] ">
  <span className="text-gold text-lg block mb-1">$50 - $300+</span>
  <span className="text-white/60">Per Hour Consulting</span>
  </div>
- <div className="p-4 border rounded bg-black/[0.01] ">
+ <div className="p-4 border rounded bg-white/[0.03] ">
  <span className="text-gold text-lg block mb-1">$1k - $10k+</span>
  <span className="text-white/60">Monthly SaaS MRR</span>
  </div>
- <div className="p-4 border rounded bg-black/[0.01] ">
+ <div className="p-4 border rounded bg-white/[0.03] ">
  <span className="text-gold text-lg block mb-1">Scalable</span>
  <span className="text-white/60">Digital Course Sales</span>
  </div>
@@ -549,9 +549,9 @@ export default function AiBusinessIdeasBlogPost() {
  a: 'Focusing excessively on AI features, tools, and algorithms instead of solving real, high-pain customer business problems.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

@@ -131,9 +131,9 @@ export default function BlogPost() {
  body: "They should understand input validation, SQL injection prevention, secure API authentication (JWT, OAuth), and basic HTTPS/CORS setup — even if you're not building anything sensitive.",
  },
  ].map((item) => (
- <article key={item.title} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <article key={item.title} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="card-title text-white">{item.title}</h3>
- <p className="mt-3 small-copy text-black/65 text-white/65">{item.body}</p>
+ <p className="mt-3 small-copy text-white/65">{item.body}</p>
  </article>
  ))}
  </div>
@@ -171,7 +171,7 @@ export default function BlogPost() {
  { flag: "Disappears mid-project", detail: "Poor communication history on platforms or references." },
  { flag: "Won't share code", detail: "Refuses to walk you through what they built or why." },
  ].map((item) => (
- <div key={item.flag} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-4">
+ <div key={item.flag} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-4">
  <p className="text-sm font-bold text-gold">{item.flag}</p>
  <p className="mt-1 small-copy text-white/60">{item.detail}</p>
  </div>
@@ -191,7 +191,7 @@ export default function BlogPost() {
  ].map((item) => (
  <div key={item.platform} className="flex items-start gap-3">
  <span className="meta-label rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1.5 text-gold">{item.platform}</span>
- <p className="small-copy mt-1.5 text-black/65 text-white/65">{item.note}</p>
+ <p className="small-copy mt-1.5 text-white/65">{item.note}</p>
  </div>
  ))}
  </div>

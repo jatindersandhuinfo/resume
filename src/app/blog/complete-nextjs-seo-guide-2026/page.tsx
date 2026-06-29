@@ -125,7 +125,7 @@ export default function SEOBlogPost() {
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10 text-xs">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Without SEO:</span>
- <ul className="pl-4 list-disc text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-white/65 space-y-1">
  <li>Your pages may not appear in search results.</li>
  <li>Customers may never discover your business.</li>
  <li>Competitors will outrank your website.</li>
@@ -134,7 +134,7 @@ export default function SEOBlogPost() {
 
  <div className="p-4 rounded-lg bg-gold/5 border border-gold/25 text-xs">
  <span className="font-bold text-gold block mb-1">With Proper SEO:</span>
- <ul className="pl-4 list-disc text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-white/65 space-y-1">
  <li>More traffic arrives organically and continuously.</li>
  <li>Inbound high-quality lead generation improves.</li>
  <li>Brand visibility and trust increase.</li>
@@ -159,7 +159,7 @@ export default function SEOBlogPost() {
  Next.js natively solves this problem by rendering your components into structured HTML on the server before dispatching it to browsers. Google loves websites that are fast, structured, and easy to crawl. Next.js was built for exactly that purpose.
  </p>
  
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4">
  <h3 className="text-sm font-bold text-gold mb-3">Core Next.js SEO Advantages</h3>
  <ul className="grid grid-cols-2 gap-2 text-xs text-white/60 pl-4 list-disc">
  <li>Server-Side Rendering (SSR)</li>
@@ -182,9 +182,9 @@ export default function SEOBlogPost() {
  </p>
 
  <div className="space-y-4 mt-4">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-sm font-bold text-gold">1. Server-Side Rendering (SSR)</h3>
- <p className="mt-1 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-1 text-xs text-white/65 leading-relaxed">
  Pages are dynamically generated on the server on every incoming request. Best for user dashboards, financial records, and live transactional pages.
  </p>
  <pre className="p-3 rounded bg-black/5 dark:bg-white/5 text-[11px] font-mono text-white/70 overflow-x-auto leading-relaxed mt-2">
@@ -198,16 +198,16 @@ async function DashboardPage() {
  </pre>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-sm font-bold text-gold">2. Static Site Generation (SSG)</h3>
- <p className="mt-1 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-1 text-xs text-white/65 leading-relaxed">
  HTML pages are compiled completely at build time. This ensures faster loading, outstanding visual performance, and exceptional SEO because the edge CDN serves pre-rendered files. Best for landing pages, blogs, and documentation portfolios.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-sm font-bold text-gold">3. Incremental Static Regeneration (ISR)</h3>
- <p className="mt-1 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-1 text-xs text-white/65 leading-relaxed">
  Combines the speed of SSG with updates. Next.js rebuilds static pages silently in the background after a designated time threshold has elapsed, updating the CDN seamlessly. Best for product directories, job boards, and business reviews.
  </p>
  </div>
@@ -234,7 +234,7 @@ export const metadata = {
  <p className="leading-relaxed text-white/70">
  Every page should declare:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>A **unique, keyword-rich title tag** that avoids duplication.</li>
  <li>A **compelling meta description** summarizing page intent.</li>
  <li>A **canonical URL definition** pointing to the primary page version to prevent duplicate indexing issues.</li>
@@ -266,7 +266,7 @@ export const metadata = {
  <p className="leading-relaxed text-white/70 font-semibold mt-4">
  Best practices for crafting title tags:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5">
  <li>Place the **primary target keyword** near the beginning.</li>
  <li>Keep titles **under 60 characters** to prevent truncation in search layouts.</li>
  <li>Make the title compelling and natural—avoid robotic keyword stuffing.</li>
@@ -289,7 +289,7 @@ export const metadata = {
  <p className="leading-relaxed text-white/70 font-semibold">
  Guidelines for CTR optimization:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>Keep description lengths strictly **between 150 and 160 characters**.</li>
  <li>Include the primary target keyword naturally (Google will bold it in results when matching queries).</li>
  <li>Address user search intent directly and conclude with a strong **Call to Action (CTA)**.</li>
@@ -333,7 +333,7 @@ export const metadata = {
  <p className="leading-relaxed text-white/70 font-semibold">
  Popular schemas to deploy:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li><strong>Article:</strong> Blogs and news articles.</li>
  <li><strong>Product:</strong> eCommerce pricing and stocks.</li>
  <li><strong>LocalBusiness:</strong> Contact details, hours, and coordinates.</li>
@@ -366,7 +366,7 @@ export const metadata = {
  <p className="leading-relaxed text-white/70 font-semibold mt-4">
  Core URL requirements:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>Integrate the target focus keyword directly.</li>
  <li>Separate words exclusively with **hyphens** (avoid underscores or spaces).</li>
  <li>Keep the URL path short, concise, and clean.</li>
@@ -399,7 +399,7 @@ export default function HeroSection() {
  <p className="leading-relaxed text-white/70 font-semibold">
  Benefits of utilizing next/image:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>**Automatic Compression:** Converts standard assets into lightweight WebP or AVIF formats on the fly.</li>
  <li>**Responsive Formatting:** Delivers correct asset sizes based on browser layout widths.</li>
  <li>**Lazy Loading:** Native lazy-loading prevents lower-page images from blocking initial renders.</li>
@@ -414,9 +414,9 @@ export default function HeroSection() {
  <p className="leading-relaxed text-white/70">
  An intelligent internal linking structure acts like a highway system, letting search engine bots crawl and index pages smoothly. Use descriptive anchor text in links rather than generic phrases like "click here".
  </p>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs">
  <span className="font-bold text-gold block mb-1">Internal Link Best Practice:</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Use the Next.js `Link` component to handle transitions and anchor related guides. E.g., <Link href="/blog/ai-tools-that-save-10-hours-per-week" className="underline text-gold hover:text-white font-bold">read our guide on 10 AI productivity tools</Link> to optimize your workspace stacks.
  </p>
  </div>
@@ -460,17 +460,17 @@ Sitemap: https://yourwebsite.com/sitemap.xml`}
  </p>
 
  <div className="grid gap-4 mt-6 sm:grid-cols-3">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25 text-center">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25 text-center">
  <span className="font-extrabold text-sm text-gold block">Largest Contentful Paint (LCP)</span>
  <span className="text-2xl font-extrabold text-white block my-1">&lt; 2.5s</span>
  <span className="text-[10px] text-white/60 block">Measures loading performance.</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25 text-center">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25 text-center">
  <span className="font-extrabold text-sm text-gold block">First Input Delay (FID)</span>
  <span className="text-2xl font-extrabold text-white block my-1">&lt; 100ms</span>
  <span className="text-[10px] text-white/60 block">Measures interaction responsiveness.</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25 text-center">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25 text-center">
  <span className="font-extrabold text-sm text-gold block">Cumulative Layout Shift (CLS)</span>
  <span className="text-2xl font-extrabold text-white block my-1">&lt; 0.1</span>
  <span className="text-[10px] text-white/60 block">Measures visual layout stability.</span>
@@ -497,7 +497,7 @@ Sitemap: https://yourwebsite.com/sitemap.xml`}
  <p className="leading-relaxed text-white/70">
  For local service organizations—such as taxi companies, medical practices, law firms, and real estate offices—local search is a major source of customer leads.
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Google Business Profile:</strong> Build a complete profile matching exact brand details.</li>
  <li><strong>Dedicated Location Pages:</strong> Create static URL pages targeting primary cities (e.g., `/taxi-service-london`, `/taxi-service-manchester`).</li>
  <li><strong>Local Schema:</strong> Inject `LocalBusiness` JSON-LD structures to outline coordinates, pricing, and operating hours.</li>
@@ -515,25 +515,25 @@ Sitemap: https://yourwebsite.com/sitemap.xml`}
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Duplicate Metadata</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Avoid using identical title or description tags across multiple pages, which can confuse crawler bots.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Missing Alt Text</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Failing to write alt descriptions leaves Google unable to understand the context of your images.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Poor Internal Linking</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Leaving pages isolated makes it difficult for search bots to discover them and distribute page authority.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Slow Loading Speed</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Huge image files and excessive client-side scripts lead to poor Core Web Vitals, causing rankings to drop.
  </p>
  </div>
@@ -629,9 +629,9 @@ Sitemap: https://yourwebsite.com/sitemap.xml`}
  a: 'No. While technical SEO provides a vital foundation, high-quality content and reputable backlinks are also necessary to secure top rankings.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

@@ -94,7 +94,7 @@ export default function HeaderNav() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Primary navigation">
           {visibleItems.map((item) => {
             const targetHref = getHref(item);
             const isHash = item.href.startsWith('/#') && isHome;
@@ -123,7 +123,7 @@ export default function HeaderNav() {
         <div className="flex shrink-0 items-center gap-3">
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-2 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-gold transition duration-200 hover:bg-gold hover:text-deep hover:border-gold"
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-5 py-2 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-gold transition duration-200 hover:bg-gold hover:text-deep hover:border-gold"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
             Available · Hire Me
@@ -132,7 +132,7 @@ export default function HeaderNav() {
           {/* Mobile toggle */}
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition duration-200 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition duration-200 hover:border-gold/50 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -155,7 +155,7 @@ export default function HeaderNav() {
       {menuOpen && (
         <div
           id="mobile-navigation"
-          className="border-t border-white/[0.07] bg-studio/95 backdrop-blur-2xl px-5 py-5 lg:hidden"
+          className="border-t border-white/[0.07] bg-studio/95 backdrop-blur-2xl px-5 py-5 md:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
             {visibleItems.map((item) => {

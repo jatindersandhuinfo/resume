@@ -86,7 +86,7 @@ export function Chapter2ForWho() {
     <section
       id="chapter-2"
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-studio py-28 lg:py-40"
+      className="relative w-full overflow-hidden bg-studio py-14 md:py-20 lg:py-28"
       aria-labelledby="for-who-heading"
     >
       {/* Ghost chapter number */}

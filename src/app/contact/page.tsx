@@ -170,7 +170,7 @@ export default function ContactPage() {
       {/* ── Contact methods + FAQ ── */}
       <section className="bg-studio py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
-          <div className="grid gap-16 lg:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
 
             {/* Contact methods */}
             <div>
@@ -207,7 +207,7 @@ export default function ContactPage() {
               </div>
 
               {/* Quick stats */}
-              <div className="mt-10 grid grid-cols-3 gap-px border border-white/[0.06]">
+              <div className="mt-10 grid grid-cols-3 gap-px border border-white/[0.06] text-center">
                 {[
                   { label: 'Response time', value: '< 4h' },
                   { label: 'Projects done', value: '25+' },

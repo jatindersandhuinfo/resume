@@ -27,7 +27,7 @@ export function FaqSection({ section }: FaqSectionProps) {
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
 
         {/* ── Header ── */}
-        <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="section-kicker">{section.kicker}</p>
             <h2 id="faq-title" className="mt-5 section-title text-white">

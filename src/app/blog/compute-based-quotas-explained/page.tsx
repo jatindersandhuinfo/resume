@@ -119,7 +119,7 @@ export default function ComputeQuotasBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  Common resources governed by quotas include:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li>CPU cores</li>
  <li>RAM</li>
  <li>Virtual machines</li>
@@ -138,9 +138,9 @@ export default function ComputeQuotasBlogPost() {
  <p className="leading-relaxed text-white/70">
  Modern cloud environments often serve multiple teams, applications, or customers simultaneously. Without quotas, a single workload could consume excessive resources and negatively affect everyone else sharing the environment.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-4">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-4">
  <p className="text-sm font-bold text-gold">Compute quotas help organizations:</p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2">
  <li><strong>Prevent resource abuse:</strong> Protect environments from runaway workloads or misconfigured applications.</li>
  <li><strong>Improve system stability:</strong> Minimize performance degradation during usage spikes.</li>
  <li><strong>Control cloud spending:</strong> Avoid surprising, massive monthly billing spikes.</li>
@@ -162,19 +162,19 @@ export default function ComputeQuotasBlogPost() {
  <div className="space-y-6 mt-4">
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Hard Limits</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Hard limits completely block additional resource consumption. Any attempt to create resources exceeding the hard threshold will immediately fail.
  </p>
  </div>
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Soft Limits</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Soft limits allow temporary overages but generate system warnings, emails, or Slack notifications for administration audit.
  </p>
  </div>
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Dynamic Quotas</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Advanced systems automatically adjust quotas based on demand, historical usage, or business priorities. This is becoming increasingly common in AI and large-scale cloud environments.
  </p>
  </div>
@@ -184,31 +184,31 @@ export default function ComputeQuotasBlogPost() {
  <section id="key-components" className="space-y-4">
  <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Key Components of Compute Quotas</h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 lg:grid-cols-3">
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Resource Allocation</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Defines the maximum resources available to a user or application.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Monitoring</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Tracks resource consumption in real time to catch bottlenecks immediately.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Enforcement</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Ensures quotas are respected through restrictions or throttling controls.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Reporting</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Provides visibility into usage patterns and trends for cloud team review.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] sm:col-span-2 lg:col-span-1">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] sm:col-span-2 lg:col-span-1">
  <h3 className="text-sm font-bold text-gold">Scaling Policies</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Determine how systems respond when quota thresholds are reached.
@@ -227,9 +227,9 @@ export default function ComputeQuotasBlogPost() {
  { title: 'GPU Quotas', text: 'Crucial for AI and machine learning workloads to enable fair GPU sharing, control billing, and optimize model training resources.' },
  { title: 'Network Quotas', text: 'Control bandwidth consumption and data transfer limits to avoid network congestion and optimize user performance.' }
  ].map((res, idx) => (
- <div key={idx} className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div key={idx} className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-base font-bold text-gold">{res.title}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{res.text}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{res.text}</p>
  </div>
  ))}
  </div>
@@ -291,25 +291,25 @@ spec:
  <section id="benefits" className="space-y-4">
  <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Benefits of Compute-Based Quotas</h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">Cost Control</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Cloud costs can grow rapidly without proper governance. Quotas help organizations establish predictable spending patterns and prevent runaway compute billing.
  </p>
  </div>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">Fair Resource Distribution</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Every team receives its designated share of infrastructure resources, preventing a single client or app from hogging shared pools.
  </p>
  </div>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">Enhanced Security</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Limiting resources can reduce abuse and minimize the impact of compromised virtual machines or malicious workloads inside your networks.
  </p>
  </div>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">Better Performance</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Preventing resource contention improves overall application responsiveness. Historical quota usage also provides valuable forecasting insights.
@@ -324,19 +324,19 @@ spec:
  Despite their advantages, quotas can introduce challenges if not configured thoughtfully:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Resource Underutilization</span>
  <p className="text-white/60">Overly conservative quotas may leave resources completely unused, leading to wasted capital.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Growth Constraints</span>
  <p className="text-white/60">Rapidly growing workloads may hit limits unexpectedly, causing application downtime if not adjusted.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Administrative Overhead</span>
  <p className="text-white/60">Quota management requires ongoing monitoring, request escalations, and periodic policy adjustments.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Complex Multi-Tenant Environments</span>
  <p className="text-white/60">Managing complex quota policies for dozens of distinct departments, apps, and customers can become difficult.</p>
  </div>
@@ -383,19 +383,19 @@ spec:
  As cloud computing evolves, quota management is becoming more intelligent and automated:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <span className="font-bold text-gold block mb-1">AI-Powered Resource Allocation</span>
  <p className="text-white/60">Machine learning models predict workload demand and automatically adjust quotas dynamically.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <span className="font-bold text-gold block mb-1">Dynamic Auto-Scaling</span>
  <p className="text-white/60">Limits expand or contract in real time based on active user traffic and transaction volume.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <span className="font-bold text-gold block mb-1">FinOps Integration</span>
  <p className="text-white/60">Quota boundaries align directly with company cloud budget limits and cost-saving initiatives.</p>
  </div>
- <div className="p-4 rounded border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded border border-white/[0.08] bg-white/[0.03] ">
  <span className="font-bold text-gold block mb-1">Multi-Cloud Governance</span>
  <p className="text-white/60">Unified dashboards orchestrate quota strategies across AWS, GCP, and Azure simultaneously.</p>
  </div>
@@ -455,9 +455,9 @@ spec:
  a: 'The future involves AI-driven automation, predictive scaling, and deeper integration with cloud cost optimization platforms.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

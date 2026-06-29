@@ -242,7 +242,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
 
         <div className="relative mx-auto max-w-[1400px] px-6 py-20 sm:px-10 lg:px-14 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-[1fr_360px] lg:items-start">
+          <div className="grid gap-12 md:grid-cols-[1fr_320px] md:items-start">
 
             {/* Left: Hero text */}
             <div>
@@ -311,7 +311,7 @@ export default async function ServicePage({ params }: Props) {
       {/* ── What I Do ── */}
       <section id="what-i-do" className="border-b border-white/[0.07] bg-surface py-20 scroll-mt-10 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-12 md:grid-cols-2">
             <div>
               <p className="chapter-label mb-6">01 / Overview</p>
               <h2 className="font-bebas text-[clamp(2rem,4vw,4rem)] leading-[0.9] uppercase text-canvas">
@@ -382,7 +382,7 @@ export default async function ServicePage({ params }: Props) {
       {/* ── Technologies ── */}
       <section className="border-b border-white/[0.07] bg-surface py-20 scroll-mt-10 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
-          <div className="grid gap-12 lg:grid-cols-[360px_1fr] lg:items-start">
+          <div className="grid gap-12 md:grid-cols-[320px_1fr] md:items-start">
             <div>
               <p className="chapter-label mb-6">03 / Technologies</p>
               <h2 className="font-bebas text-[clamp(2rem,4vw,4rem)] leading-[0.9] uppercase text-canvas">
@@ -515,7 +515,7 @@ export default async function ServicePage({ params }: Props) {
               </p>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {relatedProjects.map((p) => {
                 const colorObj = cat(p.category);
                 return (

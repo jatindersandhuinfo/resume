@@ -141,7 +141,7 @@ export default function SaaSBlogPost() {
  <p className="leading-relaxed text-white/70 mt-6">
  This stack provides several distinct advantages:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5">
  <li><strong>Fast Development:</strong> Unified language environment (JavaScript/TypeScript) from frontend to backend.</li>
  <li><strong>Excellent Scalability:</strong> High-concurrency support natively using Node.js event-driven loops.</li>
  <li><strong>SEO-Friendly Pages:</strong> Pre-rendered HTML layouts delivered instantly to search engines.</li>
@@ -164,7 +164,7 @@ export default function SaaSBlogPost() {
  <div className="space-y-6">
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Defining User Roles</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  The SaaS platform required strict Role-Based Access Control (RBAC) supporting four distinct profiles:
  </p>
  <ul className="pl-4 list-disc text-xs text-white/60 mt-2 space-y-1">
@@ -177,7 +177,7 @@ export default function SaaSBlogPost() {
 
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Database Design</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  We designed optimized MongoDB schemas to house relational structures without sacrificing speed. Our collection schemas map:
  </p>
  <ul className="pl-4 list-disc text-xs text-white/60 mt-2 space-y-1">
@@ -203,9 +203,9 @@ export default function SaaSBlogPost() {
  By utilizing Server-side rendering (SSR), static generation, built-in API routing, and asset optimization, Next.js helped us deliver an extremely fast experience that satisfies search engines and retains active users.
  </p>
  
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4">
  <h3 className="text-sm font-bold text-gold mb-3">Component Architecture</h3>
- <p className="text-xs text-black/65 text-white/65 mb-4">
+ <p className="text-xs text-white/65 mb-4">
  To maintain readability and prevent code duplication, we isolated layout features into clean modular directories:
  </p>
  <pre className="p-4 rounded bg-black/5 dark:bg-white/5 text-xs font-mono text-gold overflow-x-auto leading-relaxed">
@@ -215,7 +215,7 @@ export default function SaaSBlogPost() {
 ├── auth/ # Login forms, MFA components, resets
 └── common/ # Navbars, buttons, inputs, loading skeletons`}
  </pre>
- <p className="mt-4 text-xs text-black/65 text-white/65">
+ <p className="mt-4 text-xs text-white/65">
  This modular structure significantly improved file maintainability, simplified unit test coverage, and accelerated collaborative feature additions.
  </p>
  </div>
@@ -234,7 +234,7 @@ export default function SaaSBlogPost() {
 
  <div className="p-5 rounded-lg border border-white/[0.08] bg-gold/5 border-l-4 border-l-[#f59e0b] mt-4">
  <h3 className="text-sm font-bold text-white mb-2">REST API Architecture</h3>
- <p className="text-xs text-black/65 text-white/65 mb-3 leading-relaxed">
+ <p className="text-xs text-white/65 mb-3 leading-relaxed">
  We enforced a strict controller-service-repository pattern to isolate logic layers:
  </p>
  <pre className="p-3 rounded bg-black/5 dark:bg-white/5 text-[11px] font-mono text-white/70 overflow-x-auto leading-relaxed">
@@ -258,14 +258,14 @@ models/ # Mongoose schemas and indexes`}
  </p>
 
  <div className="grid gap-4 mt-4 sm:grid-cols-2">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">JWT Authentication</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Upon login, users receive an encrypted JSON Web Token (JWT) saved inside a secure, HTTP-only cookie. This ensures stateless verification, prevents Cross-Site Scripting (XSS), and yields extremely fast API processing.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Role-Based Access Control (RBAC)</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Every API endpoint passes through validation middleware that matches user role permissions. A Super Admin possesses full access, while customers are strictly limited to their own dataset.
@@ -284,7 +284,7 @@ models/ # Mongoose schemas and indexes`}
  <p className="leading-relaxed text-white/70 font-semibold text-gold">
  To guarantee high performance as document records grew, we implemented index optimization strategies:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Unique Keys:</strong> Implemented single-field unique indexes on emails and subscription IDs.</li>
  <li><strong>Compound Indexing:</strong> Structured query combinations of status, user IDs, and creation dates into compound indexes.</li>
  <li><strong>TTL Indexing:</strong> Programmed automatic log expirations on transient notification trails.</li>
@@ -301,7 +301,7 @@ models/ # Mongoose schemas and indexes`}
  <p className="leading-relaxed text-white/70">
  A high-end SaaS product is often judged by the usability of its main workspace dashboard.
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4">
  <h3 className="text-sm font-bold text-gold mb-3">Key Dashboard Capabilities</h3>
  <ul className="pl-4 list-disc text-xs text-white/60 space-y-2">
  <li><strong>Real-Time Analytics:</strong> Live dashboard metrics showing total registered customers, recurring revenue metrics (MRR/ARR), active sessions, and growth charts.</li>
@@ -319,21 +319,21 @@ models/ # Mongoose schemas and indexes`}
  Loading speed directly impacts user retention and SEO ranking. We utilized four advanced optimization techniques:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Code Splitting & Lazy Loading</span>
- <p className="text-black/65 text-white/65">Components outside the viewport or complex analytics charts load on-demand, reducing initial JavaScript bundle size.</p>
+ <p className="text-white/65">Components outside the viewport or complex analytics charts load on-demand, reducing initial JavaScript bundle size.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Next.js Image Component</span>
- <p className="text-black/65 text-white/65">Automatically resizes, compresses, and delivers modern WebP image assets directly from Vercel’s global CDN.</p>
+ <p className="text-white/65">Automatically resizes, compresses, and delivers modern WebP image assets directly from Vercel’s global CDN.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Data Caching</span>
- <p className="text-black/65 text-white/65">Stores slow, static resource queries inside secure RAM caches, preventing repetitive database calls.</p>
+ <p className="text-white/65">Stores slow, static resource queries inside secure RAM caches, preventing repetitive database calls.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Bundle Compression</span>
- <p className="text-black/65 text-white/65">Compresses responses using Gzip to minimize data load across mobile networks.</p>
+ <p className="text-white/65">Compresses responses using Gzip to minimize data load across mobile networks.</p>
  </div>
  </div>
  </section>
@@ -345,7 +345,7 @@ models/ # Mongoose schemas and indexes`}
  <p className="leading-relaxed text-white/70">
  Security must be native, not reactive. From day one, we integrated robust practices:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Password Hashing:</strong> Sensitive passwords are hashed using bcrypt with custom salt cycles.</li>
  <li><strong>Input Validation:</strong> Strictly sanitizes all client inputs to prevent SQL/NoSQL Injection and XSS attacks.</li>
  <li><strong>API Rate Limiting:</strong> Enforces client IP call ceilings to defend against brute force and DDoS attacks.</li>
@@ -363,25 +363,25 @@ models/ # Mongoose schemas and indexes`}
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Authentication Synchronization</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Managing stateless JWT expiration and secure refreshing across multiple browser devices and sessions required complex token invalidation logic.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Database Schema Scaling</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Evolving MongoDB relationships from embedding to referencing structures as customer collections grew required several complex database optimization cycles.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">API Performance Bottlenecks</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Aggregating massive dashboard transaction summaries initially took over 2 seconds. We fixed this by introducing database indexes and query cache filters.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Deployment Configurations</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Aligning environmental variables, CORS parameters, and SSL cert handshakes between backend Node.js engines and the Vercel CDN frontend demanded meticulous tweaking.
  </p>
  </div>
@@ -395,8 +395,8 @@ models/ # Mongoose schemas and indexes`}
  <p className="leading-relaxed text-white/70">
  We deployed our SaaS architecture utilizing specialized hosting tiers:
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
- <ul className="space-y-4 text-xs text-black/65 text-white/65">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4">
+ <ul className="space-y-4 text-xs text-white/65">
  <li>
  <strong className="text-sm text-gold block">1. Frontend: Next.js on Vercel</strong>
  Deploying on Vercel gives us automatic global edge replication, instant previews, zero-config image optimization, and robust SSL certificates.
@@ -448,7 +448,7 @@ models/ # Mongoose schemas and indexes`}
  <p className="leading-relaxed text-white/70">
  The SaaS application continues to evolve. Our upcoming development roadmap includes:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-3">
  <li><strong>AI-Powered Automation:</strong> Integrating LLM assistant hooks directly inside dashboard workspaces.</li>
  <li><strong>Advanced Analytics Engine:</strong> Adding compound reporting utilities and database aggregation views.</li>
  <li><strong>Companion Mobile Applications:</strong> Deploying React Native wrappers for iOS and Android access.</li>
@@ -495,9 +495,9 @@ models/ # Mongoose schemas and indexes`}
  a: 'Yes. Modern frameworks like Next.js, Node.js, and MongoDB coupled with hosting services like Vercel allow a small, agile team to build and launch powerful platforms efficiently.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

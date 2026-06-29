@@ -23,7 +23,7 @@ export function SkillsSection({ section }: SkillsSectionProps) {
       </span>
 
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-stretch">
 
           {/* ── Left: Skills panel ── */}
           <div className="flex flex-col gap-8">

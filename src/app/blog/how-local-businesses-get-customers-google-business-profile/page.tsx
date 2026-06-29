@@ -109,7 +109,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70">
  When someone searches:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li>“Taxi near me”</li>
  <li>“Best restaurant nearby”</li>
  <li>“Web developer near me”</li>
@@ -226,11 +226,11 @@ export default function GBPBlogPost() {
  Google uses several verification methods depending on business categories:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Postcard & Phone</span>
  <p className="text-white/60">Google mails a physical code to your business address or sends an instant verification SMS.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Email & Video</span>
  <p className="text-white/60">Verification via corporate emails or direct video walkthroughs showing your tools, location, and registration.</p>
  </div>
@@ -247,7 +247,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  Primary category matching examples:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5">
  <li><strong>Taxi Company:</strong> Choose <em>"Taxi Service"</em> as primary.</li>
  <li><strong>Restaurant:</strong> Choose <em>"Restaurant"</em> or specific subcategories (e.g. <em>"Italian Restaurant"</em>).</li>
  <li><strong>Web Development:</strong> Choose <em>"Website Designer"</em> or <em>"Software Company"</em>.</li>
@@ -261,7 +261,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70">
  Complete, detailed profiles rank significantly higher on Google Maps search. Ensure you optimize:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Business Name:</strong> Use your actual, legal business name. Avoid stuffing spammy keywords.</li>
  <li><strong>Consistent NAP:</strong> Keep your Name, Address, and Phone number identical across all web directories.</li>
  <li><strong>Website Links:</strong> Add a direct, clean link pointing to your mobile-friendly homepage.</li>
@@ -291,7 +291,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Ask every happy customer consistently:
  </p>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs italic text-black/75 text-white/75">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs italic text-white/75">
  "If you were happy with our services today, we would highly appreciate a brief review on our Google Business Profile!"
  </div>
  </section>
@@ -306,7 +306,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  Review management guidelines:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2">
  <li><strong>Positive Reviews:</strong> Thank the customer warmly and show genuine appreciation.</li>
  <li><strong>Negative Reviews:</strong> Never argue publicly. Address complaints calmly, remain professional, and offer to resolve issues offline via email or phone.</li>
  </ul>
@@ -340,7 +340,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70">
  Your Google listing and main business site must support each other to build local search authority:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2">
  <li><strong>Local Keywords:</strong> Integrate geographic terms (e.g., <em>"Taxi Service in London"</em>, <em>"Web Designer in Toronto"</em>) naturally into your site copy.</li>
  <li><strong>Build Local Citations:</strong> Register your exact businessName and address in high-authority directory sites.</li>
  <li><strong>Backlink Structures:</strong> Secure links from local business circles, chambers of commerce, and directories to raise local authority.</li>
@@ -367,25 +367,25 @@ export default function GBPBlogPost() {
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Incomplete Profiles</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Missing hours or phone numbers hurts search rankings and frustrates customers.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Low-Quality visual Assets</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Blurry, dark, or unprofessional photos reduce client trust in your business.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Ignoring Reviews</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Failing to respond to positive or negative feedback reduces customer engagement metrics.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Lacking Active Updates</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Neglecting updates makes your business appear inactive compared to competitors.
  </p>
  </div>
@@ -399,7 +399,7 @@ export default function GBPBlogPost() {
  <p className="leading-relaxed text-white/70">
  Once your profile is optimized, you can accelerate growth further:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-3">
  <li><strong>Add Detailed FAQs:</strong> Build a helpful questions-and-answers section directly on your listing.</li>
  <li><strong>Upload Walkthrough Videos:</strong> Upload short, professional videos showing your business in action.</li>
  <li><strong>Encourage Customer Photos:</strong> Ask customers to share real, unedited photos of your products or services.</li>
@@ -414,7 +414,7 @@ export default function GBPBlogPost() {
  Let's evaluate two local taxi companies operating in the same area:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Company A</span>
  <p className="text-white/60 leading-relaxed">
  Operates without an optimized Google profile. Has no reviews, no photos, and no listing updates. Customers cannot discover them on Google Maps.
@@ -488,9 +488,9 @@ export default function GBPBlogPost() {
  a: 'Consistently ask satisfied customers upon completing projects and provide a clean, direct review URL link.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

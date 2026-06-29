@@ -164,28 +164,28 @@ export default function AIBlogPost() {
  <div className="space-y-6 mt-6">
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Business</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Small businesses can now leverage technologies that were once exclusively available to multi-million dollar corporations. Business workflows utilize AI for customer support automation, marketing optimization, sales forecasting, high-throughput data analysis, and intelligent invoicing.
  </p>
  </div>
 
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Education</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Students and educators benefit from hyper-personalized learning pathways, research drafting, massive document summarization, instant cross-language translation, and responsive interactive tutors that simplify complex concepts.
  </p>
  </div>
 
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Marketing</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Marketing professionals use generative models to test hundreds of ad variations, analyze customer cohorts on the fly, structure perfect SEO parameters, and curate real-time personalized shopping experiences.
  </p>
  </div>
 
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">AI in Software Development</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Developers are no longer writing code from absolute scratch. Through pair programming companions, developers achieve massive productivity leaps, leveraging AI for code generation, bug fixing, test automation, dynamic documentation, and infrastructure configuration.
  </p>
  <div className="mt-3 p-3 rounded bg-gold/5 border border-gold/20 text-xs text-gold/90 font-medium">
@@ -202,28 +202,28 @@ export default function AIBlogPost() {
  </p>
 
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">1. Time Savings</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Completing a complex five-hour task (like summarizing data sheets or formatting blog outlines) in thirty minutes. AI automates the mundane, freeing up mental bandwidth for high-impact creative tasks.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">2. Cost Reduction</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Businesses eliminate huge overhead costs. Customer support pipelines, recurring graphic design elements, and routine administrative tasks can be largely automated using AI integrations.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">3. Improved Accuracy</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Advanced models process gigabytes of complex transactional logs or documentation with virtually zero human typos or calculation slip-ups, maintaining a highly robust data standard.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-base font-bold text-gold">4. Better Decision-Making</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  AI processes customer habits, search patterns, and backend performance metrics to offer predictive insights that humans might completely miss, accelerating logical business choices.
@@ -243,35 +243,35 @@ export default function AIBlogPost() {
  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Writing Tools: </strong>
- <span className="text-xs text-black/65 text-white/65">Ideal for outlining blog posts, copywriting, drafting social media content, and refining grammar. Leading examples include ChatGPT, Claude, and Jasper.</span>
+ <span className="text-xs text-white/65">Ideal for outlining blog posts, copywriting, drafting social media content, and refining grammar. Leading examples include ChatGPT, Claude, and Jasper.</span>
  </div>
  </li>
  <li className="flex gap-3">
  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Image Generation Tools: </strong>
- <span className="text-xs text-black/65 text-white/65">Allow users to output custom visual materials, design layouts, and icons instantly using natural language prompts. Key leaders are Midjourney and DALL·E.</span>
+ <span className="text-xs text-white/65">Allow users to output custom visual materials, design layouts, and icons instantly using natural language prompts. Key leaders are Midjourney and DALL·E.</span>
  </div>
  </li>
  <li className="flex gap-3">
  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Video Creation Tools: </strong>
- <span className="text-xs text-black/65 text-white/65">Generate high-quality video content from text inputs and scripts, dramatically decreasing video editing timelines for online creators.</span>
+ <span className="text-xs text-white/65">Generate high-quality video content from text inputs and scripts, dramatically decreasing video editing timelines for online creators.</span>
  </div>
  </li>
  <li className="flex gap-3">
  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Coding Assistants: </strong>
- <span className="text-xs text-black/65 text-white/65">Autofill complex functions, find performance bottlenecks, build mock APIs, and write clean unit tests in real time. Standard-setters include GitHub Copilot and Cursor.</span>
+ <span className="text-xs text-white/65">Autofill complex functions, find performance bottlenecks, build mock APIs, and write clean unit tests in real time. Standard-setters include GitHub Copilot and Cursor.</span>
  </div>
  </li>
  <li className="flex gap-3">
  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gold" />
  <div>
  <strong className="text-sm text-white">AI Chatbots: </strong>
- <span className="text-xs text-black/65 text-white/65">Manage interactive customer support queues, nurture marketing leads, schedule client calendar bookings, and resolve FAQs.</span>
+ <span className="text-xs text-white/65">Manage interactive customer support queues, nurture marketing leads, schedule client calendar bookings, and resolve FAQs.</span>
  </div>
  </li>
  </ul>
@@ -306,9 +306,9 @@ export default function AIBlogPost() {
  desc: 'The ultimate developers companion. Operating inside the code editor, it understands your entire repository to auto-generate secure functions, write unit tests, and resolve bugs.',
  },
  ].map((tool, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.01] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-5">
  <h3 className="text-base font-bold text-gold">{tool.name}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{tool.desc}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{tool.desc}</p>
  </div>
  ))}
  </div>
@@ -355,19 +355,19 @@ export default function AIBlogPost() {
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Blindly Trusting Outputs</span>
- <span className="text-black/65 text-white/65">AI models can sometimes &quot;hallucinate&quot; incorrect facts, outdated documentation, or insecure code routines. Always fact-check crucial information.</span>
+ <span className="text-white/65">AI models can sometimes &quot;hallucinate&quot; incorrect facts, outdated documentation, or insecure code routines. Always fact-check crucial information.</span>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Using Vague Prompts</span>
- <span className="text-black/65 text-white/65">Generic instructions like &ldquo;write an article about coding&rdquo; yield bland, generic results. Provide deep context, role definitions, and output structures.</span>
+ <span className="text-white/65">Generic instructions like &ldquo;write an article about coding&rdquo; yield bland, generic results. Provide deep context, role definitions, and output structures.</span>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Ignoring Data Privacy</span>
- <span className="text-black/65 text-white/65">Never paste highly sensitive client details, proprietary backend access codes, or private corporate databases into public web-based LLMs.</span>
+ <span className="text-white/65">Never paste highly sensitive client details, proprietary backend access codes, or private corporate databases into public web-based LLMs.</span>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Over-Automating Core Decisions</span>
- <span className="text-black/65 text-white/65">AI should serve as an excellent catalyst and assistant, not as a complete replacement for human strategic alignment, tone, and empathy.</span>
+ <span className="text-white/65">AI should serve as an excellent catalyst and assistant, not as a complete replacement for human strategic alignment, tone, and empathy.</span>
  </div>
  </div>
  </section>
@@ -378,24 +378,24 @@ export default function AIBlogPost() {
  <div className="space-y-5">
  <div>
  <h3 className="text-base font-bold text-gold">AI Tools for Small Businesses</h3>
- <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-2 text-xs text-white/65 leading-relaxed">
  Small business owners utilize automation pipelines to run cold outreach campaigns, automate client support with dynamic FAQ chatbots, draft high-volume product listings, and streamline complex business operations. 
  </p>
- <p className="mt-2 text-xs text-black/65 text-white/65 italic">
+ <p className="mt-2 text-xs text-white/65 italic">
  *Tip: Automating customer interactions using custom-trained OpenAI assistant APIs allows your small business to answer queries instantly 24/7.*
  </p>
  </div>
 
  <div>
  <h3 className="text-base font-bold text-gold">AI Tools for Students</h3>
- <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-2 text-xs text-white/65 leading-relaxed">
  Students use AI for advanced academic research, organizing extensive lecture transcripts, structural essay reviews, creating custom study plans, and learning foreign languages via customized conversational bots.
  </p>
  </div>
 
  <div>
  <h3 className="text-base font-bold text-gold">AI Tools for Content Creators</h3>
- <p className="mt-2 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-2 text-xs text-white/65 leading-relaxed">
  Creators can leverage generative engines to script YouTube outlines, optimize titles for Click-Through Rates (CTR), draft blog structures, design custom graphical templates, and generate video captions.
  </p>
  </div>
@@ -465,9 +465,9 @@ export default function AIBlogPost() {
  a: 'The future points toward hyper-integrated, autonomous AI agents. Instead of simply responding to prompts, future AI tools will work in the background to handle multi-step workflows, connect distinct APIs, and learn your specific business habits.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

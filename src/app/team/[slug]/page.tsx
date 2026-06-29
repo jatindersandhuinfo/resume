@@ -122,7 +122,7 @@ export default async function TeamMemberPage({ params }: Props) {
  <span className="text-white/50">{member.name}</span>
  </nav>
 
- <div className="grid gap-12 lg:grid-cols-[1fr_360px] lg:items-start">
+ <div className="grid gap-12 md:grid-cols-[1fr_340px] md:items-start">
 
  {/* ── Left: identity ─────────────────────────────── */}
  <div>
@@ -328,7 +328,7 @@ export default async function TeamMemberPage({ params }: Props) {
  aria-labelledby="projects-heading"
  >
  {/* Section header */}
- <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1fr]">
+ <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.72fr_1fr]">
  <div>
  <p className="chapter-label">
  Portfolio
@@ -430,7 +430,7 @@ export default async function TeamMemberPage({ params }: Props) {
  {metrics.slice(0, 4).map((m) => (
  <div
  key={m.label}
- className="rounded-lg border border-white/[0.07] bg-black/[0.02] px-3 py-2 text-center"
+ className="rounded-lg border border-white/[0.07] bg-white/[0.04] px-3 py-2 text-center"
  >
  <p className="text-sm font-black" style={{ color: c.accent }}>{m.value}</p>
  <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-white/35">{m.label}</p>
@@ -633,7 +633,7 @@ export default async function TeamMemberPage({ params }: Props) {
  className="pointer-events-none absolute inset-0"
  style={{ background: 'radial-gradient(ellipse 70% 60% at 100% 0%, #f59e0b10, transparent)' }}
  />
- <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
+ <div className="relative grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
  <div>
  <p className="chapter-label">Work with {member.name.split(' ')[0]}</p>
  <h2 className="mt-4 section-title text-white max-w-xl">

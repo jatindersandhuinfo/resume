@@ -46,7 +46,7 @@ function ProjectScene({ project, index }: { project: Project; index: number }) {
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-8 sm:px-12 lg:px-16 xl:px-20">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center lg:gap-16">
 
           {/* ── TEXT CONTENT ── */}
           <motion.div

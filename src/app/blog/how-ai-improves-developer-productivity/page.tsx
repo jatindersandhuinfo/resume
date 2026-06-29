@@ -116,7 +116,7 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  These tools can:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-1 mt-2">
  <li>Suggest code</li>
  <li>Explain complex code</li>
  <li>Detect bugs</li>
@@ -137,7 +137,7 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI helps reduce time spent on:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-1 mt-2">
  <li>Boilerplate code</li>
  <li>Documentation</li>
  <li>Debugging</li>
@@ -155,18 +155,18 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  One of the most popular uses of AI is generating code.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A developer creating a login form can ask an AI tool to generate:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>React components</li>
  <li>Form validation</li>
  <li>API integration</li>
  <li>TypeScript interfaces</li>
  </ul>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  Instead of writing everything from scratch, the developer reviews and improves the generated code.
  </p>
  </div>
@@ -180,12 +180,12 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI can explain Next.js concepts, React hooks, Node.js APIs, database queries, and system design patterns.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A developer learning Next.js can ask AI to explain server components or API routes with practical examples.
  </p>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This reduces time spent searching through multiple resources.
  </p>
  </div>
@@ -199,9 +199,9 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can analyze error messages, suggest fixes, explain root causes, and recommend improvements.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  If an application crashes because of a database connection issue, AI can help identify potential causes and troubleshooting steps.
  </p>
  </div>
@@ -215,9 +215,9 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI can generate API documentation, function descriptions, README files, and user guides.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A developer finishing a project can quickly generate a professional README file instead of writing it manually.
  </p>
  </div>
@@ -242,19 +242,19 @@ export default function AIDeveloperProductivityBlogPost() {
  Developers who use AI effectively often experience:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Development Speed</strong>
  <p className="text-white/60">Faster development cycles and reduced time-to-market.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Less Repetitive Tasks</strong>
  <p className="text-white/60">Reduced repetitive, boring manual work and boilerplates.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Learning Curve</strong>
  <p className="text-white/60">Improved learning speed when adopting new frameworks.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">High-Quality Assets</strong>
  <p className="text-white/60">Better documentation, automated tests, and increased general productivity.</p>
  </div>
@@ -266,7 +266,7 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  While AI is powerful, developers should avoid:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2 mt-2">
  <li>Copying code without understanding it</li>
  <li>Ignoring security concerns</li>
  <li>Trusting every AI suggestion</li>
@@ -321,9 +321,9 @@ export default function AIDeveloperProductivityBlogPost() {
  <p className="leading-relaxed text-white/70">
  The reality is that AI is more likely to change how developers work rather than replace them completely.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Businesses still need developers to:</span>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>Design systems and architecture</li>
  <li>Understand requirements and business logic</li>
  <li>Solve complex, highly custom engineering problems</li>

@@ -51,44 +51,55 @@ function PhaseCard({ phase, index }: { phase: typeof PHASES[0]; index: number })
       transition={{ delay: index * 0.1, duration: 0.9, ease: EASE_EXPO }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      {/* Connector line (not on last) */}
+      {/* Desktop connector line between cards */}
       {index < PHASES.length - 1 && (
-        <div className="absolute top-7 left-[2.85rem] hidden h-px flex-1 bg-gradient-to-r from-gold/20 to-transparent lg:block" style={{ width: '100%', zIndex: 0 }} />
+        <div className="absolute top-7 left-[2.85rem] hidden h-px bg-gradient-to-r from-gold/20 to-transparent lg:block" style={{ width: '100%', zIndex: 0 }} />
       )}
 
-      {/* Phase content */}
-      <div className="relative z-10 flex gap-6">
-        {/* Left: number + phase name vertical */}
-        <div className="flex w-20 shrink-0 flex-col items-center">
+      {/* Mobile/tablet: horizontal (number left, content right) */}
+      <div className="relative z-10 flex gap-5 lg:hidden">
+        <div className="flex shrink-0 flex-col items-center">
           <div
-            className="flex h-14 w-14 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-gold/40"
+            className="flex h-12 w-12 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-gold/40"
             style={{ borderColor: 'rgba(239,239,239,0.08)', background: '#0e0e0e' }}
           >
-            <span className="font-bebas text-lg" style={{ color: phase.color }}>
-              {phase.index}
-            </span>
+            <span className="font-bebas text-base" style={{ color: phase.color }}>{phase.index}</span>
           </div>
-          <div className="mt-3 h-full w-px bg-gradient-to-b from-white/[0.05] to-transparent lg:hidden" />
+          {index < PHASES.length - 1 && (
+            <div className="mt-2 h-full w-px bg-gradient-to-b from-white/[0.06] to-transparent" />
+          )}
         </div>
-
-        {/* Right: details */}
-        <div className="pb-12 lg:pb-0">
-          <h3
-            className="font-bebas text-3xl tracking-wide transition-colors duration-300 group-hover:text-gold sm:text-4xl"
-            style={{ color: '#efefef' }}
-          >
+        <div className="pb-10">
+          <h3 className="font-bebas text-3xl tracking-wide text-canvas transition-colors duration-300 group-hover:text-gold">
             {phase.name}
           </h3>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/58">
-            {phase.description}
-          </p>
+          <p className="mt-2 text-sm leading-relaxed text-white/55">{phase.description}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {phase.tools.map((tool) => (
+              <span key={tool} className="border px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.18em] uppercase text-white/45" style={{ borderColor: 'rgba(239,239,239,0.07)' }}>
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: vertical card (number top, content below) */}
+      <div className="relative z-10 hidden flex-col lg:flex">
+        <div
+          className="flex h-14 w-14 items-center justify-center rounded-full border transition-colors duration-300 group-hover:border-gold/40"
+          style={{ borderColor: 'rgba(239,239,239,0.08)', background: '#0e0e0e' }}
+        >
+          <span className="font-bebas text-lg" style={{ color: phase.color }}>{phase.index}</span>
+        </div>
+        <div className="mt-6 pr-4">
+          <h3 className="font-bebas text-3xl tracking-wide text-canvas transition-colors duration-300 group-hover:text-gold">
+            {phase.name}
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-white/55">{phase.description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {phase.tools.map((tool) => (
-              <span
-                key={tool}
-                className="rounded-sm border px-2.5 py-1 text-xs font-bold tracking-[0.18em] uppercase text-white/50"
-                style={{ borderColor: 'rgba(239,239,239,0.07)' }}
-              >
+              <span key={tool} className="border px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.18em] uppercase text-white/45" style={{ borderColor: 'rgba(239,239,239,0.07)' }}>
                 {tool}
               </span>
             ))}
@@ -103,11 +114,11 @@ export function Chapter4Process() {
   return (
     <section
       id="chapter-4"
-      className="relative w-full overflow-hidden bg-surface-mid py-28 lg:py-40"
+      className="relative w-full overflow-hidden bg-surface-mid py-14 md:py-20 lg:py-28"
       aria-labelledby="process-heading"
     >
       {/* Ghost chapter number */}
-      <div className="pointer-events-none absolute left-8 top-8 select-none" aria-hidden="true">
+      <div className="pointer-events-none absolute right-8 top-8 select-none text-right" aria-hidden="true">
         <p className="text-[0.6rem] font-bold tracking-[0.4em] uppercase text-white/10">Chapter</p>
         <p className="chapter-number-bg leading-none">04</p>
       </div>
@@ -125,7 +136,7 @@ export function Chapter4Process() {
       <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
 
         {/* Header */}
-        <div className="mb-20 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-end">
+        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:items-end md:mb-14 lg:mb-20">
           <div>
             <motion.div
               className="chapter-label mb-10"
@@ -186,7 +197,7 @@ export function Chapter4Process() {
         </div>
 
         {/* Phase cards */}
-        <div className="relative flex flex-col gap-0 lg:grid lg:grid-cols-5 lg:gap-0">
+        <div className="relative grid grid-cols-1 gap-0 lg:grid-cols-5 lg:gap-0">
           {/* Horizontal connector — desktop only */}
           <div className="pointer-events-none absolute top-7 left-[2.5rem] right-0 hidden h-px bg-gradient-to-r from-gold/15 via-white/[0.05] to-transparent lg:block" aria-hidden="true" />
 
