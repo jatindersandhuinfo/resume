@@ -48,9 +48,9 @@ function BeliefSection({ belief }: { belief: typeof BELIEFS[0] }) {
   return (
     <div
       ref={ref}
-      className={`relative flex min-h-[60vh] w-full items-center border-t border-white/[0.05] py-20 ${
-        belief.align === 'right' ? 'bg-surface-mid' : 'bg-studio'
-      }`}
+      className={`relative flex min-h-[60vh] w-full items-center overflow-hidden py-12 md:py-16 lg:py-20 ${
+        belief.index !== '01' ? 'border-t border-white/[0.05]' : ''
+      } ${belief.align === 'right' ? 'bg-surface-mid' : 'bg-studio'}`}
     >
       {/* Ambient glow */}
       <motion.div
@@ -64,22 +64,27 @@ function BeliefSection({ belief }: { belief: typeof BELIEFS[0] }) {
         aria-hidden="true"
       />
 
-      {/* Ghost index */}
+      {/* Ghost index — sized to fit inside the section */}
       <div
-        className={`pointer-events-none absolute select-none ${
-          belief.align === 'left' ? 'right-8 bottom-8' : 'left-8 bottom-8'
+        className={`pointer-events-none absolute select-none bottom-4 ${
+          belief.align === 'left' ? 'right-6' : 'left-6'
         }`}
         aria-hidden="true"
       >
-        <p className="chapter-number-bg text-right leading-none">{belief.index}</p>
+        <p
+          className="font-bebas leading-none tracking-[0.01em]"
+          style={{ fontSize: 'clamp(4rem, 8vw, 9rem)', color: 'rgba(239,239,239,0.05)' }}
+        >
+          {belief.index}
+        </p>
       </div>
 
       <div
         className={`relative mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-14 ${
-          belief.align === 'right' ? 'text-right' : ''
+          belief.align === 'right' ? 'lg:text-right' : ''
         }`}
       >
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
 
           {/* Statement — left column */}
           <div className={belief.align === 'right' ? 'lg:order-2' : ''}>
@@ -117,7 +122,7 @@ function BeliefSection({ belief }: { belief: typeof BELIEFS[0] }) {
             </p>
 
             {/* Stat card */}
-            <div className={`flex items-center gap-5 border-l-2 border-gold/30 pl-5 ${belief.align === 'right' ? 'border-l-0 border-r-2 pr-5 pl-0 flex-row-reverse' : ''}`}>
+            <div className={`flex items-center gap-5 border-l-2 border-gold/30 pl-5 ${belief.align === 'right' ? 'lg:border-l-0 lg:border-r-2 lg:pr-5 lg:pl-0 lg:flex-row-reverse' : ''}`}>
               <div>
                 <p className="font-bebas text-3xl text-gold sm:text-4xl">
                   {belief.stat.value}
@@ -141,16 +146,17 @@ export function Chapter5Philosophy() {
   return (
     <section
       id="chapter-5"
-      className="relative w-full"
+      className="relative w-full overflow-hidden"
       aria-labelledby="philosophy-heading"
     >
+      {/* Ghost 05 — anchored to full section so it has vertical room */}
+      <div className="pointer-events-none absolute right-8 top-8 z-10 select-none text-right" aria-hidden="true">
+        <p className="text-[0.6rem] font-bold tracking-[0.4em] uppercase text-white/10">Chapter</p>
+        <p className="chapter-number-bg leading-none">05</p>
+      </div>
+
       {/* Section header */}
       <div ref={sectionRef} className="relative bg-studio px-6 pb-8 pt-20 sm:px-10 lg:px-14">
-        <div className="pointer-events-none absolute right-8 top-8 select-none text-right" aria-hidden="true">
-          <p className="text-[0.6rem] font-bold tracking-[0.4em] uppercase text-white/10">Chapter</p>
-          <p className="chapter-number-bg leading-none">05</p>
-        </div>
-
         <motion.div
           className="chapter-label"
           initial={{ opacity: 0 }}

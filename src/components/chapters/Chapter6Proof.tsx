@@ -79,7 +79,7 @@ export function Chapter6Proof({ projects }: Chapter6ProofProps) {
   return (
     <section
       id="chapter-6"
-      className="relative w-full overflow-hidden bg-surface-mid py-28 lg:py-40"
+      className="relative w-full overflow-hidden bg-surface-mid py-14 md:py-20 lg:py-28"
       aria-labelledby="proof-heading"
     >
       {/* Ghost chapter number */}
@@ -126,11 +126,11 @@ export function Chapter6Proof({ projects }: Chapter6ProofProps) {
         </div>
 
         {/* Big stats grid */}
-        <div className="mt-16 grid grid-cols-2 gap-0 border border-white/[0.05] lg:grid-cols-4 [&>*]:flex [&>*]:flex-col">
+        <div className="mt-10 md:mt-14 grid grid-cols-2 gap-0 border border-white/[0.05] md:grid-cols-4 [&>*]:flex [&>*]:flex-col">
           {BIG_STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
-              className="border-r border-white/[0.05] p-8 last:border-r-0 even:border-r-0 lg:even:border-r lg:last:border-r-0"
+              className="border-r border-white/[0.05] p-5 sm:p-8 last:border-r-0 even:border-r-0 lg:even:border-r lg:last:border-r-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.8, ease: EASE_EXPO }}
@@ -150,7 +150,7 @@ export function Chapter6Proof({ projects }: Chapter6ProofProps) {
         </div>
 
         {/* Divider */}
-        <div className="my-20 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+        <div className="my-12 md:my-16 lg:my-20 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
 
         {/* Experience timeline */}
         <motion.div
@@ -202,7 +202,7 @@ export function Chapter6Proof({ projects }: Chapter6ProofProps) {
         </div>
 
         {/* Divider */}
-        <div className="my-20 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+        <div className="my-12 md:my-16 lg:my-20 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
 
         {/* Project thumbnail gallery */}
         <motion.div

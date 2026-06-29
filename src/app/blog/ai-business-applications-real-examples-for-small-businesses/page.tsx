@@ -123,7 +123,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Small businesses often operate with limited staff and resources. AI can help by:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2 mt-2">
  <li>Reducing manual work</li>
  <li>Saving time on repetitive tasks</li>
  <li>Improving customer support</li>
@@ -144,17 +144,17 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI chatbots can answer frequently asked questions, collect customer information, and provide support even outside business hours.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A local plumbing business can use an AI chatbot on its website to answer questions such as:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1">
  <li>What services do you offer?</li>
  <li>What are your operating hours?</li>
  <li>How can I book an appointment?</li>
  </ul>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This allows customers to get immediate answers while reducing the workload on staff.
  </p>
  </div>
@@ -168,19 +168,19 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI writing tools can help generate:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2">
  <li>Blog articles</li>
  <li>Social media posts</li>
  <li>Product descriptions</li>
  <li>Email newsletters</li>
  <li>Marketing content</li>
  </ul>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A local bakery can use AI to generate weekly social media posts promoting new products and special offers.
  </p>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This helps maintain an active online presence without spending hours creating content.
  </p>
  </div>
@@ -194,16 +194,16 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can help businesses:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2">
  <li>Create advertising copy</li>
  <li>Generate marketing ideas</li>
  <li>Analyze campaign performance</li>
  <li>Optimize content for search engines</li>
  <li>Personalize customer communication</li>
  </ul>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  An online clothing store can use AI to create multiple versions of an advertisement and test which one performs best.
  </p>
  </div>
@@ -217,16 +217,16 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI-powered automation can help streamline:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2">
  <li>Appointment scheduling</li>
  <li>Lead management</li>
  <li>Email responses</li>
  <li>Data entry</li>
  <li>Customer follow-ups</li>
  </ul>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A consulting business can automatically send appointment confirmations, reminders, and follow-up emails without manual effort.
  </p>
  </div>
@@ -240,18 +240,18 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can help identify:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2">
  <li>Sales trends</li>
  <li>Customer behavior</li>
  <li>Popular products</li>
  <li>Revenue opportunities</li>
  </ul>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A retail store can analyze sales data to determine which products perform best during different seasons.
  </p>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This information can help improve inventory planning and marketing strategies.
  </p>
  </div>
@@ -265,15 +265,15 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can assist with:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2">
  <li>Content suggestions</li>
  <li>SEO optimization</li>
  <li>Customer interactions</li>
  <li>Website analytics</li>
  </ul>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A service-based business can use AI to identify the most searched topics related to its industry and create helpful content around those topics.
  </p>
  </div>
@@ -285,19 +285,19 @@ export default function AIBusinessApplicationsBlogPost() {
  Businesses that effectively use AI may experience:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Productivity & Decisions</strong>
  <p className="text-white/60">Increased productivity and faster decision-making across teams.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Customer Experience</strong>
  <p className="text-white/60">Better customer experiences with 24/7 instant response support systems.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Operational Costs</strong>
  <p className="text-white/60">Reduced operational costs through intelligent workflow automation.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Marketing Efficiency</strong>
  <p className="text-white/60">Improved marketing performance and more efficient general business workflows.</p>
  </div>
@@ -309,7 +309,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  While AI offers many advantages, businesses should also be aware of potential challenges:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2 mt-2">
  <li>Learning new tools</li>
  <li>Maintaining data accuracy</li>
  <li>Verifying AI-generated content</li>
@@ -328,7 +328,7 @@ export default function AIBusinessApplicationsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Choose one area of your business where AI can provide immediate value, such as:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-1">
  <li>Customer support</li>
  <li>Content creation</li>
  <li>Marketing</li>

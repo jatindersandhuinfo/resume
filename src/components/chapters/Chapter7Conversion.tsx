@@ -50,7 +50,7 @@ export function Chapter7Conversion() {
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-studio"
+      className="relative w-full overflow-hidden bg-studio py-20 lg:py-28"
       aria-labelledby="cta-heading"
     >
       {/* Background */}
@@ -79,7 +79,7 @@ export function Chapter7Conversion() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1400px] px-6 sm:px-10 lg:px-14">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-14">
 
         <motion.div
           className="chapter-label mb-14"
@@ -113,7 +113,7 @@ export function Chapter7Conversion() {
 
         {/* Bottom grid: availability + links */}
         <motion.div
-          className="mt-20 grid grid-cols-1 gap-16 border-t border-white/[0.06] pt-12 lg:grid-cols-2"
+          className="mt-20 grid grid-cols-1 gap-12 border-t border-white/[0.06] pt-12 md:grid-cols-2 md:gap-16"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ delay: 0.5, duration: 0.9, ease: EASE_EXPO }}

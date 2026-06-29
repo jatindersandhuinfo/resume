@@ -127,7 +127,7 @@ export default function SmallBusinessWebsiteBlogPost() {
  <p className="leading-relaxed text-white/70">
  They want answers to questions like:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li>Is this business legitimate?</li>
  <li>What services do they offer?</li>
  <li>What are their prices?</li>
@@ -200,7 +200,7 @@ export default function SmallBusinessWebsiteBlogPost() {
  <p className="leading-relaxed text-white/70">
  A website functions as an automated lead generation machine. Instead of waiting for the phone to ring, your site can capture customer details via contact forms, email newsletter signups, quote estimators, or appointment pages.
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] text-xs leading-relaxed">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] text-xs leading-relaxed">
  <span className="font-bold text-gold block mb-1">Example Lead Flow:</span>
  <p className="text-white/60">
  A local user searches for your service, lands on your website, sees a clear "Get a Free Quote" callout, and submits their details. You generate a high-value lead without having to pick up a phone.
@@ -218,7 +218,7 @@ export default function SmallBusinessWebsiteBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Configure clear conversion elements:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5">
  <li><strong>Contact Forms:</strong> Keep fields simple to maximize submissions.</li>
  <li><strong>Online Booking:</strong> Ideal for service businesses to capture bookings instantly.</li>
  <li><strong>Quote Requests:</strong> Perfect for custom services and agencies.</li>
@@ -258,7 +258,7 @@ export default function SmallBusinessWebsiteBlogPost() {
 
  <div className="p-4 rounded-lg bg-gold/5 border border-gold/25">
  <span className="font-bold text-gold block mb-1">Owning a Website:</span>
- <ul className="pl-4 list-disc text-black/65 text-white/65 space-y-1">
+ <ul className="pl-4 list-disc text-white/65 space-y-1">
  <li>Complete asset ownership and stability.</li>
  <li>Total control over design, branding, and customer flows.</li>
  <li>Superior SEO positioning and organic visibility.</li>
@@ -277,7 +277,7 @@ export default function SmallBusinessWebsiteBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  A website provides compounding long-term value:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5">
  <li>Low monthly hosting costs.</li>
  <li>Excellent Return on Investment (ROI).</li>
  <li>Generates organic leads for years without recurring ad spend.</li>
@@ -331,25 +331,25 @@ export default function SmallBusinessWebsiteBlogPost() {
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Slow Loading Speed</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Slow-loading pages frustrate users and drive them to your competitors.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Poor Mobile Design</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Failing to optimize your site for smartphones will drive mobile users away.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Outdated Content</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Out-of-date pricing or services create an unprofessional impression.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Missing Contact Details</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Hiding phone numbers or forms makes it difficult to generate leads.
  </p>
  </div>
@@ -390,7 +390,7 @@ export default function SmallBusinessWebsiteBlogPost() {
  Let's evaluate two local taxi companies operating in the same city:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Company A</span>
  <p className="text-white/60 leading-relaxed">
  Operates without a website. Relies solely on Facebook updates and phone calls. Customers cannot book rides online or verify credibility.
@@ -464,9 +464,9 @@ export default function SmallBusinessWebsiteBlogPost() {
  a: 'Reclaiming ownership of your digital presence and generating leads and customer bookings continuously 24/7.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

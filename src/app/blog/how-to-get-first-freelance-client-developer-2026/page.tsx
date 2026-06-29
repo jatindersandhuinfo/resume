@@ -124,7 +124,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70">
  Common business mistakes include:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li>Lacking an active portfolio</li>
  <li>Lacking a personal website</li>
  <li>Weak LinkedIn profile optimization</li>
@@ -238,7 +238,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70 mt-4">
  Niche specializations help you stand out. Highly profitable niches in 2026 include:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li>Full-stack SaaS dashboard systems</li>
  <li>Real estate directory portals</li>
  <li>Taxi and fleet booking platforms</li>
@@ -267,7 +267,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70">
  LinkedIn is an extremely powerful platform for acquiring high-paying direct freelance clients. Make sure your profile acts as a landing page:
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4 space-y-3 text-xs">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4 space-y-3 text-xs">
  <p>
  <strong className="text-sm text-gold block">1. Professional Headline</strong>
  Avoid generic "Software Developer". Use descriptive headlines: <em>"Full-Stack Developer | Next.js | Node.js | SaaS & AI Systems"</em>.
@@ -294,7 +294,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70">
  Upwork remains one of the largest global marketplaces for active freelance clients. To stand out, configure a highly optimized profile:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Focused Profile Title:</strong> Match your specialized niche exactly, e.g., <em>"Full-Stack Next.js & Node.js Developer"</em>.</li>
  <li><strong>Benefit-Focused Overview:</strong> Address client pain points first. Explain how your development expertise saves them operational costs or increases sales conversions.</li>
  <li><strong>Detailed Portfolio Items:</strong> Add crisp dashboard screenshots, architectural wireframes, and clear descriptions outlining what was built and why.</li>
@@ -311,7 +311,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70">
  Draft specific Gigs that target exact service keywords:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-2">
  <li><strong>Full Builds:</strong> "I will develop a premium Next.js full-stack website."</li>
  <li><strong>API Integrations:</strong> "I will engineer secure Node.js APIs and DB schemas."</li>
  <li><strong>Debugging & Maintenance:</strong> "I will fix React, Next.js, and CSS issues."</li>
@@ -328,7 +328,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  Instead, draft custom, highly specific proposals:
  </p>
- <div className="p-4 rounded-lg bg-gold/5 border border-gold/25 text-xs italic leading-relaxed text-black/75 text-white/75">
+ <div className="p-4 rounded-lg bg-gold/5 border border-gold/25 text-xs italic leading-relaxed text-white/75">
  "Hi [Client Name], I reviewed your requirements and noticed your platform needs improved image loading speeds. I recently optimized a Next.js ecommerce project that reduced mobile load times by 45% using next/image and dynamic imports. I can implement this same optimization for your site within 3 days..."
  </div>
  </section>
@@ -391,17 +391,17 @@ export default function FreelanceBlogPost() {
  Avoid extreme low-ball pricing (which attracts highly demanding, low-value clients) and avoid overpricing (which is difficult to justify without testimonials).
  </p>
  <div className="grid gap-3 my-6 sm:grid-cols-3 text-center text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25">
  <span className="font-extrabold text-lg text-gold block">Landing Pages</span>
  <span className="text-xl font-bold text-white block my-1">$300 – $800</span>
  <span className="text-[10px] text-white/60 block">1-3 dynamic pages</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25">
  <span className="font-extrabold text-lg text-gold block">Business Sites</span>
  <span className="text-xl font-bold text-white block my-1">$800 – $3,000</span>
  <span className="text-[10px] text-white/60 block">Full SEO integrations</span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25">
  <span className="font-extrabold text-lg text-gold block">Custom SaaS MVP</span>
  <span className="text-xl font-bold text-white block my-1">$3,000+</span>
  <span className="text-[10px] text-white/60 block">Custom dynamic databases</span>
@@ -416,7 +416,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70">
  Landing your first client is only the first step. Providing an outstanding client experience is how you secure long-term, high-value recurring contracts.
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Proactive Communication:</strong> Provide regular progress logs and share staging links weekly.</li>
  <li><strong>Clear Technical Documentation:</strong> Write concise guides explaining how to run and manage their new systems.</li>
  <li><strong>Rigorous Testing:</strong> Test responsiveness, speed, and forms across devices before delivering files.</li>
@@ -446,7 +446,7 @@ export default function FreelanceBlogPost() {
  <p className="leading-relaxed text-white/70">
  Once your client calendar reaches capacity, you can scale your freelance operations by:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-3">
  <li><strong>Raising Your Rates:</strong> Charge premium prices as your review and project catalog grows.</li>
  <li><strong>Productizing Services:</strong> Structure specific offerings into fixed-price, packaged items (e.g. Next.js migrations for $1,500).</li>
  <li><strong>Building an Agency:</strong> Subcontract designers and developers to scale capacity.</li>
@@ -465,25 +465,25 @@ export default function FreelanceBlogPost() {
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Waiting for Clients to Find You</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Proactively market your services, submit proposals daily, and send outreach emails.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Poor Communication</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Respond to inquiries within 24 hours. Communication is key to retaining clients.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Severe Underpricing</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Charging extremely low rates attracts difficult clients and devalues your expertise.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Working Without Contracts</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Always use simple contracts defining project scope, payment stages, and IP transfers.
  </p>
  </div>
@@ -499,19 +499,19 @@ export default function FreelanceBlogPost() {
  </p>
 
  <div className="grid gap-3 my-6 sm:grid-cols-3 text-center text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25">
  <span className="font-extrabold text-sm text-gold block uppercase tracking-wider">Month 1</span>
  <span className="text-xs text-white/60 block mt-2">
  Build your personal portfolio site, optimize your Upwork and LinkedIn profiles, and draft your core case studies.
  </span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25">
  <span className="font-extrabold text-sm text-gold block uppercase tracking-wider">Month 2</span>
  <span className="text-xs text-white/60 block mt-2">
  Initiate daily cold outreach emails, bid on Upwork proposals, and engage in online networking circles.
  </span>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-gold/25">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-gold/25">
  <span className="font-extrabold text-sm text-gold block uppercase tracking-wider">Month 3</span>
  <span className="text-xs text-white/60 block mt-2">
  Secure your initial video consultations, close contract deals, launch small projects, and gather reviews.
@@ -578,9 +578,9 @@ export default function FreelanceBlogPost() {
  a: 'Run direct cold email outreach to local businesses, actively bid on Upwork job posts, and optimize your LinkedIn profile simultaneously.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

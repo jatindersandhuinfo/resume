@@ -103,7 +103,7 @@ export default function AIAgentBlogPost() {
  <p className="leading-relaxed text-white/70">
  Businesses are using AI agents for:
  </p>
- <ul className="grid grid-cols-2 gap-2 text-xs text-black/65 text-white/65 pl-4 list-disc">
+ <ul className="grid grid-cols-2 gap-2 text-xs text-white/65 pl-4 list-disc">
  <li>Customer support</li>
  <li>Lead generation</li>
  <li>Appointment scheduling</li>
@@ -134,14 +134,14 @@ export default function AIAgentBlogPost() {
  </p>
 
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs">
  <span className="font-bold text-gold block mb-1">A Chatbot:</span>
  <p className="text-white/60 leading-relaxed">
  Acts like a calculator. It strictly responds to direct input using standard static rules and lacks independent agency.
  </p>
  </div>
 
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08] text-xs">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs">
  <span className="font-bold text-gold block mb-1">An AI Agent:</span>
  <p className="text-white/60 leading-relaxed">
  Acts like a virtual employee. It can understand goals, make independent decisions, use external tools (like databases and APIs), remember previous user interactions, and complete multi-step tasks autonomously.
@@ -186,31 +186,31 @@ export default function AIAgentBlogPost() {
  Every modern autonomous AI agent relies on four crucial layers working in concert:
  </p>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4 space-y-4">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4 space-y-4">
  <div className="pl-3 border-l-2 border-gold">
  <strong className="text-xs text-gold block uppercase tracking-wider">1. User Input Layer</strong>
- <p className="text-xs text-black/65 text-white/65 mt-1">
+ <p className="text-xs text-white/65 mt-1">
  Receives instructions and parameters from users via chat portals, web dashboard interfaces, companion mobile apps, or webhook integrations.
  </p>
  </div>
 
  <div className="pl-3 border-l-2 border-gold">
  <strong className="text-xs text-gold block uppercase tracking-wider">2. Reasoning Engine</strong>
- <p className="text-xs text-black/65 text-white/65 mt-1">
+ <p className="text-xs text-white/65 mt-1">
  The central brain. Uses Large Language Models (OpenAI, Claude, Gemini) to analyze instructions, build logic, and decide which actions to execute.
  </p>
  </div>
 
  <div className="pl-3 border-l-2 border-gold">
  <strong className="text-xs text-gold block uppercase tracking-wider">3. Memory Layer</strong>
- <p className="text-xs text-black/65 text-white/65 mt-1">
+ <p className="text-xs text-white/65 mt-1">
  Maintains historical context. Short-term memory tracks the current conversation flow, while long-term memory stores user habits and persistent parameters inside a database.
  </p>
  </div>
 
  <div className="pl-3 border-l-2 border-gold">
  <strong className="text-xs text-gold block uppercase tracking-wider">4. Tool & Execution Layer</strong>
- <p className="text-xs text-black/65 text-white/65 mt-1">
+ <p className="text-xs text-white/65 mt-1">
  Gives the agent hands. Allows the model to execute external actions, query backend databases, invoke APIs, dispatch emails, or compile spreadsheets.
  </p>
  </div>
@@ -225,19 +225,19 @@ export default function AIAgentBlogPost() {
  For engineering high-performance agentic applications, I recommend the following stack:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Frontend Layer</span>
  <p className="text-white/60">Next.js, React, and Tailwind CSS for designing premium, responsive dashboards and portal screens.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-black/5 dark:bg-white/5">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Backend Server</span>
  <p className="text-white/60">Node.js and Express.js for compiling fast, highly concurrent API architectures and tool calling processes.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">Database & Memory</span>
  <p className="text-white/60">MongoDB or PostgreSQL for persisting session history matrices, user settings, and agent parameters.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.01] border border-white/[0.07]">
+ <div className="p-4 rounded-lg bg-white/[0.03] border border-white/[0.07]">
  <span className="font-bold text-gold block mb-1">LLM APIs</span>
  <p className="text-white/60">OpenAI (GPT-4o), Anthropic (Claude 3.5 Sonnet), or Google Gemini APIs as your core reasoning engines.</p>
  </div>
@@ -356,7 +356,7 @@ async function getAgentReasoning(prompt, history = []) {
  <p className="text-white/70 font-semibold">
  "Act as a senior Node.js security engineer. Analyze the attached code for access vulnerabilities, suggest secure code replacements, rank risks (High/Med/Low), and explain CORS security details."
  </p>
- <p className="text-[10px] text-black/65 text-white/65 mt-2">Generates deeply technical, accurate, and drop-in code recommendations.</p>
+ <p className="text-[10px] text-white/65 mt-2">Generates deeply technical, accurate, and drop-in code recommendations.</p>
  </div>
  </div>
  </section>
@@ -369,14 +369,14 @@ async function getAgentReasoning(prompt, history = []) {
  Memory transforms a simple chatbot into a highly capable personal assistant. Without memory systems, every session starts from absolute zero.
  </p>
  <div className="grid gap-4 mt-4 sm:grid-cols-2">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Short-Term Memory</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Stores immediate context and conversation transcripts within the active server state. Messages are pushed into an array structure and sent to the LLM context.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Long-Term Memory</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Persists user details, previous workflows, billing states, and preferences in a database like MongoDB. The agent queries this memory at session startup to load the context.
@@ -395,7 +395,7 @@ async function getAgentReasoning(prompt, history = []) {
  <p className="leading-relaxed text-white/70 font-semibold text-gold">
  Examples of automated tools:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-2">
  <li><strong>sendEmail(recipient, body):</strong> Dispatches updates or notifications to clients.</li>
  <li><strong>createLead(name, email, phone):</strong> Adds qualified visitors directly to your CRM.</li>
  <li><strong>searchDatabase(query):</strong> Queries backend tables for details.</li>
@@ -413,14 +413,14 @@ async function getAgentReasoning(prompt, history = []) {
  Advanced agents operate under multi-step reasoning cycles (like ReAct—Reason and Action). When a user poses a compound question, the agent iterates:
  </p>
  
- <div className="p-5 rounded-lg border border-gold/20 bg-black/[0.02] mt-4">
+ <div className="p-5 rounded-lg border border-gold/20 bg-white/[0.04] mt-4">
  <strong className="text-xs text-gold block uppercase tracking-wider mb-2">Example User Query:</strong>
  <p className="text-xs text-white/70 italic mb-4">
  "Which leads haven't responded to emails in the past 30 days, and what are their emails?"
  </p>
  
  <strong className="text-xs text-white block uppercase tracking-wider mb-2">Autonomous Agent Workflow:</strong>
- <ol className="list-decimal pl-4 text-xs text-black/65 text-white/65 space-y-1.5">
+ <ol className="list-decimal pl-4 text-xs text-white/65 space-y-1.5">
  <li><strong>Query:</strong> Agent queries CRM database for customers created over 30 days ago.</li>
  <li><strong>Analyze:</strong> Filters users lacking associated transaction or contact logs.</li>
  <li><strong>Consolidate:</strong> Extracts email and name parameters into a clean dataset.</li>
@@ -438,21 +438,21 @@ async function getAgentReasoning(prompt, history = []) {
  </p>
 
  <div className="grid gap-4 mt-4 sm:grid-cols-3">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">1. Customer Support</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Answers repetitive business FAQs, details package shipping statuses, modifies customer bookings, and escalates complex issues to human agents.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">2. Lead Generation</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Greets incoming landing page visitors, asks qualifying questions, matches product catalogs, and schedules appointments automatically.
  </p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">3. SaaS Assistants</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Acts as an onboarding companion, generates complex aggregated database reports, and structures user workflows via simple chat commands.
@@ -506,7 +506,7 @@ async function getAgentReasoning(prompt, history = []) {
  <p className="leading-relaxed text-white/70">
  Production integrations demand strict security standards to defend customer data:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Secure API Keys:</strong> Never hardcode API keys or credentials. Enforce `.env` configuration files and ignore them in Git repositories.</li>
  <li><strong>Input Validation:</strong> Strictly sanitize inputs and configure length limits to defend against prompt injection and cross-site scripting (XSS).</li>
  <li><strong>Enforce Rate Limiting:</strong> Use rate-limiting middleware (like `express-rate-limit`) to prevent abuse and manage API costs.</li>
@@ -522,21 +522,21 @@ async function getAgentReasoning(prompt, history = []) {
  AI models incur transaction costs and response latency. You can optimize performance by:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Caching Common Answers</span>
- <p className="text-black/65 text-white/65">Stores predictable replies (such as operational hours) in memory caches to bypass LLM calls.</p>
+ <p className="text-white/65">Stores predictable replies (such as operational hours) in memory caches to bypass LLM calls.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Limiting History Context</span>
- <p className="text-black/65 text-white/65">Pipes only the most recent conversation messages, keeping token usage low and API responses fast.</p>
+ <p className="text-white/65">Pipes only the most recent conversation messages, keeping token usage low and API responses fast.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Asynchronous Queues</span>
- <p className="text-black/65 text-white/65">Routes slow operations through a background task manager (like BullMQ), preventing thread blocks.</p>
+ <p className="text-white/65">Routes slow operations through a background task manager (like BullMQ), preventing thread blocks.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Efficient Prompts</span>
- <p className="text-black/65 text-white/65">Drafts shorter, highly structured system prompts to reduce input tokens and lower transaction costs.</p>
+ <p className="text-white/65">Drafts shorter, highly structured system prompts to reduce input tokens and lower transaction costs.</p>
  </div>
  </div>
  </section>
@@ -548,8 +548,8 @@ async function getAgentReasoning(prompt, history = []) {
  <p className="leading-relaxed text-white/70">
  Deploy your agent layers using specialized hosting services:
  </p>
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] mt-4">
- <ul className="space-y-4 text-xs text-black/65 text-white/65">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] mt-4">
+ <ul className="space-y-4 text-xs text-white/65">
  <li>
  <strong className="text-sm text-gold block">1. Frontend UI: Next.js on Vercel</strong>
  Gives you global edge caching, instant deployments, and automatic image optimizations.
@@ -577,25 +577,25 @@ async function getAgentReasoning(prompt, history = []) {
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">No Memory Layer</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Treating every prompt as a new session creates poor user experiences. Always configure memory systems.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Vague Prompt Templates</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Failing to provide exact parameters or structures yields robotic, low-quality agent outputs.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Ignoring API Security</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Exposing raw API keys or failing to filter tool execution boundaries invites severe hacking vulnerabilities.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-red-500/5 border border-red-500/10">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">No System Monitoring</span>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Failing to track prompt errors or execution logs makes debugging server issues incredibly difficult.
  </p>
  </div>
@@ -672,9 +672,9 @@ async function getAgentReasoning(prompt, history = []) {
  a: 'Effectively managing long-term and short-term memory structures, defining robust tool sets, protecting APIs against injections, and optimizing model call costs.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

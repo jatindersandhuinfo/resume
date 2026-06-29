@@ -146,7 +146,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  An optimized booking form should capture:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-2">
  <li><strong>Pickup & Destination:</strong> Locations parsed accurately via address lookup.</li>
  <li><strong>Date & Time:</strong> Intuitive calendars to schedule immediate or future rides.</li>
  <li><strong>Passenger & Luggage Count:</strong> Necessary to match the correct vehicle size.</li>
@@ -175,7 +175,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </p>
 
  <div className="grid gap-4 mt-4 sm:grid-cols-2 text-xs">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold uppercase tracking-wider">Sedan / Economy</h3>
  <ul className="mt-2 text-white/60 space-y-1">
  <li><strong>Capacity:</strong> Max 4 Passengers, 2 Bags</li>
@@ -183,7 +183,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  </ul>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold uppercase tracking-wider">Luxury SUV</h3>
  <ul className="mt-2 text-white/60 space-y-1">
  <li><strong>Capacity:</strong> Max 6 Passengers, 4 Bags</li>
@@ -203,7 +203,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  <p className="leading-relaxed text-white/70">
  A private customer portal drastically raises client retention rates:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-1.5 mt-2">
  <li><strong>Booking History:</strong> View and track previous and upcoming reservations.</li>
  <li><strong>Saved Locations:</strong> Quickly reuse home, office, or common airport coordinates.</li>
  <li><strong>Invoicing & Payments:</strong> Access and print receipts or card statements.</li>
@@ -298,7 +298,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  <p className="leading-relaxed text-white/70">
  Protecting customer information is non-negotiable. Modern booking systems demand:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>SSL Certificates:</strong> Enforce HTTPS across all pages to secure transit data.</li>
  <li><strong>Secure API Tokens:</strong> Safeguard payment processors and maps integrations with backend validation checks.</li>
  <li><strong>Role-Based Access (RBAC):</strong> Enforce strict permissions separating customer data from administrative panels.</li>
@@ -313,13 +313,13 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  Artificial Intelligence is driving massive efficiency leaps in modern fleet operations:
  </p>
  <div className="grid gap-3 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Smart Dispatching</span>
- <p className="text-black/65 text-white/65">AI engines assign drivers based on dynamic traffic, reducing fuel spend and wait times.</p>
+ <p className="text-white/65">AI engines assign drivers based on dynamic traffic, reducing fuel spend and wait times.</p>
  </div>
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">AI Support Bots</span>
- <p className="text-black/65 text-white/65">Resolves client booking modifications, fare estimations, and cancellation requests 24/7.</p>
+ <p className="text-white/65">Resolves client booking modifications, fare estimations, and cancellation requests 24/7.</p>
  </div>
  </div>
  </section>
@@ -329,7 +329,7 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  Real-World Comparison
  </h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">Company A</span>
  <p className="text-white/60 leading-relaxed">
  Depends solely on manual phone dispatches, lacks fare estimations, and offers no credit card checkouts. Customers quickly bounce to competitors.
@@ -403,9 +403,9 @@ export default function TaxiWebsiteFeaturesBlogPost() {
  a: 'Yes. A professional platform builds credibility, simplifies booking steps, and significantly drives up client conversion rates.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

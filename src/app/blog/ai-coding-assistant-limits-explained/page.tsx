@@ -129,9 +129,9 @@ export default function AICodingLimitsBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI models require enormous computing resources. Every request consumes GPU processing power, memory resources, storage systems, and networking infrastructure. A single complex coding request can involve thousands of tokens and significant computational effort.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-4">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-4">
  <p className="text-sm font-bold text-gold">Without quotas, providers would struggle to offer free access. Limits help:</p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2">
  <li><strong>Control Infrastructure Costs:</strong> Running large language models is highly expensive.</li>
  <li><strong>Prevent Abuse:</strong> Limits discourage automated misuse and excessive scraping.</li>
  <li><strong>Ensure Fair Access:</strong> All users receive a reasonable share of resources.</li>
@@ -153,25 +153,25 @@ export default function AICodingLimitsBlogPost() {
  <section id="measure-usage" className="space-y-4">
  <h2 className="text-2xl font-bold tracking-tight text-white border-b border-gold/20 pb-2">How AI Coding Assistants Measure Usage</h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2">
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Request Count</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Every prompt counts as a request. Example: &quot;Generate a React component&quot; counts as one request.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Token Usage</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Large prompts and large responses consume more tokens. Pasting a 2,000-line application consumes far more tokens than reviewing a simple login function.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Premium Model Consumption</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Many platforms limit access to powerful, expensive models to manage usage costs.
  </p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.02] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.04] ">
  <h3 className="text-sm font-bold text-gold">Compute Resources</h3>
  <p className="mt-2 text-xs text-white/60 leading-relaxed">
  Some platforms measure actual computational effort. Complex requests may consume quotas faster than simple ones.
@@ -208,8 +208,8 @@ export default function AICodingLimitsBlogPost() {
  <section id="comparing-tools" className="space-y-4">
  <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Comparing Popular AI Coding Assistants</h2>
  <div className="overflow-x-auto my-6 rounded-lg border border-white/[0.08]">
- <table className="min-w-full divide-y divide-black/10 dark:divide-white/10 text-left text-xs sm:text-sm">
- <thead className="bg-black/[0.02] font-bold text-black text-white uppercase tracking-wider text-xs">
+ <table className="min-w-full divide-y divide-white/10 text-left text-xs sm:text-sm">
+ <thead className="bg-white/[0.04] font-bold text-white uppercase tracking-wider text-xs">
  <tr>
  <th className="px-6 py-4">Tool</th>
  <th className="px-6 py-4">Free Plan</th>
@@ -218,7 +218,7 @@ export default function AICodingLimitsBlogPost() {
  <th className="px-6 py-4">Limits</th>
  </tr>
  </thead>
- <tbody className="divide-y divide-black/10 dark:divide-white/10 text-white/70">
+ <tbody className="divide-y divide-white/10 text-white/70">
  {[
  { name: 'Cursor', free: 'Yes', gen: 'Yes', chat: 'Yes', limit: 'Request-based' },
  { name: 'GitHub Copilot', free: 'Limited', gen: 'Yes', chat: 'Yes', limit: 'Plan-dependent' },
@@ -226,7 +226,7 @@ export default function AICodingLimitsBlogPost() {
  { name: 'Claude', free: 'Yes', gen: 'Strong', chat: 'Yes', limit: 'Usage-based' },
  { name: 'Gemini', free: 'Yes', gen: 'Yes', chat: 'Yes', limit: 'Request-based' }
  ].map((row, idx) => (
- <tr key={idx} className="hover:bg-black/[0.01] ">
+ <tr key={idx} className="hover:bg-white/[0.03] ">
  <td className="px-6 py-4 font-bold text-white">{row.name}</td>
  <td className="px-6 py-4">{row.free}</td>
  <td className="px-6 py-4">{row.gen}</td>
@@ -256,19 +256,19 @@ export default function AICodingLimitsBlogPost() {
  <section id="maximize-usage" className="space-y-4">
  <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Strategies to Maximize Free Tier Usage</h2>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Be Specific</strong>
  <p className="text-white/60">Instead of &quot;Help me with React&quot;, use specific prompts like &quot;Optimize this React component&apos;s re-render performance.&quot;</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Submit Smaller Tasks</strong>
  <p className="text-white/60">Break large projects into smaller pieces. This improves accuracy and conserves resources.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Reuse Context Summaries</strong>
  <p className="text-white/60">Maintain concise project summaries rather than repeatedly sharing entire repositories.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Request Focused Outputs</strong>
  <p className="text-white/60">Ask only for specific bug fixes, code reviews, or specific components. Avoid broad, generic requests.</p>
  </div>
@@ -280,7 +280,7 @@ export default function AICodingLimitsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Many developers use multiple tools strategically to distribute workload across platforms:
  </p>
- <ul className="pl-4 list-disc text-xs text-black/65 text-white/65 space-y-2 mt-3">
+ <ul className="pl-4 list-disc text-xs text-white/65 space-y-2 mt-3">
  <li><strong>Cursor:</strong> Primarily for code generation and editing.</li>
  <li><strong>GitHub Copilot:</strong> For real-time autocomplete completions.</li>
  <li><strong>ChatGPT:</strong> For high-level architecture planning.</li>
@@ -294,19 +294,19 @@ export default function AICodingLimitsBlogPost() {
  <div className="space-y-6 mt-4">
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Best Setup for Students</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Students should combine Cursor Free, GitHub Student Benefits (if eligible), ChatGPT Free, and Gemini Free to gain debugging assistance and learning support without significant monthly expenses.
  </p>
  </div>
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Best Setup for Freelancers</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Freelancers needing maximum productivity should use Cursor for development, Copilot for autocomplete, ChatGPT for architecture, and Claude for large code reviews to minimize bottlenecks.
  </p>
  </div>
  <div className="pl-4 border-l-2 border-gold/40">
  <h3 className="text-lg font-bold text-white">Best Setup for Startup Teams</h3>
- <p className="text-sm text-black/65 text-white/65 mt-1">
+ <p className="text-sm text-white/65 mt-1">
  Startup teams should balance productivity and costs by deploying team-wide coding assistants, defining shared AI guidelines, practicing token optimization, and monitoring team usage.
  </p>
  </div>
@@ -322,7 +322,7 @@ export default function AICodingLimitsBlogPost() {
 
  <section id="common-mistakes" className="space-y-4">
  <h2 className="text-2xl font-bold tracking-tight text-white border-b border-white/[0.07] pb-2">Common Mistakes That Waste AI Quotas</h2>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>Uploading Entire Repositories:</strong> Paste only the files relevant to the active bug.</li>
  <li><strong>Repeating Context:</strong> Avoid sending project descriptions in every prompt.</li>
  <li><strong>Vague Prompts:</strong> Unclear instructions create additional back-and-forth messages.</li>
@@ -391,9 +391,9 @@ export default function AICodingLimitsBlogPost() {
  a: 'The future includes larger context windows, autonomous coding agents, and more intelligent resource management systems.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

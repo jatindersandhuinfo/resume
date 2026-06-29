@@ -109,8 +109,8 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  The confusion is understandable. Both technologies are incredibly popular. Both are used by major companies. Both can help you build modern web applications.
  </p>
- <div className="p-5 my-6 rounded-lg border-l-4 border-gold bg-black/[0.02] space-y-2">
- <p className="font-bold text-black text-white leading-relaxed">
+ <div className="p-5 my-6 rounded-lg border-l-4 border-gold bg-white/[0.04] space-y-2">
+ <p className="font-bold text-white leading-relaxed">
  But here’s the important thing many beginners don’t realize: React and Next.js are not competitors. Next.js is built on top of React.
  </p>
  </div>
@@ -135,7 +135,7 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70 font-semibold">
  React introduced concepts such as:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-1.5 mt-2">
  <li><strong>Components:</strong> Modular, self-contained UI blocks that can be nested and reused.</li>
  <li><strong>Virtual DOM:</strong> A lightweight in-memory representation of the real DOM that optimizes render performance.</li>
  <li><strong>Hooks:</strong> Special functions like <code className="px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/5 font-mono text-gold">useState</code> and <code className="px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/5 font-mono text-gold">useEffect</code> that let you hook into state and lifecycle features.</li>
@@ -149,10 +149,10 @@ export default function ReactVsNextjsBlogPost() {
  Popular companies using React include:
  </p>
  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 text-xs font-bold text-center mt-2">
- <div className="p-3 border border-white/[0.08] rounded bg-black/[0.01] ">Meta</div>
- <div className="p-3 border border-white/[0.08] rounded bg-black/[0.01] ">Netflix</div>
- <div className="p-3 border border-white/[0.08] rounded bg-black/[0.01] ">Airbnb</div>
- <div className="p-3 border border-white/[0.08] rounded bg-black/[0.01] ">Uber</div>
+ <div className="p-3 border border-white/[0.08] rounded bg-white/[0.03] ">Meta</div>
+ <div className="p-3 border border-white/[0.08] rounded bg-white/[0.03] ">Netflix</div>
+ <div className="p-3 border border-white/[0.08] rounded bg-white/[0.03] ">Airbnb</div>
+ <div className="p-3 border border-white/[0.08] rounded bg-white/[0.03] ">Uber</div>
  </div>
  <p className="leading-relaxed text-white/70 mt-4">
  React is powerful, flexible, and highly customizable.
@@ -166,7 +166,7 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Next.js is a React framework developed by Vercel. It extends React with powerful features including:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-1.5 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-1.5 mt-2">
  <li><strong>Server-Side Rendering (SSR):</strong> Pages are pre-rendered on the server for each request, delivering faster initial loads and better SEO.</li>
  <li><strong>Static Site Generation (SSG):</strong> Pages are pre-built at compile time, delivering exceptional speed and reliability.</li>
  <li><strong>App Router:</strong> A modern, intuitive file-system based router supporting nested layouts and Server Components.</li>
@@ -189,15 +189,15 @@ export default function ReactVsNextjsBlogPost() {
  </p>
 
  <div className="overflow-x-auto my-6 rounded-lg border border-white/[0.08]">
- <table className="min-w-full divide-y divide-black/10 dark:divide-white/10 text-left text-xs sm:text-sm">
- <thead className="bg-black/[0.02] font-bold text-black text-white uppercase tracking-wider text-xs">
+ <table className="min-w-full divide-y divide-white/10 text-left text-xs sm:text-sm">
+ <thead className="bg-white/[0.04] font-bold text-white uppercase tracking-wider text-xs">
  <tr>
  <th className="px-6 py-4">Feature</th>
  <th className="px-6 py-4">React</th>
  <th className="px-6 py-4">Next.js</th>
  </tr>
  </thead>
- <tbody className="divide-y divide-black/10 dark:divide-white/10 text-white/70">
+ <tbody className="divide-y divide-white/10 text-white/70">
  <tr>
  <td className="px-6 py-4 font-bold text-white">Type</td>
  <td className="px-6 py-4">Library</td>
@@ -252,9 +252,9 @@ export default function ReactVsNextjsBlogPost() {
  Learning Curve Comparison
  </h2>
  <div className="grid gap-6 md:grid-cols-2 mt-4">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-lg font-bold text-white mb-3">Learning React</h3>
- <p className="text-xs sm:text-sm text-black/65 text-white/65 leading-relaxed">
+ <p className="text-xs sm:text-sm text-white/65 leading-relaxed">
  React is relatively straightforward. You’ll learn:
  </p>
  <ul className="pl-4 list-disc text-xs text-white/60 space-y-1 mt-2">
@@ -267,9 +267,9 @@ export default function ReactVsNextjsBlogPost() {
  <p className="text-xs text-gold font-semibold mt-3">Strong introduction to modern frontend development.</p>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-lg font-bold text-white mb-3">Learning Next.js</h3>
- <p className="text-xs sm:text-sm text-black/65 text-white/65 leading-relaxed">
+ <p className="text-xs sm:text-sm text-white/65 leading-relaxed">
  Next.js requires React knowledge first. Additional concepts include:
  </p>
  <ul className="pl-4 list-disc text-xs text-white/60 space-y-1 mt-2">
@@ -292,14 +292,14 @@ export default function ReactVsNextjsBlogPost() {
  Performance matters. Users expect websites to load instantly, and search engines heavily penalize slow pages.
  </p>
  <div className="space-y-4">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-white block mb-1">React Performance</span>
- <p className="text-xs sm:text-sm text-black/65 text-white/65 leading-relaxed">
+ <p className="text-xs sm:text-sm text-white/65 leading-relaxed">
  Traditional React applications often render entirely in the browser (Client-Side Rendering). This means the browser must download a large JavaScript bundle before displaying anything to the user, leading to a slower initial paint and slower apparent load times.
  </p>
  </div>
  <div className="p-4 rounded-lg bg-gold/5 border border-gold/25">
- <span className="font-bold text-black text-white block mb-1">Next.js Performance</span>
+ <span className="font-bold text-white block mb-1">Next.js Performance</span>
  <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
  Next.js improves performance by offloading rendering to the server. With Server-Side Rendering (SSR) and Static Site Generation (SSG), users receive fully formed HTML files instantly. Coupled with automatic script splitting, image optimization, and smart client-side prefetching, Next.js sites feel instantaneous.
  </p>
@@ -320,13 +320,13 @@ export default function ReactVsNextjsBlogPost() {
  <div className="grid gap-6 md:grid-cols-2 my-4">
  <div>
  <h3 className="text-lg font-bold text-red-500 dark:text-red-400 mb-2">React SEO Challenges</h3>
- <p className="text-xs sm:text-sm text-black/65 text-white/65 leading-relaxed">
+ <p className="text-xs sm:text-sm text-white/65 leading-relaxed">
  Because plain React renders in the browser, search engine crawlers initially find an empty HTML document. While modern crawlers (like Google) run JavaScript, they can struggle with dynamic asynchronous content, leading to indexing lag and poorer search placement.
  </p>
  </div>
  <div>
  <h3 className="text-lg font-bold text-gold mb-2">Next.js SEO Advantages</h3>
- <p className="text-xs sm:text-sm text-black/65 text-white/65 leading-relaxed">
+ <p className="text-xs sm:text-sm text-white/65 leading-relaxed">
  Next.js pre-renders HTML on the server. When search bots crawl your site, they find complete, content-rich HTML pages immediately. In addition, Next.js has standard hooks for injecting dynamic page-level titles, metadata, sitemaps, and Schema.org markup.
  </p>
  </div>
@@ -347,20 +347,20 @@ export default function ReactVsNextjsBlogPost() {
  <div className="grid gap-6 md:grid-cols-2 mt-4 text-xs">
  <div className="space-y-3">
  <h3 className="text-sm font-bold text-white uppercase tracking-wider">React Routing (Manual)</h3>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Requires manual package installation:
  </p>
  <pre className="p-3 rounded bg-black/5 dark:bg-white/5 text-gold font-mono overflow-x-auto leading-relaxed">
 {`npm install react-router-dom`}
  </pre>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Then, configure pages, browser routers, route trees, and history objects manually in your code.
  </p>
  </div>
 
  <div className="space-y-3">
  <h3 className="text-sm font-bold text-gold uppercase tracking-wider">Next.js Routing (Automatic)</h3>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Simply map routes using the file system structure:
  </p>
  <pre className="p-3 rounded bg-black/5 dark:bg-white/5 text-gold font-mono overflow-x-auto leading-relaxed">
@@ -368,7 +368,7 @@ export default function ReactVsNextjsBlogPost() {
 ├── about/page.js
 └── contact/page.js`}
  </pre>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Routes are generated dynamically based on directories. No manual router file setup is needed, leading to less code maintenance.
  </p>
  </div>
@@ -383,9 +383,9 @@ export default function ReactVsNextjsBlogPost() {
  Web applications rely heavily on backend API data to render content.
  </p>
  <div className="grid gap-6 md:grid-cols-2 mt-4 text-xs sm:text-sm">
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-base font-bold text-white mb-2">React Data Fetching</h3>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Developers must configure everything from scratch, usually using tools like:
  </p>
  <ul className="pl-4 list-disc text-xs text-white/60 space-y-1.5 mt-2">
@@ -396,9 +396,9 @@ export default function ReactVsNextjsBlogPost() {
  </ul>
  </div>
 
- <div className="p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <h3 className="text-base font-bold text-gold mb-2">Next.js Data Fetching</h3>
- <p className="text-black/65 text-white/65 leading-relaxed">
+ <p className="text-white/65 leading-relaxed">
  Integrates data fetching natively into server-side layouts:
  </p>
  <ul className="pl-4 list-disc text-xs text-white/60 space-y-1.5 mt-2">
@@ -417,7 +417,7 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  How easy is it to take your application live to the internet?
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>React Deployment:</strong> Requires building your application into static assets and uploading them to a CDN or host (like Netlify, Vercel, or AWS S3). It requires careful setup for routing fallbacks (to prevent 404s when hard refreshing SPA pages).</li>
  <li><strong>Next.js Deployment:</strong> Works seamlessly. Because Vercel builds Next.js, deployment is a simple git integration. Additionally, Next.js routes, server components, and API functions are automatically mapped to global CDNs and serverless edge runtimes worldwide.</li>
  </ul>
@@ -431,7 +431,7 @@ export default function ReactVsNextjsBlogPost() {
  Developer experience impacts team productivity, onboarding velocity, and application maintenance.
  </p>
  <div className="grid gap-4 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-gold block mb-1">React Advantages</span>
  <p className="text-white/60 leading-relaxed">
  Huge ecosystem, massive community, and millions of tutorials. Since React is flexible, developers can choose their own directories, states, and styles.
@@ -454,7 +454,7 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  React is an excellent choice under these specific scenarios:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>Building Internal Tools:</strong> If you are creating dashboards, administrative panels, or customer service screens that sit behind a login portal, SEO does not matter. The complexity of SSR is unnecessary.</li>
  <li><strong>Learning Frontend Fundamentals:</strong> If you are a beginner, starting with React teaches you component-oriented design patterns, hook architecture, and JavaScript integration cleanly.</li>
  <li><strong>Existing React Ecosystem:</strong> Your company or team is already structured around plain client-side applications, and refactoring to a full-stack framework is high-risk.</li>
@@ -469,7 +469,7 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Next.js is the ideal fit for most consumer-facing and corporate web products:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>SEO Matters:</strong> Blogs, SaaS promotional pages, business directories, and marketing websites that rely on organic traffic from Google.</li>
  <li><strong>Performance is Critical:</strong> Fast loading directly boosts conversion rates, bounce rates, and customer experience.</li>
  <li><strong>Public-Facing Applications:</strong> E-commerce stores, SaaS webapps, and public listings where rapid discovery and social sharing previews (OpenGraph) are key.</li>
@@ -518,9 +518,9 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Startups prioritize speed, scalability, SEO, and flexibility. Next.js checkmarks every single criteria, allowing founders to build mvps quickly and scale seamlessly.
  </p>
- <div className="p-5 rounded-lg border border-gold/20 bg-black/[0.02] my-6">
+ <div className="p-5 rounded-lg border border-gold/20 bg-white/[0.04] my-6">
  <span className="font-bold text-gold uppercase tracking-wider text-xs block mb-3">Popular Startup Stack in 2026</span>
- <ul className="text-xs sm:text-sm text-black/75 text-white/75 space-y-1.5 font-mono">
+ <ul className="text-xs sm:text-sm text-white/75 space-y-1.5 font-mono">
  <li><strong>Frontend:</strong> Next.js (App Router, Tailwind CSS)</li>
  <li><strong>Backend:</strong> Node.js (Server Actions, Express endpoints)</li>
  <li><strong>Database:</strong> MongoDB or PostgreSQL</li>
@@ -554,7 +554,7 @@ export default function ReactVsNextjsBlogPost() {
  <p className="leading-relaxed text-white/70">
  Key future trends to watch:
  </p>
- <ul className="pl-5 list-disc text-xs sm:text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-xs sm:text-sm text-white/65 space-y-2 mt-2">
  <li><strong>AI Integration:</strong> Built-in support for streaming AI model outputs natively from server actions to frontend interfaces.</li>
  <li><strong>Server Components:</strong> Further optimization of React Server Components (RSC) to reduce client-side bundle sizes.</li>
  <li><strong>Edge Computing:</strong> Pre-rendering pages dynamically on globally distributed edge networks for sub-millisecond latencies.</li>
@@ -571,21 +571,21 @@ export default function ReactVsNextjsBlogPost() {
  </p>
 
  <div className="space-y-4 mt-6">
- <div className="flex gap-4 p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="flex gap-4 p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gold text-xs font-bold text-white">1</span>
  <div>
  <h4 className="text-sm font-bold text-white">Learn React Fundamentals</h4>
- <p className="mt-1 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-1 text-xs text-white/65 leading-relaxed">
  Master JSX, component lifecycle, props passing, local state hook (<code className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/5 font-mono text-gold">useState</code>), and dynamic effect hook (<code className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/5 font-mono text-gold">useEffect</code>).
  </p>
  </div>
  </div>
 
- <div className="flex gap-4 p-5 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="flex gap-4 p-5 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gold text-xs font-bold text-white">2</span>
  <div>
  <h4 className="text-sm font-bold text-white">Move to Next.js</h4>
- <p className="mt-1 text-xs text-black/65 text-white/65 leading-relaxed">
+ <p className="mt-1 text-xs text-white/65 leading-relaxed">
  Once comfortable, scale up to Next.js. Learn file-system routing, Server Components, page metadata configuration, and API routes.
  </p>
  </div>
@@ -605,7 +605,7 @@ export default function ReactVsNextjsBlogPost() {
  Imagine two developers competing in the current market:
  </p>
  <div className="grid gap-4 sm:grid-cols-2 mt-4 text-xs">
- <div className="p-4 rounded-lg bg-black/[0.02] border border-white/[0.08]">
+ <div className="p-4 rounded-lg bg-white/[0.04] border border-white/[0.08]">
  <span className="font-bold text-red-500 dark:text-red-400 block mb-1">Developer A</span>
  <p className="text-white/60 leading-relaxed">
  Knows only client-side React. Can build user interfaces and dashboards, but struggles with SEO setups, server integrations, and site performance tuning.
@@ -685,9 +685,9 @@ export default function ReactVsNextjsBlogPost() {
  a: 'Focus on TypeScript, advanced databases (PostgreSQL, MongoDB), authentication protocols, cloud hosting architectures, and AI API integrations.',
  },
  ].map((faq, idx) => (
- <div key={idx} className="rounded-lg border border-white/[0.08] bg-black/[0.03] p-5">
+ <div key={idx} className="rounded-lg border border-white/[0.08] bg-white/[0.05] p-5">
  <h3 className="text-sm font-bold text-gold">{faq.q}</h3>
- <p className="mt-2 text-xs leading-relaxed text-black/65 text-white/65">{faq.a}</p>
+ <p className="mt-2 text-xs leading-relaxed text-white/65">{faq.a}</p>
  </div>
  ))}
  </div>

@@ -29,7 +29,7 @@ export function AboutSection({ section, techGroups }: AboutSectionProps) {
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
 
         {/* ── Top: header + quick stats ── */}
-        <div className="flex flex-col gap-10 border-b border-white/[0.07] pb-14 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-8 border-b border-white/[0.07] pb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="section-kicker">{section.kicker}</p>
             <h2 id="about-title" className="mt-5 section-title text-white">
@@ -50,7 +50,7 @@ export function AboutSection({ section, techGroups }: AboutSectionProps) {
         </div>
 
         {/* ── Bio columns ── */}
-        <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2">
           <p className="body-copy-lg text-white/65 leading-relaxed">{section.description}</p>
           <p className="body-copy text-white/50 leading-relaxed">{section.secondaryDescription}</p>
         </div>

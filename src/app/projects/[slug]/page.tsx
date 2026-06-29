@@ -212,7 +212,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           )}
 
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="grid gap-12 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               {/* Badges */}
               <div className="mb-8 flex flex-wrap items-center gap-3">
@@ -287,7 +287,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       {/* ── Body ── */}
       <section className="bg-studio py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
-          <div className="grid gap-16 lg:grid-cols-[1fr_300px]">
+          <div className="grid gap-16 md:grid-cols-[1fr_300px]">
 
             {/* Left prose */}
             <div className="space-y-14">

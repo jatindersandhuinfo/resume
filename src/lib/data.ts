@@ -765,6 +765,82 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'dreamcreatorvisa',
+    name: 'Dream Creator Visa Consultancy',
+    featured: true,
+    developer: 'Jatinder Sandhu',
+    coverImage: '/images/team/jatinder/dreamcreatorvisa/cover.png',
+    images: [
+      '/images/team/jatinder/dreamcreatorvisa/image1.png',
+      '/images/team/jatinder/dreamcreatorvisa/image2.png',
+      '/images/team/jatinder/dreamcreatorvisa/image3.png',
+      '/images/team/jatinder/dreamcreatorvisa/image4.png',
+    ],
+    tagline: 'A professional visa consultancy website for a Mohali-based immigration firm — serving clients across USA, Canada, UK, Australia, and 10+ countries with an online appointment booking system.',
+    tech: 'WordPress · Elementor · Slider Revolution · Local SEO',
+    result: 'Full-featured immigration consultancy website with 7 visa service pages, 10+ country landing pages, online appointment booking, and strong local SEO presence for Mohali and Punjab region.',
+    url: 'https://dreamcreatorvisa.com/',
+    category: 'CMS',
+    year: '2024',
+    overview:
+      'Designed and developed a complete professional website for Dream Creator Visa Consultancy, a leading immigration and visa services firm based in SCO 35, Sector 71, Mohali, Punjab. The platform was built to establish a strong online brand presence, showcase their full range of visa services — Study, Work, Tourist, Business, Family, Visitor Visa, and PR — and generate qualified consultation leads from clients across Punjab and NRI communities worldwide. The site features an interactive appointment booking system, country-specific landing pages, customer testimonials, and an FAQ section to build trust and improve organic search visibility.',
+    challenge:
+      'Dream Creator Visa Consultancy needed a professional online presence to compete in the highly competitive immigration consultancy market across Punjab and beyond. Without a structured website, they were losing high-intent clients searching for visa services online. The site needed to clearly communicate their services for 10+ countries, earn trust from potential clients, and convert visitors into consultation bookings — all while ranking well locally in Mohali and across Punjab-based immigration search terms.',
+    solution:
+      'Built a high-performance, mobile-responsive website using WordPress and Elementor, with Slider Revolution for engaging hero banners. Developed 7 dedicated visa service pages (Study, Work, Tourist, Business, Family, Visitor, PR) and individual country landing pages for USA, Canada, UK, Australia, Gulf Countries, Schengen, New Zealand, and Azerbaijan. Integrated a multi-step online appointment booking form with country and service selection, live WhatsApp/phone CTAs, a structured FAQ section, and an optimised Google presence targeting local immigration consultancy keywords across Mohali, Chandigarh, and Punjab.',
+    metrics: [
+      { label: 'Countries Covered', value: '10+' },
+      { label: 'Visa Service Pages', value: '7' },
+      { label: 'Years in Service', value: '4+' },
+      { label: 'Client Satisfaction', value: '95%' },
+    ],
+    techStack: [
+      { group: 'CMS & Page Builder', items: ['WordPress', 'Elementor Pro', 'Slider Revolution'] },
+      { group: 'Features', items: ['Appointment Booking Form', 'Country Landing Pages', 'Testimonials Carousel', 'FAQ Section', 'WhatsApp CTA'] },
+      { group: 'SEO & Visibility', items: ['Local SEO', 'Meta Optimisation', 'Schema Markup', 'Google Search Console'] },
+      { group: 'Design', items: ['Mobile-First Responsive UI', 'Premium Typography', 'Hero Sliders'] },
+      { group: 'Hosting', items: ['cPanel Hosting', 'PHP 8.x'] },
+    ],
+  },
+  {
+    slug: 'malwaland',
+    name: 'Malwaland',
+    featured: true,
+    developer: 'Jatinder Sandhu',
+    coverImage: '/images/team/jatinder/malwaland/cover.png',
+    images: [
+      '/images/team/jatinder/malwaland/image1.png',
+      '/images/team/jatinder/malwaland/image2.png',
+      '/images/team/jatinder/malwaland/image3.png',
+      '/images/team/jatinder/malwaland/image4.png',
+    ],
+    tagline: 'Punjab\'s local home services marketplace — connecting 10,000+ homeowners with 500+ verified electricians, plumbers, AC technicians, and more across 17 cities, with direct WhatsApp contact and zero commission.',
+    tech: 'Next.js · TypeScript · Tailwind CSS · App Router',
+    result: 'Full-stack local services marketplace live in 17+ Punjab cities with verified provider profiles, real-time WhatsApp lead generation, city-specific SEO landing pages, and a provider self-registration portal.',
+    url: 'https://malwaland.com/',
+    category: 'Marketplace',
+    year: '2026',
+    overview:
+      'Designed and developed Malwaland — Punjab\'s most trusted local home services marketplace — from scratch. The platform connects homeowners across Punjab with verified local professionals including electricians, plumbers, AC repair technicians, carpenters, painters, and 17+ other service categories across Ludhiana, Amritsar, Jalandhar, Bathinda, Mohali, and 12+ more cities. Customers browse verified provider profiles, read genuine reviews, and connect instantly via WhatsApp — with zero commission or platform fees. Providers can register for free and manage their business profile.',
+    challenge:
+      'Punjab homeowners had no reliable, centralised platform to find and directly contact verified local service professionals. Existing options either charged high commissions, lacked verification, or were limited to metro cities. The challenge was to build a scalable marketplace that covers both major cities and rural towns across Punjab, maintains trust through verification, drives organic traffic through hyperlocal SEO, and eliminates the middleman completely — making it free for both sides to connect.',
+    solution:
+      'Built with Next.js 14 App Router for SSR and SEO performance, with dynamically generated city and service landing pages targeting hyperlocal Punjab search queries. Implemented a verified provider directory with WhatsApp deep-link integration for zero-friction direct contact. Built a provider self-registration portal, a review and rating system, and a featured listings module. Deployed on Vercel with full Open Graph metadata, JSON-LD structured data, and a sitemap — achieving strong local search visibility across 17+ Punjab cities and 17 service categories from launch.',
+    metrics: [
+      { label: 'Verified Providers', value: '500+' },
+      { label: 'Happy Customers', value: '10K+' },
+      { label: 'Cities & Towns', value: '50+' },
+      { label: 'Avg Rating', value: '4.9 / 5' },
+    ],
+    techStack: [
+      { group: 'Frontend', items: ['Next.js 14 (App Router)', 'TypeScript', 'Tailwind CSS'] },
+      { group: 'Features', items: ['Provider Directory', 'WhatsApp Lead Integration', 'City & Service Pages', 'Reviews & Ratings', 'Provider Registration'] },
+      { group: 'SEO', items: ['SSR', 'Dynamic Sitemap', 'JSON-LD Schema', 'Open Graph', 'Hyperlocal SEO'] },
+      { group: 'Performance', items: ['next/image', 'Vercel Edge Network', 'Static Generation'] },
+      { group: 'Hosting', items: ['Vercel'] },
+    ],
+  },
+  {
     slug: 'devidend',
     name: 'Devidend',
     developer: 'Sandeep Singh',

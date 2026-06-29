@@ -25,7 +25,7 @@ export function WorksSection({ section }: WorksSectionProps) {
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
 
         {/* ── Header ── */}
-        <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="section-kicker">{section.kicker}</p>
             <h2 id="works-title" className="mt-5 section-title text-white">
@@ -39,7 +39,7 @@ export function WorksSection({ section }: WorksSectionProps) {
         {featured && (
           <Link
             href={`/projects/${featured.slug}`}
-            className="interactive-card group mb-3 flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-alt transition duration-300 hover:border-accent/30 lg:flex-row"
+            className="interactive-card group mb-3 flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-alt transition duration-300 hover:border-accent/30 md:flex-row"
           >
             {/* Left info */}
             <div className="flex flex-1 flex-col justify-between gap-6 p-7 lg:p-10">

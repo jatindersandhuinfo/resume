@@ -26,20 +26,20 @@ export default function CinematicNav() {
   }, []);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    const onScroll = () => {
+      const threshold = window.innerHeight * 0.45;
+      let active = 0;
+      CHAPTERS.forEach(({ id }, index) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.getBoundingClientRect().top <= threshold) active = index;
+      });
+      setActiveChapter(active);
+    };
 
-    CHAPTERS.forEach(({ id }, index) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveChapter(index); },
-        { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-
-    return () => observers.forEach((o) => o.disconnect());
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const scrollToChapter = useCallback((id: string) => {
@@ -58,7 +58,7 @@ export default function CinematicNav() {
         }`}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 2.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ delay: 0.4, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 sm:px-10 lg:px-14">
 

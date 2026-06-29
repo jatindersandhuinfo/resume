@@ -116,7 +116,7 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  These tools can help businesses:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-1 mt-2">
  <li>Create content</li>
  <li>Generate marketing ideas</li>
  <li>Analyze customer behavior</li>
@@ -137,7 +137,7 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI helps businesses:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-1 mt-2">
  <li>Save time</li>
  <li>Create content faster</li>
  <li>Reach the right audience</li>
@@ -158,12 +158,12 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can assist with blog writing, social media posts, product descriptions, email newsletters, and advertising copy.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A local restaurant can use AI to create weekly social media posts highlighting special offers, new menu items, and upcoming events.
  </p>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This helps maintain an active online presence without spending hours creating content.
  </p>
  </div>
@@ -177,9 +177,9 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI can help with content ideas, post scheduling, caption generation, performance analysis, and audience insights.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A small clothing brand can use AI to generate content ideas for Instagram, Facebook, and LinkedIn while tracking which posts perform best.
  </p>
  </div>
@@ -193,12 +193,12 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI can improve email campaigns by writing subject lines, personalizing messages, segmenting audiences, and optimizing send times.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  An online store can send personalized product recommendations based on previous customer purchases.
  </p>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This often results in higher engagement and conversions.
  </p>
  </div>
@@ -212,12 +212,12 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can assist with keyword research, content optimization, topic suggestions, competitor analysis, and meta descriptions.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A business blog can use AI to identify common customer questions and create articles that answer those questions.
  </p>
- <p className="text-xs text-black/65 text-white/65 mt-2">
+ <p className="text-xs text-white/65 mt-2">
  This can improve search visibility and increase website traffic.
  </p>
  </div>
@@ -231,9 +231,9 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI can help businesses create ad copy, identify target audiences, optimize campaigns, and improve ad performance.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  An e-commerce business can use AI to test multiple ad variations and automatically identify the highest-performing versions.
  </p>
  </div>
@@ -247,9 +247,9 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  AI tools can analyze website activity, purchase history, customer preferences, and engagement patterns.
  </p>
- <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-black/[0.02] space-y-3">
+ <div className="p-5 my-6 rounded-lg border border-white/[0.08] bg-white/[0.04] space-y-3">
  <span className="font-bold text-gold block">Example</span>
- <p className="text-sm text-black/75 text-white/75">
+ <p className="text-sm text-white/75">
  A business may discover that certain products are more popular among specific customer groups and adjust marketing efforts accordingly.
  </p>
  </div>
@@ -261,19 +261,19 @@ export default function AIMarketingBlogPost() {
  Businesses that use AI effectively can benefit from:
  </p>
  <div className="grid gap-4 mt-6 sm:grid-cols-2 text-xs">
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">High-Speed Content</strong>
  <p className="text-white/60">Faster content creation and social media copywriting drafts.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Targeting & Audiences</strong>
  <p className="text-white/60">Better customer targeting and personalization pipelines.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Ad Campaigns</strong>
  <p className="text-white/60">Improved campaign performance and reduced general marketing costs.</p>
  </div>
- <div className="p-4 rounded-lg border border-white/[0.08] bg-black/[0.01] ">
+ <div className="p-4 rounded-lg border border-white/[0.08] bg-white/[0.03] ">
  <strong className="block text-gold mb-1">Team Productivity</strong>
  <p className="text-white/60">Increased productivity and better data-driven decision-making.</p>
  </div>
@@ -285,7 +285,7 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  While AI offers many advantages, businesses should remember:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-2 mt-2">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-2 mt-2">
  <li>AI-generated content should be reviewed.</li>
  <li>Human creativity remains important.</li>
  <li>Data privacy should be respected.</li>
@@ -301,7 +301,7 @@ export default function AIMarketingBlogPost() {
  <p className="leading-relaxed text-white/70">
  If you’re new to AI marketing, start with one area:
  </p>
- <ul className="pl-5 list-disc text-sm text-black/65 text-white/65 space-y-1">
+ <ul className="pl-5 list-disc text-sm text-white/65 space-y-1">
  <li>Content creation</li>
  <li>Social media management</li>
  <li>Email marketing</li>
