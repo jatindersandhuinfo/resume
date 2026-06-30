@@ -283,4 +283,18 @@ export const blogPosts: BlogPost[] = [
 ]
 
 /** Quick lookup by slug */
-export function getBlogPost(slug: string): BlogPost
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug)
+}
+
+/** Posts in same category (excluding current) */
+export function getRelatedPosts(slug: string, limit = 3): BlogPost[] {
+  const current = getBlogPost(slug)
+  if (!current) return []
+  return blogPosts
+    .filter((p) => p.slug !== slug && p.category === current.category)
+    .slice(0, limit)
+}
+
+/** All unique categories */
+export const blogCategories = Array.from(new Set(blogPosts.map((p) => p.category)))
