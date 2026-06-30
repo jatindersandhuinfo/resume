@@ -17,6 +17,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: 'How to Build a REST API with Node.js and Express (2026 Guide)',
+    description:
+      'A step-by-step guide to building a production-ready REST API with Node.js and Express — routing, middleware, validation, error handling, and deployment.',
+    slug: 'how-to-build-rest-api-nodejs-express',
+    category: 'Development',
+    publishDate: '2026-06-30',
+    modifiedDate: '2026-06-30',
+    readTime: '10 min read',
+    kicker: 'Guide · Node.js · Express',
+  },
+  {
     title: 'Next.js vs WordPress: Which is Better for Business Websites in 2026?',
     description:
       'Comparing Next.js and WordPress for business websites in 2026 — performance, SEO, cost, maintenance, and when to choose each one for your project.',
@@ -272,18 +283,4 @@ export const blogPosts: BlogPost[] = [
 ]
 
 /** Quick lookup by slug */
-export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find((p) => p.slug === slug)
-}
-
-/** Posts in same category (excluding current) */
-export function getRelatedPosts(slug: string, limit = 3): BlogPost[] {
-  const current = getBlogPost(slug)
-  if (!current) return []
-  return blogPosts
-    .filter((p) => p.slug !== slug && p.category === current.category)
-    .slice(0, limit)
-}
-
-/** All unique categories */
-export const blogCategories = Array.from(new Set(blogPosts.map((p) => p.category)))
+export function getBlogPost(slug: string): BlogPost

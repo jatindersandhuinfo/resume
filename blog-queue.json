@@ -1,0 +1,275 @@
+[
+  {
+    "slug": "nextjs-app-router-complete-guide",
+    "title": "Next.js 14 App Router: Complete Guide for Beginners",
+    "description": "Everything you need to know about the Next.js App Router — layouts, loading states, error boundaries, server components, and data fetching patterns explained clearly.",
+    "category": "Development",
+    "kicker": "Guide · Next.js · App Router",
+    "readTime": "11 min read"
+  },
+  {
+    "slug": "how-to-use-claude-api-nextjs",
+    "title": "How to Use the Claude API in Your Next.js App",
+    "description": "A practical guide to integrating the Anthropic Claude API into a Next.js application — streaming responses, prompt design, error handling, and real use cases.",
+    "category": "AI & Automation",
+    "kicker": "Guide · Claude API · Next.js",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-to-price-web-development-services-2026",
+    "title": "How to Price Your Web Development Services in 2026",
+    "description": "A transparent guide to pricing freelance web development work in 2026 — hourly vs project rates, how to scope work, when to raise prices, and how to handle client budget conversations.",
+    "category": "Business",
+    "kicker": "Guide · Freelance Pricing",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-i-built-taxi-booking-website-nextjs",
+    "title": "Case Study: How I Built a Taxi Booking Website with Next.js",
+    "description": "Full technical case study of building a taxi and chauffeur booking website — real-time availability, WhatsApp integration, Google Maps, and local SEO strategy.",
+    "category": "Case Study",
+    "kicker": "Case Study · Next.js · Booking System",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "typescript-crash-course-javascript-developers",
+    "title": "TypeScript Crash Course for JavaScript Developers",
+    "description": "Everything a JavaScript developer needs to start writing TypeScript confidently — types, interfaces, generics, enums, and practical patterns used in real Next.js and Node.js projects.",
+    "category": "Development",
+    "kicker": "Guide · TypeScript · JavaScript",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "build-chatbot-website-openai-api",
+    "title": "How to Build a Chatbot for Your Website Using the OpenAI API",
+    "description": "Step-by-step guide to adding an AI chatbot to your website using the OpenAI API and Next.js — streaming responses, conversation history, custom prompting, and deployment.",
+    "category": "AI & Automation",
+    "kicker": "Guide · OpenAI · Chatbot",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-to-write-freelance-web-development-proposal",
+    "title": "How to Write a Freelance Web Development Proposal That Wins",
+    "description": "A practical framework for writing web development proposals that convert — what to include, how to structure pricing, how to handle scope, and real proposal mistakes to avoid.",
+    "category": "Business",
+    "kicker": "Guide · Freelance · Proposals",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "how-i-rebuilt-slow-wordpress-site-tripled-rankings",
+    "title": "Case Study: How I Rebuilt a Slow WordPress Site and Tripled Its Google Rankings",
+    "description": "A real case study of migrating a slow WordPress site to Next.js — the performance audit, migration approach, SEO preservation strategy, and ranking results 3 months after launch.",
+    "category": "Case Study",
+    "kicker": "Case Study · WordPress Migration · SEO",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "nextjs-authentication-nextauth-guide",
+    "title": "How to Set Up Authentication in Next.js with NextAuth.js",
+    "description": "Complete guide to adding authentication to a Next.js App Router project using NextAuth.js — Google login, credentials provider, session handling, and protected routes.",
+    "category": "Development",
+    "kicker": "Guide · Next.js · Authentication",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "ai-for-seo-rank-higher-with-ai-2026",
+    "title": "AI for SEO: How to Use AI to Rank Higher on Google in 2026",
+    "description": "Practical ways to use AI tools for SEO in 2026 — keyword research, content briefs, meta tag generation, internal linking strategy, and what AI cannot do for your rankings.",
+    "category": "AI & Automation",
+    "kicker": "Guide · AI · SEO",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "how-to-build-developer-portfolio-that-gets-hired",
+    "title": "How to Build a Developer Portfolio That Gets You Hired",
+    "description": "What your developer portfolio must show in 2026 to get freelance clients and job offers — project selection, case study writing, tech stack presentation, and what recruiters actually look at.",
+    "category": "Business",
+    "kicker": "Guide · Portfolio · Career",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-i-built-visa-consultancy-website",
+    "title": "Case Study: How I Built a Visa Consultancy Website That Ranks Locally",
+    "description": "Technical case study of building a multi-service visa consultancy website — service page structure, local SEO setup, WhatsApp CTA integration, and Google ranking results.",
+    "category": "Case Study",
+    "kicker": "Case Study · WordPress · Local SEO",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "nodejs-file-upload-multer-guide",
+    "title": "Node.js File Upload with Multer: Complete Guide",
+    "description": "How to handle file uploads in a Node.js Express API using Multer — single and multiple file uploads, file type validation, size limits, cloud storage integration with AWS S3.",
+    "category": "Development",
+    "kicker": "Guide · Node.js · File Upload",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-to-automate-social-media-with-ai-2026",
+    "title": "How to Automate Your Social Media with AI in 2026",
+    "description": "Practical guide to using AI tools to automate social media content — scheduling, caption writing, hashtag research, image generation, and the tools that actually work in 2026.",
+    "category": "AI & Automation",
+    "kicker": "Guide · Social Media · AI Automation",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "how-to-get-web-development-clients-linkedin",
+    "title": "How to Get Web Development Clients on LinkedIn in 2026",
+    "description": "A practical LinkedIn strategy for freelance web developers — profile optimisation, content that attracts clients, outreach scripts that get replies, and common mistakes to avoid.",
+    "category": "Business",
+    "kicker": "Guide · LinkedIn · Client Acquisition",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "how-i-delivered-dashboard-3-weeks",
+    "title": "Case Study: How I Delivered a Full Admin Dashboard in 3 Weeks",
+    "description": "Behind the scenes of a tight-deadline dashboard project — tech stack decisions, component architecture, how I kept scope under control, and what I would do differently.",
+    "category": "Case Study",
+    "kicker": "Case Study · Next.js · Dashboard",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "how-to-use-prisma-orm-nextjs-postgresql",
+    "title": "How to Use Prisma ORM with Next.js and PostgreSQL",
+    "description": "Step-by-step guide to setting up Prisma in a Next.js project — database schema design, migrations, queries, relations, and connecting to a hosted PostgreSQL database.",
+    "category": "Development",
+    "kicker": "Guide · Prisma · PostgreSQL",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "ai-tools-for-freelancers-save-time-2026",
+    "title": "Best AI Tools for Freelancers: Save 10 Hours a Week in 2026",
+    "description": "The AI tools freelancers actually use to save time in 2026 — proposal writing, invoicing, client communication, content creation, and code generation tools that pay for themselves.",
+    "category": "AI & Automation",
+    "kicker": "Guide · AI Tools · Freelancing",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "from-freelancer-to-agency-how-to-scale",
+    "title": "From Freelancer to Agency: How to Scale Your Web Dev Business",
+    "description": "How to transition from solo freelance developer to running a small agency — when to hire, how to structure your team, pricing for agency work, and the mindset shift required.",
+    "category": "Business",
+    "kicker": "Guide · Agency · Business Growth",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "build-realtime-app-nodejs-socketio",
+    "title": "Building a Real-Time App with Node.js and Socket.io",
+    "description": "How to build a real-time application using Node.js and Socket.io — event-based architecture, rooms, broadcasting, authentication with JWT, and scaling considerations.",
+    "category": "Development",
+    "kicker": "Guide · Node.js · Real-Time",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "how-to-build-ai-content-generator-nextjs",
+    "title": "Build an AI Content Generator with Next.js and Claude API",
+    "description": "Step-by-step tutorial for building an AI content generation tool using Next.js, the Anthropic Claude API, and streaming — from API setup to a working UI with copy-to-clipboard.",
+    "category": "AI & Automation",
+    "kicker": "Build · Next.js · Claude API",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "how-to-handle-difficult-clients-freelance",
+    "title": "How to Handle Difficult Clients as a Freelance Developer",
+    "description": "How to manage scope creep, late payments, unclear briefs, and unrealistic deadlines — practical scripts, boundaries, and systems that keep projects on track and clients happy.",
+    "category": "Business",
+    "kicker": "Guide · Freelance · Client Management",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "nextjs-server-actions-practical-guide",
+    "title": "Next.js Server Actions: Practical Guide with Real Examples",
+    "description": "What Server Actions are, when to use them, and how to implement them correctly in the Next.js App Router — form handling, mutations, optimistic updates, and error handling.",
+    "category": "Development",
+    "kicker": "Guide · Next.js · Server Actions",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-to-rank-on-google-maps-2026",
+    "title": "How to Rank Your Business on Google Maps in 2026",
+    "description": "A practical local SEO guide to ranking in Google Maps — Google Business Profile optimisation, citation building, review strategy, and category selection that drives map pack rankings.",
+    "category": "Business",
+    "kicker": "Guide · Local SEO · Google Maps",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-i-built-marketplace-nextjs",
+    "title": "Case Study: How I Built a Service Marketplace with Next.js",
+    "description": "Technical case study of building a two-sided service marketplace — provider listings, search and filtering, WhatsApp contact flow, admin moderation, and SEO architecture.",
+    "category": "Case Study",
+    "kicker": "Case Study · Next.js · Marketplace",
+    "readTime": "11 min read"
+  },
+  {
+    "slug": "nextjs-image-optimization-guide",
+    "title": "How to Optimize Images in Next.js for Better Performance",
+    "description": "Complete guide to image optimization in Next.js — next/image component, srcset, WebP/AVIF, lazy loading, blur placeholders, and how image optimization directly impacts Core Web Vitals.",
+    "category": "Development",
+    "kicker": "Guide · Next.js · Performance",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "integrate-chatgpt-into-your-website",
+    "title": "How to Integrate ChatGPT into Your Website (Step-by-Step)",
+    "description": "How to add a ChatGPT-powered feature to your website — API setup, system prompts, conversation history, streaming in the browser, and keeping API costs under control.",
+    "category": "AI & Automation",
+    "kicker": "Guide · ChatGPT · Integration",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "freelance-developer-rates-what-to-charge-2026",
+    "title": "Freelance Developer Rates: What to Charge in 2026",
+    "description": "Real freelance developer rate benchmarks for 2026 — by technology, experience level, and project type. How to calculate your rate, when to raise it, and how to justify it to clients.",
+    "category": "Business",
+    "kicker": "Guide · Freelance Rates · Pricing",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "how-i-improved-site-seo-300-percent",
+    "title": "Case Study: How I Improved a Site's Google Traffic by 300%",
+    "description": "A real SEO case study — the audit findings, on-page fixes, technical changes, content strategy, and timeline that tripled organic traffic over 6 months for a local services business.",
+    "category": "Case Study",
+    "kicker": "Case Study · SEO · Technical Audit",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "react-query-vs-swr-data-fetching",
+    "title": "React Query vs SWR: Which Data Fetching Library to Use in 2026?",
+    "description": "A direct comparison of React Query (TanStack Query) and SWR for data fetching in React and Next.js — caching, mutations, pagination, background refetch, and when to choose each.",
+    "category": "Development",
+    "kicker": "Guide · React Query · SWR",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "why-your-website-not-ranking-on-google",
+    "title": "Why Your Website Is Not Ranking on Google (And How to Fix It)",
+    "description": "The most common reasons websites fail to rank on Google in 2026 — indexing issues, thin content, slow speed, missing metadata, no backlinks — and exactly how to fix each one.",
+    "category": "Business",
+    "kicker": "Guide · SEO · Google Rankings",
+    "readTime": "9 min read"
+  },
+  {
+    "slug": "how-to-manage-multiple-freelance-clients",
+    "title": "How to Manage Multiple Freelance Clients Without Burning Out",
+    "description": "Systems and habits for managing multiple client projects simultaneously — time blocking, client communication boundaries, project tracking tools, and how to know when you are taking on too much.",
+    "category": "Business",
+    "kicker": "Guide · Freelance · Project Management",
+    "readTime": "8 min read"
+  },
+  {
+    "slug": "nodejs-jwt-authentication-guide",
+    "title": "Node.js Authentication with JWT: Complete Step-by-Step Guide",
+    "description": "How to implement JWT authentication in a Node.js Express API — access tokens, refresh tokens, middleware, password hashing with bcrypt, and common security mistakes to avoid.",
+    "category": "Development",
+    "kicker": "Guide · Node.js · JWT Auth",
+    "readTime": "10 min read"
+  },
+  {
+    "slug": "how-to-track-seo-performance-free-tools",
+    "title": "How to Track Your Website SEO Performance with Free Tools",
+    "description": "The free tools every website owner should use to monitor SEO performance — Google Search Console, Google Analytics, PageSpeed Insights, and what to actually look at each week.",
+    "category": "Business",
+    "kicker": "Guide · SEO Monitoring · Free Tools",
+    "readTime": "8 min read"
+  }
+]
+                                                                                                                                                                                                                                                                                                                                                                                                                                      
