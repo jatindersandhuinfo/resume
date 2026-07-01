@@ -1,13 +1,5 @@
 [
   {
-    "slug": "nextjs-app-router-complete-guide",
-    "title": "Next.js 14 App Router: Complete Guide for Beginners",
-    "description": "Everything you need to know about the Next.js App Router — layouts, loading states, error boundaries, server components, and data fetching patterns explained clearly.",
-    "category": "Development",
-    "kicker": "Guide · Next.js · App Router",
-    "readTime": "11 min read"
-  },
-  {
     "slug": "how-to-use-claude-api-nextjs",
     "title": "How to Use the Claude API in Your Next.js App",
     "description": "A practical guide to integrating the Anthropic Claude API into a Next.js application — streaming responses, prompt design, error handling, and real use cases.",
@@ -272,4 +264,3 @@
     "readTime": "8 min read"
   }
 ]
-                                                                                                                                                                                                                                                                                                                                                                                                                                      

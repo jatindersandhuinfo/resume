@@ -17,6 +17,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: 'Next.js 14 App Router: Complete Guide for Beginners',
+    description:
+      'Everything you need to know about the Next.js App Router — layouts, loading states, error boundaries, server components, and data fetching patterns explained clearly.',
+    slug: 'nextjs-app-router-complete-guide',
+    category: 'Development',
+    publishDate: '2026-07-01',
+    modifiedDate: '2026-07-01',
+    readTime: '11 min read',
+    kicker: 'Guide · Next.js · App Router',
+  },
+  {
     title: 'How to Build a REST API with Node.js and Express (2026 Guide)',
     description:
       'A step-by-step guide to building a production-ready REST API with Node.js and Express — routing, middleware, validation, error handling, and deployment.',
